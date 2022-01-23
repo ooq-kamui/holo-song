@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Document</title>
+<style>
+ul {
+  list-style-type: none;
+}
+</style>
+</head>
+<body>
+<input type='text' id="srch_bar" size="100" placeholder="空白区切りでand条件 カンマ区切りでor条件  例) フレア,わため,ねね cover,歌ってみた" >
+<ul id="list">
+</ul>
+<script>
+var get_prm = function(){
+  var get_prm = new Object();
+  var qery_str = window.location.search;
+  if(qery_str){
+    qery_str = qery_str.substring(1);
+    var prms = qery_str.split('&');
+
+    for (var i = 0; i < prms.length; i++) {
+      var elm    = prms[i].split('=');
+      var prmKey = decodeURIComponent(elm[0]);
+      var prmVal = decodeURIComponent(elm[1]);
+      get_prm[prmKey] = prmVal;
+    }
+  }
+  return get_prm;
+}();
+
+var data_url_dir = 'https://ooq.jp/pri/holo/song/data';
+var file_json = (get_prm.f) ? get_prm.f : 's.ltst.json';
+var data_url = data_url_dir + "/" + file_json;
+
+var li_cre = function (lists) {
+  var list = document.getElementById('list');
+  list.textContent = null;
+  lists.forEach(function (l) {
+    var li = document.createElement('li');
+    li.appendChild(document.createTextNode(l));
+    list.appendChild(li);
+  });
+};
+
+var data_jsn = {}
+var video_id_srt = new Array()
+var data_jsn_srt = new Array()
+var lst = new Array()
+
+const xhr = new XMLHttpRequest();
+xhr.open("GET", data_url);
+xhr.send();
+xhr.onreadystatechange = () => {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    data_jsn = JSON.parse(xhr.responseText);      
+    lst_srt(data_jsn);
+    li_cre(lst);
+  }
+}
+
+function lst_srt(data_jsn){
+
+  for (let [video_id, tbl] of Object.entries(data_jsn)) {
+    if(tbl.view_cnt){
+      video_id_srt.push(video_id)
+    }
+  }
+  video_id_srt.sort(function (video_id1, video_id2) {
+    return data_jsn[video_id2].view_cnt - data_jsn[video_id1].view_cnt;
+  });
+
+  video_id_srt.forEach(function (video_id) {
+    data_jsn_srt.push(data_jsn[video_id])
+  });
+
+  for (let [video_id, tbl] of Object.entries(data_jsn_srt)) {
+    lst.push(tbl.view_cnt + " " + tbl.title)
+  }
+}
+
+var keyupStack = [];
+srch_bar_elm().addEventListener('keyup', function () {
+  keyupStack.push(1);
+
+  setTimeout(function () {
+    keyupStack.pop();
+
+    if (keyupStack.length === 0) {
+
+      var words_and = this.value.split(/\s/g);
+      words_and.forEach(function(w,idx,ws){
+        if (w.indexOf(',') >= 0){
+          ws[idx] = w.replace(new RegExp("^" + "," + "+|" + "," + "+$", "g"),'').split(',');
+        }
+      });
+      var filteredLists = lst.filter(function (d) {
+        return words_and.every(function (w_and) {
+          var ret
+          if (typeof w_and == "string" ) {
+            ret = d.toLowerCase().indexOf(w_and.toLowerCase()) >= 0;
+          }else if(typeof w_and == "object"){
+            ret = w_and.some(function(w_or){
+              return d.toLowerCase().indexOf(w_or.toLowerCase()) >= 0;
+            });
+          }
+          return ret;
+        });
+      });
+      li_cre(filteredLists);
+    }
+  }.bind(this), 300);
+});
+
+function srch_bar_focus(){
+  srch_bar_elm().focus();
+}
+function srch_bar_elm(){
+  return document.getElementById('srch_bar');
+}
+srch_bar_focus();
+
+// document.onkeydown = function(e) {
+//   switch (e.keyCode) {
+//     case 191: // Key: /
+//       if (document.activeElement.id != 'srch_bar'){
+//         srch_bar_focus();
+//       }
+//       break;
+//   }
+// };
+</script>
+</body>
+</html>
+
