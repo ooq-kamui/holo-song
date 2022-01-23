@@ -2,6 +2,9 @@
 
 sh/*.log
 
-www/song/data/
+www/song/data/*
+
+www/song/bk/
+
 
 
