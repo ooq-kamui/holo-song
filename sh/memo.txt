@@ -1,7 +1,75 @@
+# 
+# todo
+# 
+
+-- src
+
+class 化
+
+再生タイトルに色づけ
+
+日本語入力確定で起動するように
+
+fltr bar
+  option
+    -r reverse
+    -s shuffle
+    -  random skip start
+
+  enter で 再再生
+
+  get prm からの flt でも 動画自動再生
+    直後は無理なのは仕様だが
+
+tooltip cre
+
+plyer load と cue の違いを調べる
+
+dir を上のほうにする
+
+help  cre
+about cre
 
 
+-- env
 
+www/song/bk を ignore
 
+fish cre
+  data cre ul
+
+  sub cre
+
+  data ul
+
+  まで含めて
+
+launchctl
+  reg
+    data cre ul
+
+  pc 再起動で再登録されるのかを ch
+
+  tst が del されていない?
+
+rsync cre
+
+  vim から 1 操作で rsync する
+
+-- tool
+
+fish
+  complete 整備
+
+vim
+  javascript syntax highlight 整備
+
+  word selected 1char mv
+
+  line selected mv up
+
+  paste registor pre
+    complete select と組み合わせてできるかも
 
 
 

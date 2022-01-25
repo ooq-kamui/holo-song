@@ -1,1 +1,1 @@
-../prg/song_view_cnt_sub.fish
+../stt/song_view_cnt_sub.fish

@@ -9,6 +9,9 @@ body {
   background-color: #202124;
   color: #bdc1c6;
   font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  margin: 0;
+  height: 100%;
+  text-align: center;
 }
 a {
   color: #bdc1c6;
@@ -22,10 +25,35 @@ a:visited {
    */
   color: #B384FF;
 }
-
 ul {
   list-style-type: none;
 }
+.site-header{
+  /* position: fixed; */
+}
+#flt_bar {
+  background-color: #000;
+  color: #bdc1c6;
+}
+.video_lst {
+  text-align: left;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 800px;
+  display: inline-block;
+  height: 800px;
+  overflow-y: auto;
+  /* 
+   */
+}
+.video_lst::-webkit-scrollbar {
+  display:none;
+}
+/* 
+.video_lst::-webkit-scrollbar-track {
+  background: #ffe6ea;
+}
+ */
 .view_cnt {
   display: inline-block;
   width: 85px;
@@ -35,454 +63,21 @@ ul {
   display: inline-block;
   margin-left: 15px;
 }
-
-#srch_bar {
-  background-color: #000;
-  color: #bdc1c6;
-}
 </style>
 </head>
 <body>
-<div id="plyr"></div>
-<div>
-  <input type='text' id="srch_bar" size="100" placeholder="空白区切りでand条件 カンマ区切りでor条件  例) フレア,わため,ねね cover,歌ってみた" >
-</div>
-<div>
-  <ul id="video_ul">
+<header class="site-header">
+  <div id="plyr">
+  </div>
+  <div>
+    <input type='text' id="flt_bar" size="100" placeholder="空白区切りでand条件 カンマ区切りでor条件  例) フレア,わため,ねね cover,歌ってみた" >
+  </div>
+</header>
+<div class="video_lst">
+  <ul id="video_lst">
   </ul>
-<div>
-<script async>
-
-var tag = document.createElement('script');
-
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var plyr;
-function onYouTubeIframeAPIReady(){
-  plyr = new YT.Player('plyr', {
-    height: '250',
-    //height: '360',
-    //width: '640',
-    videoId: '68KV7JnrvDo',
-    //videoId: 'o5lZMlrsdXM',
-    playerVars: {
-      autoplay: 0,
-      controls: 1, 
-      //mute:     1
-      //playlist: "68KV7JnrvDo"
-    },
-    events: {
-      'onReady':       plyr_ready,
-      'onStateChange': plyr_st_ch
-    }
-  });
-}
-
-function plyr_ready(ev){
-  log("ready");
-}
-
-function plyr__load(video_id){
-  plyr.loadVideoById(video_id);
-}
-
-function plyr__load_ply(video_id){
-  plyr__load(video_id);
-  plyr_ply();
-}
-
-var g_plyr_load_time_pre = 0;
-function plyr__load_lst(video_id){
-  log("plyr__load_lst :" + video_id[0]);
-
-  if (!plyr.loadPlaylist){return;}
-
-  var now = Date.now();
-  var timer = now - g_plyr_load_time_pre;
-
-  if (timer < 3){
-    dly(plyr.loadPlaylist, 2, video_id);
-  }else{
-    plyr.loadPlaylist(video_id);
-  }
-
-  g_plyr_load_time_pre = now;
-}
-
-function plyr__cue_lst(video_id){
-  plyr.cuePlaylist(video_id);
-}
-
-function plyr_ply(){
-  log("ply");
-  plyr.playVideo();
-}
-
-function plyr_stp(){
-  log("stp");
-  plyr.stopVideo();
-}
-
-function plyr_st_ch(ev){
-  var st = ev.data;
-  log("st_ch : " + plyr_st(st));
-}
-
-function plyr_st(st){
-  if (st == -1){return "UNSTARTED";}
-  const _plyr_st = [
-    "ENDED",
-    "PLAYING",
-    "PAUSED",
-    "BUFFERING",
-    "CUED"
-  ];
-  return (_plyr_st[st]) ? _plyr_st[st] : st;
-}
-
-// -------------------
-
-// global, alias
-
-var doc = document;
-var g_video_srt;
-
-// fnc
-
-function video__(video){
-
-  g_video_srt = video_srt(video);
-}
-
-function video_id_srt(video){
-
-  var video_id_srt = new Array()
-
-  for (let [video_id, _video] of Object.entries(video)){
-
-    if(_video.view_cnt){
-      video_id_srt.push(video_id)
-    }
-  }
-
-  var cmpr = function (video_id1, video_id2){
-
-    return video[video_id2].view_cnt - video[video_id1].view_cnt;
-  }
-  video_id_srt.sort(cmpr);
-  return video_id_srt;
-}
-
-function video_srt(video){
-
-  var _video_id_srt = video_id_srt(video);
-
-  var video_srt = new Object();
-
-  for (let [idx, video_id] of _video_id_srt.entries()){
-
-    video_srt[video_id] = video[video_id];
-  }
-  return video_srt;
-}
-
-// flt
-
-function video_elm__flt(str){
-
-  var word = split_and_or(str);
-
-  var _video_flt = video_flt(g_video_srt, word);
-  ul_elm__upd(_video_flt);
-  return _video_flt;
-}
-
-function video_flt(video, word){
-
-  var video_flt = new Object();
-
-  for (let [video_id, _video] of Object.entries(video)){
-
-    if (is_match_and_or(_video.title, word)){
-      video_flt[video_id] = _video;
-    }
-  }
-  return video_flt;
-}
-
-function srch_bar__init(){
-
-  var prm = url_prm();
-
-  if (!(prm && prm.s)){return;}
-
-  srch_bar_elm().value = prm.s;
-}
-
-function srch_bar_str(){
-  return srch_bar_elm().value;
-}
-
-function srch_bar_focus(){
-
-  srch_bar_elm().focus();
-}
-
-// elm
-
-function ul_elm__upd(video){
-
-  ul_elm__cre(video);
-}
-
-function ul_elm__cre(video){
-
-  var ul_elm = doc.getElementById('video_ul');
-
-  ul_elm.textContent = null;
-
-  var url_base = "https://www.youtube.com/watch?v=";
-  var view_cnt_elm , title_spn_elm , title_elm , url
-
-  for (let [video_id, _video] of Object.entries(video)){
-
-    view_cnt_elm = cre_elm_span(_video.view_cnt, "view_cnt");
-
-    title_spn_elm = cre_elm_span(_video.title   , "title"   );
-
-    title_elm = doc.createElement('a');
-    title_elm.appendChild(title_spn_elm);
-    url = url_base + video_id;
-    title_elm.setAttribute("href", url);
-    title_elm.setAttribute("target", "_blank");
-
-    var li_elm = doc.createElement('li');
-    li_elm.appendChild(view_cnt_elm);
-    li_elm.appendChild(title_elm);
-
-    ul_elm.appendChild(li_elm);
-  }
-}
-
-function cre_elm_span(str, cls){
-
-  var elm = doc.createElement('span');
-  elm.appendChild(doc.createTextNode(str));
-  elm.classList.add(cls);
-  return elm;
-}
-
-function srch_bar_elm(){
-
-  return doc.getElementById('srch_bar');
-}
-
-var g_srch_str_pre = "";
-var g_video_id_1st_pre = [];
-function keyup(){
-
-  var keyupStack = [];
-  keyupStack.push(1);
-  dly(function (){
-
-    keyupStack.pop();
-
-    if (keyupStack.length !== 0){return;}
-
-    var srch_str = this.value;
-    srch_str = srch_str.trim();
-
-    if (srch_str == g_srch_str_pre){return;}
-
-    log("__flt :" + srch_str + ":" + g_srch_str_pre + ":");
-
-    var video = video_elm__flt(srch_str);
-    g_srch_str_pre = srch_str;
-
-    if (!srch_str || srch_str == ""){return;}
-
-    //var lim = 20;
-    var lim = 5;
-    //var video_id_1st = Object.keys(video).slice(0, 1);
-    var video_id_1st = Object.keys(video).slice(0, lim);
-
-    if (!video_id_1st[0]){return;}
-    if (video_id_1st[0] == g_video_id_1st_pre[0]){return;}
-
-    log("__load_lst :" + video_id_1st[0] + ":" + g_video_id_1st_pre[0] + ":");
-    log(video_id_1st);
-
-    plyr__load_lst(video_id_1st);
-    g_video_id_1st_pre = video_id_1st;
-
-    //dly(plyr_ply, 5000);
-
-
-    //var video_id_flw = Object.keys(video).slice(1, lim);
-    //log(video_id_flw);
-    //plyr__cue_lst( video_id_flw);
-    //dly(plyr__cue_lst, 10, video_id_flw);
-
-  }.bind(this), 500);
-}
-srch_bar_elm().addEventListener('keyup', keyup);
-
-// video req
-
-function video__init_req(){
-
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", data_url());
-  xhr.send();
-  xhr.onreadystatechange = function(){
-
-    if (!(xhr.readyState == 4 && xhr.status == 200)){return;}
-
-    var video = JSON.parse(xhr.responseText);      
-    video__(video);
-    video_elm__flt(srch_bar_str())
-  }
-}
-
-// main
-
-function __init(){
-
-  video__init_req();
-  srch_bar__init();
-  srch_bar_focus();
-}
-
-__init();
-
-// url
-
-function data_url(){
-
-  var prm = url_prm();
-  var file_json = (prm && prm.f) ? prm.f : 's.ltst.json';
-
-  var data_domain  = 'ooq.jp';
-  var data_dir     = 'pri/holo/song/data';
-  var data_url_dir = data_domain + "/" + data_dir;
-  var data_url = 'https://' + data_url_dir + "/" + file_json;
-
-  return data_url;
-}
-
-// flt
-
-function split_and_or(str){
-
-  var word = str.trim().split(/\s/g);
-
-  for (let [idx, word_and] of word.entries()){
-  
-    word[idx] = split_or(word_and);
-  }
-  return word;
-}
-
-function split_or(word_and){
-
-  var split_char = ",";
-
-  if (!is_match(word_and, split_char)){return word_and;}
-
-  var exp = new RegExp("^" + split_char + "+|" + split_char + "+$", "g");
-
-  var word = word_and.replace(exp,'').split(split_char);
-  return word;
-}
-
-// util
-
-function url_prm(){
-
-  var qery_str = window.location.search;
-
-  if(!qery_str){return;}
-
-  qery_str = qery_str.substring(1);
-
-  var prms = qery_str.split('&');
-
-  var prm = new Object();
-  var elm, key, val;
-  for (var i = 0; i < prms.length; i++){
-
-    elm = prms[i].split('=');
-    key = decodeURIComponent(elm[0]);
-    val = decodeURIComponent(elm[1]);
-    prm[key] = val;
-  }
-  return prm;
-}
-
-function is_match(str, word){
-
-  var ret = false;
-
-  str  = str.toLowerCase();
-  word = word.toLowerCase();
-
-  if (str.indexOf(word) >= 0){
-    ret = true;
-  }
-  return ret;
-}
-
-function is_match_and_or(str, word){
-
-  var ret = false;
-
-  for (let [idx, word_and] of word.entries()){
-
-    if      (typeof word_and == "string"){
-
-      ret = is_match(   str, word_and);
-
-    }else if(typeof word_and == "object"){
-
-      ret = is_match_or(str, word_and);
-    }
-    if (!ret){break;}
-  }
-  return ret;
-}
-
-function is_match_or(str, word){
-
-  var ret = false;
-
-  for (let [idx, word_or] of word.entries()){
-    ret = is_match(str, word_or);
-    if (ret){break;}
-  }
-  return ret;
-}
-
-function log(str){
-  console.log(str);
-}
-
-function dly(fnc, msec, arg){
-  setTimeout(fnc, msec, arg);
-}
-
-// doc.onkeydown = function(e) {
-//   switch (e.keyCode) {
-//     case 191: // Key: /
-//       if (doc.activeElement.id != 'srch_bar'){
-//         srch_bar_focus();
-//       }
-//       break;
-//   }
-// };
-
-</script>
+</div>
 </body>
+<script src="song.js" type="text/javascript" charset="UTF-8" async></script>
 </html>
 
