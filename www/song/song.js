@@ -148,34 +148,40 @@ class Song {
     return video_srt;
   }
 
-  video_id_srt_slice(_video_id, lim){
+  video_id_flt_slice(_video_id, lim){
 
-    var idx      = this._video_id_srt.indexOf(_video_id);
-    var video_id = this._video_id_srt.slice(idx, idx + lim);
+    var idx      = this._video_id_flt.indexOf(_video_id);
+    var video_id = this._video_id_flt.slice(idx, idx + lim);
     return video_id;
   }
 
   // flt
 
-  video_elm__flt(str){
+  video_flt__(str){
+
+    if (!str){str = this.srch_bar_str();}
 
     var word = u.split_and_or(str);
 
-    var _video_flt = this.video_flt(this._video_srt, word);
-    this.ul_elm__upd(_video_flt);
-    return _video_flt;
+    this.video_flt__by_word(word);
+
+    this.ul_elm__upd();
   }
 
-  video_flt(video, word){
+  video_flt__by_word(word, video){
+
+    if(!video){
+      video = this._video_srt;
+    }
 
     this._video_flt    = new Object();
-    this._video_id_srt = new Array();
+    this._video_id_flt = new Array();
 
     for (let [video_id, _video] of Object.entries(video)){
 
       if (is_match_and_or(_video.title, word)){
         this._video_flt[video_id] = _video;
-        this._video_id_srt.push(video_id);
+        this._video_id_flt.push(video_id);
       }
     }
     return this._video_flt;
@@ -201,33 +207,35 @@ class Song {
 
   // elm
 
-  ul_elm__upd(video){
+  ul_elm__upd(_video){
 
-    this.ul_elm__cre(video);
+    if (!_video){
+      _video = this._video_flt;
+    }
+    this.elm_ul__cre(_video);
   }
 
-  ul_elm__cre(video){
+  url_base = "https://www.youtube.com/watch?v=";
+
+  elm_ul__cre(video){
 
     var ul_elm = doc.getElementById('video_lst');
 
     ul_elm.textContent = null;
 
-    var url_base = "https://www.youtube.com/watch?v=";
     var view_cnt_elm , title_spn_elm , title_elm , url
 
     for (let [video_id, _video] of Object.entries(video)){
 
-      view_cnt_elm = this.cre_elm_span(_video.view_cnt, "view_cnt");
+      view_cnt_elm = this.elm_span__cre(_video.view_cnt, "view_cnt");
 
-      title_spn_elm = this.cre_elm_span(_video.title   , "title"   );
+      title_spn_elm = this.elm_span__cre(_video.title, "title");
 
       title_elm = doc.createElement('a');
       title_elm.appendChild(title_spn_elm);
-      //url = url_base + video_id;
+      //url = Song.url_base + video_id;
       url = "javascript:song.onclick('" + video_id + "');";
       title_elm.setAttribute("href", url);
-      //title_elm.setAttribute("target", "_blank");
-      //title_elm.setAttribute("onclick", "onclick('" + video_id + "')");
       //title_elm.setAttribute("onclick", "onclick();");
 
       var li_elm = doc.createElement('li');
@@ -238,7 +246,7 @@ class Song {
     }
   }
 
-  cre_elm_span(str, cls){
+  elm_span__cre(str, cls){
 
     var elm = doc.createElement('span');
     elm.appendChild(doc.createTextNode(str));
@@ -256,10 +264,9 @@ class Song {
   onclick(video_id){
 
     var lim = 5;
-    var video_id_lim = this.video_id_srt_slice(video_id, lim)
+    var video_id_lim = this.video_id_flt_slice(video_id, lim)
 
     this._plyr.__load_lst(video_id_lim);
-    //this._plyr.__load(video_id);
   }
 
   // video req
@@ -277,8 +284,39 @@ class Song {
 
       var video = JSON.parse(xhr.responseText);      
       song.video__(video);
-      song.video_elm__flt(song.srch_bar_str())
+
+      song.video_flt__()
     }
+  }
+
+  flt_ply__(srch_str){
+
+    srch_str = srch_str.trim();
+
+    if (srch_str == this._srch_str_pre){return;}
+
+    log("__flt :" + srch_str + ":" + this._srch_str_pre + ":");
+
+    this.video_flt__(srch_str);
+
+    this._srch_str_pre = srch_str;
+
+    if (!srch_str || srch_str == ""){return;}
+
+    var lim = 5;
+    var video_id_lst = this._video_id_flt.slice(0, lim);
+    var video_id_1 = video_id_lst[0];
+
+    if (!video_id_1){return;}
+    log(video_id_1);
+
+    if (video_id_1 == this._video_id_1_pre){return;}
+
+    log("__load_lst :" + video_id_1 + ":" + this._video_id_1_pre + ":");
+    log(video_id_lst);
+
+    this._plyr.__load_lst(video_id_lst);
+    this._video_id_1_pre = video_id_1;
   }
 }
 
@@ -423,43 +461,7 @@ function flt_bar_elm_keyup(){
 
     if (keyupStack.length !== 0){return;}
 
-    // --
-
-    var srch_str = this.value;
-    srch_str = srch_str.trim();
-
-    if (srch_str == song._srch_str_pre){return;}
-
-    log("__flt :" + srch_str + ":" + song._srch_str_pre + ":");
-
-    var video = song.video_elm__flt(srch_str);
-    song._srch_str_pre = srch_str;
-
-    if (!srch_str || srch_str == ""){return;}
-
-    var lim = 5; // 20;
-    //var video_id_1st = Object.keys(video).slice(0, lim);
-    //var video_id_1st = song._video_id_srt.slice(0, lim);
-    var video_id_1st = song._video_id_srt.slice(0, lim);
-
-    if (!video_id_1st[0]){return;}
-    log(video_id_1st[0]);
-    log(song._video_id_srt[0]);
-    if (video_id_1st[0] == song._video_id_1st_pre[0]){return;}
-    log("bbb");
-
-    log("__load_lst :" + video_id_1st[0] + ":" + song._video_id_1st_pre[0] + ":");
-    log(video_id_1st);
-
-    song._plyr.__load_lst(video_id_1st);
-    song._video_id_1st_pre = video_id_1st;
-
-    //dly(song._plyr.plyr_ply, 5000);
-
-    //var video_id_flw = Object.keys(video).slice(1, lim);
-    //log(video_id_flw);
-    //song._plyr.cue_lst( video_id_flw);
-    //dly(song._plyr.cue_lst, 10, video_id_flw);
+    song.flt_ply__(this.value);
 
   }.bind(this), 500);
 }
