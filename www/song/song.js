@@ -165,14 +165,13 @@ class Song {
 
     this.video_flt__by_word(word);
 
-    this.ul_elm__upd();
+    //this.elm_ul__upd();
+    this.elm_ul__flt();
   }
 
   video_flt__by_word(word, video){
 
-    if(!video){
-      video = this._video_srt;
-    }
+    if(!video){video = this._video_srt;}
 
     this._video_flt    = new Object();
     this._video_id_flt = new Array();
@@ -197,6 +196,7 @@ class Song {
   }
 
   srch_bar_str(){
+
     return this.flt_bar_elm().value;
   }
 
@@ -207,42 +207,72 @@ class Song {
 
   // elm
 
-  ul_elm__upd(_video){
+  elm_ul__flt(video_flt){
 
-    if (!_video){
-      _video = this._video_flt;
+    if (!video_flt){video_flt = this._video_flt;}
+
+    var elm_ul = this.video_lst_elm_ul();
+    log(elm_ul);
+    var elm_li = elm_ul.children;
+    log(elm_li);
+
+    //for (let [idx, elm_li] of elm_li.entries()){
+    for (let idx = 0; idx < elm_li.length; idx++){
+      
+      //if(video_flt[elm_li.id]){
+      if(video_flt[elm_li[idx].id]){
+
+        elm_li[idx].style.display ="block";
+
+      }else{
+        elm_li[idx].style.display ="none";
+      }
     }
+  }
+
+  elm_ul__upd(_video){
+
+    if (!_video){_video = this._video_flt;}
+
     this.elm_ul__cre(_video);
   }
 
   url_base = "https://www.youtube.com/watch?v=";
 
+  video_lst_elm_ul(){
+
+    return doc.getElementById('video_lst');
+  }
+
   elm_ul__cre(video){
 
-    var ul_elm = doc.getElementById('video_lst');
+    if (!video){video = this._video_srt;}
 
-    ul_elm.textContent = null;
+    var elm_ul = this.video_lst_elm_ul();
 
-    var view_cnt_elm , title_spn_elm , title_elm , url
+    elm_ul.textContent = null;
+
+    var view_cnt_elm , title_elm_spn , title_elm , url;
 
     for (let [video_id, _video] of Object.entries(video)){
 
-      view_cnt_elm = this.elm_span__cre(_video.view_cnt, "view_cnt");
+      view_cnt_elm  = this.elm_span__cre(_video.view_cnt, "view_cnt");
 
-      title_spn_elm = this.elm_span__cre(_video.title, "title");
+      title_elm_spn = this.elm_span__cre(_video.title, "title");
 
       title_elm = doc.createElement('a');
-      title_elm.appendChild(title_spn_elm);
+      title_elm.appendChild(title_elm_spn);
       //url = Song.url_base + video_id;
       url = "javascript:song.onclick('" + video_id + "');";
       title_elm.setAttribute("href", url);
       //title_elm.setAttribute("onclick", "onclick();");
 
-      var li_elm = doc.createElement('li');
-      li_elm.appendChild(view_cnt_elm);
-      li_elm.appendChild(title_elm);
+      var elm_li = doc.createElement('li');
+      elm_li.appendChild(view_cnt_elm);
+      elm_li.appendChild(title_elm);
+      elm_li.setAttribute("id", video_id);
 
-      ul_elm.appendChild(li_elm);
+      elm_ul.appendChild(elm_li);
     }
   }
 
@@ -261,12 +291,12 @@ class Song {
 
   // lst
 
-  onclick(video_id){
+  onclick(_video_id){
 
     var lim = 5;
-    var video_id_lim = this.video_id_flt_slice(video_id, lim)
+    var video_id = this.video_id_flt_slice(_video_id, lim)
 
-    this._plyr.__load_lst(video_id_lim);
+    this._plyr.__load_lst(video_id);
   }
 
   // video req
@@ -284,6 +314,8 @@ class Song {
 
       var video = JSON.parse(xhr.responseText);      
       song.video__(video);
+
+      song.elm_ul__cre();
 
       song.video_flt__()
     }
@@ -308,6 +340,7 @@ class Song {
     var video_id_1 = video_id_lst[0];
 
     if (!video_id_1){return;}
+
     log(video_id_1);
 
     if (video_id_1 == this._video_id_1_pre){return;}
