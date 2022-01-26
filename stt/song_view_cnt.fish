@@ -1,7 +1,9 @@
 # fish
 
-set dir_prj ~/doc/hoby/youtube/vtuber/hololive/prj/prg
-cd $dir_prj
+set dir_prj ~/doc/hoby/youtube/vtuber/hololive/prj
+
+set dir_exe $dir_prj/stt
+cd $dir_exe
 
 set dir ../www/song/data
 set cdt (date +"%Y-%m-%dT%H:%M")

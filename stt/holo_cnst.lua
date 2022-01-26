@@ -51,6 +51,9 @@ Holo._jp = {
         lst_id = {
           "PLF54qiUa9cTu9eyx3Ukx88jtJUCKGFvWL", -- cvr, org
         },
+        lst_excld_video_id = {
+          "QA8KoMko9u8", -- live
+        },
       },
     },
     mel     = {

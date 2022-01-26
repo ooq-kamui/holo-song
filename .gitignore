@@ -1,11 +1,12 @@
 
-
 sh/*.log
 
 www/song/data/*
 
 www/song/bk/
 www/song/tst/
+
+sh/memo.txt
 
 .DS_Store
 

@@ -4,9 +4,20 @@
 
 -- src
 
-class 化
+ytplyr class 化
+
+random skip start
+
 
 再生タイトルに色づけ
+  hidden で flt に変える必要がある?
+    try
+
+data file name ch
+
+id mmbr lst
+  research cre
+  cmnt
 
 日本語入力確定で起動するように
 
@@ -14,21 +25,18 @@ fltr bar
   option
     -r reverse
     -s shuffle
-    -  random skip start
 
   enter で 再再生
 
   get prm からの flt でも 動画自動再生
     直後は無理なのは仕様だが
 
-tooltip cre
-
 plyer load と cue の違いを調べる
-
-dir を上のほうにする
 
 help  cre
 about cre
+
+tooltip cre
 
 
 -- env
@@ -48,7 +56,7 @@ launchctl
   reg
     data cre ul
 
-  pc 再起動で再登録されるのかを ch
+  pc 再起動で再登録されるのかを chk
 
   tst が del されていない?
 
@@ -68,8 +76,6 @@ vim
 
   line selected mv up
 
-  paste registor pre
-    complete select と組み合わせてできるかも
 
 
 

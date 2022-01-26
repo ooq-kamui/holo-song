@@ -1,9 +1,11 @@
 # fish
 
-set dir_prj ~/doc/hoby/youtube/vtuber/hololive/prj/prg
-cd $dir_prj
+set dir_prj ~/doc/hoby/youtube/vtuber/hololive/prj
 
-set dir_www ~/doc/hoby/youtube/vtuber/hololive/prj/www
+set dir_exe $dir_prj/stt
+cd $dir_exe
+
+set dir_www $dir_prj/www
 set dir_data $dir_www/song/data
 
 set path_file1 ( ls -t $dir_data/t.*.json | head -n 1 )
