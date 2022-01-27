@@ -8,8 +8,8 @@ cd $dir_exe
 set dir_www $dir_prj/www
 set dir_data $dir_www/song/data
 
-set path_file1 ( ls -t $dir_data/t.*.json | head -n 1 )
-set path_file2 ( ls -t $dir_data/t.*.json | head -n 2 | tail -n 1 )
+set path_file1 ( ls -t $dir_data/*.json | head -n 1 )
+set path_file2 ( ls -t $dir_data/*.json | head -n 2 | tail -n 1 )
 echo $path_file1 $path_file2
 
 set sub_file ( basename $path_file1 .json ).-.( basename $path_file2 .json )

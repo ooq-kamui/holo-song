@@ -472,25 +472,34 @@ Holo._id = {
     iofi = {
       ch_id = "",
       song = {
-        lst_id = {},
+        lst_id = {
+          -- "PL0OWyC-pOgQnQ1POfg1fOiXffUPE-b3sR", -- cvr
+        },
       },
     },
     moona = {
       ch_id = "",
       song = {
-        lst_id = {},
+        lst_id = {
+          -- "PLdcktSYecSKfeQ7p5CrVO4avrmLzSL8mt", -- cvr, org
+        },
       },
     },
     risu = {
       ch_id = "",
       song = {
-        lst_id = {},
+        lst_id = {
+          -- "PLHeIKIUgnbJDhs2mTJ6WFXUvol189G7IK", -- org
+          -- "PLHeIKIUgnbJBzW9cvaqSG6P9_NvXldgCH", -- cvr
+        },
       },
     },
     ollie = {
       ch_id = "",
       song = {
-        lst_id = {},
+        lst_id = {
+          -- "PL6DI34hJswwQ8um3dpgrZY1elCO-tNfrc", -- cvr
+        },
       },
     },
     anya = {
@@ -502,7 +511,10 @@ Holo._id = {
     reine = {
       ch_id = "",
       song = {
-        lst_id = {},
+        lst_id = {
+          -- "PLrALGrrF-6IVnnurSv7Nxdxpo5zJmmjnC", -- cvr
+          -- "PLrALGrrF-6IWBHB3pdou530lFKrSsCtD4", -- org
+        },
       },
     },
   },
