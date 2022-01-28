@@ -3,6 +3,8 @@
 
 class Plyr {
 
+  yt_url_base = "https://www.youtube.com/watch?v=";
+
   constructor(){
 
     this._ytplyr; // = ytplyr;
@@ -94,25 +96,28 @@ class Song {
     this._video_id_1st_pre = [];
 
     this.video__init_req();
-    this.srch_bar__init();
-    this.srch_bar_focus();
+    this.flt_bar__init();
+    this.flt_bar_focus();
 
     var song = this;
-    function flt_bar_elm_keyup(){
+    function flt_bar_keyup(ev){
 
-      var keyupStack = [];
-      keyupStack.push(1);
+      log("isComposing: " + ev.isComposing);
+      if (ev.isComposing || ev.keyCode === 229){return;}
+
+      var keyup_stack = [];
+      keyup_stack.push(1);
       dly(function (){
 
-        keyupStack.pop();
+        keyup_stack.pop();
 
-        if (keyupStack.length !== 0){return;}
+        if (keyup_stack.length !== 0){return;}
 
-        song.flt_ply__(this.value);
+        song.flt_ply(this.value);
 
       }.bind(this), 500);
     }
-    this.flt_bar_elm().addEventListener('keyup', flt_bar_elm_keyup);
+    this.flt_bar_elm().addEventListener('keyup', flt_bar_keyup);
   }
 
   // video
@@ -202,7 +207,7 @@ class Song {
     return this._video_flt;
   }
 
-  srch_bar__init(){
+  flt_bar__init(){
 
     var prm = url_prm();
 
@@ -216,7 +221,7 @@ class Song {
     return this.flt_bar_elm().value;
   }
 
-  srch_bar_focus(){
+  flt_bar_focus(){
 
     this.flt_bar_elm().focus();
   }
@@ -246,8 +251,6 @@ class Song {
     this.elm_ul__cre(_video);
   }
 
-  url_base = "https://www.youtube.com/watch?v=";
-
   video_lst_elm_ul(){
 
     return doc.getElementById('video_lst');
@@ -271,7 +274,7 @@ class Song {
 
       title_elm = doc.createElement('a');
       title_elm.appendChild(title_elm_spn);
-      //url = Song.url_base + video_id;
+      //url = Song.yt_url_base + video_id;
       url = "javascript:song.onclick('" + video_id + "');";
       title_elm.setAttribute("href", url);
       //title_elm.setAttribute("onclick", "onclick();");
@@ -364,7 +367,7 @@ class Song {
     }
   }
 
-  flt_ply__(srch_str){
+  flt_ply(srch_str){
 
     srch_str = srch_str.trim();
 
@@ -390,11 +393,6 @@ class Song {
     var s_idx = rnd(0, this._video_id_flt.length);
 
     log("s_idx: " + s_idx);
-
-    //var lim = 5;
-    //var video_id_lst = this._video_id_flt.slice(s_idx, s_idx + lim);
-    //this._plyr.__load_lst(video_id_lst);
-    //log(video_id_lst);
 
     this.plyr__ply_by_video_id(this._video_id_flt[s_idx]);
 
@@ -529,7 +527,7 @@ function dly(fnc, msec, arg){
 //   switch (e.keyCode) {
 //     case 191: // Key: /
 //       if (doc.activeElement.id != 'flt_bar'){
-//         this.srch_bar_focus();
+//         this.flt_bar_focus();
 //       }
 //       break;
 //   }
