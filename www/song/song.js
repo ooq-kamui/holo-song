@@ -390,11 +390,9 @@ class Song {
 
     if (this._video_id_flt.length == 0){return;}
 
-    var s_idx = rnd(0, this._video_id_flt.length);
+    var video_id = ar_rnd(this._video_id_flt);
 
-    log("s_idx: " + s_idx);
-
-    this.plyr__ply_by_video_id(this._video_id_flt[s_idx]);
+    this.plyr__ply_by_video_id(video_id);
   }
 }
 
@@ -510,6 +508,19 @@ function rnd(min, max){
 
   var val = Math.floor(Math.random() * (max - min + 1) + min);
   return val
+}
+
+function ar_rnd(ar){
+
+  var idx = ar_rnd_idx(ar);
+  var val = ar[idx];
+  return val;
+}
+
+function ar_rnd_idx(ar){
+
+  var idx = rnd(0, ar.length - 1);
+  return idx;
 }
 
 function log(str){
