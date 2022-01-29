@@ -105,6 +105,8 @@ class Song {
       log("isComposing: " + ev.isComposing);
       if (ev.isComposing || ev.keyCode === 229){return;}
 
+      var force = (ev.code == "Enter") ? true : false;
+
       var keyup_stack = [];
       keyup_stack.push(1);
       dly(function (){
@@ -113,7 +115,7 @@ class Song {
 
         if (keyup_stack.length !== 0){return;}
 
-        song.flt_ply(this.value);
+        song.flt_ply(this.value, force);
 
       }.bind(this), 500);
     }
@@ -367,36 +369,32 @@ class Song {
     }
   }
 
-  flt_ply(srch_str){
+  flt_ply(srch_str, force){
 
     srch_str = srch_str.trim();
 
-    if (srch_str == this._srch_str_pre){return;}
+    if ((srch_str == this._srch_str_pre) && !force){return;}
 
     log("__flt :" + srch_str + ":" + this._srch_str_pre + ":");
 
     this.video_flt__(srch_str);
+
     this._srch_str_pre = srch_str;
 
-    if (!srch_str || srch_str == ""){return;}
+    if ((!srch_str || srch_str == "") && !force){return;}
 
-    var video_id_flt_1 = this._video_id_flt[0];
+    this.ply_rnd();
+  }
 
-    if (!video_id_flt_1){return;}
+  ply_rnd(){
 
-    log(video_id_flt_1);
-
-    if (video_id_flt_1 == this._video_id_flt_1_pre){return;}
-
-    log("video_id_flt_1 :" + video_id_flt_1 + ":" + this._video_id_flt_1_pre);
+    if (this._video_id_flt.length == 0){return;}
 
     var s_idx = rnd(0, this._video_id_flt.length);
 
     log("s_idx: " + s_idx);
 
     this.plyr__ply_by_video_id(this._video_id_flt[s_idx]);
-
-    this._video_id_flt_1_pre = video_id_flt_1;
   }
 }
 
