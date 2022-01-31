@@ -99,7 +99,18 @@ class Song {
     this.flt_bar__init();
     this.flt_bar_focus();
 
+
+    var keyup_stack = [];
     var song = this;
+    function flt_bar_keyup_exe(force){
+
+      keyup_stack.pop();
+
+      if (keyup_stack.length !== 0){return;}
+
+      var str = song.flt_bar_elm().value;
+      song.flt_ply(str, force);
+    }
     function flt_bar_keyup(ev){
 
       log("isComposing: " + ev.isComposing);
@@ -107,17 +118,9 @@ class Song {
 
       var force = (ev.code == "Enter") ? true : false;
 
-      var keyup_stack = [];
       keyup_stack.push(1);
-      dly(function (){
 
-        keyup_stack.pop();
-
-        if (keyup_stack.length !== 0){return;}
-
-        song.flt_ply(this.value, force);
-
-      }.bind(this), 500);
+      dly(flt_bar_keyup_exe, 700, force);
     }
     this.flt_bar_elm().addEventListener('keyup', flt_bar_keyup);
   }
