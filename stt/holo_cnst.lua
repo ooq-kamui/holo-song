@@ -353,7 +353,9 @@ Holo._jp = {
     chloe   = {
       ch_id = "UCIBY1ollUsauvVi4hW4cumw",
       song = {
-        lst_id = {},
+        lst_id = {
+          "PLi6TWx3pTf1dHW-DvMpPEW2NLDICBkW8z", -- cvr
+        },
       },
     },
     iroha   = {
