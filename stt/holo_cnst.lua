@@ -81,6 +81,10 @@ Holo._jp = {
         lst_id = {
           "PL6sZ3uYmeG1vGZVLNlWdJkm3W0R86y_Qa", -- cvr, org
         },
+        lst_excld_video_id = {
+          "j84IEsVYGyE", -- 
+          "-wV0AH0u8ik", -- 
+        },
       },
     },
     fubuki  = {
