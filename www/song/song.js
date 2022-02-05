@@ -52,14 +52,19 @@ class Plyr {
     this._ytplyr.stopVideo();
   }
 
-  static ready(ev){
-    log("ready");
-  }
-
-  static st_ch(ev){
+  st_ch(ev){
 
     var st = ev.data;
     log("st_ch: " + Plyr.st(st));
+
+    if (Plyr.st(st) == "ENDED"){
+      log("ENDED");
+      this.ply_rnd();
+    }
+  }
+
+  static ready(ev){
+    log("ready");
   }
 
   static _st = [
@@ -578,7 +583,7 @@ win.onYouTubeIframeAPIReady = function(){
       },
       events: {
         'onReady':       Plyr.ready,
-        'onStateChange': Plyr.st_ch
+        'onStateChange': song._plyr.st_ch.bind(song)
       }
     }
   );
