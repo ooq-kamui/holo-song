@@ -414,7 +414,7 @@ class Song {
     log("video_id: " + video_id);
 
     var video_elm = elm_by_id(video_id);
-    var video_top = video_elm.getBoundingClientRect().top;
+    var video_top = video_elm.offsetTop;
     log("top: " + video_top);
 
     var header_elm = elm_by_id('header');

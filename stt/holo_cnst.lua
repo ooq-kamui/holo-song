@@ -97,6 +97,7 @@ Holo._jp = {
         },
         lst_excld_video_id = {
           "uqQLrla5pDI", -- 
+          "LlwxRcUFNV8", -- 
         },
       },
     },
