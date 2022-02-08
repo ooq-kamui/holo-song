@@ -320,7 +320,6 @@ class Song {
 
   plyr__ply_by_video_id(_video_id){
 
-    //this.ply_video_elm_color__(false);
     this.ply_video_elm__(false);
 
     this.ply_video_id__by_video_id(_video_id);
@@ -363,6 +362,7 @@ class Song {
 
     const xhr = new XMLHttpRequest();
     xhr.open("GET", u.data_url());
+    xhr.setRequestHeader('If-Modified-Since', 'Thu, 01 Jun 1970 00:00:00 GMT');
     xhr.send();
     xhr.onreadystatechange = function(){
 
@@ -401,6 +401,30 @@ class Song {
     var video_id = ar_rnd(this._video_id_flt);
 
     this.plyr__ply_by_video_id(video_id);
+
+    this.video_lst__scrl();
+  }
+
+  video_lst__scrl(video_id){
+    log("video_lst__scrl");
+
+    video_id = video_id ? video_id : this._ply_video_id[0];
+    if (!video_id){return;}
+
+    log("video_id: " + video_id);
+
+    var video_elm = elm_by_id(video_id);
+    var video_top = video_elm.getBoundingClientRect().top;
+    log("top: " + video_top);
+
+    var header_elm = elm_by_id('header');
+    var header_h = header_elm.clientHeight;
+    log("h: " + header_h);
+
+    var scrl_y = video_top - header_h - 28;
+
+    var lst_elm = elm_by_id('video_lst_scrl');
+    lst_elm.scroll(0, scrl_y);
   }
 }
 
@@ -531,6 +555,11 @@ function ar_rnd_idx(ar){
   return idx;
 }
 
+// alias
+
+var doc = document;
+var win = window;
+
 function log(str){
   console.log(str);
 }
@@ -538,6 +567,10 @@ function log(str){
 function dly(fnc, msec, arg){
 
   setTimeout(fnc, msec, arg);
+}
+
+function elm_by_id(id){
+  return doc.getElementById(id);
 }
 
 // doc.onkeydown = function(e) {
@@ -551,10 +584,6 @@ function dly(fnc, msec, arg){
 // };
 
 // main
-
-// alias
-var doc = document;
-var win = window;
 
 var tag = doc.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";

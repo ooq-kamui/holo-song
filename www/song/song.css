@@ -21,14 +21,14 @@ a:visited {
 ul {
   list-style-type: none;
 }
-.site-header{
+.header{
   /* position: fixed; */
 }
 #flt_bar {
   background-color: #000;
   color: #bdc1c6;
 }
-.video_lst {
+.video_lst_scrl {
   text-align: left;
   overflow-x: auto;
   white-space: nowrap;
@@ -39,11 +39,11 @@ ul {
   /* 
    */
 }
-.video_lst::-webkit-scrollbar {
+.video_lst_scrl::-webkit-scrollbar {
   display:none;
 }
 /* 
-.video_lst::-webkit-scrollbar-track {
+.video_lst_scrl::-webkit-scrollbar-track {
   background: #ffe6ea;
 }
  */

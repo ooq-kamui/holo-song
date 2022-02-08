@@ -84,6 +84,7 @@ Holo._jp = {
         lst_excld_video_id = {
           "j84IEsVYGyE", -- 
           "-wV0AH0u8ik", -- 
+          "Z-q5aJm0UJE", -- 
         },
       },
     },
@@ -215,6 +216,9 @@ Holo._jp = {
         lst_id = {
           "PLAo9RlHR2tDakgakxbOxT9dAZD0rpwvXQ", -- cvr
           "PLAo9RlHR2tDZwddeEyp9nTfpaFB58DrXd", -- org
+        },
+        lst_excld_video_id = {
+          "UXQDUhSr8nU", -- 
         },
       },
     },
