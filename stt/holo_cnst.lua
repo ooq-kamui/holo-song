@@ -469,10 +469,10 @@ Holo._en = {
     baelz = {
       ch_id = "UCgmPnx-EEeOrZSg5Tiw7ZRQ",
       song = {
-        lst_id = {},
-        video_id = {
-          "09xVC-xun_c",
+        lst_id = {
+          "PLcPAszg2ItaGAkxKIUiTTtgekfmgMmmEQ", -- cvr
         },
+        -- video_id = {},
       },
     },
   },
