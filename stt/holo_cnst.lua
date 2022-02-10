@@ -452,7 +452,9 @@ Holo._en = {
     kronii = {
       ch_id = "UCmbs8T6MWqUHP1tIQvSgKrg",
       song = {
-        lst_id = {},
+        lst_id = {
+          "PLh_mnrb4W5H6ir9_rwZomjr5SKhPqDf7y",
+        },
       },
     },
     mumei = {
