@@ -10,6 +10,9 @@ Holo._jp = {
           "PL1NeGg1woXqkTks79_kSoxBrEKloB9SrI", -- idlprj
           "PL1NeGg1woXqmYch2waEwydLkKJvaXUgA1", -- azki
         },
+        lst_excld_video_id = {
+          "UXQDUhSr8nU", -- 
+        },
         video_id = {
           "23nEnPOXLEk",
         },
