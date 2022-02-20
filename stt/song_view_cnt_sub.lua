@@ -12,7 +12,6 @@ local jsn2   = Utl.file_read(jsn_path2)
 local video2 = cjson.decode(jsn2)
 
 local holo = Holo.new()
--- holo:video__sub_view_cnt(video1, video2)
 holo:video__(   video1)
 holo:video__sub(video2)
 holo:video_2_jsn()

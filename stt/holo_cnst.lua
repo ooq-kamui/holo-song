@@ -11,7 +11,14 @@ Holo._jp = {
           "PL1NeGg1woXqmYch2waEwydLkKJvaXUgA1", -- azki
         },
         lst_excld_video_id = {
-          "UXQDUhSr8nU", -- 
+          "j84IEsVYGyE", -- matsuri
+          "-wV0AH0u8ik", -- matsuri
+          "Z-q5aJm0UJE", -- matsuri
+          "VbLsb2t1qzI", -- matsuri
+          "uqQLrla5pDI", -- fubuki
+          "LlwxRcUFNV8", -- fubuki
+          "0yeg4XkzrMI", -- fubuki
+          "UXQDUhSr8nU", -- suisei
         },
         video_id = {
           "23nEnPOXLEk",
@@ -102,6 +109,7 @@ Holo._jp = {
         lst_excld_video_id = {
           "uqQLrla5pDI", -- 
           "LlwxRcUFNV8", -- 
+          "0yeg4XkzrMI", -- 
         },
       },
     },
@@ -110,6 +118,8 @@ Holo._jp = {
       song = {
         lst_id = {
           "PLQoA24ikdy_kFurrcDRRJufTwHo_Kv6ew", -- cvr, org
+          "PLQoA24ikdy_nAOv_I7586LS891s5es8AC", -- org
+          -- "PLQoA24ikdy_mj_PeUMQcq-VXTXvlsuffo", -- rap
         },
       },
     },
@@ -526,7 +536,10 @@ Holo._id = {
       ch_id = "UCYz_5n-uDuChHtLo7My1HnQ",
       song = {
         lst_id = {
-          -- "PL6DI34hJswwQ8um3dpgrZY1elCO-tNfrc", -- cvr
+          "PL6DI34hJswwQ8um3dpgrZY1elCO-tNfrc", -- cvr
+        },
+        lst_excld_video_id = {
+          "0D-tcQjYf28", -- 
         },
       },
     },

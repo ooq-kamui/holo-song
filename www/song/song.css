@@ -53,6 +53,12 @@ ul {
   text-align: right;
   color: #688ccb;
 }
+.view_cnt_new {
+  display: inline-block;
+  width: 85px;
+  text-align: right;
+  color: #00fa9a;
+}
 .title {
   display: inline-block;
   margin-left: 15px;

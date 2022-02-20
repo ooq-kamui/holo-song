@@ -278,7 +278,11 @@ class Song {
 
     for (let [video_id, _video] of Object.entries(video)){
 
-      view_cnt_elm  = this.elm_span__cre(_video.view_cnt, "view_cnt");
+      if (_video.new){
+        view_cnt_elm  = this.elm_span__cre(_video.view_cnt, "view_cnt_new");
+      }else{
+        view_cnt_elm  = this.elm_span__cre(_video.view_cnt, "view_cnt");
+      }
 
       title_elm_spn = this.elm_span__cre(_video.title, "title");
 
