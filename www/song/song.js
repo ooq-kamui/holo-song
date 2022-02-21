@@ -616,13 +616,14 @@ win.onYouTubeIframeAPIReady = function(){
   song._plyr._ytplyr = ytplyr;
 }
 
-//doc.onkeydown = function (e){
-//  switch (e.keyCode){
-//    case 191: // Key: /
-//      if (doc.activeElement.id != 'flt_bar'){
-//        // song.flt_bar__focus();
-//      }
-//      break;
-//  }
-//};
+doc.onkeydown = function (e){
+  switch (e.keyCode){
+    case 191: // Key: /
+      if (doc.activeElement.id != 'flt_bar'){
+        e.preventDefault();
+        song.flt_bar__focus();
+      }
+      break;
+  }
+};
 
