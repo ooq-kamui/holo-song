@@ -11,17 +11,21 @@ Holo._jp = {
           "PL1NeGg1woXqmYch2waEwydLkKJvaXUgA1", -- azki
         },
         lst_excld_video_id = {
+          "zsBD66Sa5Yg", -- sora
+          "TSZ9RlU6EXk", -- roboco
           "j84IEsVYGyE", -- matsuri
           "-wV0AH0u8ik", -- matsuri
           "Z-q5aJm0UJE", -- matsuri
           "VbLsb2t1qzI", -- matsuri
+          "1KyLE_Ejf-U", -- matsuri
           "uqQLrla5pDI", -- fubuki
           "LlwxRcUFNV8", -- fubuki
           "0yeg4XkzrMI", -- fubuki
           "UXQDUhSr8nU", -- suisei
         },
         video_id = {
-          "23nEnPOXLEk",
+          -- "23nEnPOXLEk",
+          "OpveB76DTZk",
         },
       },
     },
@@ -53,6 +57,9 @@ Holo._jp = {
         lst_id = {
           "PL_0A0t0-Y0AMGFPCuKDZ3o8PMVpKcNvOQ", -- cvr, org
         },
+        lst_excld_video_id = {
+          "zsBD66Sa5Yg", -- 
+        },
       },
     },
     roboco  = {
@@ -65,6 +72,7 @@ Holo._jp = {
           "QA8KoMko9u8", -- live
           "8rNFX-kZvQQ", -- live
           "_H0wcyOYqBE", -- live
+          "TSZ9RlU6EXk", -- 
         },
       },
     },
@@ -96,6 +104,7 @@ Holo._jp = {
           "-wV0AH0u8ik", -- 
           "Z-q5aJm0UJE", -- 
           "VbLsb2t1qzI", -- 
+          "1KyLE_Ejf-U", -- 
         },
       },
     },
@@ -408,6 +417,9 @@ Holo._en = {
         lst_id = {
           "PLB8Nt5W7hnKA_pG2qljWbgVmJPobrLTm4",
         },
+        lst_excld_video_id = {
+          "5HWCMh1ZmzE", -- 
+        },
       },
     },
     kiara = {
@@ -540,6 +552,7 @@ Holo._id = {
         },
         lst_excld_video_id = {
           "0D-tcQjYf28", -- 
+          "B_HAwShg1kY", -- 
         },
       },
     },
