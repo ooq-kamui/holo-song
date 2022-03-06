@@ -513,7 +513,8 @@ Holo._id = {
           "PLl62IkfhHtN5kDBdmZ96EisueppHSZmbi", -- cvr, org
         },
         lst_excld_video_id = {
-          "cos54QJsb7o", -- 
+          "cos54QJsb7o", -- risu
+          "0YX80lIi36w", -- risu
         },
       },
     },

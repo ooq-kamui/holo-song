@@ -199,8 +199,11 @@ class Song {
 
     this.video_flt__by_word(word);
 
-    //this.elm_ul__upd();
     this.elm_ul__flt();
+
+    if (!str || str == ""){
+      scrollTo(0, 0);
+    }
   }
 
   video_flt__by_word(word, video){
@@ -430,8 +433,9 @@ class Song {
 
     var scrl_y = video_top - header_h - 28;
 
-    var lst_elm = elm_by_id('video_lst_scrl');
-    lst_elm.scroll(0, scrl_y);
+    // var lst_elm = elm_by_id('video_lst_scrl');
+    // lst_elm.scroll(0, scrl_y);
+    scrollTo(0, scrl_y);
   }
 }
 
