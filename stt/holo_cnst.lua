@@ -13,6 +13,7 @@ Holo._jp = {
         lst_excld_video_id = {
           "zsBD66Sa5Yg", -- sora
           "TSZ9RlU6EXk", -- roboco
+          "Lw3sBpkC3Rw", -- roboco
           "j84IEsVYGyE", -- matsuri
           "-wV0AH0u8ik", -- matsuri
           "Z-q5aJm0UJE", -- matsuri
@@ -73,6 +74,7 @@ Holo._jp = {
           "8rNFX-kZvQQ", -- live
           "_H0wcyOYqBE", -- live
           "TSZ9RlU6EXk", -- 
+          "Lw3sBpkC3Rw", -- live
         },
       },
     },

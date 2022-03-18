@@ -117,4 +117,9 @@ ul {
   opacity: 1;
   visibility: visible;
 }
+.spc {
+  text-align: left;
+  width: 500px;
+  display: inline-block;
+}
 

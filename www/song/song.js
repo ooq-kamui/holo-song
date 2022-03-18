@@ -26,9 +26,11 @@ class Plyr {
     var timer = now - this._load_time_pre;
 
     if (timer < 3){
+      log("__load_lst : timer < 3");
       dly(this._ytplyr.loadPlaylist, 2, video_id);
 
     }else{
+      log("__load_lst : else");
       this._ytplyr.loadPlaylist(video_id);
     }
 
