@@ -517,6 +517,8 @@ Holo._id = {
         lst_excld_video_id = {
           "cos54QJsb7o", -- risu
           "0YX80lIi36w", -- risu
+          "0D-tcQjYf28", -- ollie
+          "B_HAwShg1kY", -- ollie
         },
       },
     },

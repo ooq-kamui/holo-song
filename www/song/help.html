@@ -3,30 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>hololive song</title>
-<meta name="description" content="hololive song original cover all list">
+<title>help - hololive song list</title>
+<meta name="description" content="ホロライブ 全歌 再生数 週間ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
+<meta name=”keywords” content="hololive,song,list,all,filter,player,weekly,ranking,original,cover" />
 <link rel="stylesheet" href="song.css">
 </head>
 <body>
 <h1>help</h1>
 <div class="spc">
 <ul>
-  <li>現在(2022-03-17 ~ ) プレイヤーでの再生が正常に動作していません, ご了承ください</li>
-  <li>当面, ランキングリストのご活用のみとしていただけますと幸いです</li>
-</ul>
-<ul>
   <li>list</li>
   <ul>
-    <li>数値は 週間の再生数 です</li>
+    <li>ホロライブ 全歌動画(youtube) の再生数を週間ランキングで掲載しています</li>
     <li>毎週木曜 23:45 に更新されます</li>
-    <li>再生数が緑のものは new </li>
+    <li>再生数が緑のものは 新着の動画 です</li>
     <ul>
       <li>集計期間は 1週未満となります</li>
     </ul>
   </ul>
   <li>filter</li>
   <ul>
-    <li>タイトルの文字列に対してマッチングを行い, リストを絞り込むことができます</li>
+    <li>動画タイトルの文字列に対してマッチングを行い, リストを絞り込むことができます</li>
     <li>and 条件</li>
     <ul>
       <li>半角スペース</li>
@@ -35,27 +32,38 @@
     <ul>
       <li>, ( カンマ )</li>
       <li>, の両端にはスペースを挟まない</li>
+      <li>, を絞り込み文字列とすることはできない</li>
+    </ul>
+    <li>空白(and) と , (or) が混在する場合は , (or) 条件の結合が優先されます</li>
+    <ul>
+      <li>例えば, すいせい と azki の オリジナルソング を絞り込みする場合は<br>
+          すいせい,azki original,オリジナル<br>
+          のように入力します</li>
     </ul>
     <li>それ以外の複雑な入れ子条件はできません</li>
-    <li>例)&nbsp;</li>
     <li>オリジナル曲のみにする場合</li>
     <ul>
         original,オリジナル<br>
-        と入力すれば, おおむねそのように絞り込まれます</li>
+        と入力すれば, おおむね絞り込まれます</li>
     </ul>
     <li>カバー曲のみにする場合</li>
     <ul>
         cover,カバー<br>
-        と入力すれば, おおむねそのように絞り込まれます</li>
+        と入力すれば, おおむね絞り込まれます</li>
     </ul>
   </ul>
   <li>player</li>
   <ul>
-    <li>タイトルをクリックで, その曲から5曲を再生</li>
+    <li>リストのタイトルをクリックで, その曲から5曲を再生</li>
     <li>5曲の再生が終わったら, ランダムに 別の 5曲を再生</li>
   </ul>
-  <li><a href="https://github.com/o-o-q/holo-song" target="_blank"
-      >source</a></li>
+  <li>source</li>
+  <ul>
+    <li><a href="https://github.com/o-o-q/holo-song" target="_blank"
+        >github</a></li>
+    <li><a href="https://github.com/o-o-q/holo-song/blob/master/stt/holo_cnst.lua" target="_blank"
+        >抽出対象の youtube リストID</a></li>
+  </ul>
 </ul>
 </div>
 </body>

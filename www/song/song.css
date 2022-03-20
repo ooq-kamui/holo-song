@@ -50,7 +50,7 @@ ul {
   color: #bdc1c6;
 }
 .video_lst_scrl {
-  padding-top: 300px;
+  padding-top: 280px; /* 370px; */
 
   text-align: left;
   width: 800px;
@@ -61,20 +61,12 @@ ul {
 
   /*
   overflow-y: auto;
-
   height: 800px;
    */
 }
 .video_lst_scrl::-webkit-scrollbar {
   display:none;
-  /*
-   */
 }
-/* 
-.video_lst_scrl::-webkit-scrollbar-track {
-  background: #ffe6ea;
-}
- */
 .view_cnt {
   display: inline-block;
   width: 85px;
