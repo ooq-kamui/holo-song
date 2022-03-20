@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>help - hololive song list</title>
 <meta name="description" content="ホロライブ 全歌 再生数 週間ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
-<meta name=”keywords” content="hololive,song,list,all,filter,player,weekly,ranking,original,cover" />
+<meta name=”keywords” content="hololive,song,list,all,filter,player,weekly,ranking,original,cover,search,filter" />
 <link rel="stylesheet" href="song.css">
 </head>
 <body>
@@ -15,8 +15,12 @@
   <li>list</li>
   <ul>
     <li>ホロライブ 全歌動画(youtube) の再生数を週間ランキングで掲載しています</li>
-    <li>毎週木曜 23:45 に更新されます</li>
-    <li>再生数が緑のものは 新着の動画 です</li>
+    <li>公式ch の オリジナル, カバー の動画が対象です</li>
+    <ul>
+      <li>歌枠, live は非対象です</li>
+      <li>毎週木曜 23:45 に更新されます</li>
+    </ul>
+    <li>再生数が緑のものは 新着 の動画です</li>
     <ul>
       <li>集計期間は 1週未満となります</li>
     </ul>
@@ -38,7 +42,7 @@
     <ul>
       <li>例えば, すいせい と azki の オリジナルソング を絞り込みする場合は<br>
           すいせい,azki original,オリジナル<br>
-          のように入力します</li>
+          と入力します</li>
     </ul>
     <li>それ以外の複雑な入れ子条件はできません</li>
     <li>オリジナル曲のみにする場合</li>
@@ -51,18 +55,23 @@
         cover,カバー<br>
         と入力すれば, おおむね絞り込まれます</li>
     </ul>
+    <li>絞り込み完了後に, リストからランダムで5曲を自動再生</li>
   </ul>
   <li>player</li>
   <ul>
     <li>リストのタイトルをクリックで, その曲から5曲を再生</li>
-    <li>5曲の再生が終わったら, ランダムに 別の 5曲を再生</li>
+    <li>5曲の再生が終わったら, ランダムに別の5曲を再生</li>
   </ul>
   <li>source</li>
   <ul>
     <li><a href="https://github.com/o-o-q/holo-song" target="_blank"
         >github</a></li>
-    <li><a href="https://github.com/o-o-q/holo-song/blob/master/stt/holo_cnst.lua" target="_blank"
-        >抽出対象の youtube リストID</a></li>
+    <ul>
+      <li><a href="https://github.com/o-o-q/holo-song/blob/master/stt/holo_cnst.lua" target="_blank"
+          >抽出対象の youtube リストID</a></li>
+    </ul>
+    <li><a href="data/" target="_blank"
+        >data archive</a></li>
   </ul>
 </ul>
 </div>
