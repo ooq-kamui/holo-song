@@ -49,6 +49,10 @@ ul {
   background-color: #000;
   color: #bdc1c6;
 }
+.video_lst {
+  display:flex;
+  flex-flow: column;
+}
 .video_lst_scrl {
   padding-top: 280px; /* 370px; */
 

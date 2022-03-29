@@ -93,8 +93,11 @@ class Song {
 
     this._plyr = new Plyr();
 
+    this._video;
     this._video_srt;
-    this._video_id_srt;
+    // this._video_id_srtd;
+    this._video_id_srtd_view_cnt;
+    this._video_id_srtd_cdt;
 
     this._video_flt;
     this._video_id_flt;
@@ -140,46 +143,119 @@ class Song {
 
   video__(_video){
 
-    this._video = _video
-
-    this.video_srt__();
+    this._video = _video;
   }
 
   // srt
 
-  video_id_srt__(video){
+  new_video_id(){
 
-    if (!video){video = this._video}
+    let video_id = new Array();
 
-    this._video_id_srt = new Array()
+    for (let [_video_id, _video] of Object.entries(this._video)){
 
-    for (let [video_id, _video] of Object.entries(video)){
+      if(!_video.view_cnt || !_video.cdt){continue;}
 
-      if(_video.view_cnt){
-        this._video_id_srt.push(video_id)
-      }
+      video_id.push(_video_id);
     }
-
-    var cmpr = function (video_id1, video_id2){
-
-      return video[video_id2].view_cnt - video[video_id1].view_cnt;
-    }
-    this._video_id_srt.sort(cmpr);
-    return this._video_id_srt;
+    return video_id;
   }
 
-  video_srt__(_video){
+  video_id_srtd_view_cnt__(){
 
-    if (!_video){_video = this._video}
+    this._video_id_srtd_view_cnt = this.new_video_id();
 
-    var _video_id_srt = this.video_id_srt__(_video);
+    let slf = this;
+    let cmpr_view_cnt = function(video_id1, video_id2){
 
-    this._video_srt = new Object();
-
-    for (let [idx, _video_id] of _video_id_srt.entries()){
-
-      this._video_srt[_video_id] = _video[_video_id];
+      let ret = slf._video[video_id2].view_cnt - slf._video[video_id1].view_cnt;
+      return ret;
     }
+    this._video_id_srtd_view_cnt.sort(cmpr_view_cnt);
+  }
+
+  video_id_strd_cdt__(){
+
+    this._video_id_srtd_cdt = this.new_video_id();
+
+    let slf = this;
+    let cmpr_cdt = function(video_id1, video_id2){
+
+      let ret;
+      if (slf._video[video_id2].cdt > slf._video[video_id1].cdt){
+        ret =  1;
+      }else{
+        ret = -1;
+      }
+      // log(ret)
+      return ret;
+    }
+    this._video_id_srtd_cdt.sort(cmpr_cdt);
+  }
+
+  static _video_srt_ordr_df = [
+    "view_cnt",
+    "cdt"
+  ];
+
+  video_ordr__(ordr){
+
+    if (!Song._video_srt_ordr_df.includes(ordr)){
+
+      ordr = Song._video_srt_ordr_df[0];
+    }
+
+    this._video_ordr = ordr;
+  }
+
+  video_ordr__tgl(){
+
+    let idx = Song._video_srt_ordr_df.indexOf(this._video_ordr);
+
+    idx = idx + 1;
+    if (idx >= Song._video_srt_ordr_df.length) idx = 0;
+
+    this._video_ordr = Song._video_srt_ordr_df[idx];
+  }
+
+  video__srt(ordr){
+    log("video__srt");
+
+    if (ordr){this.video_ordr__(ordr);}
+
+    if       (this._video_ordr == "view_cnt"){
+      this.video_id_srtd_view_cnt__();
+
+    }else if (this._video_ordr == "cdt"     ){
+      this.video_id_strd_cdt__();
+    }
+
+    this.elm_ul__srt();
+
+    // this._video_srt = new Object();
+    // for (let [idx, _video_id] of this._video_id_srt.entries()){
+    //   this._video_srt[_video_id] = this._video[_video_id];
+    // }
+  }
+
+  video_id_srtd(){
+
+   let ret;
+
+    if       (this._video_ordr == "view_cnt"){
+      ret = this._video_id_srtd_view_cnt;
+
+    }else if (this._video_ordr == "cdt"     ){
+      ret = this._video_id_srtd_cdt;
+    }
+    return ret;
+  }
+
+  video__srt_tgl(){
+
+    this.video_ordr__tgl();
+
+    this.video__srt();
   }
 
   video_id_flt_slice(_video_id, lim){
@@ -210,12 +286,14 @@ class Song {
 
   video_flt__by_word(word, video){
 
-    if(!video){video = this._video_srt;}
+    if(!video){video = this._video;}
 
     this._video_flt    = new Object();
     this._video_id_flt = new Array();
 
     for (let [video_id, _video] of Object.entries(video)){
+
+      if (!_video.title){continue;}
 
       if (is_match_and_or(_video.title, word)){
         this._video_flt[video_id] = _video;
@@ -250,41 +328,50 @@ class Song {
 
     if (!video_flt){video_flt = this._video_flt;}
 
-    var elm_ul = this.video_lst_elm_ul();
-    var elm_li = elm_ul.children;
+    let elm_ul = this.video_lst_elm_ul();
+    let elm_li = elm_ul.children;
 
     for (let idx = 0; idx < elm_li.length; idx++){
       if(video_flt[elm_li[idx].id]){
-        elm_li[idx].style.display ="block";
+        elm_li[idx].style.display = "block";
       }else{
-        elm_li[idx].style.display ="none";
+        elm_li[idx].style.display = "none";
       }
     }
   }
 
-  elm_ul__upd(_video){
+  elm_ul__srt(){
 
-    if (!_video){_video = this._video_flt;}
+    let video_id_srtd = this.video_id_srtd();
 
-    this.elm_ul__cre(_video);
+    let elm_li;
+    for (let idx = 0; idx < video_id_srtd.length; idx++){
+
+      elm_li = elm_by_id(video_id_srtd[idx]);
+      elm_li.style.order = idx;
+    }
   }
 
   video_lst_elm_ul(){
 
-    return doc.getElementById('video_lst');
+    return elm_by_id('video_lst');
   }
 
-  elm_ul__cre(video){
+  elm_ul__cre(){
 
-    if (!video){video = this._video_srt;}
+    // let video = this._video_srt;
 
-    var elm_ul = this.video_lst_elm_ul();
+    let video = this._video;
+
+    let elm_ul = this.video_lst_elm_ul();
 
     elm_ul.textContent = null;
 
-    var view_cnt_elm , title_elm_spn , title_elm , url;
+    let view_cnt_elm , title_elm_spn , title_elm , url;
 
     for (let [video_id, _video] of Object.entries(video)){
+
+      if (!_video.view_cnt || !_video.title){continue;}
 
       if (_video.new){
         view_cnt_elm  = this.elm_span__cre(_video.view_cnt, "view_cnt_new");
@@ -320,7 +407,7 @@ class Song {
 
   flt_bar_elm(){
 
-    return doc.getElementById('flt_bar');
+    return elm_by_id('flt_bar');
   }
 
   // lst
@@ -348,7 +435,7 @@ class Song {
     var elm;
     for (let [idx, _video_id] of this._ply_video_id.entries()){
 
-      elm = doc.getElementById(_video_id).children[1];
+      elm = elm_by_id(_video_id).children[1];
       if (val){
         elm.classList.add(   "playing");
       }else{
@@ -384,6 +471,8 @@ class Song {
       song.video__(video);
 
       song.elm_ul__cre();
+
+      song.video__srt("view_cnt"); // "cdt"
 
       song.video_flt__()
     }
@@ -624,7 +713,7 @@ win.onYouTubeIframeAPIReady = function(){
 
 doc.onkeydown = function (e){
   switch (e.keyCode){
-    case 191: // Key: /
+    case 191: // key: /
       if (doc.activeElement.id != 'flt_bar'){
         e.preventDefault();
         song.flt_bar__focus();
