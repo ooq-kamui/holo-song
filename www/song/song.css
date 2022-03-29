@@ -1,3 +1,4 @@
+
 body {
   background-color: #202124;
   color: #bdc1c6;
@@ -6,21 +7,40 @@ body {
   height: 100%;
   text-align: center;
 }
+
 a {
   color: #99b6e8;
 }
+
 a:link {
   color: #99b6e8;
 }
+
 a:link.playing {
   color: #bdc1c6;
 }
+
 a:visited {
   color: #B384FF;
 }
+
 ul {
   list-style-type: none;
 }
+
+#plyr {
+  /* margin: 0 auto; */
+}
+
+#flt_bar {
+  background-color: #000;
+  color: #bdc1c6;
+}
+
+#ordr_swtch {
+  text-decoration: none;
+}
+
 .header {
   position: fixed;
   background-color: #202124;
@@ -30,29 +50,27 @@ ul {
   white-space: nowrap;
    */
 }
+
 .hdr_lr {
   display: inline-block;
   width: calc((100% - (640px + 40px)) / 2);
   vertical-align: top;
   font-size: 0.8rem;
 }
+
 .hdr_l {
   text-align: left;
 }
+
 .hdr_r {
   text-align: right;
 }
-#plyr {
-  /* margin: 0 auto; */
-}
-#flt_bar {
-  background-color: #000;
-  color: #bdc1c6;
-}
+
 .video_lst {
   display: flex;
   flex-flow: column;
 }
+
 .video_lst_scrl {
   padding-top: 280px; /* 370px; */
 
@@ -68,21 +86,25 @@ ul {
   height: 800px;
    */
 }
+
 .video_lst_scrl::-webkit-scrollbar {
   display:none;
 }
+
 .view_cnt {
   display: inline-block;
   width: 85px;
   text-align: right;
   color: #688ccb;
 }
+
 .view_cnt_new {
   display: inline-block;
   width: 85px;
   text-align: right;
   color: #5CB095;
 }
+
 .title {
   display: inline-block;
   margin-left: 15px;
@@ -92,6 +114,7 @@ ul {
   position: relative;          /* ツールチップの位置の基準に */
   cursor: pointer;             /* カーソルを当てたときにポインターに */
 }
+
 .tooltip-text {
   opacity: 0;                  /* はじめは隠しておく */
   visibility: hidden;          /* はじめは隠しておく */
@@ -109,10 +132,12 @@ ul {
   border-radius: 3px;          /* 角丸 */
   transition: 0.3s ease-in;    /* animation */
 }
+
 .tooltip:hover .tooltip-text {
   opacity: 1;
   visibility: visible;
 }
+
 .spc {
   text-align: left;
   width: 500px;
