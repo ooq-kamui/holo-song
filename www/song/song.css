@@ -41,6 +41,10 @@ ul {
   text-decoration: none;
 }
 
+::placeholder {
+  color: gray;
+}
+
 .header {
   position: fixed;
   background-color: #202124;
