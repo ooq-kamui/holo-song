@@ -279,9 +279,6 @@ class Song {
     this._video_flt    = new Object();
     this._video_id_flt = new Array();
 
-    // for (let [idx, _video_id] of this.video_id_srtd().entries()){
-    // for (let [_video_id, _video] of Object.entries(this._video)){
-
     let _video;
     for (let [idx, _video_id] of this._video_id.entries()){
 
@@ -321,22 +318,12 @@ class Song {
 
   elm_ul__flt(){
 
-    let video_flt = this._video_flt;
-
     let elm_ul = this.video_lst_elm_ul();
     let elm_li = elm_ul.children;
-    let video_id;
-
     for (let idx = 0; idx < elm_li.length; idx++){
 
-      // if(video_flt[elm_li[idx].id]){
-
-      video_id = elm_li[idx].id
-      if(ar_in(this._video_id_flt, video_id)){
-      // if(this._video_id_flt.indexOf(video_id) >= 0){
-
+      if(ar_in(this._video_id_flt, elm_li[idx].id)){
         elm_li[idx].style.display = "block";
-
       }else{
         elm_li[idx].style.display = "none";
       }
@@ -481,7 +468,7 @@ class Song {
 
       song.video_flt__()
 
-      song.video__srt("view_cnt"); // "cdt"
+      song.video__srt("view_cnt");
     }
   }
 
@@ -494,6 +481,8 @@ class Song {
     log("__flt :" + srch_str + ":" + this._srch_str_pre + ":");
 
     this.video_flt__(srch_str);
+
+    this.video__srt();
 
     this._srch_str_pre = srch_str;
 
