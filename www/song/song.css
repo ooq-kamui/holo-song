@@ -50,7 +50,7 @@ ul {
   color: #bdc1c6;
 }
 .video_lst {
-  display:flex;
+  display: flex;
   flex-flow: column;
 }
 .video_lst_scrl {
