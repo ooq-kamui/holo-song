@@ -489,10 +489,12 @@ Holo._en = {
     mumei = {
       ch_id = "UC3n5uGu18FoCy23ggWWp8tA",
       song = {
-        lst_id = {},
-        video_id = {
-          "Py21QCndbxc",
+        lst_id = {
+          "PL6IyOjey3U8WiUwXw-1AIDv99qMB9otjp",
         },
+        -- video_id = {
+        --   "Py21QCndbxc",
+        -- },
       },
     },
     baelz = {
@@ -567,7 +569,9 @@ Holo._id = {
     anya = {
       ch_id = "UC727SQYUvx5pDDGQpTICNWg",
       song = {
-        lst_id = {},
+        lst_id = {
+          -- "PLuRWkjIMjanEVABxsKoHeDrRDXsMf1dbE", -- cvr
+        },
       },
     },
     reine = {
@@ -582,22 +586,19 @@ Holo._id = {
     zeta = {
       ch_id = "UCTvHWSfBZgtxE4sILOaurIQ",
       song = {
-        lst_id = {
-        },
+        lst_id = {},
       },
     },
     kaela = {
       ch_id = "UCZLZ8Jjx_RN2CXloOmgTHVg",
       song = {
-        lst_id = {
-        },
+        lst_id = {},
       },
     },
     kobo = {
       ch_id = "UCjLEmnpCNeisMxy134KPwWw",
       song = {
-        lst_id = {
-        },
+        lst_id = {},
       },
     },
   },
