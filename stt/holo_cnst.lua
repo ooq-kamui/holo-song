@@ -22,6 +22,7 @@ Holo._jp = {
           "uqQLrla5pDI", -- fubuki
           "LlwxRcUFNV8", -- fubuki
           "0yeg4XkzrMI", -- fubuki
+          "49hhGHTKHLs", -- fubuki
           "UXQDUhSr8nU", -- suisei
         },
         video_id = {
@@ -121,6 +122,7 @@ Holo._jp = {
           "uqQLrla5pDI", -- 
           "LlwxRcUFNV8", -- 
           "0yeg4XkzrMI", -- 
+          "49hhGHTKHLs", -- 
         },
       },
     },
