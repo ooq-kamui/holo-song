@@ -421,7 +421,7 @@ Holo._en = {
         },
         lst_excld_video_id = {
           "5HWCMh1ZmzE", -- 
-          "4SssgZg8rpY", -- 
+          -- "4SssgZg8rpY", -- trailer
         },
       },
     },
