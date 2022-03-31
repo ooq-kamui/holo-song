@@ -8,7 +8,7 @@ Holo._jp = {
         lst_id = {
           "PL1NeGg1woXqlISJkxjgwHKgB8LmR7tk92", -- cvr, org
           "PL1NeGg1woXqkTks79_kSoxBrEKloB9SrI", -- idlprj
-          "PL1NeGg1woXqmYch2waEwydLkKJvaXUgA1", -- azki
+          -- "PL1NeGg1woXqmYch2waEwydLkKJvaXUgA1", -- azki
         },
         lst_excld_video_id = {
           "zsBD66Sa5Yg", -- sora
@@ -258,6 +258,7 @@ Holo._jp = {
         },
       },
     },
+    --[[
     rushia  = {
       ch_id = "UCl_gCybOJRIgOXw6Qb4qJzQ",
       song = {
@@ -266,6 +267,7 @@ Holo._jp = {
         },
       },
     },
+    --]]
     flare   = {
       ch_id = "UCvInZx9h3jC2JzsIzoOebWg",
       song = {
@@ -585,6 +587,7 @@ Holo._id = {
         },
       },
     },
+    --[[
     zeta = {
       ch_id = "UCTvHWSfBZgtxE4sILOaurIQ",
       song = {
@@ -603,6 +606,7 @@ Holo._id = {
         lst_id = {},
       },
     },
+    --]]
   },
 }
 

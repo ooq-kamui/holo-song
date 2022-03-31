@@ -184,7 +184,7 @@ function Holo.video_2_jsn(_s)
   local _to_jsn
 
   local jsn = cjson.encode(_s._video)
-  u.log(jsn)
+  u.log(jsn) -- stdout
 end
 
 function Holo.video_view_cnt_2_txt(_s)

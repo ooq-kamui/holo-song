@@ -29,6 +29,8 @@ function Ytube.video_by_lst(lst_id, pgtkn)
   if pgtkn then table.insert(prm, "pageToken" .."="..pgtkn) end
 
   local res = Ytube.curl(trgt, prm)
+  -- u.log(lst_id)
+  -- u.log(res)
   return res
 end
 

@@ -30,7 +30,7 @@ class Plyr {
       dly(this._ytplyr.loadPlaylist, 2, video_id);
 
     }else{
-      log("__load_lst : else");
+      log("__load_lst : else ( timer > 3 )");
       this._ytplyr.loadPlaylist(video_id);
     }
 
