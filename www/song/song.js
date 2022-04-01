@@ -25,6 +25,7 @@ class Plyr {
     var now = Date.now();
     var timer = now - this._load_time_pre;
 
+    /*
     if (timer < 3){
       log("__load_lst : timer < 3");
       dly(this._ytplyr.loadPlaylist, 2, video_id);
@@ -33,6 +34,8 @@ class Plyr {
       log("__load_lst : else ( timer > 3 )");
       this._ytplyr.loadPlaylist(video_id);
     }
+     */
+    this._ytplyr.loadPlaylist(video_id);
 
     this._load_time_pre = now;
   }
@@ -272,7 +275,7 @@ class Song {
     this.elm_ul__flt();
 
     if (!str || str == ""){
-      scrollTo(0, 0);
+      scrl(0, 0);
     }
   }
 
@@ -537,17 +540,17 @@ class Song {
 
     var video_elm = elm_by_id(video_id);
     var video_top = video_elm.offsetTop;
-    log("top: " + video_top);
+    // log("top: " + video_top);
 
     var header_elm = elm_by_id('header');
     var header_h = header_elm.clientHeight;
-    log("h: " + header_h);
+    // log("h: " + header_h);
 
     var scrl_y = video_top - header_h - 28;
 
     // var lst_elm = elm_by_id('video_lst_scrl');
     // lst_elm.scroll(0, scrl_y);
-    scrollTo(0, scrl_y);
+    scrl(0, scrl_y);
   }
 }
 
@@ -695,8 +698,11 @@ function log(str){
 }
 
 function dly(fnc, msec, arg){
-
   setTimeout(fnc, msec, arg);
+}
+
+function scrl(x, y){
+  scrollTo(x, y);
 }
 
 function elm_by_id(id){

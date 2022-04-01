@@ -87,7 +87,6 @@ Holo._jp = {
         },
       },
     },
-    ---[[
     aki     = {
       ch_id = "UCFTLzh12_nrtzqBPsTCqenA",
       song = {
@@ -398,7 +397,6 @@ Holo._jp = {
         lst_id = {},
       },
     },
-    --]]
   },
 }
 Holo._en = {

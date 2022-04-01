@@ -125,6 +125,9 @@ function Holo.video__add_by_lst_id(_s, lst_id, excld_video_id)
   local res, pgtkn_nxt, video_id
   repeat
     res = Ytube.video_by_lst(lst_id, pgtkn_nxt)
+
+    if res.error then break end
+
     for idx, itm in pairs(res.items) do
 
       video_id = itm.snippet.resourceId.videoId
