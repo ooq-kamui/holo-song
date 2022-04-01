@@ -587,7 +587,6 @@ Holo._id = {
         },
       },
     },
-    --[[
     zeta = {
       ch_id = "UCTvHWSfBZgtxE4sILOaurIQ",
       song = {
@@ -606,7 +605,6 @@ Holo._id = {
         lst_id = {},
       },
     },
-    --]]
   },
 }
 
