@@ -256,10 +256,25 @@ class Song {
   // flt
   // 
 
+  static _excld_video_id = [
+    "lxJ7SXMEPto" // azki
+  ];
+
   video_id_flt_slice(_video_id, lim){
 
     var idx      = this._video_id_flt.indexOf(_video_id);
     var video_id = this._video_id_flt.slice(idx, idx + lim);
+
+    var del_idx;
+    for (let [_excld_idx, excld_video_id] of Song._excld_video_id.entries()){
+
+      del_idx = video_id.indexOf(excld_video_id);
+      if (del_idx != -1){
+        log("plyr excld : " + excld_video_id);
+        video_id.splice(del_idx, 1);
+      }
+    }
+
     //log(video_id);
     return video_id;
   }

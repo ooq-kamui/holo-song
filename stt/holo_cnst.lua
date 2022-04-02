@@ -24,10 +24,11 @@ Holo._jp = {
           "0yeg4XkzrMI", -- fubuki
           "49hhGHTKHLs", -- fubuki
           "UXQDUhSr8nU", -- suisei
+          "rDSIUPkuM7U", -- live
         },
         video_id = {
           -- "23nEnPOXLEk",
-          "OpveB76DTZk",
+          -- "OpveB76DTZk", -- Happiness World
         },
       },
     },
