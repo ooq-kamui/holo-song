@@ -77,6 +77,7 @@ class Plyr {
     "PLAYING",
     "PAUSED",
     "BUFFERING",
+    "none",
     "CUED"
   ];
 
@@ -188,7 +189,6 @@ class Song {
     idx = idx + 1;
     if (idx >= Song._video_ordr_df.length) idx = 0;
 
-    // this._video_ordr = Song._video_ordr_df[idx];
     this.video_ordr__(Song._video_ordr_df[idx]);
   }
 
