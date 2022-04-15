@@ -33,12 +33,16 @@ function Holo.name_ordr(_s)
 end
 
 function Holo.ch_reg_cnt(_s)
-
 end
 
 --
 -- video __
 --
+
+function Holo.video__init(_s)
+
+  _s._video = {}
+end
 
 function Holo.video__jsn_file(_s, jsn_file)
 
@@ -93,7 +97,7 @@ end
 
 function Holo.video__song_view_cnt(_s, cntry)
 
-  _s._video = {}
+  _s:video__init()
 
   for key, _cntry in pairs(cntry) do
 
@@ -235,5 +239,34 @@ function Holo.video__sub(_s, video2)
       -- tbl1.view_cnt = 0
     end
   end
+end
+
+--
+-- ch
+--
+
+function Holo.video__add_by_ch_id(_s, ch_id, excld_video_id)
+
+  excld_video_id = excld_video_id or {}
+
+  local res, pgtkn_nxt, video_id
+  repeat
+    res = Ytube.video_by_ch(ch_id, pgtkn_nxt)
+
+    if res.error then break end
+
+    for idx, itm in pairs(res.items) do
+
+      video_id = itm.snippet.resourceId.videoId
+
+      if ar.in_(video_id, excld_video_id) then
+        -- nothing
+      else
+        _s._video[video_id] = {}
+      end
+    end
+
+    pgtkn_nxt = res.nextPageToken
+  until not pgtkn_nxt
 end
 

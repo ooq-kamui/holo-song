@@ -257,7 +257,8 @@ class Song {
   // 
 
   static _excld_video_id = [
-    "lxJ7SXMEPto" // azki
+    "lxJ7SXMEPto", // azki
+    "YcfZziSg0cg"  // kanata & azki
   ];
 
   video_id_flt_slice(_video_id, lim){
@@ -743,7 +744,7 @@ win.onYouTubeIframeAPIReady = function(){
     {
       height: '250', // '360',
       //width: '640',
-      videoId: '68KV7JnrvDo',
+      videoId: '68KV7JnrvDo', // sss
       playerVars: {
         autoplay: 0,
         controls: 1, 

@@ -201,6 +201,9 @@ Holo._jp = {
           "PLMF8NocLqJtubiccXUm9SCZ79dDPSLq2B", -- cvr
           "PLMF8NocLqJttJCIiUCkNXx6jW4dAYfz5G", -- org
         },
+        lst_excld_video_id = {
+          "DWIo1R5G_oc", -- game live ?
+        },
       },
     },
     okayu   = {
@@ -230,6 +233,9 @@ Holo._jp = {
           "lFUXNby9svA", -- live
           "iYjjKmBok9o", -- live
           "mrc2uXkJles", -- live
+        },
+        video_id = {
+          "wLNTAMY1NZA",
         },
       },
     },
