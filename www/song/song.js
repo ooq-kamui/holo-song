@@ -69,7 +69,8 @@ class Plyr {
   }
 
   static ready(ev){
-    log("ready");
+    // Song._embd_code = ev.target.getVideoEmbedCode();
+    // log("ready : " + Song._embd_code);
   }
 
   static _st = [
@@ -128,6 +129,7 @@ class Song {
       if (ev.isComposing || ev.keyCode === 229){return;}
       if (ev.keyCode === 16){return;} // shift
       if (ev.keyCode ===  0){return;} // del ?
+      if (ev.keyCode === 27){return;} // esc
       log("flt_bar_keyup_exe");
 
       var force = (ev.code == "Enter") ? true : false;
@@ -762,12 +764,19 @@ win.onYouTubeIframeAPIReady = function(){
 }
 
 doc.onkeydown = function (e){
+  log("keydown : " + e.keyCode);
   switch (e.keyCode){
     case 191: // key: /
-      if (doc.activeElement.id != 'flt_bar'){
-        e.preventDefault();
-        song.flt_bar__focus();
-      }
+      if (doc.activeElement.id != 'flt_bar'){break;}
+      e.preventDefault(); // ?
+      song.flt_bar__focus();
+      break;
+    case  27: // key: <esc>
+      // let plyr_elm = elm_by_id("plyr");
+      // let if_plyr_elm = plyr_elm.contentWindow.document.querySelector("#player");
+      // if_plyr_elm.focus();
+      
+      // song._plyr.getIframe().focus();
       break;
   }
 };
