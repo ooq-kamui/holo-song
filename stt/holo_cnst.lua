@@ -125,6 +125,8 @@ Holo._jp = {
           "0yeg4XkzrMI", -- 
           "49hhGHTKHLs", -- 
           "dJtME9ULWQ8", -- 
+          "5RsoRC9t3no", -- 
+          "V8aGtJURz88", -- 
         },
       },
     },
@@ -203,6 +205,9 @@ Holo._jp = {
         },
         lst_excld_video_id = {
           "DWIo1R5G_oc", -- game live ?
+        },
+        video_id = {
+          "AaCFoBdpviw",
         },
       },
     },
