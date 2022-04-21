@@ -14,17 +14,20 @@ Holo._jp = {
           "zsBD66Sa5Yg", -- sora
           "TSZ9RlU6EXk", -- roboco
           "Lw3sBpkC3Rw", -- roboco
-          "j84IEsVYGyE", -- matsuri
-          "-wV0AH0u8ik", -- matsuri
-          "Z-q5aJm0UJE", -- matsuri
-          "VbLsb2t1qzI", -- matsuri
-          "1KyLE_Ejf-U", -- matsuri
-          "uqQLrla5pDI", -- fubuki
-          "LlwxRcUFNV8", -- fubuki
-          "0yeg4XkzrMI", -- fubuki
-          "49hhGHTKHLs", -- fubuki
-          "dJtME9ULWQ8", -- fubuki
-          "UXQDUhSr8nU", -- suisei
+          "j84IEsVYGyE", -- matsuri vo-m
+          "-wV0AH0u8ik", -- matsuri vo-m
+          "Z-q5aJm0UJE", -- matsuri vo-m
+          "VbLsb2t1qzI", -- matsuri vo-m
+          "1KyLE_Ejf-U", -- matsuri vo-m
+          "Mm8Ej2xG_O8", -- matsuri vo-m
+          "uqQLrla5pDI", -- fubuki  vo-m
+          "LlwxRcUFNV8", -- fubuki  vo-m
+          "0yeg4XkzrMI", -- fubuki  vo-m
+          "49hhGHTKHLs", -- fubuki  vo-m
+          "dJtME9ULWQ8", -- fubuki  vo-m
+          "5RsoRC9t3no", -- fubuki  vo-m
+          "V8aGtJURz88", -- fubuki  vo-m
+          "UXQDUhSr8nU", -- suisei  vo-m
           "rDSIUPkuM7U", -- live
         },
         video_id = {
@@ -104,11 +107,12 @@ Holo._jp = {
           "PL6sZ3uYmeG1vGZVLNlWdJkm3W0R86y_Qa", -- cvr, org
         },
         lst_excld_video_id = {
-          "j84IEsVYGyE", -- 
-          "-wV0AH0u8ik", -- 
-          "Z-q5aJm0UJE", -- 
-          "VbLsb2t1qzI", -- 
-          "1KyLE_Ejf-U", -- 
+          "j84IEsVYGyE", -- vo-m
+          "-wV0AH0u8ik", -- vo-m
+          "Z-q5aJm0UJE", -- vo-m
+          "VbLsb2t1qzI", -- vo-m
+          "1KyLE_Ejf-U", -- vo-m
+          "Mm8Ej2xG_O8", -- vo-m
         },
       },
     },
@@ -120,13 +124,13 @@ Holo._jp = {
           "PL7LdRPp7xCkOwyOEKkE5YNC1_pGCTU2Id", -- cvr-clb
         },
         lst_excld_video_id = {
-          "uqQLrla5pDI", -- 
-          "LlwxRcUFNV8", -- 
-          "0yeg4XkzrMI", -- 
-          "49hhGHTKHLs", -- 
-          "dJtME9ULWQ8", -- 
-          "5RsoRC9t3no", -- 
-          "V8aGtJURz88", -- 
+          "uqQLrla5pDI", -- vo-m
+          "LlwxRcUFNV8", -- vo-m
+          "0yeg4XkzrMI", -- vo-m
+          "49hhGHTKHLs", -- vo-m
+          "dJtME9ULWQ8", -- vo-m
+          "5RsoRC9t3no", -- vo-m
+          "V8aGtJURz88", -- vo-m
         },
       },
     },
