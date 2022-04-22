@@ -325,8 +325,10 @@ Holo._jp = {
       ch_id = "UCqm3BQLlJfvkTsX_hvm0UmA",
       song = {
         lst_id = {
-          "PLZ34fLWik_iAlCTAC0GSWqc8XCDcEwEd4", -- cvr, org
-          "PLZ34fLWik_iAP2AdGLOHthUhAJTrEXqGb", -- cvr, org-mini
+          "PLZ34fLWik_iBK39rTWRAs_G93pnUW3K-7", -- org
+          "PLZ34fLWik_iDfjOVqChEelXHyaDQBpA8m", -- org-mini
+          "PLZ34fLWik_iAP2AdGLOHthUhAJTrEXqGb", -- cvr
+          "PLZ34fLWik_iAlCTAC0GSWqc8XCDcEwEd4", -- cvr, org-mini
         },
       },
     },
