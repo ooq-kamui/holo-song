@@ -31,7 +31,6 @@ function Holo.member_init(_s)
     mel     = {id = "UCD8HOxPs4Xvsm8H0ZxXGiBw"},
     aki     = {id = "UCFTLzh12_nrtzqBPsTCqenA"},
     matsuri = {id = "UCQ0UDLQCjY0rmuxCDE38FGg"},
-    ---[[
     fubuki  = {id = "UCdn5BQ06XqgXoAxIhbqw5Rg"},
     haato   = {id = "UC1CfXB_kRs3C-zaeTG3oGyg"},
     aqua    = {id = "UC1opHUrw8rvnsadT-iGp7Cg"},
@@ -46,7 +45,6 @@ function Holo.member_init(_s)
     azki    = {id = "UC0TXe_LYZ4scaW2XMyi5_kw"},
     suisei  = {id = "UC5CwaMl1eIgY8h02uZw7u8A"},
     pekora  = {id = "UC1DCedRgGHBdm81E1llLhOQ"},
-    -- rushia  = {id = "UCl_gCybOJRIgOXw6Qb4qJzQ"},
     flare   = {id = "UCvInZx9h3jC2JzsIzoOebWg"},
     noel    = {id = "UCdyqAaZDKHXg4Ahi7VENThQ"},
     marine  = {id = "UCCzUftO8KOVkV4wQG1vkUvg"},
@@ -63,7 +61,7 @@ function Holo.member_init(_s)
     koyori  = {id = "UC6eWCld0KwmyHFbAqK3V-Rw"},
     chloe   = {id = "UCIBY1ollUsauvVi4hW4cumw"},
     iroha   = {id = "UC_vMYWcDjmfdpH6r4TTn1MQ"},
-    --]]
+    -- rushia  = {id = "UCl_gCybOJRIgOXw6Qb4qJzQ"},
   }
 end
 

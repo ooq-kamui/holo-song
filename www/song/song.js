@@ -22,8 +22,8 @@ class Plyr {
 
     if (!this._ytplyr.loadPlaylist){return;}
 
-    var now = Date.now();
-    var timer = now - this._load_time_pre;
+    let now = Date.now();
+    let timer = now - this._load_time_pre;
 
     /*
     if (timer < 3){
@@ -59,7 +59,7 @@ class Plyr {
 
   st_ch(ev){
 
-    var st = ev.data;
+    let st = ev.data;
     log("st_ch: " + Plyr.st(st));
 
     if (Plyr.st(st) == "ENDED"){
@@ -111,17 +111,19 @@ class Song {
     this.flt_bar__init();
     this.flt_bar__focus();
 
-    var keyup_stack = [];
-    var slf = this;
+    let keyup_stack = [];
+    let slf = this;
+
     function flt_bar_keyup_exe(force){
 
       keyup_stack.pop();
 
       if (keyup_stack.length !== 0){return;}
 
-      var str = slf.flt_bar_elm().value;
+      let str = slf.flt_bar_elm().value;
       slf.flt_ply(str, force);
     }
+
     function flt_bar_keyup(ev){
 
       log("isComposing: " + ev.isComposing);
@@ -132,7 +134,7 @@ class Song {
       if (ev.keyCode === 27){return;} // esc
       log("flt_bar_keyup_exe");
 
-      var force = (ev.code == "Enter") ? true : false;
+      let force = (ev.code == "Enter") ? true : false;
 
       keyup_stack.push(1);
 
@@ -174,6 +176,16 @@ class Song {
     "cdt"
   ];
 
+  video_ordr__init(){
+  }
+
+  video_ordr__by_url_prm(){
+
+    let prm = url_prm();
+    let ordr = prm.o || 'view_cnt';
+    this.video_ordr__(ordr);
+  }
+
   video_ordr__(ordr){
 
     if (!Song._video_ordr_df.includes(ordr)){
@@ -182,6 +194,8 @@ class Song {
     }
 
     this._video_ordr = ordr;
+
+    this.ordr_swtch_elm__();
   }
 
   video_ordr__tgl(){
@@ -245,13 +259,20 @@ class Song {
     this.elm_ul__srt();
   }
 
+  video__srt_by_url_prm(){
+
+    this.video_ordr__by_url_prm();
+    // this.ordr_swtch_elm__();
+
+    this.video__srt();
+  }
+
   video__srt_tgl(){
 
     this.video_ordr__tgl();
+    // this.ordr_swtch_elm__();
 
     this.video__srt();
-
-    this.ordr_swtch_elm__();
   }
 
   // 
@@ -265,10 +286,10 @@ class Song {
 
   video_id_flt_slice(_video_id, lim){
 
-    var idx      = this._video_id_flt.indexOf(_video_id);
-    var video_id = this._video_id_flt.slice(idx, idx + lim);
+    let idx      = this._video_id_flt.indexOf(_video_id);
+    let video_id = this._video_id_flt.slice(idx, idx + lim);
 
-    var del_idx;
+    let del_idx;
     for (let [_excld_idx, excld_video_id] of Song._excld_video_id.entries()){
 
       del_idx = video_id.indexOf(excld_video_id);
@@ -286,7 +307,7 @@ class Song {
 
     if (!str){str = this.srch_bar_str();}
 
-    var word = u.split_and_or(str);
+    let word = u.split_and_or(str);
 
     this.video_flt__by_word(word);
 
@@ -318,9 +339,9 @@ class Song {
 
   flt_bar__init(){
 
-    var prm = url_prm();
-
-    if (!(prm && prm.s)){return;}
+    let prm = url_prm();
+    if (!prm.s){return;}
+    // if (!(prm && prm.s)){return;}
 
     this.flt_bar_elm().value = prm.s;
   }
@@ -405,7 +426,7 @@ class Song {
       title_elm.setAttribute("href", url);
       //title_elm.setAttribute("onclick", "onclick();");
 
-      var elm_li = doc.createElement('li');
+      let elm_li = doc.createElement('li');
       elm_li.appendChild(view_cnt_elm);
       elm_li.appendChild(title_elm);
       elm_li.setAttribute("id", video_id);
@@ -416,7 +437,7 @@ class Song {
 
   elm_span__cre(str, cls){
 
-    var elm = doc.createElement('span');
+    let elm = doc.createElement('span');
     elm.appendChild(doc.createTextNode(str));
     elm.classList.add(cls);
     return elm;
@@ -472,7 +493,7 @@ class Song {
 
     if (!this._ply_video_id){return;}
 
-    var elm;
+    let elm;
     for (let [idx, _video_id] of this._ply_video_id.entries()){
 
       elm = elm_by_id(_video_id).children[1];
@@ -497,7 +518,7 @@ class Song {
 
   video__init_req(){
 
-    var song = this;
+    let song = this;
 
     const xhr = new XMLHttpRequest();
     xhr.open("GET", u.data_url());
@@ -507,14 +528,15 @@ class Song {
 
       if (!(xhr.readyState == 4 && xhr.status == 200)){return;}
 
-      var video = JSON.parse(xhr.responseText);      
+      let video = JSON.parse(xhr.responseText);      
       song.video__(video);
 
       song.elm_ul__cre();
 
       song.video_flt__()
 
-      song.video__srt("view_cnt");
+      song.video__srt_by_url_prm();
+      // song.video__srt("view_cnt");
     }
   }
 
@@ -541,7 +563,7 @@ class Song {
 
     if (this._video_id_flt.length == 0){return;}
 
-    var video_id = ar_rnd(this._video_id_flt);
+    let video_id = ar_rnd(this._video_id_flt);
 
     this.plyr__ply_by_video_id(video_id);
 
@@ -556,17 +578,17 @@ class Song {
 
     log("video_id: " + video_id);
 
-    var video_elm = elm_by_id(video_id);
-    var video_top = video_elm.offsetTop;
+    let video_elm = elm_by_id(video_id);
+    let video_top = video_elm.offsetTop;
     // log("top: " + video_top);
 
-    var header_elm = elm_by_id('header');
-    var header_h = header_elm.clientHeight;
+    let header_elm = elm_by_id('header');
+    let header_h = header_elm.clientHeight;
     // log("h: " + header_h);
 
-    var scrl_y = video_top - header_h - 28;
+    let scrl_y = video_top - header_h - 28;
 
-    // var lst_elm = elm_by_id('video_lst_scrl');
+    // let lst_elm = elm_by_id('video_lst_scrl');
     // lst_elm.scroll(0, scrl_y);
     scrl(0, scrl_y);
   }
@@ -580,20 +602,21 @@ class u {
 
   static data_url(){
 
-    var prm = url_prm();
-    var file_json = (prm && prm.f) ? prm.f : 's.ltst.json';
+    let prm = url_prm();
+    let file_json = prm.f ? prm.f : 's.ltst.json';
+    // let file_json = (prm && prm.f) ? prm.f : 's.ltst.json';
 
-    var data_domain  = 'ooq.jp';
-    var data_dir     = 'pri/holo/song/data';
-    var data_url_dir = data_domain + "/" + data_dir;
-    var data_url = 'https://' + data_url_dir + "/" + file_json;
+    let data_domain  = 'ooq.jp';
+    let data_dir     = 'pri/holo/song/data';
+    let data_url_dir = data_domain + "/" + data_dir;
+    let data_url = 'https://' + data_url_dir + "/" + file_json;
 
     return data_url;
   }
 
   static split_and_or(str){
 
-    var word = str.trim().split(/\s/g);
+    let word = str.trim().split(/\s/g);
 
     for (let [idx, word_and] of word.entries()){
     
@@ -604,30 +627,31 @@ class u {
 
   static split_or(word_and){
 
-    var split_char = ",";
+    let split_char = ",";
 
     if (!is_match(word_and, split_char)){return word_and;}
 
-    var exp = new RegExp("^" + split_char + "+|" + split_char + "+$", "g");
+    let exp = new RegExp("^" + split_char + "+|" + split_char + "+$", "g");
 
-    var word = word_and.replace(exp,'').split(split_char);
+    let word = word_and.replace(exp,'').split(split_char);
     return word;
   }
 }
 
 function url_prm(){
 
-  var qery_str = win.location.search;
+  let prm = new Object();
 
-  if(!qery_str){return;}
+  let qery_str = win.location.search;
+
+  if(!qery_str){return prm;}
 
   qery_str = qery_str.substring(1);
 
-  var prms = qery_str.split('&');
+  let prms = qery_str.split('&');
 
-  var prm = new Object();
-  var elm, key, val;
-  for (var i = 0; i < prms.length; i++){
+  let elm, key, val;
+  for (let i = 0; i < prms.length; i++){
 
     elm = prms[i].split('=');
     key = decodeURIComponent(elm[0]);
@@ -639,7 +663,7 @@ function url_prm(){
 
 function is_match(str, word){
 
-  var ret = false;
+  let ret = false;
 
   str  = str.toLowerCase();
   word = word.toLowerCase();
@@ -652,7 +676,7 @@ function is_match(str, word){
 
 function is_match_and_or(str, word){
 
-  var ret = false;
+  let ret = false;
 
   for (let [idx, word_and] of word.entries()){
 
@@ -671,7 +695,7 @@ function is_match_and_or(str, word){
 
 function is_match_or(str, word){
 
-  var ret = false;
+  let ret = false;
 
   for (let [idx, word_or] of word.entries()){
     ret = is_match(str, word_or);
@@ -682,20 +706,20 @@ function is_match_or(str, word){
 
 function rnd(min, max){
 
-  var val = Math.floor(Math.random() * (max - min + 1) + min);
+  let val = Math.floor(Math.random() * (max - min + 1) + min);
   return val
 }
 
 function ar_rnd(ar){
 
-  var idx = ar_rnd_idx(ar);
-  var val = ar[idx];
+  let idx = ar_rnd_idx(ar);
+  let val = ar[idx];
   return val;
 }
 
 function ar_rnd_idx(ar){
 
-  var idx = rnd(0, ar.length - 1);
+  let idx = rnd(0, ar.length - 1);
   return idx;
 }
 
@@ -708,8 +732,8 @@ function ar_in(ar, val){
 
 // alias
 
-var doc = document;
-var win = window;
+let doc = document;
+let win = window;
 
 function log(str){
   console.log(str);
@@ -729,16 +753,16 @@ function elm_by_id(id){
 
 // main
 
-var tag = doc.createElement('script');
+let tag = doc.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
-var js1 = doc.getElementsByTagName('script')[0];
+let js1 = doc.getElementsByTagName('script')[0];
 js1.parentNode.insertBefore(tag, js1);
 
-var song = new Song();
+let song = new Song();
 
 // ytplyr
 
-var ytplyr;
+let ytplyr;
 win.onYouTubeIframeAPIReady = function(){
 
   ytplyr = new YT.Player (

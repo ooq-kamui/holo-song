@@ -19,6 +19,19 @@ end
 
 # file
 
+function day_files
+
+  ls -r $dir/cnt.????-??-??.??:??.txt
+
+  #set -l cnt_file_ptn 'cnt.????-??-??.??:??.txt'
+  #ls -r "$dir/$cnt_file_ptn"
+end
+
+function day_files_ltst_2
+
+  day_files | head -n 2 | sort
+end
+
 function yday_files
 
   set -l cnt_file_ptn 'cnt.20*.txt'

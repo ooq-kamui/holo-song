@@ -1,0 +1,499 @@
+data/cnt.2022-04-29.08:49.txt
+data/cnt.2022-04-30.10:09.txt data/cnt.now.txt
+is_same_tday_file_cnt_now_file: file_tday_file = cnt_now_file
+diff 
+diff data/cnt.2022-04-29.08:49.txt data/cnt.now.txt
+pekora	192.0		pekora	192.0
+marine	189.0	  |	marine	190.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	145.0		suisei	145.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	123.0		matsuri	123.0
+watame	121.0		watame	121.0
+kanata	118.0		kanata	118.0
+botan	113.0		botan	113.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.2		lamy	 98.2
+mio	 97.5	  |	mio	 97.6
+polka	 96.5		polka	 96.5
+sora	 96.1		sora	 96.1
+nene	 92.4	  |	nene	 92.5
+flare	 87.6		flare	 87.6
+choco	 86.0		choco	 86.0
+roboco	 82.6		roboco	 82.6
+chloe	 81.1		chloe	 81.1
+luna	 79.4	  |	luna	 79.5
+laplus	 76.2		laplus	 76.2
+mel	 70.9		mel	 70.9
+aki	 66.7	  |	aki	 66.8
+azki	 62.4	  |	azki	 62.5
+koyori	 58.2	  |	koyori	 58.3
+iroha	 52.8		iroha	 52.8
+lui	 50.1		lui	 50.1
+data/cnt.2022-04-29.08:49.txt
+data/cnt.2022-04-30.10:09.txt data/cnt.now.txt
+is_same_tday_file_cnt_now_file: file_tday_file = cnt_now_file
+diff 
+diff data/cnt.2022-04-29.08:49.txt data/cnt.now.txt
+pekora	192.0		pekora	192.0
+marine	189.0	  |	marine	190.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	145.0		suisei	145.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	123.0		matsuri	123.0
+watame	121.0		watame	121.0
+kanata	118.0		kanata	118.0
+botan	113.0		botan	113.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.2		lamy	 98.2
+mio	 97.5	  |	mio	 97.6
+polka	 96.5		polka	 96.5
+sora	 96.1		sora	 96.1
+nene	 92.4	  |	nene	 92.5
+flare	 87.6		flare	 87.6
+choco	 86.0		choco	 86.0
+roboco	 82.6		roboco	 82.6
+chloe	 81.1		chloe	 81.1
+luna	 79.4	  |	luna	 79.5
+laplus	 76.2		laplus	 76.2
+mel	 70.9		mel	 70.9
+aki	 66.7	  |	aki	 66.8
+azki	 62.4	  |	azki	 62.5
+koyori	 58.2	  |	koyori	 58.3
+iroha	 52.8		iroha	 52.8
+lui	 50.1		lui	 50.1
+data/cnt.2022-04-30.10:09.txt
+data/cnt.2022-05-01.00:00.txt
+cp fin
+diff 
+diff data/cnt.2022-04-30.10:09.txt data/cnt.now.txt
+pekora	192.0	  <
+marine	190.0	  <
+fubuki	187.0	  <
+korone	181.0	  <
+aqua	162.0	  <
+noel	148.0	  <
+suisei	145.0	  <
+miko	144.0	  <
+okayu	138.0	  <
+haato	135.0	  <
+subaru	131.0	  <
+ayame	126.0	  <
+matsuri	123.0	  <
+watame	121.0	  <
+kanata	118.0	  <
+botan	113.0	  <
+towa	102.0	  <
+shion	100.0	  <
+lamy	 98.2	  <
+mio	 97.6	  <
+polka	 96.5	  <
+sora	 96.1	  <
+nene	 92.5	  <
+flare	 87.6	  <
+choco	 86.0	  <
+roboco	 82.6	  <
+chloe	 81.1	  <
+luna	 79.5	  <
+laplus	 76.2	  <
+mel	 70.9	  <
+aki	 66.8	  <
+azki	 62.5	  <
+koyori	 58.3	  <
+iroha	 52.8	  <
+lui	 50.1	  <
+data/cnt.2022-04-30.10:09.txt
+data/cnt.2022-05-01.14:08.txt data/cnt.now.txt
+data/cnt.2022-05-01.23:45.txt
+cp fin
+diff 
+diff data/cnt.2022-04-30.10:09.txt data/cnt.now.txt
+pekora	192.0	  |	pekora	193.0
+marine	190.0		marine	190.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	145.0		suisei	145.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	123.0		matsuri	123.0
+watame	121.0		watame	121.0
+kanata	118.0	  |	kanata	119.0
+botan	113.0		botan	113.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.2		lamy	 98.2
+mio	 97.6	  |	mio	 97.7
+polka	 96.5	  |	polka	 96.6
+sora	 96.1		sora	 96.1
+nene	 92.5		nene	 92.5
+flare	 87.6		flare	 87.6
+choco	 86.0		choco	 86.0
+roboco	 82.6		roboco	 82.6
+chloe	 81.1	  |	chloe	 81.2
+luna	 79.5		luna	 79.5
+laplus	 76.2	  |	laplus	 76.3
+mel	 70.9	  |	mel	 71.0
+aki	 66.8		aki	 66.8
+azki	 62.5	  |	azki	 62.6
+koyori	 58.3	  |	koyori	 58.4
+iroha	 52.8		iroha	 52.8
+lui	 50.1	  |	lui	 50.2
+data/cnt.2022-05-01.23:45.txt
+data/cnt.2022-05-02.23:48.txt
+cp fin
+diff 
+diff data/cnt.2022-05-01.23:45.txt data/cnt.now.txt
+pekora	193.0		pekora	193.0
+marine	190.0		marine	190.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	145.0		suisei	145.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	123.0		matsuri	123.0
+watame	121.0		watame	121.0
+kanata	119.0		kanata	119.0
+botan	113.0	  |	botan	114.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.2	  |	lamy	 98.3
+mio	 97.7		mio	 97.7
+polka	 96.6	  |	polka	 96.7
+sora	 96.1		sora	 96.1
+nene	 92.5	  |	nene	 92.6
+flare	 87.6		flare	 87.6
+choco	 86.0	  |	choco	 86.1
+roboco	 82.6	  |	roboco	 82.7
+chloe	 81.2	  |	chloe	 81.3
+luna	 79.5	  |	luna	 79.6
+laplus	 76.3	  |	laplus	 76.4
+mel	 71.0	  |	mel	 71.1
+aki	 66.8	  |	aki	 66.9
+azki	 62.6	  |	azki	 62.7
+koyori	 58.4	  |	koyori	 58.5
+iroha	 52.8		iroha	 52.8
+lui	 50.2	  |	lui	 50.3
+data/cnt.2022-05-02.23:48.txt
+data/cnt.2022-05-03.23:45.txt
+cp fin
+diff 
+diff data/cnt.2022-05-02.23:48.txt data/cnt.now.txt
+pekora	193.0		pekora	193.0
+marine	190.0		marine	190.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	145.0		suisei	145.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	123.0		matsuri	123.0
+watame	121.0		watame	121.0
+kanata	119.0		kanata	119.0
+botan	114.0		botan	114.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.3	  |	lamy	 98.4
+mio	 97.7	  |	mio	 97.8
+polka	 96.7		polka	 96.7
+sora	 96.1	  |	sora	 96.2
+nene	 92.6	  |	nene	 92.7
+flare	 87.6	  |	flare	 87.7
+choco	 86.1		choco	 86.1
+roboco	 82.7	  |	roboco	 82.8
+chloe	 81.3		chloe	 81.3
+luna	 79.6		luna	 79.6
+laplus	 76.4		laplus	 76.4
+mel	 71.1		mel	 71.1
+aki	 66.9		aki	 66.9
+azki	 62.7		azki	 62.7
+koyori	 58.5		koyori	 58.5
+iroha	 52.8	  |	iroha	 52.9
+lui	 50.3	  |	lui	 50.4
+data/cnt.2022-05-03.23:45.txt
+data/cnt.2022-05-04.23:45.txt
+cp fin
+diff 
+diff data/cnt.2022-05-03.23:45.txt data/cnt.now.txt
+pekora	193.0		pekora	193.0
+marine	190.0		marine	190.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	145.0		suisei	145.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	123.0	  |	matsuri	124.0
+watame	121.0		watame	121.0
+kanata	119.0		kanata	119.0
+botan	114.0		botan	114.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.4		lamy	 98.4
+mio	 97.8	  |	mio	 98.0
+polka	 96.7	  |	polka	 96.8
+sora	 96.2		sora	 96.2
+nene	 92.7		nene	 92.7
+flare	 87.7		flare	 87.7
+choco	 86.1		choco	 86.1
+roboco	 82.8		roboco	 82.8
+chloe	 81.3	  |	chloe	 81.4
+luna	 79.6		luna	 79.6
+laplus	 76.4	  |	laplus	 76.9
+mel	 71.1	  |	mel	 71.2
+aki	 66.9		aki	 66.9
+azki	 62.7	  |	azki	 62.8
+koyori	 58.5	  |	koyori	 58.7
+iroha	 52.9	  |	iroha	 53.0
+lui	 50.4	  |	lui	 50.5
+data/cnt.2022-05-04.23:45.txt
+data/cnt.2022-05-05.23:45.txt
+cp fin
+diff 
+diff data/cnt.2022-05-04.23:45.txt data/cnt.now.txt
+pekora	193.0		pekora	193.0
+marine	190.0	  |	marine	191.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	145.0		suisei	145.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	124.0		matsuri	124.0
+watame	121.0		watame	121.0
+kanata	119.0		kanata	119.0
+botan	114.0		botan	114.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.4	  |	lamy	 98.5
+mio	 98.0	  |	mio	 98.1
+polka	 96.8	  |	polka	 96.9
+sora	 96.2	  |	sora	 96.3
+nene	 92.7	  |	nene	 92.8
+flare	 87.7		flare	 87.7
+choco	 86.1		choco	 86.1
+roboco	 82.8	  |	roboco	 82.9
+chloe	 81.4	  |	chloe	 81.5
+luna	 79.6		luna	 79.6
+laplus	 76.9	  |	laplus	 77.1
+mel	 71.2	  |	mel	 71.3
+aki	 66.9	  |	aki	 67.0
+azki	 62.8	  |	azki	 62.9
+koyori	 58.7	  |	koyori	 58.8
+iroha	 53.0	  |	iroha	 53.1
+lui	 50.5	  |	lui	 50.6
+data/cnt.2022-05-05.23:45.txt
+data/cnt.2022-05-06.23:45.txt
+cp fin
+diff 
+diff data/cnt.2022-05-05.23:45.txt data/cnt.now.txt
+pekora	193.0		pekora	193.0
+marine	191.0		marine	191.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	145.0	  |	suisei	146.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	124.0		matsuri	124.0
+watame	121.0		watame	121.0
+kanata	119.0		kanata	119.0
+botan	114.0		botan	114.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.5		lamy	 98.5
+mio	 98.1	  |	mio	 98.2
+polka	 96.9		polka	 96.9
+sora	 96.3		sora	 96.3
+nene	 92.8		nene	 92.8
+flare	 87.7		flare	 87.7
+choco	 86.1	  |	choco	 86.2
+roboco	 82.9		roboco	 82.9
+chloe	 81.5		chloe	 81.5
+luna	 79.6		luna	 79.6
+laplus	 77.1		laplus	 77.1
+mel	 71.3		mel	 71.3
+aki	 67.0		aki	 67.0
+azki	 62.9	  |	azki	 63.0
+koyori	 58.8	  |	koyori	 58.9
+iroha	 53.1		iroha	 53.1
+lui	 50.6		lui	 50.6
+data/cnt.2022-05-06.23:45.txt
+data/cnt.2022-05-07.23:45.txt
+cp fin
+diff 
+diff data/cnt.2022-05-06.23:45.txt data/cnt.now.txt
+pekora	193.0		pekora	193.0
+marine	191.0		marine	191.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	146.0		suisei	146.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0		haato	135.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	124.0		matsuri	124.0
+watame	121.0		watame	121.0
+kanata	119.0		kanata	119.0
+botan	114.0		botan	114.0
+towa	102.0		towa	102.0
+shion	100.0		shion	100.0
+lamy	 98.5		lamy	 98.5
+mio	 98.2	  |	mio	 98.3
+polka	 96.9	  |	polka	 97.0
+sora	 96.3		sora	 96.3
+nene	 92.8	  |	nene	 92.9
+flare	 87.7	  |	flare	 87.8
+choco	 86.2		choco	 86.2
+roboco	 82.9		roboco	 82.9
+chloe	 81.5		chloe	 81.5
+luna	 79.6	  |	luna	 79.7
+laplus	 77.1	  |	laplus	 77.2
+mel	 71.3		mel	 71.3
+aki	 67.0		aki	 67.0
+azki	 63.0		azki	 63.0
+koyori	 58.9		koyori	 58.9
+iroha	 53.1	  |	iroha	 53.2
+lui	 50.6	  |	lui	 50.7
+data/cnt.2022-05-07.23:45.txt
+data/cnt.2022-05-08.23:45.txt
+cp fin
+diff 
+diff data/cnt.2022-05-07.23:45.txt data/cnt.now.txt
+pekora	193.0		pekora	193.0
+marine	191.0		marine	191.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	146.0		suisei	146.0
+miko	144.0		miko	144.0
+okayu	138.0		okayu	138.0
+haato	135.0	  |	haato	136.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	124.0		matsuri	124.0
+watame	121.0		watame	121.0
+kanata	119.0		kanata	119.0
+botan	114.0		botan	114.0
+towa	102.0	  |	towa	103.0
+shion	100.0		shion	100.0
+lamy	 98.5	  |	lamy	 98.6
+mio	 98.3		mio	 98.3
+polka	 97.0		polka	 97.0
+sora	 96.3		sora	 96.3
+nene	 92.9		nene	 92.9
+flare	 87.8		flare	 87.8
+choco	 86.2		choco	 86.2
+roboco	 82.9		roboco	 82.9
+chloe	 81.5	  |	chloe	 81.6
+luna	 79.7		luna	 79.7
+laplus	 77.2		laplus	 77.2
+mel	 71.3	  |	mel	 71.4
+aki	 67.0	  |	aki	 67.2
+azki	 63.0	  |	azki	 63.1
+koyori	 58.9	  |	koyori	 59.0
+iroha	 53.2		iroha	 53.2
+lui	 50.7	  |	lui	 50.9
+data/cnt.2022-05-08.23:45.txt
+data/cnt.2022-05-09.23:45.txt
+cp fin
+diff 
+diff data/cnt.2022-05-08.23:45.txt data/cnt.now.txt
+pekora	193.0		pekora	193.0
+marine	191.0		marine	191.0
+fubuki	187.0		fubuki	187.0
+korone	181.0		korone	181.0
+aqua	162.0		aqua	162.0
+noel	148.0		noel	148.0
+suisei	146.0		suisei	146.0
+miko	144.0	  |	miko	145.0
+okayu	138.0		okayu	138.0
+haato	136.0		haato	136.0
+subaru	131.0		subaru	131.0
+ayame	126.0		ayame	126.0
+matsuri	124.0		matsuri	124.0
+watame	121.0		watame	121.0
+kanata	119.0		kanata	119.0
+botan	114.0		botan	114.0
+towa	103.0		towa	103.0
+shion	100.0		shion	100.0
+lamy	 98.6		lamy	 98.6
+mio	 98.3	  |	mio	 98.4
+polka	 97.0		polka	 97.0
+sora	 96.3	  |	sora	 96.4
+nene	 92.9	  |	nene	 93.0
+flare	 87.8		flare	 87.8
+choco	 86.2		choco	 86.2
+roboco	 82.9		roboco	 82.9
+chloe	 81.6		chloe	 81.6
+luna	 79.7	  |	luna	 79.8
+laplus	 77.2	  |	laplus	 77.3
+mel	 71.4		mel	 71.4
+aki	 67.2		aki	 67.2
+azki	 63.1		azki	 63.1
+koyori	 59.0	  |	koyori	 59.1
+iroha	 53.2	  |	iroha	 53.3
+lui	 50.9	  |	lui	 51.0
+data/cnt.2022-05-09.23:45.txt
+data/cnt.2022-05-10.23:45.txt
+cp fin
+data/cnt.2022-05-10.23:45.txt
+data/cnt.2022-05-11.23:45.txt
+cp fin
+data/cnt.2022-05-11.23:45.txt
+data/cnt.2022-05-12.23:45.txt
+cp fin
+data/cnt.2022-05-12.23:45.txt
+data/cnt.2022-05-13.23:45.txt
+cp fin
+data/cnt.2022-05-13.23:45.txt
+data/cnt.2022-05-14.23:45.txt
+cp fin
+data/cnt.2022-05-14.23:45.txt
+data/cnt.2022-05-15.23:45.txt
+cp fin

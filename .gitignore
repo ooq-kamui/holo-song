@@ -5,9 +5,12 @@ www/favicon.ico
 
 sh/*.log
 
-www/song/data/*
+www/song/data/
 www/song/bk/
 www/song/tst/
+
+ch_cnt/data/
+ch_cnt/bk/
 
 
 .DS_Store

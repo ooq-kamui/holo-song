@@ -14,6 +14,7 @@ Holo._jp = {
           "zsBD66Sa5Yg", -- sora
           "TSZ9RlU6EXk", -- roboco
           "Lw3sBpkC3Rw", -- roboco
+          "aWSaIdLUE0Y", -- azki
           "j84IEsVYGyE", -- matsuri vo-m
           "-wV0AH0u8ik", -- matsuri vo-m
           "Z-q5aJm0UJE", -- matsuri vo-m
@@ -37,7 +38,7 @@ Holo._jp = {
       },
     },
     idlprj = {
-      ch_id = "",
+      ch_id = "UCuCfKSM0_23RRXxQGYTVJlw",
       song = {
         lst_id = {},
         video_id = {
@@ -66,6 +67,7 @@ Holo._jp = {
         },
         lst_excld_video_id = {
           "zsBD66Sa5Yg", -- 
+          "UAMhYU9SHzo", -- v fes jp day 1
         },
       },
     },
@@ -256,6 +258,9 @@ Holo._jp = {
           "PLpt61bADOMwWhy94VL5fB9NfJERFmAOiF", -- cvr-clb
           "PLpt61bADOMwW2aA9I1hWHyR8OixSuCXzc", -- org
         },
+        lst_excld_video_id = {
+          "aWSaIdLUE0Y", -- 
+        },
       },
     },
     suisei  = {
@@ -310,6 +315,9 @@ Holo._jp = {
         lst_id = {
           "PLKo9UD3uKyyFUSwUDM5hCTB4fEvZqYs0P", -- cvr, org
         },
+        video_id = {
+          "u_hUpHUTJwQ",
+        },
       },
     },
     kanata  = {
@@ -318,6 +326,9 @@ Holo._jp = {
         lst_id = {
           "PLNvxSJodVoAu5ABQjfuPGnzqkRMLtN0y2", -- cvr
           "PLNvxSJodVoAuAqJxsnbT07LeETTwLpXfx", -- org
+        },
+        lst_excld_video_id = {
+          "gDfd2ICWezg", -- v fes jp day 2
         },
       },
     },
@@ -329,6 +340,9 @@ Holo._jp = {
           "PLZ34fLWik_iDfjOVqChEelXHyaDQBpA8m", -- org-mini
           "PLZ34fLWik_iAP2AdGLOHthUhAJTrEXqGb", -- cvr
           "PLZ34fLWik_iAlCTAC0GSWqc8XCDcEwEd4", -- cvr, org-mini
+        },
+        lst_excld_video_id = {
+          "j3zN-p65j3Q", -- long
         },
       },
     },
@@ -387,6 +401,9 @@ Holo._jp = {
       song = {
         lst_id = {
           "PL-ksV7rAwJHWfgsi38uZEsWpnY128WwBC", -- cvr
+        },
+        lst_excld_video_id = {
+          "Yq7SBodB5YE", -- live
         },
       },
     },
@@ -548,6 +565,7 @@ Holo._id = {
           "0D-tcQjYf28", -- ollie
           "B_HAwShg1kY", -- ollie
           "pOsqlM_6JcI", -- ollie
+          "W0_iSvXdM6c", -- moona
         },
       },
     },
