@@ -1,5 +1,8 @@
 # fish
 
+set dir_wrk ~/doc/hoby/youtube/vtuber/hololive/prj/ch_cnt
+cd $dir_wrk
+
 source u.fish
 source diff_sbs.fish
 

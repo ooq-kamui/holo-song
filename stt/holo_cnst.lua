@@ -259,7 +259,8 @@ Holo._jp = {
           "PLpt61bADOMwW2aA9I1hWHyR8OixSuCXzc", -- org
         },
         lst_excld_video_id = {
-          "aWSaIdLUE0Y", -- 
+          "aWSaIdLUE0Y", -- vo-m
+          "hvB26v6rBxA", -- live
         },
       },
     },
@@ -478,11 +479,13 @@ Holo._en = {
     ina = {
       ch_id = "UCMwGHR0BTZuLsmjY_NT5Pwg",
       song = {
-        lst_id = {},
-        video_id = {
-          "8ZdLXELdF9Q",
-          "NIv_yYKl9tQ",
+        lst_id = {
+          "PLQZecHYc3j2plhVMu0squPpD4XRoQmX-y"
         },
+        -- video_id = {
+          -- "8ZdLXELdF9Q",
+          -- "NIv_yYKl9tQ",
+        -- },
       },
     },
     gura = {

@@ -228,11 +228,11 @@ function Holo.video__sub(_s, video2)
 
     if not tbl1.view_cnt
     or tbl1.view_cnt == -1 -- mmbr only
-    or tbl1.view_cnt ==  0 -- rls bfr
+    or tbl1.view_cnt ==  0 -- rls pre
     then
-			_s._video[video_id] = nil
+      _s._video[video_id] = nil
     else
-      if tbl2 and tbl2.view_cnt then
+      if tbl2 and tbl2.view_cnt and tbl2.view_cnt ~= 0 then
 
         tbl1.view_cnt = tbl1.view_cnt - tbl2.view_cnt
       else
