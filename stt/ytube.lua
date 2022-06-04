@@ -34,6 +34,32 @@ function Ytube.video_by_lst(lst_id, pgtkn)
   return res
 end
 
+function Ytube.video_by_ch(ch_id, year, pgtkn)
+
+  local trgt = "search"
+
+  ch_id = ch_id or ""
+
+  year = year or 2022
+  local fr = year.."-01-01T00:00:00Z"
+  local to = year.."-12-31T23:59:59Z"
+
+  local prm = {
+    "key"       .."="..Ytube.api_key,
+    "part"      .."=".."id",
+    "channelId" .."="..ch_id,
+    "publishedAfter" .."="..fr,
+    "publishedBefore".."="..to,
+    "maxResults".."=".."50",
+    -- "order"     .."=".."viewCount",
+    "type"      .."=".."video",
+  }
+  if pgtkn then table.insert(prm, "pageToken" .."="..pgtkn) end
+
+  local res = Ytube.curl(trgt, prm)
+  return res
+end
+
 function Ytube.srch(ch_id, word)
 
   local trgt = "search"

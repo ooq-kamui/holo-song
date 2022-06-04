@@ -31,9 +31,6 @@ Holo._jp = {
           "UXQDUhSr8nU", -- suisei  vo-m
           "rDSIUPkuM7U", -- live
         },
-        video_id = {
-          "R1fJXaDodiY", -- negi u
-        },
       },
     },
     idlprj = {

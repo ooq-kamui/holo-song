@@ -19,6 +19,7 @@ function Utl.curl(ep, prm)
   local url = ep.."?"..table.concat(prm, "&")
   local cmd = "curl -s '"..url.."'"
   local jsn = Utl.cmd(cmd)
+  u.log(jsn)
   -- u.log(jsn)
   local tbl = cjson.decode(jsn)
   return tbl

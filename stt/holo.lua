@@ -246,19 +246,30 @@ end
 -- ch
 --
 
-function Holo.video__add_by_ch_id(_s, ch_id, excld_video_id)
+function Holo.video__by_ch(_s, ch_id)
+
+  _s:video__init()
+
+  for year = 2017, 2022 do
+    _s:video__add_by_ch(ch_id, year)
+  end
+
+  _s:video__view_cnt()
+end
+
+function Holo.video__add_by_ch(_s, ch_id, year, excld_video_id)
 
   excld_video_id = excld_video_id or {}
 
   local res, pgtkn_nxt, video_id
   repeat
-    res = Ytube.video_by_ch(ch_id, pgtkn_nxt)
+    res = Ytube.video_by_ch(ch_id, year, pgtkn_nxt)
 
     if res.error then break end
 
     for idx, itm in pairs(res.items) do
 
-      video_id = itm.snippet.resourceId.videoId
+      video_id = itm.id.videoId
 
       if ar.in_(video_id, excld_video_id) then
         -- nothing
