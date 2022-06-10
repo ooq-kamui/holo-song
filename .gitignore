@@ -8,6 +8,7 @@ sh/*.log
 www/song/data/
 www/song/bk/
 www/song/tst/
+www/mmbr/
 
 ch_cnt/data/
 ch_cnt/log/
