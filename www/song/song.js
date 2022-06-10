@@ -176,14 +176,23 @@ class Song {
     "cdt"
   ];
 
+  static _video_ordr_op_df = [
+    "asc",
+    "dsc"
+  ];
+
   video_ordr__init(){
   }
 
   video_ordr__by_url_prm(){
 
     let prm = url_prm();
+
     let ordr = prm.o || 'view_cnt';
     this.video_ordr__(ordr);
+
+    let ordr_op = prm.o_op || 'dsc';
+    this.video_ordr_op__(ordr_op);
   }
 
   video_ordr__(ordr){
@@ -208,6 +217,28 @@ class Song {
     this.video_ordr__(Song._video_ordr_df[idx]);
   }
 
+  video_ordr_op__tgl(){
+
+    let idx = Song._video_ordr_op_df.indexOf(this._video_ordr_op);
+
+    idx = idx + 1;
+    if (idx >= Song._video_ordr_op_df.length) idx = 0;
+
+    this.video_ordr_op__(Song._video_ordr_op_df[idx]);
+  }
+
+  video_ordr_op__(ordr_op){
+
+    if (!Song._video_ordr_op_df.includes(ordr_op)){
+
+      ordr_op = Song._video_ordr_op_df[0];
+    }
+
+    this._video_ordr_op = ordr_op;
+
+    this.ordr_op_swtch_elm__();
+  }
+
   // video_id srtd
 
   video_id_srtd(){
@@ -221,6 +252,9 @@ class Song {
     let cmpr_view_cnt = function(video_id1, video_id2){
 
       let ret = slf._video[video_id2].view_cnt - slf._video[video_id1].view_cnt;
+
+      if (slf._video_ordr_op == "asc"){ret = - ret}
+
       return ret;
     }
     this._video_id_flt.sort(cmpr_view_cnt);
@@ -237,6 +271,9 @@ class Song {
       }else{
         ret = -1;
       }
+
+      if (slf._video_ordr_op == "asc"){ret = - ret}
+
       return ret;
     }
     this._video_id_flt.sort(cmpr_cdt);
@@ -262,16 +299,18 @@ class Song {
   video__srt_by_url_prm(){
 
     this.video_ordr__by_url_prm();
-    // this.ordr_swtch_elm__();
-
     this.video__srt();
   }
 
   video__srt_tgl(){
 
     this.video_ordr__tgl();
-    // this.ordr_swtch_elm__();
+    this.video__srt();
+  }
 
+  video__srt_op_tgl(){
+
+    this.video_ordr_op__tgl();
     this.video__srt();
   }
 
@@ -461,6 +500,19 @@ class Song {
     return txt;
   }
 
+  ordr_op_swtch_elm__(){
+
+    elm_by_id('ordr_op_swtch').textContent = this.ordr_op_swtch_elm_txt();
+  }
+
+  ordr_op_swtch_elm_txt(){
+
+    let txt;
+    if      (this._video_ordr_op == "asc"){txt = this.swtch_elm_txt("l");}
+    else if (this._video_ordr_op == "dsc"){txt = this.swtch_elm_txt("r");}
+    return txt;
+  }
+
   swtch_elm_txt(lr){
 
     let txt;
@@ -536,7 +588,6 @@ class Song {
       song.video_flt__()
 
       song.video__srt_by_url_prm();
-      // song.video__srt("view_cnt");
     }
   }
 

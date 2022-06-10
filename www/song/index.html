@@ -8,6 +8,9 @@
 <meta name=”keywords” content="hololive,song,list,all,filter,player,weekly,ranking,original,cover,search,filter" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
 <link rel="stylesheet" href="song.css" />
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2099637840916857"
+  crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="header" id="header">
@@ -62,12 +65,6 @@
       <a href="?s=orio,天音かなた・常闇トワ,天音かなた＆常闇トワ">orio</a>
       <a href="?s=negi☆u">negi☆u</a>
     </div>
-    <div>&nbsp;</div>
-    <div>
-      sort : view count
-      <a  id="ordr_swtch" href="javascript:song.video__srt_tgl();" >🟢-</a>
-      date added
-    </div>
   </div>
   <div id="plyr"></div>
   <div class="hdr_lr hdr_r" id="hdr_r">
@@ -80,15 +77,27 @@
       <a href="help.html" target="holo_song_help">help</a>
     </div>
     <div>&nbsp;</div>
-    <div>&nbsp;</div>
+    <div>
+      <div>
+        sort :
+        view count
+        <a id="ordr_swtch"     href="javascript:song.video__srt_tgl();" >🟢-</a>
+        date added
+      </div>
+      <div>
+        asc
+        <a id="ordr_op_swtch" href="javascript:song.video__srt_op_tgl();" >🟢-</a>
+        desc
+      </div>
+    </div>
     <div>&nbsp;</div>
     <div>
       <a href="?f=t.ltst.json" >total view count</a>
     </div>
     <div>&nbsp;</div>
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
+    <div>
+      <a href="./mmbr.html" >member ch list</a>
+    </div>
     <div>&nbsp;</div>
     <div>
       <!-- twitter share -->
@@ -128,6 +137,6 @@
   </ul>
 </div>
 </body>
-<script src="song.js" type="text/javascript" charset="UTF-8" async></script>
+<script src="song.js?2022-06-10_1200" type="text/javascript" charset="UTF-8" async></script>
 </html>
 

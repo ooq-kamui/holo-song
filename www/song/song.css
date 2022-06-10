@@ -149,3 +149,25 @@ ul {
   display: inline-block;
 }
 
+div.profile {
+  display: inline-block;
+}
+
+div.profile_img {
+}
+
+img.profile {
+  width:  75px;
+  height: 75px;
+  vertical-align: middle;
+}
+
+img.icn {
+  width:  25px;
+  vertical-align: middle;
+}
+
+.mmbr_name {
+  display: none;
+}
+

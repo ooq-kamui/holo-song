@@ -2,7 +2,6 @@ require("holo")
 
 local mmbr_name = arg[1]
 local ch_id = Holo._jp.mmbr[mmbr_name].ch_id
--- local ch_id = Holo._jp.mmbr.mio.ch_id
 
 local holo = Holo.new()
 holo:video__by_ch(ch_id)
