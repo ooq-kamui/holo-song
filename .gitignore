@@ -1,14 +1,12 @@
 
 sh/memo.txt
-
-www/favicon.ico
-
 sh/*.log
 
 www/song/data/
 www/song/bk/
 www/song/tst/
 www/mmbr/
+www/favicon.ico
 
 ch_cnt/data/
 ch_cnt/log/
@@ -16,4 +14,7 @@ ch_cnt/log/
 
 .DS_Store
 *.jpg
+*.png
+*.log
+*.ico
 

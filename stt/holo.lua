@@ -216,6 +216,20 @@ function Holo.video_view_cnt_2_txt(_s)
 end
 
 --
+-- add
+--
+
+function Holo.video__add(_s, video2)
+
+  if not _s._video then _s:video__init() end
+
+  for video_id2, tbl2 in pairs(video2) do
+
+    _s._video[video_id2] = tbl2
+  end
+end
+
+--
 -- sub
 --
 
@@ -250,7 +264,8 @@ function Holo.video__by_ch(_s, ch_id)
 
   _s:video__init()
 
-  for year = 2017, 2022 do
+  for year = 2022, 2022 do
+
     _s:video__add_by_ch(ch_id, year)
   end
 

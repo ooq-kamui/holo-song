@@ -41,7 +41,8 @@ function Ytube.video_by_ch(ch_id, year, pgtkn)
   ch_id = ch_id or ""
 
   year = year or 2022
-  local fr = year.."-01-01T00:00:00Z"
+  local fr = year.."-06-04T00:00:00Z"
+  -- local fr = year.."-01-01T00:00:00Z"
   local to = year.."-12-31T23:59:59Z"
 
   local prm = {
