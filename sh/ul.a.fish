@@ -1,7 +1,7 @@
 # fish
 
-set sh_dir ~/doc/hoby/youtube/vtuber/hololive/prj/sh
-cd $sh_dir
+set dir_sh ~/doc/hoby/youtube/vtuber/hololive/prj/sh
+cd $dir_sh
 
 fish ul.t.fish
 fish ul.s.fish

@@ -1,6 +1,5 @@
 
 sh/memo.txt
-sh/*.log
 
 www/song/data/
 www/song/bk/
@@ -8,8 +7,9 @@ www/song/tst/
 www/mmbr/
 www/favicon.ico
 
-ch_cnt/data/
-ch_cnt/log/
+stt/ch/data/
+stt/ch/log/
+stt/song_video/log/
 
 
 .DS_Store
