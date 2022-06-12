@@ -1,5 +1,3 @@
--- package.path = package.path .. ";../lib/?.lua"
-
 require("path")
 require("holo")
 

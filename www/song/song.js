@@ -500,6 +500,14 @@ class Song {
     return txt;
   }
 
+  swtch_elm_txt(lr){
+
+    let txt;
+    if      (lr == "l"){txt = "🟢-";}
+    else if (lr == "r"){txt = "-🟢";}
+    return txt;
+  }
+
   ordr_op_swtch_elm__(){
 
     elm_by_id('ordr_op_swtch').textContent = this.ordr_op_swtch_elm_txt();
@@ -507,17 +515,16 @@ class Song {
 
   ordr_op_swtch_elm_txt(){
 
-    let txt;
-    if      (this._video_ordr_op == "asc"){txt = this.swtch_elm_txt("l");}
-    else if (this._video_ordr_op == "dsc"){txt = this.swtch_elm_txt("r");}
+    let op  = this._video_ordr_op;
+    let txt = this.ordr_op_elm_txt(op);
     return txt;
   }
 
-  swtch_elm_txt(lr){
+  ordr_op_elm_txt(op){
 
     let txt;
-    if      (lr == "l"){txt = "🟢-";}
-    else if (lr == "r"){txt = "-🟢";}
+    if      (op == "asc"){txt = "🔼";}
+    else if (op == "dsc"){txt = "🔽";}
     return txt;
   }
 
