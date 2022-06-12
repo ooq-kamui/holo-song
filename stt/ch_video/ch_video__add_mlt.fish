@@ -8,7 +8,7 @@ cd $dir_exe
 
 source $dir_lib/mmbr.fish
 
-set term_date 2022-06-12.-.2022-06-13
+set term_date $argv[1] #2022-06-12.-.2022-06-13
 
 for _mmbr_name in $mmbr_name
   set path_file1 $dir_data/$_mmbr_name.json
