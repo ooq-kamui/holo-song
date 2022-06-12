@@ -19,11 +19,11 @@
       </dict>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/stt/ch</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch</string>
     <key>StandardOutPath</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/stt/ch/log/std-out.log</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch/log/std-out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/stt/ch/log/std-err.log</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch/log/std-err.log</string>
   </dict>
 </plist>
 

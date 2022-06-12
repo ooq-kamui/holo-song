@@ -450,36 +450,37 @@ class Song {
 
       if (!_video.view_cnt || !_video.title){continue;}
 
-      if (_video.new){
-        view_cnt_elm  = this.elm_span__cre(_video.view_cnt, "view_cnt_new");
-      }else{
-        view_cnt_elm  = this.elm_span__cre(_video.view_cnt, "view_cnt");
-      }
-
-      title_elm_spn = this.elm_span__cre(_video.title, "title");
-
-      title_elm = doc.createElement('a');
-      title_elm.appendChild(title_elm_spn);
-      //url = Song.yt_url_base + video_id;
-      url = "javascript:song.onclick('" + video_id + "');";
-      title_elm.setAttribute("href", url);
-      //title_elm.setAttribute("onclick", "onclick();");
-
-      let elm_li = doc.createElement('li');
-      elm_li.appendChild(view_cnt_elm);
-      elm_li.appendChild(title_elm);
-      elm_li.setAttribute("id", video_id);
-
-      elm_ul.appendChild(elm_li);
+      let elm_clone = this.elm_li__clone(video_id, _video);
+      elm_ul.appendChild(elm_clone);
     }
   }
 
-  elm_span__cre(str, cls){
+  elm_li__clone(video_id, _video){
 
-    let elm = doc.createElement('span');
-    elm.appendChild(doc.createTextNode(str));
-    elm.classList.add(cls);
-    return elm;
+    let elm_clone = elm__clone_by_slctr('#video_li_tmpl');
+    /*
+    <li style="display: block; order: 0;"
+      ><span class="view_cnt">0</span><a href=""><span class="title"></span></a>
+    </li>
+     */
+
+    let elm_li = elm_clone.querySelectorAll("li");
+    elm_li[0].setAttribute("id", video_id);
+
+    let elm_span = elm_clone.querySelectorAll("span");
+
+    elm_span[0].textContent = _video.view_cnt;
+    if (_video.new){
+      elm_span[0].classList.replace("view_cnt", "view_cnt_new");
+    }
+
+    elm_span[1].textContent = _video.title;
+
+    let elm_a   = elm_clone.querySelectorAll("a");
+    let href_js = "javascript:song.onclick('" + video_id + "');";
+    elm_a[0].setAttribute("href", href_js);
+
+    return elm_clone;
   }
 
   flt_bar_elm(){
@@ -807,6 +808,17 @@ function scrl(x, y){
 
 function elm_by_id(id){
   return doc.getElementById(id);
+}
+
+function elm_by_slctr(slctr){
+  return doc.querySelector(slctr);
+}
+
+function elm__clone_by_slctr(slctr){
+
+  let tmpl = elm_by_slctr(slctr);
+  let elm = tmpl.content.cloneNode(true);
+  return elm
 }
 
 // main
