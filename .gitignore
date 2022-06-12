@@ -8,6 +8,7 @@ www/favicon.ico
 stt/ch/data/
 stt/ch/log/
 stt/song_video/log/
+stt/ch_video/log/
 
 *.jpg
 *.png

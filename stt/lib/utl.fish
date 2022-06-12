@@ -15,3 +15,8 @@ function tday_dt
   echo (tday_date).(tday_time)
 end
 
+function yday_date
+
+  date -v-1d +"%Y-%m-%d"
+end
+
