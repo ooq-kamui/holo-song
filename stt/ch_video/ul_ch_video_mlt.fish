@@ -1,7 +1,7 @@
 # fish
 
 set svr_dir_base    dev/www/pri/holo
-set svr_dir_data    $svr_dir_base/song/data
+set svr_dir_data    $svr_dir_base/song/data/ch
 
 set lcl_dir_prj     ~/doc/hoby/youtube/vtuber/hololive/prj
 set lcl_dir_lib     $lcl_dir_prj/stt/lib

@@ -457,7 +457,7 @@ class Song {
 
   elm_li__clone(video_id, _video){
 
-    let elm_clone = elm__clone_by_slctr('#video_li_tmpl');
+    let elm_clone = elm__clone('#video_li_tmpl');
     /*
     <li style="display: block; order: 0;"
       ><span class="view_cnt">0</span><a href=""><span class="title"></span></a>
@@ -810,15 +810,15 @@ function elm_by_id(id){
   return doc.getElementById(id);
 }
 
-function elm_by_slctr(slctr){
+function elm(slctr){
   return doc.querySelector(slctr);
 }
 
-function elm__clone_by_slctr(slctr){
+function elm__clone(tmpl_slctr){
 
-  let tmpl = elm_by_slctr(slctr);
-  let elm = tmpl.content.cloneNode(true);
-  return elm
+  let tmpl      = elm(tmpl_slctr);
+  let elm_clone = tmpl.content.cloneNode(true);
+  return elm_clone
 }
 
 // main

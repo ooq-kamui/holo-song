@@ -9,7 +9,7 @@ set dir_lib  $dir_prj/stt/lib
 set dir_exe  $dir_prj/stt/ch_video
 cd $dir_exe
 
-set fr_date $arg[1]
+set fr_date $argv[1]
 
 source $dir_lib/mmbr.fish
 

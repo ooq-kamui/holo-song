@@ -8,10 +8,13 @@ cd $dir_exe
 
 source $dir_lib/mmbr.fish
 
+set term_date 2022-06-12.-.2022-06-13
+
 for _mmbr_name in $mmbr_name
-  echo $_mmbr_name
   set path_file1 $dir_data/$_mmbr_name.json
-  set path_file2 $dir_data/$_mmbr_name.2022-06-12.03:19.json
+  set path_file2 $dir_data/$_mmbr_name.$term_date.json
+  #echo $path_file1
+  #echo $path_file2
 
   fish ch_video__add.fish $path_file1 $path_file2
 end
