@@ -1,9 +1,7 @@
 
-sh/memo.txt
+doc/
 
 www/song/data/
-www/song/bk/
-www/song/tst/
 www/mmbr/
 www/favicon.ico
 
@@ -11,10 +9,9 @@ stt/ch/data/
 stt/ch/log/
 stt/song_video/log/
 
-
-.DS_Store
 *.jpg
 *.png
 *.log
 *.ico
+.DS_Store
 

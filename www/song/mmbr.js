@@ -177,9 +177,9 @@ for (let [idx, gen] of mmbr.entries()){
 
     let a_elm = profile_elm.querySelectorAll("a");
     a_elm[0].textContent = name;
-    a_elm[0].href = "./?o=cdt&f=" + name + ".json";
+    a_elm[0].href = "./?o=cdt&f=ch/" + name + ".json";
     a_elm[1].href = "https://www.youtube.com/channel/" + profile.ch_id;
-    a_elm[2].href = "./?o=cdt&f=" + name + ".json";
+    a_elm[2].href = "./?o=cdt&f=ch/" + name + ".json";
     a_elm[3].href = "https://twitter.com/" + profile.tw_id;
 
     let img_elm    = profile_elm.querySelectorAll("img");

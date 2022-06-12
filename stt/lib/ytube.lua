@@ -34,22 +34,21 @@ function Ytube.video_by_lst(lst_id, pgtkn)
   return res
 end
 
-function Ytube.video_by_ch(ch_id, year, pgtkn)
+function Ytube.video_by_ch(ch_id, fr_date, to_date, pgtkn)
 
   local trgt = "search"
 
   ch_id = ch_id or ""
 
-  year = year or 2022
-  local fr = year.."-06-11T00:00:00Z"
-  local to = year.."-12-31T23:59:59Z"
+  local fr_dt = fr_date .. "T00:00:00Z"
+  local to_dt = to_date .. "T23:59:59Z"
 
   local prm = {
     "key"       .."="..Ytube.api_key,
     "part"      .."=".."id",
     "channelId" .."="..ch_id,
-    "publishedAfter" .."="..fr,
-    "publishedBefore".."="..to,
+    "publishedAfter" .."="..fr_dt,
+    "publishedBefore".."="..to_dt,
     "maxResults".."=".."50",
     -- "order"     .."=".."viewCount",
     "type"      .."=".."video",

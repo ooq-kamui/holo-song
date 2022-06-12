@@ -260,25 +260,31 @@ end
 -- ch
 --
 
-function Holo.video__by_ch(_s, ch_id)
+function Holo.video__by_ch(_s, ch_id, fr_date)
+
+  fr_date = fr_date or "2022-06-01"
+  local to_date = "2022-12-31"
 
   _s:video__init()
 
-  for year = 2022, 2022 do
+  _s:video__add_by_ch(ch_id, fr_date, to_date)
 
-    _s:video__add_by_ch(ch_id, year)
+  --[[
+  for year = 2022, 2022 do
+    _s:video__add_by_ch(ch_id, fr_date, to_date)
   end
+  --]]
 
   _s:video__view_cnt()
 end
 
-function Holo.video__add_by_ch(_s, ch_id, year, excld_video_id)
+function Holo.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)
 
   excld_video_id = excld_video_id or {}
 
   local res, pgtkn_nxt, video_id
   repeat
-    res = Ytube.video_by_ch(ch_id, year, pgtkn_nxt)
+    res = Ytube.video_by_ch(ch_id, fr_date, to_date, pgtkn_nxt)
 
     if res.error then break end
 

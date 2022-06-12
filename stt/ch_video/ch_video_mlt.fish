@@ -1,48 +1,20 @@
 # fish
+# 
+# nxt when 2022-06-13
+# fish ch_video_mlt.fish 2022-06-12
 
 set dir_prj  ~/doc/hoby/youtube/vtuber/hololive/prj
+set dir_lib  $dir_prj/stt/lib
+
 set dir_exe  $dir_prj/stt/ch_video
 cd $dir_exe
 
-set mmbr_name \
-  sora    \
-  roboco  \
-  miko    \
-  suisei  \
-  azki    \
-  fubuki  \
-  aki     \
-  haato   \
-  mel     \
-  matsuri \
-  aqua    \
-  subaru  \
-  ayame   \
-  choco   \
-  shion   \
-  mio     \
-  korone  \
-  okayu   \
-  pekora  \
-  flare   \
-  marine  \
-  noel    \
-  kanata  \
-  watame  \
-  towa    \
-  luna    \
-  nene    \
-  lamy    \
-  botan   \
-  polka   \
-  koyori  \
-  laplus  \
-  lui     \
-  chloe   \
-  iroha   \
+set fr_date $arg[1]
+
+source $dir_lib/mmbr.fish
 
 for _mmbr_name in $mmbr_name
   #echo $_mmbr_name
-  fish ch_video.fish $_mmbr_name
+  fish ch_video.fish $_mmbr_name $fr_date
 end
 

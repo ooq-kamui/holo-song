@@ -3,17 +3,15 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>holo.song.view.cnt</string>
+    <string>holo.ch</string>
     <key>ProgramArguments</key>
     <array>
       <string>/opt/homebrew/bin/fish</string>
-      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/sh/view_cnt_ul.fish</string>
+      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch/holo_jp_cnt.fish</string>
     </array>
     <key>StartCalendarInterval</key>
     <array>
       <dict>
-        <key>Weekday</key>
-        <integer>4</integer>
         <key>Hour</key>
         <integer>23</integer>
         <key>Minute</key>
@@ -21,11 +19,11 @@
       </dict>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/sh</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/stt/ch</string>
     <key>StandardOutPath</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/sh/std-out.log</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/stt/ch/log/std-out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/sh/std-err.log</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/stt/ch/log/std-err.log</string>
   </dict>
 </plist>
 
