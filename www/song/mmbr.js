@@ -162,6 +162,9 @@ let mmbr = [
 // alias
 let doc = document;
 doc.elm_slct = doc.querySelector;
+Node.prototype.elm_all = function (slctr){
+  return this.querySelectorAll(slctr);
+};
 
 let profile_elm_tmpl = doc.elm_slct('#profile_tmpl');
 let gen_elm_tmpl     = doc.elm_slct('#gen_tmpl');
@@ -169,27 +172,27 @@ let profile_lst      = doc.elm_slct('#profile_lst');
 
 for (let [idx, gen] of mmbr.entries()){
 
-  let gen_elm = gen_elm_tmpl.content.cloneNode(true);
+  let gen_node = gen_elm_tmpl.content.cloneNode(true);
 
   for (let [name, profile] of Object.entries(gen)){
 
-    let profile_elm = profile_elm_tmpl.content.cloneNode(true);
+    let profile_node = profile_elm_tmpl.content.cloneNode(true);
 
-    let a_elm = profile_elm.querySelectorAll("a");
+    let a_elm = profile_node.elm_all("a");
     a_elm[0].textContent = name;
     a_elm[0].href = "./?o=cdt&f=ch/" + name + ".json";
     a_elm[1].href = "https://www.youtube.com/channel/" + profile.ch_id;
     a_elm[2].href = "./?o=cdt&f=ch/" + name + ".json";
     a_elm[3].href = "https://twitter.com/" + profile.tw_id;
 
-    let img_elm    = profile_elm.querySelectorAll("img");
+    let img_elm    = profile_node.querySelectorAll("img");
     img_elm[1].src = "/holo/mmbr/jp/" + name + "/profile.jpg";
 
-    // console.log(profile_elm);
+    // console.log(profile_node);
 
-    let gen_div_elm = gen_elm.querySelectorAll("div");
-    gen_div_elm[0].appendChild(profile_elm);
+    let gen_div_elm = gen_node.querySelectorAll("div");
+    gen_div_elm[0].appendChild(profile_node);
   }
-  profile_lst.appendChild(gen_elm);
+  profile_lst.appendChild(gen_node);
 }
 
