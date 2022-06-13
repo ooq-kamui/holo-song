@@ -105,6 +105,8 @@ function Holo.video__song(_s, cntry)
     _s:video__add_song(_cntry, "mmbr")
   end
 
+  _s:video__excld(Holo.song_excld_video_id())
+
   _s:video__view_cnt()
 end
 
@@ -152,15 +154,23 @@ function Holo.video__add_song_video(_s, cntry, cls)
   ar.mrg(_s._video, _s:song_video(cntry, cls))
 end
 
+function Holo.video__excld(_s, excld_video_id)
+
+  for idx, _excld_video_id in pairs(excld_video_id) do
+
+    _s._video[_excld_video_id] = nil
+  end
+end
+
 --
 -- srch
 --
 
-function Holo.srch(_s, word)
+function Holo.srch(_s, word) -- use not
 
   local video = {}
 
-  for name, tbl in pairs(_s:mmbr()) do
+  for name, tbl in pairs(_s:mmbr("jp")) do
   
     _s:ch_srch(tbl.ch_id, word, video)
   end

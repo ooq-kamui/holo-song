@@ -11,24 +11,6 @@ Holo._jp = {
           -- "PL1NeGg1woXqmYch2waEwydLkKJvaXUgA1", -- azki
         },
         lst_excld_video_id = {
-          "zsBD66Sa5Yg", -- sora
-          "TSZ9RlU6EXk", -- roboco
-          "Lw3sBpkC3Rw", -- roboco
-          "aWSaIdLUE0Y", -- azki
-          "j84IEsVYGyE", -- matsuri vo-m
-          "-wV0AH0u8ik", -- matsuri vo-m
-          "Z-q5aJm0UJE", -- matsuri vo-m
-          "VbLsb2t1qzI", -- matsuri vo-m
-          "1KyLE_Ejf-U", -- matsuri vo-m
-          "Mm8Ej2xG_O8", -- matsuri vo-m
-          "uqQLrla5pDI", -- fubuki  vo-m
-          "LlwxRcUFNV8", -- fubuki  vo-m
-          "0yeg4XkzrMI", -- fubuki  vo-m
-          "49hhGHTKHLs", -- fubuki  vo-m
-          "dJtME9ULWQ8", -- fubuki  vo-m
-          "5RsoRC9t3no", -- fubuki  vo-m
-          "V8aGtJURz88", -- fubuki  vo-m
-          "UXQDUhSr8nU", -- suisei  vo-m
           "rDSIUPkuM7U", -- live
         },
       },
@@ -77,8 +59,8 @@ Holo._jp = {
           "QA8KoMko9u8", -- live
           "8rNFX-kZvQQ", -- live
           "_H0wcyOYqBE", -- live
-          "TSZ9RlU6EXk", -- 
           "Lw3sBpkC3Rw", -- live
+          "TSZ9RlU6EXk", -- 
         },
       },
     },
@@ -560,9 +542,6 @@ Holo._id = {
         lst_excld_video_id = {
           "cos54QJsb7o", -- risu
           "0YX80lIi36w", -- risu
-          "0D-tcQjYf28", -- ollie
-          "B_HAwShg1kY", -- ollie
-          "pOsqlM_6JcI", -- ollie
           "W0_iSvXdM6c", -- moona
         },
       },
@@ -682,8 +661,32 @@ function Holo.song_video(_s, cntry, cls)
   return video
 end
 
-function Holo.mmbr(_s)
+function Holo.song_excld_video_id(_s) -- all
 
-  return Holo._jp.mmbr
+  local excld_video_id = {}
+
+  local cntry = {"jp", "en", "id"}
+  local cls_tbl
+
+  for cntry_idx, _cntry in pairs(cntry) do
+    cntry_tbl = Holo["_".._cntry]
+
+    for cls, cls_tbl in pairs(cntry_tbl) do
+
+      for name, mmbr_tbl in pairs(cls_tbl) do
+
+        if mmbr_tbl.song.lst_excld_video_id then
+          ar.join(excld_video_id, mmbr_tbl.song.lst_excld_video_id)
+        end
+      end
+    end
+  end
+
+  return excld_video_id
+end
+
+function Holo.mmbr(_s, cntry) -- add arg cntry
+
+  return Holo["_"..cntry].mmbr
 end
 
