@@ -416,6 +416,9 @@ Holo._jp = {
       ch_id = "UC_vMYWcDjmfdpH6r4TTn1MQ",
       song = {
         lst_id = {},
+        video_id = {
+          "23w6ThmX4a4",
+        },
       },
     },
   },
