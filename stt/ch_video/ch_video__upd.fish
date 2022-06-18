@@ -7,7 +7,8 @@ cd $dir_exe
 
 source $dir_lib/utl.fish
 
-set fr_date (yday_date) #2022-06-13
+set fr_date (y2day_date) #2022-06-13
+#set fr_date (yday_date) #2022-06-13
 set to_date (tday_date)
 set term_date $fr_date.-.$to_date
 echo $term_date
