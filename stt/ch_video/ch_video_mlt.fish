@@ -1,6 +1,5 @@
 # fish
 # 
-# nxt when 2022-06-14
 # fish ch_video_mlt.fish 2022-06-13
 
 set dir_prj  ~/doc/hoby/youtube/vtuber/hololive/prj

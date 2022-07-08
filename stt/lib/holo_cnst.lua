@@ -63,7 +63,8 @@ Holo._jp = {
           "8rNFX-kZvQQ", -- live
           "_H0wcyOYqBE", -- live
           "Lw3sBpkC3Rw", -- live
-          "TSZ9RlU6EXk", -- 
+          "_WuSd5M7va4", -- live
+          "TSZ9RlU6EXk", -- vo-m
         },
       },
     },
@@ -142,6 +143,9 @@ Holo._jp = {
       song = {
         lst_id = {
           "PLzYaEBSRCCt5kgnBdQkLM7yDDZt2_NIZG", -- cvr, org
+        },
+        video_id = {
+          "DFGJ8PhjrlM", -- clb
         },
       },
     },
@@ -226,6 +230,7 @@ Holo._jp = {
           "lFUXNby9svA", -- live
           "iYjjKmBok9o", -- live
           "mrc2uXkJles", -- live
+          "XPeJ9mQ3V9Q", -- live
         },
         video_id = {
           "wLNTAMY1NZA",
