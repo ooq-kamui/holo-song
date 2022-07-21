@@ -64,7 +64,9 @@ Holo._jp = {
           "_H0wcyOYqBE", -- live
           "Lw3sBpkC3Rw", -- live
           "_WuSd5M7va4", -- live
+          "ZVVMf8kelv0", -- live
           "TSZ9RlU6EXk", -- vo-m
+          "24NBZW9P7_c", -- 
         },
       },
     },
@@ -260,6 +262,7 @@ Holo._jp = {
         },
         lst_excld_video_id = {
           "UXQDUhSr8nU", -- 
+          "68iRzgy6c00", -- vo-m
         },
       },
     },
@@ -423,9 +426,12 @@ Holo._jp = {
     iroha   = {
       ch_id = "UC_vMYWcDjmfdpH6r4TTn1MQ",
       song = {
-        lst_id = {},
+        lst_id = {
+          "PLUfQ3xz0-Jen7EoEDeZAkl5yVuBdtw-Wl", -- cvr
+          "PLUfQ3xz0-JemBHsJIHPvt0ZTb7YpuwzYm", -- cvr-clb
+        },
         video_id = {
-          "23w6ThmX4a4",
+          -- "23w6ThmX4a4",
         },
       },
     },
@@ -704,8 +710,20 @@ function Holo.song_excld_video_id(_s) -- all
   return excld_video_id
 end
 
-function Holo.mmbr(_s, cntry) -- add arg cntry
+function Holo.mmbr(_s, cntry)
 
-  return Holo["_"..cntry].mmbr
+	local mmbr
+	local cntry_lst = {"jp", "en", "id"}
+	
+	if cntry then
+		mmbr = Holo["_"..cntry].mmbr
+	else
+		mmbr = {}
+		
+		for idx, cntry in pairs(cntry_lst) do
+		 ar.mrg(mmbr, Holo["_"..cntry].mmbr)
+	 end
+	end
+  return mmbr
 end
 

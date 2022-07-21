@@ -1,5 +1,4 @@
-
-require("utl")
+require("utl_ch")
 
 files = arg
 files[ 0] = nil
@@ -48,6 +47,7 @@ function date_cnt_out(date_cnt)
 			-- print(_date)
 		end
 		-- print(line)
+		print(line)
 	end
 	print(date_hdr)
 end
