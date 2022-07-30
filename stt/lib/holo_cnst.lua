@@ -474,6 +474,7 @@ Holo._en = {
         lst_excld_video_id = {
           "m0q5yODCFNg", -- live
           "FxI_i6Myhm8", -- live
+          "-8QcF1vZ0CY", -- live
         },
       },
     },
@@ -595,6 +596,9 @@ Holo._id = {
         lst_id = {
           -- "PLHeIKIUgnbJDhs2mTJ6WFXUvol189G7IK", -- org
           -- "PLHeIKIUgnbJBzW9cvaqSG6P9_NvXldgCH", -- cvr
+        },
+        lst_excld_video_id = {
+          -- "N9M5jX9z5cQ", -- vo-m
         },
       },
     },

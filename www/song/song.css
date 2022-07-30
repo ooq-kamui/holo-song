@@ -32,9 +32,25 @@ ul {
   /* margin: 0 auto; */
 }
 
-#flt_bar {
-  background-color: #000;
+input[type="search"]#flt_bar {
+  width: 750px;
+  background-color: #1a1c21;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: blueviolet;
+  padding-left: 10px;
   color: #bdc1c6;
+  font-size: 0.9rem;
+}
+
+input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  content: url("/holo/img/input-cancel.png");
+  height : 13px;
+  width  : 13px;
+  cursor : pointer;
+  padding-right: 4px;
 }
 
 .switch {
@@ -76,7 +92,7 @@ ul {
 }
 
 .video_lst_scrl {
-  padding-top: 280px; /* 370px; */
+  padding-top: 287px; /* 280px; 370px; */
 
   text-align: left;
   width: 800px;
