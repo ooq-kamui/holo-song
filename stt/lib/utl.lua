@@ -1,4 +1,5 @@
 cjson = require("cjson")
+require("cfg")
 
 Utl = {}
 
@@ -14,6 +15,17 @@ function Utl.new(Cls)
   return obj
 end
 
+function Utl.cmd(cmd)
+  -- u.log(cmd)
+
+  local hndl = io.popen(cmd)
+  local rslt = hndl:read("*a")
+  hndl:close()
+
+  -- u.log(rslt)
+  return rslt
+end
+
 function Utl.curl(ep, prm)
 
   local url = ep.."?"..table.concat(prm, "&")
@@ -24,15 +36,19 @@ function Utl.curl(ep, prm)
   return tbl
 end
 
-function Utl.cmd(cmd)
+function Utl.jq(jsn)
+	
+	local file = Cfg.json.encode.tmp_file
+	
+	Utl.file_write(file, jsn)
+	
+  local cmd = "cat " .. file .. " | jq "
   -- u.log(cmd)
-
-  local hndl = io.popen(cmd)
-  local rslt = hndl:read("*a")
-  hndl:close()
-
-  -- u.log(rslt)
-  return rslt
+	
+	jsn = Utl.cmd(cmd)
+  -- u.log(jsn)
+	
+  return jsn
 end
 
 function Utl.file_read(path_file)
@@ -46,8 +62,17 @@ function Utl.file_read(path_file)
   return jsn
 end
 
--- alias
-u = Utl
+function Utl.file_write(path_file, txt)
+	u.log(path_file)
+
+  local fp = io.open(path_file, "w")
+	
+	fp:write(txt)
+
+  fp:close()
+end
+
+u = Utl -- alias
 
 function u.log(...)
 
@@ -107,5 +132,4 @@ function Utl.ar_ofst(_ar, _idx, num)
   return ar
 end
 --]]
-
 

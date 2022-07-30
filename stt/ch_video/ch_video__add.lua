@@ -15,5 +15,6 @@ local video2 = cjson.decode(jsn2)
 local holo = Holo.new()
 holo:video__(   video1)
 holo:video__add(video2)
-holo:video_2_jsn()
+-- holo:video_2_jsn()
+holo:video_2_jsn_prnt()
 

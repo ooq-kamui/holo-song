@@ -18,7 +18,8 @@ set path_out_jsn $dir_data/$sub_file
 
 # exit
 
-lua song_video__sub.lua $path_file1 $path_file2 | jq > $path_out_jsn
+#lua song_video__sub.lua $path_file1 $path_file2 | jq > $path_out_jsn
+lua song_video__sub.lua $path_file1 $path_file2 > $path_out_jsn
 
 set path_ltst_jsn $dir_data/s.ltst.json
 cp $path_out_jsn $path_ltst_jsn

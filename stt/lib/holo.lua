@@ -192,16 +192,21 @@ end
 -- output
 --
 
-function Holo.video_2_jsn(_s)
-
-  local to_jsn = {}
-  local _to_jsn
-
-  local jsn = cjson.encode(_s._video)
+function Holo.video_2_jsn_prnt(_s)
+	
+	local jsn = _s:video_2_jsn()
   u.log(jsn) -- stdout
 end
 
-function Holo.video_view_cnt_2_txt(_s)
+function Holo.video_2_jsn(_s)
+
+  local jsn = cjson.encode(_s._video)
+	jsn = Utl.jq(jsn)
+  -- u.log(jsn) -- stdout
+	return jsn
+end
+
+function Holo.video_view_cnt_2_txt(_s) -- use not
 
   if not _s._video then return end
 
