@@ -22,22 +22,9 @@ class Plyr {
 
     if (!this._ytplyr.loadPlaylist){return;}
 
-    let now = Date.now();
-    let timer = now - this._load_time_pre;
-
-    /*
-    if (timer < 3){
-      log("__load_lst : timer < 3");
-      dly(this._ytplyr.loadPlaylist, 2, video_id);
-
-    }else{
-      log("__load_lst : else ( timer > 3 )");
-      this._ytplyr.loadPlaylist(video_id);
-    }
-     */
     this._ytplyr.loadPlaylist(video_id);
 
-    this._load_time_pre = now;
+    this._load_time_pre = Date.now();
   }
 
   cue_lst(video_id){
@@ -791,6 +778,7 @@ function ar_in(ar, val){
 
 // alias
 
+/*
 let doc = document;
 let win = window;
 
@@ -820,6 +808,7 @@ function elm__clone(tmpl_slctr){
   let elm_clone = tmpl.content.cloneNode(true);
   return elm_clone
 }
+ */
 
 // main
 
