@@ -1,10 +1,12 @@
 cjson   = require("cjson")
 api_key = require("ytube-data-api-key")
+
 require("path")
 require("utl")
 require("holo")
 
 Holo_ch = {}
+
 function Holo_ch.new(cntry)
 
   local obj = {}
@@ -20,6 +22,7 @@ end
 function Holo_ch.init(_s, cntry)
 
   _s:mmbr__init(cntry)
+  _s:ch__init()
   _s:name__init()
 end
 
@@ -37,6 +40,15 @@ function Holo_ch.name__init(_s)
   end
 end
 
+function Holo_ch.ch__init(_s)
+  
+  _s._ch_id = {}
+  
+  for name, tbl in pairs(_s:mmbr()) do
+    table.insert(_s._ch_id, tbl.ch_id)
+  end
+end
+
 function Holo_ch.mmbr(_s)
 
   return _s._mmbr
@@ -47,51 +59,28 @@ function Holo_ch.name(_s)
   return _s._name
 end
 
-function Holo_ch.cnt(_s)
+function Holo_ch.ch_id(_s)
 
-  _s:cnt_req()
-  _s:name_srt()
-  _s:prnt()
+  return _s._ch_id
 end
 
-function Holo_ch.cnt_req(_s)
+function Holo_ch.ch_cnt__(_s)
 
-  local api_key = api_key
-
-  local ep      = "https://www.googleapis.com/youtube/v3/channels?"
-  local prm_prt = "part".."=".."statistics"
-
-  local ch_id = {}
-  for name, tbl in pairs(_s:mmbr()) do
-    table.insert(ch_id, tbl.ch_id)
-  end
-  local ch_id_str = table.concat(ch_id, ",")
-	-- print(ch_id_str)
-
-  local prm = {
-    prm_prt,
-    "id" .."="..ch_id_str ,
-    "key".."="..api_key,
-  }
-  local qery = ep..table.concat(prm, "&")
-  local cmd  = "curl -s '"..qery.."'"
-
-  local hndl = io.popen(cmd)
-  local jsn = hndl:read("*a")
-  local tbl = cjson.decode(jsn)
-  hndl:close()
+  local res = Ytube.ch_cnt(_s:ch_id())
   
   local cnt, name
-  for idx, itm in pairs(tbl.items) do
+  for idx, itm in pairs(res.items) do
 
     cnt  = tonumber(itm.statistics.subscriberCount) / 10000
     name = _s:name_by_id(itm.id)
 
     _s._mmbr[name].cnt = cnt
   end
+  
+  _s:mmbr__srt_name()
 end
 
-function Holo_ch.name_srt(_s)
+function Holo_ch.mmbr__srt_name(_s)
 
   local cmpr = function(name1, name2)
 
@@ -121,6 +110,7 @@ end
 -- main
 
 local cntry = arg[1] or "jp"
-local holo = Holo_ch.new(cntry)
-holo:cnt()
+local holo_ch = Holo_ch.new(cntry)
+holo_ch:ch_cnt__()
+holo_ch:prnt()
 

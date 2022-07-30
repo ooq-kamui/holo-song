@@ -7,7 +7,7 @@
     <key>ProgramArguments</key>
     <array>
       <string>/opt/homebrew/bin/fish</string>
-      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch/holo_jp_cnt.fish</string>
+      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch/holo_cnt.fish</string>
     </array>
     <key>StartCalendarInterval</key>
     <array>

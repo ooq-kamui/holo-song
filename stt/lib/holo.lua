@@ -32,9 +32,6 @@ function Holo.name_ordr(_s)
   return _s._name_ordr
 end
 
-function Holo.ch_reg_cnt(_s)
-end
-
 --
 -- video __
 --

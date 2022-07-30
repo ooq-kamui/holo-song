@@ -75,6 +75,20 @@ function Ytube.srch(ch_id, word)
   return res
 end
 
+function Ytube.ch_cnt(ch_id)
+
+  local trgt = "channels"
+
+  local prm = {
+    "key" .."="..Ytube.api_key,
+    "part".."=".."statistics",
+    "id"  .."="..table.concat(ch_id, ","),
+  }
+
+  local res = Ytube.curl(trgt, prm)
+  return res
+end
+
 function Ytube.curl(trgt, prm)
 
   local ep  = Ytube.ep_base..trgt
