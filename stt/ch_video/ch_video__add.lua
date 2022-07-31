@@ -12,8 +12,10 @@ local ch_id
 local video1, video2
 local dir, dir_add
 local name_jsn_file, name_term_jsn_file
--- local path_wc
 local add_file
+-- local path_wc
+
+--[[
 
 for name, tbl in pairs(mmbr) do
 	-- name = "aki" -- tst
@@ -54,7 +56,14 @@ for name, tbl in pairs(mmbr) do
 	
 	holo:video_2_jsn_write(name_jsn_file)
 	
-	Utl.ul(name_jsn_file, "song/data/ch")
+	-- Utl.ul(name_jsn_file, "song/data/ch")
 	-- break -- tst
 end
+
+--]]
+
+-- 
+-- data rsync
+-- 
+Utl.cmd("fish rsync.data.ch_video.fish")
 

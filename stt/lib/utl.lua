@@ -29,6 +29,11 @@ function Utl.cmd(cmd, op)
   return rslt
 end
 
+function Utl.cmd1(cmd)
+	
+	return Utl.cmd(cmd, "*l")
+end
+
 function Utl.cmd_2_tbl(cmd)
   -- u.log(cmd)
 
@@ -91,9 +96,9 @@ function Utl.jq(jsn)
   return jsn
 end
 
-function Utl.ls(path_wild_card)
+function Utl.ls(path_wild_card, op)
 	
-  local cmd = "ls " .. path_wild_card
+  local cmd = "ls "..op.." "..path_wild_card
 	
 	local file = Utl.cmd_2_tbl(cmd)
 	
@@ -103,6 +108,14 @@ end
 function Utl.ul(l_path_file, s_dir) -- scp
 	
   local cmd = u.c("scp ", l_path_file, " ", Cfg.ul.host_dir, "/", s_dir, "/")
+	
+	local rslt = Utl.cmd(cmd)
+  return rslt
+end
+
+function Utl.cp(path1, path2)
+	
+  local cmd = u.c("cp ", path1, " ", path2)
 	
 	local rslt = Utl.cmd(cmd)
   return rslt
@@ -129,12 +142,33 @@ function Utl.file_write(path_file, txt)
   fp:close()
 end
 
+function Utl.date()
+	
+  local cmd = u.c('date +"%Y-%m-%d"')
+	
+	local rslt = Utl.cmd1(cmd)
+  return rslt
+end
+
+function Utl.time()
+	
+  local cmd = u.c('date +"%H:%M"')
+	
+	local rslt = Utl.cmd1(cmd)
+  return rslt
+end
+
+function Utl.datetime()
+	
+	local rslt = u.c(Utl.date(), ".", Utl.time())
+  return rslt
+end
+
 function Utl.date_y(n)
 	
-  -- local cmd = u.c("date_y ", n)
   local cmd = u.c('date -v-', n, 'd +"%Y-%m-%d"')
 	
-	local rslt = Utl.cmd(cmd, "*l")
+	local rslt = Utl.cmd1(cmd)
   return rslt
 end
 
@@ -151,6 +185,23 @@ end
 function Utl.date_t0()
 	
 	return Utl.date_y(0)
+end
+
+function Utl.basename(path)
+	
+  local cmd = 'basename '..path
+	
+	local rslt = Utl.cmd1(cmd)
+  return rslt
+end
+
+function Utl.ext_del(file_name, ext)
+	
+	ext = ext or ".json"
+	
+	local idx1, idx2 = string.find(file_name, ext, 1, true)
+	local r_str = string.sub(file_name, 1, idx1 - 1)
+	return r_str
 end
 
 function Utl.txt_2_tbl(txt)

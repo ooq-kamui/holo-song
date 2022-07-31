@@ -652,12 +652,12 @@ class u {
     let file_json = prm.f ? prm.f : 's.ltst.json';
     // let file_json = (prm && prm.f) ? prm.f : 's.ltst.json';
 
-    let data_domain  = 'ooq.jp';
-    let data_dir     = 'pri/holo/song/data';
-    let data_url_dir = data_domain + "/" + data_dir;
-    let data_url = 'https://' + data_url_dir + "/" + file_json;
+    let domain   = 'ooq.jp';
+    let dir      = 'holo/song/data/song_video';
+    let url_dir  = domain + "/" + dir;
+    let url_data = 'https://' + url_dir + "/" + file_json;
 
-    return data_url;
+    return url_data;
   }
 
   static split_and_or(str){

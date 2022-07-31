@@ -4,11 +4,18 @@
   <dict>
     <key>Label</key>
     <string>holo.ch.video.add</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>PATH</key>
+      <string>/opt/homebrew/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin</string>
+    </dict>
     <key>ProgramArguments</key>
     <array>
       <string>/opt/homebrew/bin/lua</string>
       <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch_video/ch_video__add.lua</string>
     </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch_video</string>
     <key>StartCalendarInterval</key>
     <array>
       <dict>
@@ -18,8 +25,6 @@
         <integer>05</integer>
       </dict>
     </array>
-    <key>WorkingDirectory</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch_video</string>
     <key>StandardOutPath</key>
     <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch_video/log/std-out.log</string>
     <key>StandardErrorPath</key>
