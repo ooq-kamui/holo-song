@@ -41,10 +41,9 @@ function Holo.video__init(_s)
   _s._video = {}
 end
 
-function Holo.video__jsn_file(_s, jsn_file)
+function Holo.video__(_s, video)
 
-  local jsn = Utl.file_read(jsn_file)
-  _s:video__by_jsn(jsn)
+  _s._video = video
 end
 
 function Holo.video__by_jsn(_s, jsn)
@@ -52,9 +51,10 @@ function Holo.video__by_jsn(_s, jsn)
   _s._video = cjson.decode(jsn)
 end
 
-function Holo.video__(_s, video)
+function Holo.video__by_jsn_file(_s, jsn_file)
 
-  _s._video = video
+  local jsn = Utl.file_read(jsn_file)
+  _s:video__by_jsn(jsn)
 end
 
 -- video view cnt
@@ -195,7 +195,14 @@ end
 function Holo.video_2_jsn_prnt(_s)
 	
 	local jsn = _s:video_2_jsn()
-  u.log(jsn) -- stdout
+  u.prnt(jsn)
+end
+
+function Holo.video_2_jsn_write(_s, path_file)
+	
+	local jsn = _s:video_2_jsn()
+	
+  Utl.file_write(path_file, jsn)
 end
 
 function Holo.video_2_jsn(_s)
@@ -204,27 +211,6 @@ function Holo.video_2_jsn(_s)
 	jsn = Utl.jq(jsn)
   -- u.log(jsn) -- stdout
 	return jsn
-end
-
-function Holo.video_view_cnt_2_txt(_s) -- use not
-
-  if not _s._video then return end
-
-  local row
-
-  for video_id, tbl in pairs(_s._video) do
-
-    if tbl.view_cnt then
-
-      row = {
-        tbl.cdt,
-        video_id,
-        string.format("%8.0f", tbl.view_cnt),
-        tbl.title,
-      }
-      u.log(table.concat(row, " "))
-     end
-  end
 end
 
 --
@@ -279,13 +265,8 @@ function Holo.video__by_ch(_s, ch_id, fr_date)
 
   _s:video__init()
 
+  -- u.log(ch_id, fr_date, to_date)
   _s:video__add_by_ch(ch_id, fr_date, to_date)
-
-  --[[
-  for year = 2022, 2022 do
-    _s:video__add_by_ch(ch_id, fr_date, to_date)
-  end
-  --]]
 
   _s:video__view_cnt()
 end

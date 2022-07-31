@@ -26,7 +26,7 @@ function Ytube.video_by_lst(lst_id, pgtkn)
     "playlistId".."="..lst_id,
     "maxResults".."=".."50",
   }
-  if pgtkn then table.insert(prm, "pageToken" .."="..pgtkn) end
+  if pgtkn then ar.add(prm, "pageToken".."="..pgtkn) end
 
   local res = Ytube.curl(trgt, prm)
   -- u.log(lst_id)

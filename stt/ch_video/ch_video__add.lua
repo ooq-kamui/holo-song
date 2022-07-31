@@ -1,20 +1,60 @@
 require("path")
 require("holo")
 
-if not arg[1] or not arg[2] then os.exit() end
-
-local jsn_path1 = arg[1] -- base
-local jsn_path2 = arg[2] -- add
-
-local jsn1   = Utl.file_read(jsn_path1)
-local video1 = cjson.decode(jsn1)
-
-local jsn2   = Utl.file_read(jsn_path2)
-local video2 = cjson.decode(jsn2)
+local cntry   = "jp"
+local fr_date = Utl.date_y2()
+local to_date = Utl.date_t0()
 
 local holo = Holo.new()
-holo:video__(   video1)
-holo:video__add(video2)
--- holo:video_2_jsn()
-holo:video_2_jsn_prnt()
+local mmbr = holo:mmbr(cntry)
+
+local ch_id
+local video1, video2
+local dir, dir_add
+local name_jsn_file, name_term_jsn_file
+-- local path_wc
+local add_file
+
+for name, tbl in pairs(mmbr) do
+	-- name = "aki" -- tst
+	u.log(name)
+	
+	dir     = u.c(Cfg.ch_video.data.dir, "/", name)
+	dir_add = u.c(dir, "/add")
+	
+	-- 
+	-- add file cre write
+	-- 
+	
+	ch_id = Holo["_"..cntry].mmbr[name].ch_id
+	holo:video__by_ch(ch_id, fr_date)
+	
+	name_term_jsn_file = u.c(dir_add, "/", name, ".", fr_date, ".-.", to_date, ".json")
+	holo:video_2_jsn_write(name_term_jsn_file)
+	
+	-- 
+	-- name file __ add
+	-- 
+	
+	name_jsn_file = u.c(dir, "/", name, ".json")
+	
+	holo:video__by_jsn_file(name_jsn_file)
+	
+	-- path_wc = u.c(dir_add, "/", name, ".*.-.*.json")
+	-- add_file = Utl.ls(path_wc)
+	add_file = {name_term_jsn_file}
+	
+	for idx, _add_file in pairs(add_file) do
+		-- u.log(_add_file)
+		
+		video2 = Utl.tbl_by_jsn_file(_add_file)
+		
+		holo:video__add(video2)
+	end
+	
+	holo:video_2_jsn_write(name_jsn_file)
+	
+	Utl.ul(name_jsn_file, "song/data/ch")
+	-- break -- tst
+end
 

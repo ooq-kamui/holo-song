@@ -3,11 +3,11 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>holo.ch.video.upd</string>
+    <string>holo.ch.video.add</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/opt/homebrew/bin/fish</string>
-      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch_video/ch_video__upd.fish</string>
+      <string>/opt/homebrew/bin/lua</string>
+      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch_video/ch_video__add.lua</string>
     </array>
     <key>StartCalendarInterval</key>
     <array>

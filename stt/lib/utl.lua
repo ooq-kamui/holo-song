@@ -15,30 +15,70 @@ function Utl.new(Cls)
   return obj
 end
 
-function Utl.cmd(cmd)
+function Utl.cmd(cmd, op)
+  -- u.log(cmd)
+	op = op or "*a"
+
+  local fp = io.popen(cmd)
+	
+  local rslt = fp:read(op)
+  -- u.log(rslt)
+	
+  fp:close()
+
+  return rslt
+end
+
+function Utl.cmd_2_tbl(cmd)
   -- u.log(cmd)
 
-  local hndl = io.popen(cmd)
-  local rslt = hndl:read("*a")
-  hndl:close()
+  local fp = io.popen(cmd)
+	
+	local r_tbl = {}
+	
+	for line in fp:lines() do
+		
+		ar.add(r_tbl, line)
+	end
+	
+  fp:close()
 
   -- u.log(rslt)
-  return rslt
+  return r_tbl
 end
 
 function Utl.curl(ep, prm)
 
   local url = ep.."?"..table.concat(prm, "&")
   local cmd = "curl -s '"..url.."'"
+  -- u.log(cmd)
   local jsn = Utl.cmd(cmd)
   -- u.log(jsn)
-  local tbl = cjson.decode(jsn)
+  -- local tbl = cjson.decode(jsn)
+  local tbl = Utl.jsn_decode(jsn)
   return tbl
+end
+
+function Utl.jsn_decode(jsn)
+	
+	if jsn == "" then return {} end
+	
+  local tbl = cjson.decode(jsn)
+	return tbl
+end
+
+function Utl.tbl_by_jsn_file(jsn_file)
+	
+	local jsn = Utl.file_read(jsn_file)
+	
+  local tbl = Utl.jsn_decode(jsn)
+	
+	return tbl
 end
 
 function Utl.jq(jsn)
 	
-	local file = Cfg.json.encode.tmp_file
+	local file = Cfg.jsn.encode.tmp_file
 	
 	Utl.file_write(file, jsn)
 	
@@ -49,6 +89,23 @@ function Utl.jq(jsn)
   -- u.log(jsn)
 	
   return jsn
+end
+
+function Utl.ls(path_wild_card)
+	
+  local cmd = "ls " .. path_wild_card
+	
+	local file = Utl.cmd_2_tbl(cmd)
+	
+  return file
+end
+
+function Utl.ul(l_path_file, s_dir) -- scp
+	
+  local cmd = u.c("scp ", l_path_file, " ", Cfg.ul.host_dir, "/", s_dir, "/")
+	
+	local rslt = Utl.cmd(cmd)
+  return rslt
 end
 
 function Utl.file_read(path_file)
@@ -63,7 +120,7 @@ function Utl.file_read(path_file)
 end
 
 function Utl.file_write(path_file, txt)
-	u.log(path_file)
+	-- u.log(path_file)
 
   local fp = io.open(path_file, "w")
 	
@@ -72,11 +129,68 @@ function Utl.file_write(path_file, txt)
   fp:close()
 end
 
+function Utl.date_y(n)
+	
+  -- local cmd = u.c("date_y ", n)
+  local cmd = u.c('date -v-', n, 'd +"%Y-%m-%d"')
+	
+	local rslt = Utl.cmd(cmd, "*l")
+  return rslt
+end
+
+function Utl.date_y1()
+	
+	return Utl.date_y(1)
+end
+
+function Utl.date_y2()
+	
+	return Utl.date_y(2)
+end
+
+function Utl.date_t0()
+	
+	return Utl.date_y(0)
+end
+
+function Utl.txt_2_tbl(txt)
+end
+
 u = Utl -- alias
 
 function u.log(...)
 
   print(...)
+end
+
+function u.log_ar(ar)
+	
+	if type(ar) == "table" then
+		
+		for idx, val in pairs(ar) do
+			print(val)
+		end
+	else
+		u.log(ar)
+	end
+end
+
+function u.prnt(...) -- stdout
+
+  print(...)
+end
+
+function u.c(...)
+	
+	local r_str = ""
+
+  -- for idx, str in ... do
+  for idx, str in pairs({...}) do
+		
+		r_str = r_str .. str
+	end
+	
+	return r_str
 end
 
 -- ar
@@ -104,6 +218,11 @@ function ar.in_(_val, ar)
   return ret
 end
 
+function ar.add(ar1, val)
+	
+	table.insert(ar1, val)
+end
+	
 function ar.join(ar1, ar2)
 
   for idx, val in pairs(ar2) do
