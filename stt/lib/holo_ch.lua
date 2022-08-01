@@ -1,7 +1,3 @@
-cjson   = require("cjson")
-api_key = require("ytube-data-api-key")
-
-require("path")
 require("utl")
 require("holo")
 
@@ -77,10 +73,10 @@ function Holo_ch.ch_cnt__(_s)
     _s._mmbr[name].cnt = cnt
   end
   
-  _s:mmbr__srt_name()
+  _s:name__srt_name()
 end
 
-function Holo_ch.mmbr__srt_name(_s)
+function Holo_ch.name__srt_name(_s)
 
   local cmpr = function(name1, name2)
 
@@ -100,17 +96,14 @@ function Holo_ch.name_by_id(_s, ch_id)
   end
 end
 
-function Holo_ch.prnt(_s)
+function Holo_ch.ch_cnt_2_txt_write(_s, path)
+	
+	local txt = ""
 
   for idx, name in pairs(_s._name) do
-    print(name, string.format("%5.1f", _s._mmbr[name].cnt))
+		txt = txt .. string.format("%s\t%5.1f\n", name, _s._mmbr[name].cnt)
   end
+	
+	Utl.file_write(path, txt)
 end
-
--- main
-
-local cntry = arg[1] or "jp"
-local holo_ch = Holo_ch.new(cntry)
-holo_ch:ch_cnt__()
-holo_ch:prnt()
 

@@ -1,5 +1,7 @@
 
-function split_tab(line)
+Utl_ch = {}
+
+function Utl_ch.split_tab(line)
 
 	local s, e = string.find(line, "\t")
 
@@ -10,7 +12,7 @@ function split_tab(line)
 	return name, cnt
 end
 
-function read_cnt(file)
+function Utl_ch.read_cnt(file)
 	-- print("read_cnt:" .. file)
 
 	local tbl = {}
@@ -29,7 +31,7 @@ function read_cnt(file)
 	return tbl
 end
 
-function tbl_sub(tbl1, tbl2)
+function Utl_ch.tbl_sub(tbl1, tbl2)
 
 	local r_tbl = {}
 

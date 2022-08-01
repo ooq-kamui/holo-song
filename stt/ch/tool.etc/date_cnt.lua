@@ -67,5 +67,3 @@ date_cnt = date_cnt(files)
 
 date_cnt_out(date_cnt)
 
-
-

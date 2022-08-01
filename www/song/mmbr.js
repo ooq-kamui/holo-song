@@ -285,7 +285,7 @@ for (let [cntry, _mmbr] of Obj.entries(mmbr)){
       a_elm[0].textContent = name;
       a_elm[0].href = "./?o=cdt&f=ch/" + name + ".json";
       a_elm[1].href = "https://www.youtube.com/channel/" + profile.ch_id;
-      a_elm[2].href = "./?o=cdt&f=ch/" + name + ".json";
+      a_elm[2].href = "./?o=cdt&f=ch_video/" + name + "/" + name + ".json";
       if (cntry == "en" || cntry == "id"){
         a_elm[2].removeAttribute("href")
         a_elm[2].setAttribute("tabindex", "-1")

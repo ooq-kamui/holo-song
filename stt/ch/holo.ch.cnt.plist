@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>holo.ch</string>
+    <string>holo.ch.cnt</string>
     <key>EnvironmentVariables</key>
     <dict>
       <key>PATH</key>
@@ -11,8 +11,8 @@
     </dict>
     <key>ProgramArguments</key>
     <array>
-      <string>/opt/homebrew/bin/fish</string>
-      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch/holo_cnt.fish</string>
+      <string>/opt/homebrew/bin/lua</string>
+      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch/ch_cnt.lua</string>
     </array>
     <key>WorkingDirectory</key>
     <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/ch</string>

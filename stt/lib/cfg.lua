@@ -11,10 +11,10 @@ Cfg.prj = {
 -- ch
 
 Cfg.ch = {
-  data = {
-		dir = Cfg.prj.dir .. "/stt/ch/data",
-	},
+  dir_data  = Cfg.prj.dir .. "/stt/ch/data",
+	file_ltst = "ltst.txt",
 }
+Cfg.ch.path_ltst = Cfg.ch.dir_data .. "/" .. Cfg.ch.file_ltst
 
 -- song_video
 

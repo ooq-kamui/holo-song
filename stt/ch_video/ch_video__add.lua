@@ -15,11 +15,9 @@ local name_jsn_file, name_term_jsn_file
 local add_file
 -- local path_wc
 
---[[
-
 for name, tbl in pairs(mmbr) do
 	-- name = "aki" -- tst
-	u.log(name)
+	-- u.log(name)
 	
 	dir     = u.c(Cfg.ch_video.data.dir, "/", name)
 	dir_add = u.c(dir, "/add")
@@ -59,8 +57,6 @@ for name, tbl in pairs(mmbr) do
 	-- Utl.ul(name_jsn_file, "song/data/ch")
 	-- break -- tst
 end
-
---]]
 
 -- 
 -- data rsync

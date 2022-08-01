@@ -649,11 +649,11 @@ class u {
   static data_url(){
 
     let prm = url_prm();
-    let file_json = prm.f ? prm.f : 's.ltst.json';
+    let file_json = prm.f ? prm.f : 'song_video/s.ltst.json';
     // let file_json = (prm && prm.f) ? prm.f : 's.ltst.json';
 
     let domain   = 'ooq.jp';
-    let dir      = 'holo/song/data/song_video';
+    let dir      = 'holo/song/data';
     let url_dir  = domain + "/" + dir;
     let url_data = 'https://' + url_dir + "/" + file_json;
 
