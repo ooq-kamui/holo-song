@@ -288,6 +288,15 @@ function ar.mrg(ar1, ar2)
   end
 end
 
+function ar.clr(ar)
+
+	if not ar then return end
+	
+  for key, val in pairs(ar) do
+    ar[key] = nil
+  end
+end
+
 --[[
 function Utl.ar_ofst(_ar, _idx, num)
 

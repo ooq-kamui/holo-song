@@ -29,11 +29,14 @@ Cfg.song_video.path_s_ltst = Cfg.song_video.dir_data .. "/s.ltst.json"
 -- ch_video
 
 Cfg.ch_video = {
-  data = {
-		dir = Cfg.prj.dir .. "/www/song/data/ch_video",
-	},
+	dir_data     = Cfg.prj.dir .. "/www/song/data/ch_video",
 	svr_dir_data = "song/data/ch_video",
 }
+function Cfg.ch_video.path_jsn(name)
+	
+	local path = u.c(Cfg.ch_video.dir_data, "/", name, "/", name, ".json")
+	return path
+end
 
 -- 
 -- etc

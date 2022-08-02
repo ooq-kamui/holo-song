@@ -6,7 +6,6 @@ local fr_date = Utl.date_y2()
 local to_date = Utl.date_t0()
 
 local holo = Holo.new()
-local mmbr = holo:mmbr(cntry)
 
 local ch_id
 local video1, video2
@@ -15,11 +14,13 @@ local name_jsn_file, name_term_jsn_file
 local add_file
 -- local path_wc
 
+local mmbr = holo:mmbr(cntry)
+
 for name, tbl in pairs(mmbr) do
 	-- name = "aki" -- tst
 	-- u.log(name)
 	
-	dir     = u.c(Cfg.ch_video.data.dir, "/", name)
+	dir     = u.c(Cfg.ch_video.dir_data, "/", name)
 	dir_add = u.c(dir, "/add")
 	
 	-- 

@@ -85,7 +85,57 @@ function Holo.video__view_cnt(_s)
   until idx_s > #video_id
 end
 
-function Holo.video_view_srt(_s)
+function Holo.video_id__(_s)
+	
+	if not _s._video then return end
+	
+	if not _s._video_id then
+		_s._video_id = {}
+	else
+		_s:video_id__clr()
+	end
+	
+	for video_id, tbl in pairs(_s._video) do
+		
+		ar.add(_s._video_id, video_id)
+	end
+end
+
+function Holo.video_id__clr(_s)
+	
+		ar.clr(_s._video_id)
+end
+
+function Holo.video_id__srt(_s, prp)
+	
+	prp = prp or "cdt"
+	
+	if not _s._video_id then
+		_s:video_id__()
+	end
+	
+  local cmpr = function(video_id1, video_id2)
+
+    if _s._video[video_id1][prp] == _s._video[video_id2][prp] then
+      return video_id1 < video_id2
+		else
+			return _s._video[video_id1].cdt < _s._video[video_id2].cdt
+    end
+  end
+	
+  table.sort(_s._video_id, cmpr)
+end
+
+function Holo.video_srtd__(_s)
+	
+	_s:video_id__srt()
+	
+	_s._video_srtd = {}
+	
+	for idx, _video_id in pairs(_s._video_id) do
+		
+		ar.add(_s._video_srtd, _s._video[_video_id])
+	end
 end
 
 --
@@ -195,6 +245,7 @@ end
 function Holo.video_2_jsn_prnt(_s)
 	
 	local jsn = _s:video_2_jsn()
+	
   u.prnt(jsn)
 end
 
@@ -207,7 +258,15 @@ end
 
 function Holo.video_2_jsn(_s)
 
-  local jsn = cjson.encode(_s._video)
+	local t_video
+	if true then -- srt
+		_s:video_srtd__()
+		t_video = _s._video_srtd
+	else
+		t_video = _s._video
+	end
+	
+  local jsn = cjson.encode(t_video)
 	jsn = Utl.jq(jsn)
   -- u.log(jsn) -- stdout
 	return jsn
