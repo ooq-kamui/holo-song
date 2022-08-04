@@ -67,7 +67,10 @@ function Holo.video__view_cnt(_s)
   repeat
     res = Ytube.video_view_cnt(video_id, idx_s)
 
-    if res.error then u.log("err") return end
+    if res.error then
+			Ytube.log_err(res.error)
+			break
+		end
 
     for idx, itm in pairs(res.items) do
 
@@ -85,12 +88,17 @@ function Holo.video__view_cnt(_s)
   until idx_s > #video_id
 end
 
+function Holo.video_id__init(_s)
+
+	_s._video_id = {}
+end
+
 function Holo.video_id__(_s)
 	
 	if not _s._video then return end
 	
 	if not _s._video_id then
-		_s._video_id = {}
+		_s:video_id__init()
 	else
 		_s:video_id__clr()
 	end
@@ -110,12 +118,11 @@ function Holo.video_id__srt(_s, prp)
 	
 	prp = prp or "cdt"
 	
-	if not _s._video_id then
-		_s:video_id__()
-	end
-	
   local cmpr = function(video_id1, video_id2)
 
+		-- u.log_ar(_s._video[video_id1])
+		-- u.log_ar(_s._video[video_id2])
+		
     if _s._video[video_id1][prp] == _s._video[video_id2][prp] then
       return video_id1 < video_id2
 		else
@@ -128,13 +135,16 @@ end
 
 function Holo.video_srtd__(_s)
 	
+	_s:video_id__()
+	
 	_s:video_id__srt()
 	
 	_s._video_srtd = {}
 	
 	for idx, _video_id in pairs(_s._video_id) do
+		-- u.log(_video_id)
 		
-		ar.add(_s._video_srtd, _s._video[_video_id])
+		_s._video_srtd[_video_id] = _s._video[_video_id]
 	end
 end
 
@@ -179,7 +189,10 @@ function Holo.video__add_by_lst_id(_s, lst_id, excld_video_id)
   repeat
     res = Ytube.video_by_lst(lst_id, pgtkn_nxt)
 
-    if res.error then break end
+    if res.error then
+			Ytube.log_err(res.error)
+			break
+		end
 
     for idx, itm in pairs(res.items) do
 
@@ -259,6 +272,7 @@ end
 function Holo.video_2_jsn(_s)
 
 	local t_video
+	
 	if true then -- srt
 		_s:video_srtd__()
 		t_video = _s._video_srtd
@@ -319,15 +333,17 @@ end
 
 function Holo.video__by_ch(_s, ch_id, fr_date)
 
-  fr_date = fr_date or "2022-06-01"
-  local to_date = "2022-12-31"
+  -- fr_date = fr_date or "2022-06-01"
+	
+  fr_date = fr_date or Utl.date_y7()
+  local to_date = Utl.date_t7() -- "2022-12-31"
 
   _s:video__init()
 
   -- u.log(ch_id, fr_date, to_date)
   _s:video__add_by_ch(ch_id, fr_date, to_date)
 
-  _s:video__view_cnt()
+  -- _s:video__view_cnt()
 end
 
 function Holo.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)
@@ -338,7 +354,10 @@ function Holo.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)
   repeat
     res = Ytube.video_by_ch(ch_id, fr_date, to_date, pgtkn_nxt)
 
-    if res.error then break end
+    if res.error then
+			Ytube.log_err(res.error)
+			break
+		end
 
     for idx, itm in pairs(res.items) do
 
@@ -348,6 +367,9 @@ function Holo.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)
         -- nothing
       else
         _s._video[video_id] = {}
+        _s._video[video_id].title    = itm.snippet.title
+        _s._video[video_id].cdt      = itm.snippet.publishedAt or ""
+        _s._video[video_id].view_cnt = 0
       end
     end
 

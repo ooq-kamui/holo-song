@@ -140,15 +140,24 @@ class Song {
   }
 
   new_video_id(){
+    // log("new_video_id")
 
     let video_id = new Array();
 
     for (let [_video_id, _video] of Object.entries(this._video)){
 
-      if(!_video.view_cnt || _video.view_cnt == 0 || !_video.cdt){continue;}
+      // log(_video_id)
+      // log(_video)
+      
+      // if(!_video.view_cnt || _video.view_cnt == 0 || !_video.cdt){continue;}
+      if(_video.view_cnt == undefined || _video.cdt == undefined){
+        // log("continue")
+        continue;
+      }
 
       video_id.push(_video_id);
     }
+    // log("new_video_id end")
     return video_id;
   }
 
@@ -435,7 +444,7 @@ class Song {
 
     for (let [video_id, _video] of Object.entries(video)){
 
-      if (!_video.view_cnt || !_video.title){continue;}
+      if (_video.view_cnt == undefined || !_video.title){continue;}
 
       let elm_clone = this.elm_li__clone(video_id, _video);
       elm_ul.appendChild(elm_clone);

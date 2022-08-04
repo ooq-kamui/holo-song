@@ -59,6 +59,7 @@ function Utl.curl(ep, prm)
   -- u.log(cmd)
   local jsn = Utl.cmd(cmd)
   -- u.log(jsn)
+	
   -- local tbl = cjson.decode(jsn)
   local tbl = Utl.jsn_decode(jsn)
   return tbl
@@ -144,10 +145,7 @@ end
 
 function Utl.date()
 	
-  local cmd = u.c('date +"%Y-%m-%d"')
-	
-	local rslt = Utl.cmd1(cmd)
-  return rslt
+  return Utl.date_t0()
 end
 
 function Utl.time()
@@ -166,7 +164,7 @@ end
 
 function Utl.date_y(n)
 	
-  local cmd = u.c('date -v-', n, 'd +"%Y-%m-%d"')
+  local cmd = u.c('date -v ', '-', n, 'd +"%Y-%m-%d"')
 	
 	local rslt = Utl.cmd1(cmd)
   return rslt
@@ -182,9 +180,28 @@ function Utl.date_y2()
 	return Utl.date_y(2)
 end
 
+function Utl.date_y7()
+	
+	return Utl.date_y(7)
+end
+
+function Utl.date_t(n)
+	
+  local cmd = u.c('date -v ', '+', n, 'd +"%Y-%m-%d"')
+	
+	local rslt = Utl.cmd1(cmd)
+  return rslt
+end
+
 function Utl.date_t0()
 	
-	return Utl.date_y(0)
+	return Utl.date_t(0)
+	-- return Utl.date_y(0)
+end
+
+function Utl.date_t7()
+	
+	return Utl.date_t(7)
 end
 
 function Utl.basename(path)
@@ -218,8 +235,8 @@ function u.log_ar(ar)
 	
 	if type(ar) == "table" then
 		
-		for idx, val in pairs(ar) do
-			print(val)
+		for key, val in pairs(ar) do
+			print(key, val)
 		end
 	else
 		u.log(ar)
@@ -288,12 +305,12 @@ function ar.mrg(ar1, ar2)
   end
 end
 
-function ar.clr(ar)
+function ar.clr(_ar)
 
-	if not ar then return end
+	if not _ar then return end
 	
-  for key, val in pairs(ar) do
-    ar[key] = nil
+  for key, val in pairs(_ar) do
+    _ar[key] = nil
   end
 end
 

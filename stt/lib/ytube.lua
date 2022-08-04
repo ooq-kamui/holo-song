@@ -45,7 +45,8 @@ function Ytube.video_by_ch(ch_id, fr_date, to_date, pgtkn)
 
   local prm = {
     "key"       .."="..Ytube.api_key,
-    "part"      .."=".."id",
+    -- "part"      .."=".."id",
+    "part"      .."=".."snippet",
     "channelId" .."="..ch_id,
     "publishedAfter" .."="..fr_dt,
     "publishedBefore".."="..to_dt,
@@ -94,5 +95,11 @@ function Ytube.curl(trgt, prm)
   local ep  = Ytube.ep_base..trgt
   local res = Utl.curl(ep, prm)
   return res
+end
+
+function Ytube.log_err(err)
+	
+	u.log(err.code)
+	u.log(err.message)
 end
 

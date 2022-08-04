@@ -63,6 +63,11 @@ end
 function Holo_ch.ch_cnt__(_s)
 
   local res = Ytube.ch_cnt(_s:ch_id())
+	
+	if res.error then
+		Ytube.log_err(res.error)
+		return
+	end
   
   local cnt, name
   for idx, itm in pairs(res.items) do
@@ -101,6 +106,11 @@ function Holo_ch.ch_cnt_2_txt_write(_s, path)
 	local txt = ""
 
   for idx, name in pairs(_s._name) do
+		
+		if not _s._mmbr[name].cnt then -- err case
+			_s._mmbr[name].cnt = 0
+		end
+		
 		txt = txt .. string.format("%s\t%5.1f\n", name, _s._mmbr[name].cnt)
   end
 	
