@@ -51,18 +51,19 @@ function Holo.video__by_jsn(_s, jsn)
   _s._video = cjson.decode(jsn)
 end
 
-function Holo.video__by_jsn_file(_s, jsn_file)
+function Holo.video__by_jsn_file(_s, path_jsn)
 
-  local jsn = Utl.file_read(jsn_file)
+  local jsn = Utl.file_read(path_jsn)
   _s:video__by_jsn(jsn)
 end
 
 -- video view cnt
 
-function Holo.video__view_cnt(_s)
+function Holo.video_view_cnt__(_s)
 
   local video_id = ar.key(_s._video)
   local res
+	local lim = 50
   local idx_s = 1
   repeat
     res = Ytube.video_view_cnt(video_id, idx_s)
@@ -84,8 +85,15 @@ function Holo.video__view_cnt(_s)
       end
     end
 
-    idx_s = idx_s + 50
+    idx_s = idx_s + lim
   until idx_s > #video_id
+end
+
+function Holo.video_view_cnt__0(_s)
+	
+	for video_id, _video in pairs(_s._video) do
+		_video.view_cnt = 0
+	end
 end
 
 function Holo.video_id__init(_s)
@@ -120,13 +128,18 @@ function Holo.video_id__srt(_s, prp)
 	
   local cmpr = function(video_id1, video_id2)
 
+		-- u.log("v1:"..video_id1)
 		-- u.log_ar(_s._video[video_id1])
+		-- u.log("v2:"..video_id2)
 		-- u.log_ar(_s._video[video_id2])
 		
-    if _s._video[video_id1][prp] == _s._video[video_id2][prp] then
+    if not _s._video[video_id1][prp] or not _s._video[video_id2][prp] then
+      return video_id1 < video_id2
+			
+		elseif _s._video[video_id1][prp] == _s._video[video_id2][prp] then
       return video_id1 < video_id2
 		else
-			return _s._video[video_id1].cdt < _s._video[video_id2].cdt
+			return _s._video[video_id1][prp] < _s._video[video_id2][prp]
     end
   end
 	
@@ -164,7 +177,7 @@ function Holo.video__song(_s, cntry)
 
   _s:video__excld(Holo.song_excld_video_id())
 
-  _s:video__view_cnt()
+  _s:video_view_cnt__()
 end
 
 function Holo.video__add_song(_s, cntry, cls)
@@ -273,6 +286,7 @@ function Holo.video_2_jsn(_s)
 
 	local t_video
 	
+	-- if false then -- srt
 	if true then -- srt
 		_s:video_srtd__()
 		t_video = _s._video_srtd
@@ -343,7 +357,7 @@ function Holo.video__by_ch(_s, ch_id, fr_date)
   -- u.log(ch_id, fr_date, to_date)
   _s:video__add_by_ch(ch_id, fr_date, to_date)
 
-  -- _s:video__view_cnt()
+  -- _s:video_view_cnt__()
 end
 
 function Holo.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)

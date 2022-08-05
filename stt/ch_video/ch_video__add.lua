@@ -2,9 +2,13 @@ require("path")
 require("holo")
 
 local cntry   = "jp"
-local fr_date = Utl.date_y2()
--- local fr_date = Utl.date_y(7)
+
+-- local fr_date = Utl.date_y2()
+local fr_date = Utl.date_y(7)
+
 local to_date = Utl.date_t0()
+local term = fr_date..".-."..to_date
+u.log(term)
 
 local holo = Holo.new()
 
@@ -18,8 +22,8 @@ local add_file
 local mmbr = holo:mmbr(cntry)
 
 for name, tbl in pairs(mmbr) do
-	-- name = "miko" -- tst
-	-- u.log(name)
+	-- name = "aki" -- tst
+	u.log(name)
 	
 	dir     = u.c(Cfg.ch_video.dir_data, "/", name)
 	dir_add = u.c(dir, "/add")
@@ -28,27 +32,24 @@ for name, tbl in pairs(mmbr) do
 	-- add file cre write
 	-- 
 	
-	path_add_jsn = u.c(dir_add, "/", name, ".", fr_date, ".-.", to_date, ".json")
+	path_add_jsn = dir_add.."/"..name.."."..term..".json"
 	
----[[
+	---[[
 	ch_id = Holo["_"..cntry].mmbr[name].ch_id
 	holo:video__by_ch(ch_id, fr_date)
 	
 	-- u.log(path_add_jsn)
 	holo:video_2_jsn_write(path_add_jsn)
---]]
+	--]]
 	
 	-- 
 	-- name file __ add
 	-- 
 	
----[[
+	---[[
 	path_name_jsn = dir.."/"..name..".json"
 	
 	holo:video__by_jsn_file(path_name_jsn)
-	
-	-- path_wc = u.c(dir_add, "/", name, ".*.-.*.json")
-	-- add_file = Utl.ls(path_wc)
 	
 	add_file = {path_add_jsn}
 	
@@ -60,12 +61,14 @@ for name, tbl in pairs(mmbr) do
 		holo:video__add(video2)
 	end
 	
-	dir_ttl       = dir.."/ttl"
-	path_ttl_jsn  = dir_ttl.."/"..name.."."..Utl.date()..".json"
+	-- holo:video_view_cnt__0()
+	
+	dir_ttl      = dir.."/ttl"
+	path_ttl_jsn = dir_ttl.."/"..name.."."..Utl.date()..".json"
 	
 	holo:video_2_jsn_write(path_ttl_jsn)
 	Utl.cp(path_ttl_jsn, path_name_jsn)
---]]
+	--]]
 	
 	-- break -- tst
 end

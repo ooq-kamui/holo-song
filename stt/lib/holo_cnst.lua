@@ -84,6 +84,17 @@ Holo._jp = {
         lst_id = {
           "PLYt9gyZFZDj_e7p0saJXMghPsjmBMwyiO", -- cvr, org
         },
+        video_id = {
+          "6-2nAu8EycQ", -- live 4th
+          "GyWPn8ADczQ", -- live 4th
+          "0PN_xbRCxjk", -- live 4th
+          "Ywld5Y1_ruI", -- live 4th
+          "7Ar8HnHegMA", -- live 4th
+          "-P6sDt0Yh30", -- live 4th
+          "mVHIH5Uj6mA", -- live 4th
+          "ss1uZqiSbzM", -- live 4th
+          "owB9bIpw83M", -- live 4th
+        },
       },
     },
     matsuri = {

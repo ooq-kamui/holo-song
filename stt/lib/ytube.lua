@@ -7,7 +7,9 @@ Ytube = {
 function Ytube.video_view_cnt(video_id, idx_s)
 
   local trgt = "videos"
-  local idx_e = video_id[idx_s + 49] and (idx_s + 49) or #video_id
+	local lim = 50
+  local idx_e = idx_s + lim - 1
+	if not video_id[idx_e] then idx_e = #video_id end
   local prm = {
     "key" .."="..Ytube.api_key,
     "part".."=".."statistics,snippet",

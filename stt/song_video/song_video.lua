@@ -7,9 +7,13 @@ local holo = Holo.new()
 -- song_video total
 -- 
 
-local path_song_video_total = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
+-- dbg
+-- local path_song_video_total = Cfg.song_video.dir_data.."/2022-08-05.02:38.json"
+-- holo:video__by_jsn_file(path_song_video_total)
 
+local path_song_video_total = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
 holo:video__song({"jp", "en", "id"})
+
 holo:video_2_jsn_write(path_song_video_total)
 
 Utl.cp(path_song_video_total, Cfg.song_video.path_t_ltst)
@@ -18,6 +22,7 @@ Utl.cp(path_song_video_total, Cfg.song_video.path_t_ltst)
 -- song_video sub
 -- 
 
+---[[
 local path_wc  = Cfg.song_video.dir_data.."/????-??-??.??:??.json"
 local path_jsn = Utl.ls(path_wc, "-r")
 -- u.log_ar(path_jsn)
@@ -37,6 +42,7 @@ local path_sub = Cfg.song_video.dir_data.."/"..file_sub
 holo:video_2_jsn_write(path_sub)
 
 Utl.cp(path_sub, Cfg.song_video.path_s_ltst)
+--]]
 
 -- 
 -- data rsync
