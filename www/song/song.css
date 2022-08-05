@@ -187,3 +187,9 @@ img.icn {
   display: none;
 }
 
+img.srch_icn {
+  width:  18px;
+  vertical-align: middle;
+  margin: 0px 4px;
+}
+

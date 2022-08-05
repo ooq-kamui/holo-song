@@ -2,50 +2,66 @@ require("path")
 require("holo")
 
 local holo = Holo.new()
+holo:main_song_video()
 
--- 
--- song_video total
--- 
+function Holo.main_song_video(_s)
+	
+	_s:video__song_ttl_write()
 
--- dbg
--- local path_song_video_total = Cfg.song_video.dir_data.."/2022-08-05.02:38.json"
--- holo:video__by_jsn_file(path_song_video_total)
+	_s:video__song_sub_write()
 
-local path_song_video_total = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
-holo:video__song({"jp", "en", "id"})
+	_s:song_data_rsync()
+end
 
-holo:video_2_jsn_write(path_song_video_total)
+function Holo.video__song_ttl_write(_s)
+	
+	local path_song_video_total
+	
+	-- dbg
+	-- path_song_video_total = Cfg.song_video.dir_data.."/2022-08-05.02:38.json"
+	-- _s:video__by_jsn_file(path_song_video_total)
 
-Utl.cp(path_song_video_total, Cfg.song_video.path_t_ltst)
+	path_song_video_total = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
+	
+	_s:video__song({"jp", "en", "id"})
 
--- 
--- song_video sub
--- 
+	_s:video_2_jsn_write(path_song_video_total)
 
----[[
-local path_wc  = Cfg.song_video.dir_data.."/????-??-??.??:??.json"
-local path_jsn = Utl.ls(path_wc, "-r")
--- u.log_ar(path_jsn)
+	Utl.cp(path_song_video_total, Cfg.song_video.path_t_ltst)
+end
 
-local video1 = Utl.tbl_by_jsn_file(path_jsn[1])
-local video2 = Utl.tbl_by_jsn_file(path_jsn[2])
+function Holo.video__song_sub_write(_s)
+	
+	local path_jsn = _s:song_video_jsn_file_ltst()
 
-holo:video__(   video1)
-holo:video__sub(video2)
+	local video1 = Utl.tbl_by_jsn_file(path_jsn[1])
+	local video2 = Utl.tbl_by_jsn_file(path_jsn[2])
 
-local file_jsn1 = Utl.basename(path_jsn[1])
-local file_jsn2 = Utl.basename(path_jsn[2])
+	_s:video__(   video1)
+	_s:video__sub(video2)
 
-local file_sub = Utl.ext_del(file_jsn1)..".-."..file_jsn2
-local path_sub = Cfg.song_video.dir_data.."/"..file_sub
+	local file_jsn1 = Utl.basename(path_jsn[1])
+	local file_jsn2 = Utl.basename(path_jsn[2])
 
-holo:video_2_jsn_write(path_sub)
+	local file_sub = Utl.ext_del(file_jsn1)..".-."..file_jsn2
+	local path_sub = Cfg.song_video.dir_data.."/"..file_sub
 
-Utl.cp(path_sub, Cfg.song_video.path_s_ltst)
---]]
+	_s:video_2_jsn_write(path_sub)
 
--- 
--- data rsync
--- 
-Utl.cmd("fish rsync.data.song_video.fish")
+	Utl.cp(path_sub, Cfg.song_video.path_s_ltst)
+end
+
+function Holo.song_video_jsn_file_ltst(_s)
+	
+	local path_wc  = Cfg.song_video.dir_data.."/????-??-??.??:??.json"
+	local path_jsn = Utl.ls(path_wc, "-r")
+	-- u.log_ar(path_jsn)
+	
+	return path_jsn
+end
+
+function Holo.song_data_rsync(_s)
+	
+	Utl.cmd("fish rsync.data.song_video.fish")
+end
 

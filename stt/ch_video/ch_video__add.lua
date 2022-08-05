@@ -3,9 +3,8 @@ require("holo")
 
 local cntry   = "jp"
 
--- local fr_date = Utl.date_y2()
-local fr_date = Utl.date_y(7)
-
+-- local fr_date = Utl.date_y(7)
+local fr_date = Utl.date_y2()
 local to_date = Utl.date_t0()
 local term = fr_date..".-."..to_date
 u.log(term)
