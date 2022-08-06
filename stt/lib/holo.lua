@@ -345,19 +345,15 @@ end
 -- ch
 --
 
-function Holo.video__by_ch(_s, ch_id, fr_date)
+function Holo.video__ch_by_term(_s, ch_id, fr_date, to_date)
 
-  -- fr_date = fr_date or "2022-06-01"
-	
   fr_date = fr_date or Utl.date_y7()
-  local to_date = Utl.date_t7() -- "2022-12-31"
+  to_date = to_date or Utl.date_t7()
 
   _s:video__init()
 
   -- u.log(ch_id, fr_date, to_date)
   _s:video__add_by_ch(ch_id, fr_date, to_date)
-
-  -- _s:video_view_cnt__()
 end
 
 function Holo.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)
@@ -389,5 +385,177 @@ function Holo.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)
 
     pgtkn_nxt = res.nextPageToken
   until not pgtkn_nxt
+end
+
+-- 
+-- song_video main
+-- 
+
+function Holo.main_song_video(_s)
+	
+	_s:video__song_ttl_write()
+
+	_s:video__song_sub_write()
+
+	_s:song_video_data_rsync()
+end
+
+function Holo.main_song_video_dbg(_s)
+	
+	local path_song_video_total
+	
+	if false then -- dbg
+		path_song_video_total = _s:song_video_jsn_file_ltst()[1]
+		_s:video__by_jsn_file(path_song_video_total)
+	else
+		_s:video__song_ttl_write()
+	end
+
+	_s:video__song_sub_write()
+
+	-- _s:song_video_data_rsync()
+end
+
+function Holo.video__song_ttl_write(_s)
+	
+	local path_song_video_total = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
+	
+	_s:video__song({"jp", "en", "id"})
+
+	_s:video_2_jsn_write(path_song_video_total)
+
+	Utl.cp(path_song_video_total, Cfg.song_video.path_t_ltst)
+end
+
+function Holo.video__song_sub_write(_s)
+	
+	local path_jsn = _s:song_video_jsn_file_ltst()
+
+	local video1 = Utl.tbl_by_jsn_file(path_jsn[1])
+	local video2 = Utl.tbl_by_jsn_file(path_jsn[2])
+
+	_s:video__(   video1)
+	_s:video__sub(video2)
+
+	local file_jsn1 = Utl.basename(path_jsn[1])
+	local file_jsn2 = Utl.basename(path_jsn[2])
+
+	local file_sub = Utl.ext_del(file_jsn1)..".-."..file_jsn2
+	local path_sub = Cfg.song_video.dir_data.."/"..file_sub
+
+	_s:video_2_jsn_write(path_sub)
+
+	Utl.cp(path_sub, Cfg.song_video.path_s_ltst)
+end
+
+function Holo.song_video_jsn_file_ltst(_s)
+	
+	local path_wc  = Cfg.song_video.dir_data.."/????-??-??.??:??.json"
+	local path_jsn = Utl.ls(path_wc, "-r")
+	-- u.log_ar(path_jsn)
+	
+	return path_jsn
+end
+
+function Holo.song_video_data_rsync(_s)
+	
+	Utl.cmd("fish rsync.data.song_video.fish")
+end
+
+-- 
+-- ch_video main
+-- 
+
+function Holo.main_ch_video(_s)
+	
+	_s._cntry = "jp"
+	
+	-- local fr_date = Utl.date_y(7) -- tst
+	local fr_date = Utl.date_y2()
+	local to_date = Utl.date_t0()
+	
+	_s:video__ch_ttl_add_term_write(fr_date, to_date)
+	
+	_s:ch_video_data_rsync()
+end
+
+function Holo.video__ch_ttl_add_term_write(_s, fr_date, to_date)
+	
+	local mmbr = _s:mmbr(_s._cntry)
+
+	for name, tbl in pairs(mmbr) do
+		
+		-- name = "aki" -- tst
+		u.log(name)
+		
+		_s:video__ch_by_term_write(name, fr_date, to_date)
+		
+		_s:video__ttl_add_term_write(name, fr_date, to_date)
+		
+		-- break -- tst
+	end
+end
+
+function Holo.video__ch_by_term_write(_s, name, fr_date, to_date)
+	
+	local ch_id = Holo["_".._s._cntry].mmbr[name].ch_id
+	_s:video__ch_by_term(ch_id, fr_date) -- to_date = nil
+	
+	local path_term_jsn = _s:ch_video_path_term_jsn(name, fr_date, to_date)
+	_s:video_2_jsn_write(path_term_jsn)
+	-- u.log(path_term_jsn)
+end
+
+function Holo.video__ttl_add_term_write(_s, name, fr_date, to_date)
+
+	local path_name_jsn = _s:ch_video_path_name_jsn(name)
+	_s:video__by_jsn_file(path_name_jsn)
+	
+	local path_term_jsn = _s:ch_video_path_term_jsn(name, fr_date, to_date)
+	local video2 = Utl.tbl_by_jsn_file(path_term_jsn)
+	_s:video__add(video2)
+	
+	-- _s:video_view_cnt__0() -- 
+	
+	local path_ttl_jsn = _s:ch_video_path_ttl_jsn(name)
+	_s:video_2_jsn_write(path_ttl_jsn)
+	
+	Utl.cp(path_ttl_jsn, path_name_jsn)
+end
+
+function Holo.ch_video_data_rsync(_s)
+
+	Utl.cmd("fish rsync.data.ch_video.fish")
+end
+
+function Holo.ch_video_dir_name(_s, name)
+	
+	local dir_name = u.c(Cfg.ch_video.dir_data, "/", name)
+	return dir_name
+end
+
+function Holo.ch_video_path_name_jsn(_s, name)
+
+	local dir_name = _s:ch_video_dir_name(name)
+	local path_name_jsn = dir_name.."/"..name..".json"
+	return path_name_jsn
+end
+
+function Holo.ch_video_path_term_jsn(_s, name, fr_date, to_date)
+	
+	local term = fr_date..".-."..to_date
+	
+	local dir_name = _s:ch_video_dir_name(name)
+	local dir_term = dir_name.."/add" -- mod add > term
+	local path_term_jsn = dir_term.."/"..name.."."..term..".json"
+	return path_term_jsn
+end
+	
+function Holo.ch_video_path_ttl_jsn(_s, name)
+	
+	local dir_name = _s:ch_video_dir_name(name)
+	local dir_ttl  = dir_name.."/ttl"
+	local path_ttl_jsn = dir_ttl.."/"..name.."."..Utl.date()..".json"
+	return path_ttl_jsn
 end
 
