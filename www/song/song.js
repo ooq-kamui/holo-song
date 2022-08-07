@@ -316,6 +316,7 @@ class Song {
 
   static _excld_video_id = [
     "lxJ7SXMEPto", // azki
+    "7o_YL35T93w", // azki
     "YcfZziSg0cg"  // kanata & azki
   ];
 
@@ -453,30 +454,31 @@ class Song {
 
   elm_li__clone(video_id, _video){
 
-    let elm_clone = elm__clone('#video_li_tmpl');
-    /*
-    <li style="display: block; order: 0;"
-      ><span class="view_cnt">0</span><a href=""><span class="title"></span></a>
-    </li>
-     */
+    let r_node = elm__clone('#video_li_tmpl');
+    
+    let elm_li = r_node.elm_all("li");
+    elm_li[0].attr__("id", video_id);
 
-    let elm_li = elm_clone.querySelectorAll("li");
-    elm_li[0].setAttribute("id", video_id);
-
-    let elm_span = elm_clone.querySelectorAll("span");
-
-    elm_span[0].textContent = _video.view_cnt;
+    let t_elm
+    t_elm = r_node.elm_all(".view_cnt");
+    t_elm[0].textContent = _video.view_cnt;
     if (_video.new){
-      elm_span[0].classList.replace("view_cnt", "view_cnt_new");
+      t_elm[0].classList.replace("view_cnt", "view_cnt_new");
     }
+    
+    t_elm = r_node.elm_all(".title");
+    t_elm[0].textContent = _video.title;
 
-    elm_span[1].textContent = _video.title;
-
-    let elm_a   = elm_clone.querySelectorAll("a");
+    let elm_a   = r_node.elm_all("a");
     let href_js = "javascript:song.onclick('" + video_id + "');";
-    elm_a[0].setAttribute("href", href_js);
+    elm_a[0].attr__("href", href_js);
+    
+    t_elm = r_node.elm_all(".thmb");
+    // let src = "https://i.ytimg.com/vi/" + video_id + "/default.jpg";
+    let src = "https://i.ytimg.com/vi/" + video_id + "/mqdefault.jpg";
+    t_elm[0].attr__("src", src);
 
-    return elm_clone;
+    return r_node;
   }
 
   flt_bar_elm(){
@@ -552,7 +554,7 @@ class Song {
     let elm;
     for (let [idx, _video_id] of this._ply_video_id.entries()){
 
-      elm = elm_by_id(_video_id).children[1];
+      elm = elm_by_id(_video_id).children[2];
       if (val){
         elm.classList.add(   "playing");
       }else{
@@ -784,40 +786,6 @@ function ar_in(ar, val){
   let ret = idx >= 0 ? true : false ;
   return ret;
 }
-
-// alias
-
-/*
-let doc = document;
-let win = window;
-
-function log(str){
-  console.log(str);
-}
-
-function dly(fnc, msec, arg){
-  setTimeout(fnc, msec, arg);
-}
-
-function scrl(x, y){
-  scrollTo(x, y);
-}
-
-function elm_by_id(id){
-  return doc.getElementById(id);
-}
-
-function elm(slctr){
-  return doc.querySelector(slctr);
-}
-
-function elm__clone(tmpl_slctr){
-
-  let tmpl      = elm(tmpl_slctr);
-  let elm_clone = tmpl.content.cloneNode(true);
-  return elm_clone
-}
- */
 
 // main
 

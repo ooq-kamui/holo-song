@@ -257,16 +257,6 @@ let mmbr = {
 };
 // console.log(mmbr);
 
-// alias
-/*
-let doc = document;
-doc.elm_slct = doc.querySelector;
-let Obj = Object;
-Node.prototype.elm_all = function (slctr){
-  return this.querySelectorAll(slctr);
-};
- */
-
 let profile_elm_tmpl = doc.elm_slct('#profile_tmpl');
 let gen_elm_tmpl     = doc.elm_slct('#gen_tmpl');
 let profile_lst      = doc.elm_slct('#profile_lst');

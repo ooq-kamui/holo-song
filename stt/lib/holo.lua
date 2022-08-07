@@ -74,18 +74,21 @@ function Holo.video_view_cnt__(_s)
 		end
 
     for idx, itm in pairs(res.items) do
-
+			---[[
       _s._video[itm.id].title = itm.snippet.title
       _s._video[itm.id].cdt   = itm.snippet.publishedAt
+			--]]
+      -- _s._video[itm.id].thmb_url = itm.snippet.thumbnails.default.url
 
       if itm.statistics.viewCount then
-        _s._video[itm.id].view_cnt = tonumber(itm.statistics.viewCount) -- / 10000
+        _s._video[itm.id].view_cnt = tonumber(itm.statistics.viewCount)
       else
         _s._video[itm.id].view_cnt = -1 -- mmbr only
       end
     end
-
     idx_s = idx_s + lim
+		
+		-- break -- tst
   until idx_s > #video_id
 end
 
@@ -395,41 +398,46 @@ function Holo.main_song_video(_s)
 	
 	_s:video__song_ttl_write()
 
-	_s:video__song_sub_write()
+	_s:video__song_ttl_ltst1_sub_ttl_ltst2_write()
 
 	_s:song_video_data_rsync()
 end
 
 function Holo.main_song_video_dbg(_s)
 	
-	local path_song_video_total
+	local is_by_jsn = true -- dbg
 	
-	if false then -- dbg
-		path_song_video_total = _s:song_video_jsn_file_ltst()[1]
-		_s:video__by_jsn_file(path_song_video_total)
+	if is_by_jsn then
+		
+		local path_song_ttl = _s:song_ttl_jsn_file_ltst()[1]
+		_s:video__by_jsn_file(path_song_ttl)
+		
+		-- tst
+		-- _s:video_view_cnt__()
+		-- _s:video_2_jsn_write("a.json")
 	else
 		_s:video__song_ttl_write()
 	end
 
-	_s:video__song_sub_write()
+	-- _s:video__song_ttl_ltst1_sub_ttl_ltst2_write()
 
 	-- _s:song_video_data_rsync()
 end
 
 function Holo.video__song_ttl_write(_s)
 	
-	local path_song_video_total = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
+	local path_song_ttl = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
 	
 	_s:video__song({"jp", "en", "id"})
 
-	_s:video_2_jsn_write(path_song_video_total)
+	_s:video_2_jsn_write(path_song_ttl)
 
-	Utl.cp(path_song_video_total, Cfg.song_video.path_t_ltst)
+	Utl.cp(path_song_ttl, Cfg.song_video.path_t_ltst)
 end
 
-function Holo.video__song_sub_write(_s)
+function Holo.video__song_ttl_ltst1_sub_ttl_ltst2_write(_s)
 	
-	local path_jsn = _s:song_video_jsn_file_ltst()
+	local path_jsn = _s:song_ttl_jsn_file_ltst()
 
 	local video1 = Utl.tbl_by_jsn_file(path_jsn[1])
 	local video2 = Utl.tbl_by_jsn_file(path_jsn[2])
@@ -448,7 +456,7 @@ function Holo.video__song_sub_write(_s)
 	Utl.cp(path_sub, Cfg.song_video.path_s_ltst)
 end
 
-function Holo.song_video_jsn_file_ltst(_s)
+function Holo.song_ttl_jsn_file_ltst(_s)
 	
 	local path_wc  = Cfg.song_video.dir_data.."/????-??-??.??:??.json"
 	local path_jsn = Utl.ls(path_wc, "-r")
@@ -484,7 +492,6 @@ function Holo.video__ch_ttl_add_term_write(_s, fr_date, to_date)
 	local mmbr = _s:mmbr(_s._cntry)
 
 	for name, tbl in pairs(mmbr) do
-		
 		-- name = "aki" -- tst
 		u.log(name)
 		

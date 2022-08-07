@@ -39,6 +39,13 @@ Node.prototype.elm_all = function (slctr){
 };
 
 // 
+// node
+// 
+Element.prototype.attr__ = function (name, val){
+  return this.setAttribute(name, val);
+};
+
+// 
 // etc
 // 
 
