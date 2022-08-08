@@ -709,9 +709,8 @@ function Holo.song_excld_video_id(_s) -- all
   local cls_tbl
 
   for cntry_idx, _cntry in pairs(cntry) do
-    cntry_tbl = Holo["_".._cntry]
 
-    for cls, cls_tbl in pairs(cntry_tbl) do
+    for cls, cls_tbl in pairs(Holo["_".._cntry]) do
 
       for name, mmbr_tbl in pairs(cls_tbl) do
 

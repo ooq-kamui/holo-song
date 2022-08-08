@@ -1,5 +1,5 @@
 cjson = require("cjson")
-require("cfg")
+-- require("cfg")
 
 Utl = {}
 
