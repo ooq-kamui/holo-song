@@ -11,11 +11,11 @@
 
 set prj   ~/doc/hoby/youtube/vtuber/hololive/prj
 set l_dir $prj/www/song
-set s_dir www/holo/song.d
+#set s_dir www/holo/song.d
+set s_dir www/holo.d/song
 
 rsync -av -e ssh --delete     \
   --exclude="data/"           \
-  --exclude="data"            \
   --exclude="tst/"            \
   --exclude="bk/"             \
   $l_dir/                     \

@@ -317,7 +317,8 @@ class Song {
   static _excld_video_id = [
     "lxJ7SXMEPto", // azki
     "7o_YL35T93w", // azki
-    "YcfZziSg0cg"  // kanata & azki
+    "YcfZziSg0cg", // kanata & azki
+    "FefGzx_-Onk"  // dazbee
   ];
 
   video_id_flt_slice(_video_id, lim){

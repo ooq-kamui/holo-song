@@ -15,6 +15,8 @@ Dazbee._cnst = {
       "PLguPqKADXoCHL1WH7DkaaUlAXWUQc7syo", -- duet
     },
     lst_excld_video_id = {
+			"19CVkddgXMo", -- anm
+			"QF5Jkv0oHYA", -- clb-real
     },
   },
 }

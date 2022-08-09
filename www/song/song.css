@@ -86,11 +86,6 @@ input::-webkit-search-cancel-button {
   text-align: right;
 }
 
-.video_lst {
-  display: flex;
-  flex-flow: column;
-}
-
 .video_lst_scrl {
   padding-top: 287px; /* 280px; 370px; */
 
@@ -98,8 +93,10 @@ input::-webkit-search-cancel-button {
   width: 800px;
 
   display: inline-block;
-  overflow-x: auto;
   white-space: nowrap;
+  overflow-x: auto;
+  /*
+   */
 
   /*
   overflow-y: auto;
@@ -108,7 +105,16 @@ input::-webkit-search-cancel-button {
 }
 
 .video_lst_scrl::-webkit-scrollbar {
+  display: inline-block;
+  /*
   display:none;
+   */
+}
+
+.video_lst {
+  /* display: inline-block; */
+  display: flex;
+  flex-flow: column;
 }
 
 .view_cnt {
@@ -145,7 +151,7 @@ input::-webkit-search-cancel-button {
   opacity: 0;                  /* はじめは隠しておく */
   visibility: hidden;          /* はじめは隠しておく */
   
-  position: absolute;          /* 絶対配置 */
+  position: absolute;          /* 絶対配置               */
   left: -3%;                   /* 親要素に対する表示位置 */
   transform: translateX(-50%); /* 親要素に対する表示位置 */
   bottom: 20px;                /* 親要素に対する表示位置 */
@@ -175,30 +181,55 @@ span.thmb_frame {
   /* position: relative; */
 }
 img.thmb {
-  opacity:         0;       /* はじめは隠しておく     */
-  visibility: hidden;       /* はじめは隠しておく     */
+  opacity:         0;        /* はじめは隠しておく     */
+  visibility: hidden;        /* はじめは隠しておく     */
   
-  position: absolute;       /* 絶対配置               */
-  /* left:    -130px;          親要素に対する表示位置 */
-  left:          0px;       /* 親要素に対する表示位置 */
-  /* bottom:    24px;          親要素に対する表示位置 */
+  position: absolute;        /* 絶対配置               */
+  /* left:    -130px;           親要素に対する表示位置 */
+  left:          0px;        /* 親要素に対する表示位置 */
+  /* bottom:    24px;           親要素に対する表示位置 */
   
-  padding:       5px;       /* 余白                   */
-  border-radius: 3px;       /* 角丸                   */
+  padding:       5px;        /* 余白                   */
+  border-radius: 3px;        /* 角丸                   */
   background:    #333;
   color:         #bdc1c6;
   
-  transition: 0.3s ease-in; /* animation              */
+  transition: 0.25s ease-in; /* animation              */
 }
+
+img.srch_icn {
+  width:  18px;
+  vertical-align: middle;
+  margin: 0px 4px;
+}
+
+div.body_lr {
+  display: inline-block;
+  width: calc((100% - (800px + 40px)) / 2);
+  padding-top: 287px;
+  margin: 16px 0px;
+  font-size: 0.8rem;
+}
+
+div.body_l {
+  vertical-align: top;
+  text-align: left;
+}
+
+div.body_r {
+  vertical-align: top;
+  text-align: right;
+}
+
 
 /*
  * mmbr.html
  */
 .spc {
+  display: inline-block;
   text-align: left;
   width: 600px;
   /* width: 500px; */
-  display: inline-block;
 }
 
 div.profile {
@@ -221,11 +252,5 @@ img.icn {
 
 .mmbr_name {
   display: none;
-}
-
-img.srch_icn {
-  width:  18px;
-  vertical-align: middle;
-  margin: 0px 4px;
 }
 
