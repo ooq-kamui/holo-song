@@ -2,49 +2,116 @@ require("cfg")
 require("utl")
 require("ytube")
 
-Dazbee = {}
+Etc = {}
 
-Dazbee._cnst = {
+Etc._cnst = {
 
-  ch_id = "UCUEvXLdpCtbzzDkcMI96llg",
-  song = {
-    lst_id = {
-      "PLguPqKADXoCFtJx2Xi2z4jMjzf9ZZxlPE", -- org
-      "PLguPqKADXoCEw_vJqW0VSNTKejjUAk2wY", -- cvr
-      "PLguPqKADXoCFzOk-Do2tlXE-EkkquCXKR", -- special
-      "PLguPqKADXoCHL1WH7DkaaUlAXWUQc7syo", -- duet
-    },
-    lst_excld_video_id = {
-			"19CVkddgXMo", -- anm
-			"QF5Jkv0oHYA", -- clb-real
-    },
-  },
+	dazbee = {
+		ch_id = "UCUEvXLdpCtbzzDkcMI96llg",
+		song = {
+			lst_id = {
+				"PLguPqKADXoCFtJx2Xi2z4jMjzf9ZZxlPE", -- org
+				"PLguPqKADXoCEw_vJqW0VSNTKejjUAk2wY", -- cvr
+				"PLguPqKADXoCFzOk-Do2tlXE-EkkquCXKR", -- special
+				"PLguPqKADXoCHL1WH7DkaaUlAXWUQc7syo", -- duet
+			},
+			lst_excld_video_id = {
+				"19CVkddgXMo", -- anm
+				"QF5Jkv0oHYA", -- clb-real
+			},
+		},
+	},
+	kafu = {
+		ch_id = "UCQ1U65-CQdIoZ2_NA4Z4F7A",
+		song = {
+			lst_id = {
+				"PLPqVb_3u9vSOXd5W4xU6SdRQH566UOIHs", -- cvr
+				"PLPqVb_3u9vSPmC_LA5IbAxVsxcJ2YZWwg", -- org
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
+	pmaru = {
+		ch_id = "UCLqCmbd6bgcLaBVz3aA-68A",
+		song = {
+			lst_id = {
+				"PLcC3MjGnFuZvAzsJvZ67VPidd699dtmgM", -- org
+				"PLcC3MjGnFuZtl5KkfXONu9dQMkXLKPhS5", -- cvr
+				
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
+	himehina = {
+		ch_id = "UCFv2z4iM5vHrS8bZPq4fHQQ",
+		song = {
+			lst_id = {
+				"PL1tX8zAv8bPk5fj3uFBgcOUHtlyAYKZBo", -- cvr
+				"PL1tX8zAv8bPma-l8XNdpmGVvfiJIbvrZi", -- org
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
+	vespervell = {
+		ch_id = "UCPd0Z22gF43dUidPYEQO5-w",
+		song = {
+			lst_id = {
+				"PLu4d2yplfpFeh4H02ja12apUR3MgPYhND", -- all
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
+	ado = {
+		ch_id = "UCln9P4Qm3-EAY4aiEPmRwEA",
+		song = {
+			lst_id = {
+				"PLaxauk3chSWjJUBirUlCQH9fOgvfiNjcc", -- cvr
+				"PLaxauk3chSWgwI1W0yo5Bv9GAn1O1cwKB", -- org
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
+	inuitoko = {
+		ch_id = "UCXRlIK3Cw_TJIQC5kSJJQMg",
+		song = {
+			lst_id = {
+				"PLRGzS-dvI7Zz0AuAqnv0yo9bZSIQHutwt", -- all
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
 }
-Dazbee._cfg = {
-  dir_data = Cfg.prj.dir .. "/www/song/data/etc/dazbee",
+Etc._cfg = {
+  dir_data = Cfg.prj.dir .. "/www/song/data/etc",
 }
 
-function Dazbee.song_lst_id()
+function Etc.song_lst_id(name)
 
   local lst_id = {}
   local excld_video_id = {}
 
-  ar.join(lst_id, Dazbee._cnst.song.lst_id)
+  ar.join(lst_id, Etc._cnst[name].song.lst_id)
 
-  if Dazbee._cnst.song.lst_excld_video_id then
-    ar.join(excld_video_id, Dazbee._cnst.song.lst_excld_video_id)
+  if Etc._cnst[name].song.lst_excld_video_id then
+    ar.join(excld_video_id, Etc._cnst[name].song.lst_excld_video_id)
   end
 
   return lst_id, excld_video_id
 end
 
-function Dazbee.song_video()
+function Etc.song_video(name)
 
   local video = {}
 	
-  if not Dazbee._cnst.song.video_id then return video end
+  if not Etc._cnst[name].song.video_id then return video end
 
-  for idx, video_id in pairs(Dazbee._cnst.song.video_id) do
+  for idx, video_id in pairs(Etc._cnst[name].song.video_id) do
 
     video[video_id] = {}
   end
@@ -54,35 +121,35 @@ end
 
 -- obj
 
-function Dazbee.new()
+function Etc.new()
 
-  local obj = Utl.new(Dazbee)
+  local obj = Utl.new(Etc)
   return obj
 end
 
-function Dazbee.init(_s)
+function Etc.init(_s)
 end
 
 --
 -- video __
 --
 
-function Dazbee.video__init(_s)
+function Etc.video__init(_s)
 
   _s._video = {}
 end
 
-function Dazbee.video__(_s, video)
+function Etc.video__(_s, video)
 
   _s._video = video
 end
 
-function Dazbee.video__by_jsn(_s, jsn)
+function Etc.video__by_jsn(_s, jsn)
 
   _s._video = cjson.decode(jsn)
 end
 
-function Dazbee.video__by_jsn_file(_s, path_jsn)
+function Etc.video__by_jsn_file(_s, path_jsn)
 
   local jsn = Utl.file_read(path_jsn)
   _s:video__by_jsn(jsn)
@@ -90,7 +157,7 @@ end
 
 -- video view cnt
 
-function Dazbee.video_view_cnt__(_s)
+function Etc.video_view_cnt__(_s)
 
   local video_id = ar.key(_s._video)
   local res
@@ -121,19 +188,19 @@ function Dazbee.video_view_cnt__(_s)
   until idx_s > #video_id
 end
 
-function Dazbee.video_view_cnt__0(_s)
+function Etc.video_view_cnt__0(_s)
 	
 	for video_id, _video in pairs(_s._video) do
 		_video.view_cnt = 0
 	end
 end
 
-function Dazbee.video_id__init(_s)
+function Etc.video_id__init(_s)
 
 	_s._video_id = {}
 end
 
-function Dazbee.video_id__(_s)
+function Etc.video_id__(_s)
 	
 	if not _s._video then return end
 	
@@ -149,12 +216,12 @@ function Dazbee.video_id__(_s)
 	end
 end
 
-function Dazbee.video_id__clr(_s)
+function Etc.video_id__clr(_s)
 	
 		ar.clr(_s._video_id)
 end
 
-function Dazbee.video_id__srt(_s, prp)
+function Etc.video_id__srt(_s, prp)
 	
 	prp = prp or "cdt"
 	
@@ -178,7 +245,7 @@ function Dazbee.video_id__srt(_s, prp)
   table.sort(_s._video_id, cmpr)
 end
 
-function Dazbee.video_srtd__(_s)
+function Etc.video_srtd__(_s)
 	
 	_s:video_id__()
 	
@@ -197,7 +264,7 @@ end
 -- song
 --
 
-function Dazbee.video__song(_s)
+function Etc.video__song(_s)
 
   _s:video__init()
 
@@ -206,15 +273,15 @@ function Dazbee.video__song(_s)
   _s:video_view_cnt__()
 end
 
-function Dazbee.video__add_song(_s)
+function Etc.video__add_song(_s)
 
   _s:video__add_song_lst()
   _s:video__add_song_video()
 end
 
-function Dazbee.video__add_song_lst(_s)
+function Etc.video__add_song_lst(_s)
 
-  local lst_id, excld_video_id = Dazbee.song_lst_id()
+  local lst_id, excld_video_id = Etc.song_lst_id(_s._name)
 
   for idx, _lst_id in pairs(lst_id) do
 
@@ -222,7 +289,7 @@ function Dazbee.video__add_song_lst(_s)
   end
 end
 
-function Dazbee.video__add_by_lst_id(_s, lst_id, excld_video_id)
+function Etc.video__add_by_lst_id(_s, lst_id, excld_video_id)
 
   local res, pgtkn_nxt, video_id
   repeat
@@ -248,12 +315,12 @@ function Dazbee.video__add_by_lst_id(_s, lst_id, excld_video_id)
   until not pgtkn_nxt
 end
 
-function Dazbee.video__add_song_video(_s)
+function Etc.video__add_song_video(_s)
 
-  ar.mrg(_s._video, Dazbee.song_video())
+  ar.mrg(_s._video, Etc.song_video(_s._name))
 end
 
-function Dazbee.video__excld(_s, excld_video_id)
+function Etc.video__excld(_s, excld_video_id)
 
   for idx, _excld_video_id in pairs(excld_video_id) do
 
@@ -265,18 +332,7 @@ end
 -- srch
 --
 
-function Dazbee.srch(_s, word) -- use not
-
-  local video = {}
-
-  for name, tbl in pairs(_s:mmbr("jp")) do
-  
-    _s:ch_srch(tbl.ch_id, word, video)
-  end
-  return video
-end
-
-function Dazbee.ch_srch(_s, ch_id, word, video)
+function Etc.ch_srch(_s, ch_id, word, video)
 
   local res = Ytube.srch(ch_id, word)
 
@@ -294,21 +350,21 @@ end
 -- output
 --
 
-function Dazbee.video_2_jsn_prnt(_s)
+function Etc.video_2_jsn_prnt(_s)
 	
 	local jsn = _s:video_2_jsn()
 	
   u.prnt(jsn)
 end
 
-function Dazbee.video_2_jsn_write(_s, path_file)
+function Etc.video_2_jsn_write(_s, path_file)
 	
 	local jsn = _s:video_2_jsn()
 	
   Utl.file_write(path_file, jsn)
 end
 
-function Dazbee.video_2_jsn(_s)
+function Etc.video_2_jsn(_s)
 
 	local t_video
 	
@@ -330,7 +386,7 @@ end
 -- add
 --
 
-function Dazbee.video__add(_s, video2)
+function Etc.video__add(_s, video2)
 
   if not _s._video then _s:video__init() end
 
@@ -344,7 +400,7 @@ end
 -- sub
 --
 
-function Dazbee.video__sub(_s, video2)
+function Etc.video__sub(_s, video2)
 
   local tbl2
   for video_id, tbl1 in pairs(_s._video) do
@@ -371,7 +427,7 @@ end
 -- ch
 --
 
-function Dazbee.video__ch_by_term(_s, ch_id, fr_date, to_date)
+function Etc.video__ch_by_term(_s, ch_id, fr_date, to_date)
 
   fr_date = fr_date or Utl.date_y7()
   to_date = to_date or Utl.date_t7()
@@ -382,7 +438,7 @@ function Dazbee.video__ch_by_term(_s, ch_id, fr_date, to_date)
   _s:video__add_by_ch(ch_id, fr_date, to_date)
 end
 
-function Dazbee.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)
+function Etc.video__add_by_ch(_s, ch_id, fr_date, to_date, excld_video_id)
 
   excld_video_id = excld_video_id or {}
 
@@ -417,7 +473,9 @@ end
 -- song_video main
 -- 
 
-function Dazbee.main_song_video(_s)
+function Etc.main_song_video(_s, name)
+	
+	_s._name = name
 	
 	_s:video__song_ttl_write()
 
@@ -426,18 +484,17 @@ function Dazbee.main_song_video(_s)
 	-- _s:song_video_data_rsync()
 end
 
-function Dazbee.video__song_ttl_write(_s)
-	
-	local path_song_ttl = Dazbee._cfg.dir_data.."/"..Utl.datetime()..".json"
+function Etc.video__song_ttl_write(_s)
 	
 	_s:video__song()
 
+	local path_song_ttl = Etc._cfg.dir_data.."/".._s._name.."/"..Utl.datetime()..".json"
 	_s:video_2_jsn_write(path_song_ttl)
 
 	-- Utl.cp(path_song_ttl, Cfg.song_video.path_t_ltst)
 end
 
-function Dazbee.video__song_ttl_ltst1_sub_ttl_ltst2_write(_s)
+function Etc.video__song_ttl_ltst1_sub_ttl_ltst2_write(_s)
 	
 	local path_jsn = _s:song_ttl_jsn_file_ltst()
 	
@@ -453,23 +510,23 @@ function Dazbee.video__song_ttl_ltst1_sub_ttl_ltst2_write(_s)
 	local file_jsn2 = Utl.basename(path_jsn[2])
 
 	local file_sub = Utl.ext_del(file_jsn1)..".-."..file_jsn2
-	local path_sub = Dazbee._cfg.dir_data.."/"..file_sub
+	local path_sub = Etc._cfg.dir_data.."/".._s._name.."/"..file_sub
 
 	_s:video_2_jsn_write(path_sub)
 
 	-- Utl.cp(path_sub, Cfg.song_video.path_s_ltst)
 end
 
-function Dazbee.song_ttl_jsn_file_ltst(_s)
+function Etc.song_ttl_jsn_file_ltst(_s)
 	
-	local path_wc  = Dazbee._cfg.dir_data.."/????-??-??.??:??.json"
+	local path_wc  = Etc._cfg.dir_data.."/".._s._name.."/????-??-??.??:??.json"
 	local path_jsn = Utl.ls(path_wc, "-r")
 	-- u.log_ar(path_jsn)
 	
 	return path_jsn
 end
 
-function Dazbee.song_video_data_rsync(_s)
+function Etc.song_video_data_rsync(_s)
 	
 	Utl.cmd("fish rsync.data.song_video.fish")
 end
