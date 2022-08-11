@@ -134,6 +134,7 @@ input::-webkit-search-cancel-button {
 
 .flt-tltip {
   position: relative;          /* ツールチップの位置の基準に */
+  z-index:         1;
   /*
   cursor: pointer;                カーソルを当てたときにポインターに
    */
@@ -181,9 +182,10 @@ img.thmb {
   visibility: hidden;        /* はじめは隠しておく     */
   
   position: absolute;        /* 絶対配置               */
-  /* left:    -130px;           親要素に対する表示位置 */
   left:          0px;        /* 親要素に対する表示位置 */
+  /* left:    -130px;           親要素に対する表示位置 */
   /* bottom:    24px;           親要素に対する表示位置 */
+  /* vertical-align: bottom;                           */
   
   padding:       5px;        /* 余白                   */
   border-radius: 3px;        /* 角丸                   */
@@ -215,6 +217,46 @@ div.body_l {
 div.body_r {
   vertical-align: top;
   text-align: right;
+}
+
+span.mmbr_lst_lnk {
+  /* position: relative; 位置の基準             */
+}
+span.mmbr_lst_lnk:hover span.mmbr_lst {
+  /* display: inline-block; */
+  opacity: 1;
+  visibility: visible;
+}
+
+span.mmbr_lst {
+  /* display:    none; */
+  opacity:    0;             /* はじめは隠しておく     */
+  visibility: hidden;        /* はじめは隠しておく     */
+  
+  position:   absolute;      /* 絶対配置               */
+  z-index:    2;
+  left: calc((100% - 900px) / 2);
+  /* left:       140px; 親要素に対する表示位置 */
+  top:         30px;         /* 親要素に対する表示位置 */
+  
+  padding:       5px;        /* 余白                   */
+  border-radius: 3px;        /* 角丸                   */
+  background:    #333;
+  color:         #bdc1c6;
+  
+  transition: 0.5s ease-in;  /* animation              */
+  
+  vertical-align: top;
+  /* text-align: right; */
+}
+
+div.profile_lst {
+  width:      900px;
+  height:     600px;
+  margin:      5px 0px;
+  padding:    20px 0px;
+  overflow-y: auto;
+  text-align: center;
 }
 
 /*

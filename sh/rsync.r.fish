@@ -18,6 +18,7 @@ set s_dir www/holo
 
 rsync -av -e ssh --delete     \
   --exclude="data/"           \
+  --exclude="data"            \
   --exclude="tst/"            \
   --exclude="bk/"             \
   $l_dir/                     \

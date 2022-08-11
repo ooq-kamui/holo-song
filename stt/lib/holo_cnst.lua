@@ -262,6 +262,9 @@ Holo._jp = {
           "aWSaIdLUE0Y", -- vo-m
           "hvB26v6rBxA", -- live
         },
+        video_id = {
+          "uE6keTcapp0",
+        },
       },
     },
     suisei  = {
