@@ -226,6 +226,8 @@ span.mmbr_lst_lnk:hover span.mmbr_lst {
   /* display: inline-block; */
   opacity: 1;
   visibility: visible;
+  
+  transition-delay: 0.0s;    /* animation              */
 }
 
 span.mmbr_lst {
@@ -236,7 +238,7 @@ span.mmbr_lst {
   position:   absolute;      /* 絶対配置               */
   z-index:    2;
   left: calc((100% - 900px) / 2);
-  /* left:       140px; 親要素に対する表示位置 */
+  /* left:    140px;            親要素に対する表示位置 */
   top:         30px;         /* 親要素に対する表示位置 */
   
   padding:       5px;        /* 余白                   */
@@ -244,14 +246,17 @@ span.mmbr_lst {
   background:    #333;
   color:         #bdc1c6;
   
-  transition: 0.5s ease-in;  /* animation              */
+  transition: 0.25s ease-in; /* animation              */
+  transition-delay: 0.3s;    /* animation              */
   
   vertical-align: top;
   /* text-align: right; */
+  
+  width:      900px;
 }
 
 div.profile_lst {
-  width:      900px;
+  
   height:     600px;
   margin:      5px 0px;
   padding:    20px 0px;

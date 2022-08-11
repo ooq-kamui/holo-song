@@ -7,7 +7,7 @@
 <meta name="description" content="ホロライブ 全歌 再生数 週間ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
 <meta name=”keywords” content="hololive,song,list,all,filter,player,weekly,ranking,original,cover,search,filter" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
-<link rel="stylesheet" href="../css/cmn.css?ts=2022-08-11.21:52" />
+<link rel="stylesheet" href="../css/cmn.css?ts=2022-08-12.07:34" />
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2099637840916857"
   crossorigin="anonymous"></script>
@@ -52,7 +52,10 @@
       <span class="mmbr_lst_lnk">
         <a href="../mmbr/mmbr.html" target="mmbr">member list</a>
         <span class="mmbr_lst">
+          <div class="profile_lst">
+          </div>
 
+<!--
 <div class="profile_lst">
   <div>
     <div class="profile">
@@ -362,6 +365,7 @@
     </div>
   </div>
 </div>
+-->
 
         </span>
       </span>
@@ -471,6 +475,7 @@
     <div> <a href="?f=etc/kaf/2022-08-10.00:43.json">kaf - 花譜</a> </div>
     <div> <a href="?f=etc/inuitoko/2022-08-10.00:45.json">戌亥とこ</a> </div>
     <div> <a href="?f=etc/vesperbell/2022-08-10.00:44.json">vesperbell</a> </div>
+    <div> <a href="?f=etc/hachi/2022-08-12.01:22.json">hachi</a> </div>
     <div> <a href="?f=etc/himehina/2022-08-10.00:44.json">himehina</a> </div>
     <div> <a href="?f=etc/pmaru/2022-08-10.00:44.json">P丸様。</a> </div>
     <div> <a href="?f=etc/ado/2022-08-10.00:50.json">ado</a> </div>
@@ -487,10 +492,36 @@
   </li>
 </template>
 
+<template id="gen_tmpl">
+  <div>
+  </div>
+</template>
+
+<template id="profile_tmpl">
+  <div class="profile">
+    <div>
+      <a href="../song/?o=cdt&f=ch/sora.json" target="_blank" class="mmbr_name">sora</a>
+    </div>
+    <div>
+      <a href="https://www.youtube.com/channel/ch_id" target="_blank"
+      ><img class="icn" src="../img/yt.png"></a>
+      <a href="../song/?o=cdt&f=ch/sora.json" target="_blank"
+      ><img class="profile" src="jp/sora/profile.jpg"></a>
+      <a href="https://twitter.com/tokino_sora" target="_blank"
+      ><img class="icn" src="../img/tw.png"></a>
+    </div>
+    <div>
+      <a class="lnk_song_video" href="../song/?s=" target="_blank" >♪♪</a>
+    </div>
+  </div>
+</template>
+
 </body>
 <script src="../js/alias.js?ts=2022-08-11.15:44"
   defer type="text/javascript" charset="UTF-8" ></script>
 <script src="song.js?ts=2022-08-11.15:43"
+  defer type="text/javascript" charset="UTF-8" ></script>
+<script src="../js/mmbr.js?ts=2022-08-12.07:36"
   defer type="text/javascript" charset="UTF-8" ></script>
 </html>
 
