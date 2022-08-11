@@ -95,8 +95,6 @@ input::-webkit-search-cancel-button {
   display: inline-block;
   white-space: nowrap;
   overflow-x: auto;
-  /*
-   */
 
   /*
   overflow-y: auto;
@@ -106,9 +104,7 @@ input::-webkit-search-cancel-button {
 
 .video_lst_scrl::-webkit-scrollbar {
   display: inline-block;
-  /*
-  display:none;
-   */
+  /* display:none; */
 }
 
 .video_lst {
@@ -221,16 +217,9 @@ div.body_r {
   text-align: right;
 }
 
-
 /*
  * mmbr.html
  */
-.spc {
-  display: inline-block;
-  text-align: left;
-  width: 600px;
-  /* width: 500px; */
-}
 
 div.profile {
   display: inline-block;
@@ -250,7 +239,22 @@ img.icn {
   vertical-align: middle;
 }
 
-.mmbr_name {
+a.mmbr_name {
   display: none;
+}
+
+a.lnk_song_video {
+  text-decoration: none;
+}
+
+/*
+ * help.html
+ */
+
+.spc {
+  display: inline-block;
+  text-align: left;
+  width: 600px;
+  /* width: 500px; */
 }
 

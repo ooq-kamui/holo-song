@@ -10,8 +10,11 @@
 #            sync元の相対パスで指定
 
 set prj   ~/doc/hoby/youtube/vtuber/hololive/prj
-set l_dir $prj/www/song
-set s_dir www/holo/song
+set l_dir $prj/www
+set s_dir www/holo
+
+#set l_dir $prj/www/song
+#set s_dir www/holo/song
 
 rsync -av -e ssh --delete     \
   --exclude="data/"           \

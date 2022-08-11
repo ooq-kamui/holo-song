@@ -18,10 +18,11 @@ Etc._cnst = {
 			lst_excld_video_id = {
 				"19CVkddgXMo", -- anm
 				"QF5Jkv0oHYA", -- clb-real
+				"cRm7xQ7MEEI", -- clb
 			},
 		},
 	},
-	kafu = {
+	kaf = {
 		ch_id = "UCQ1U65-CQdIoZ2_NA4Z4F7A",
 		song = {
 			lst_id = {
@@ -55,7 +56,7 @@ Etc._cnst = {
 			},
 		},
 	},
-	vespervell = {
+	vesperbell = {
 		ch_id = "UCPd0Z22gF43dUidPYEQO5-w",
 		song = {
 			lst_id = {

@@ -360,6 +360,9 @@ Holo._jp = {
       ch_id = "UCa9Y57gfeY0Zro_noHRVrnw",
       song = {
         lst_id = {},
+        video_id = {
+          "IY2kSsj3CGc",
+        },
       },
     },
     lamy    = {

@@ -45,6 +45,10 @@ Element.prototype.attr__ = function (name, val){
   return this.setAttribute(name, val);
 };
 
+Element.prototype.attr__del = function (name){
+  return this.removeAttribute(name);
+};
+
 // 
 // etc
 // 
