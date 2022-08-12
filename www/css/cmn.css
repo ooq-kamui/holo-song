@@ -32,33 +32,8 @@ ul {
   /* margin: 0 auto; */
 }
 
-input[type="search"]#flt_bar {
-  width: 750px;
-  background-color: #1a1c21;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 4px;
-  border-color: blueviolet;
-  padding-left: 10px;
-  color: #bdc1c6;
-  font-size: 0.9rem;
-}
-
-input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  content: url("/holo/img/input-cancel.png");
-  height : 13px;
-  width  : 13px;
-  cursor : pointer;
-  padding-right: 4px;
-}
-
 .switch {
   text-decoration: none;
-}
-
-::placeholder {
-  color: gray;
 }
 
 .header {
@@ -83,6 +58,88 @@ input::-webkit-search-cancel-button {
 }
 
 .hdr_r {
+  text-align: right;
+}
+
+img.srch_icn {
+  width:  18px;
+  vertical-align: middle;
+  margin: 0px 4px;
+}
+
+.flt-tltip {
+  position: relative;          /* ツールチップの位置の基準に */
+  z-index:         1;
+  /*
+  cursor: pointer;                カーソルを当てたときにポインターに
+   */
+}
+.flt-tltip:hover .flt-tltip-txt {
+  opacity: 1;
+  visibility: visible;
+}
+
+.flt-tltip-txt {
+  opacity: 0;                  /* はじめは隠しておく */
+  visibility: hidden;          /* はじめは隠しておく */
+  
+  position: absolute;          /* 絶対配置               */
+  left:          -3%;          /* 親要素に対する表示位置 */
+  transform: translateX(-50%); /* 親要素に対する表示位置 */
+  bottom:       20px;          /* 親要素に対する表示位置 */
+  
+  display: inline-block;
+  padding: 5px;                /* 余白 */
+  text-align: start;
+  white-space: nowrap;         /* テキストを折り返さない */
+  font-size: 0.7rem;
+  line-height: 1.3;            /* 行間 */
+  background: #333;
+  color: #bdc1c6;
+  border-radius: 3px;          /* 角丸 */
+  transition: 0.3s ease-in;    /* animation */
+}
+
+input[type="search"]#flt_bar {
+  width: 750px;
+  background-color: #1a1c21;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: blueviolet;
+  padding-left: 10px;
+  color: #bdc1c6;
+  font-size: 0.9rem;
+}
+
+input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  content: url("/holo/img/input-cancel.png");
+  height : 13px;
+  width  : 13px;
+  cursor : pointer;
+  padding-right: 4px;
+}
+
+::placeholder {
+  color: gray;
+}
+
+div.body_lr {
+  display: inline-block;
+  width: calc((100% - (800px + 40px)) / 2);
+  padding-top: 287px;
+  margin: 16px 0px;
+  font-size: 0.8rem;
+}
+
+div.body_l {
+  vertical-align: top;
+  text-align: left;
+}
+
+div.body_r {
+  vertical-align: top;
   text-align: right;
 }
 
@@ -132,39 +189,6 @@ input::-webkit-search-cancel-button {
   margin-left: 15px;
 }
 
-.flt-tltip {
-  position: relative;          /* ツールチップの位置の基準に */
-  z-index:         1;
-  /*
-  cursor: pointer;                カーソルを当てたときにポインターに
-   */
-}
-.flt-tltip:hover .flt-tltip-txt {
-  opacity: 1;
-  visibility: visible;
-}
-
-.flt-tltip-txt {
-  opacity: 0;                  /* はじめは隠しておく */
-  visibility: hidden;          /* はじめは隠しておく */
-  
-  position: absolute;          /* 絶対配置               */
-  left: -3%;                   /* 親要素に対する表示位置 */
-  transform: translateX(-50%); /* 親要素に対する表示位置 */
-  bottom: 20px;                /* 親要素に対する表示位置 */
-  
-  display: inline-block;
-  padding: 5px;                /* 余白 */
-  text-align: start;
-  white-space: nowrap;         /* テキストを折り返さない */
-  font-size: 0.7rem;
-  line-height: 1.3;            /* 行間 */
-  background: #333;
-  color: #bdc1c6;
-  border-radius: 3px;          /* 角丸 */
-  transition: 0.3s ease-in;    /* animation */
-}
-
 li.video_li {
   display: block;
   order: 0;
@@ -175,16 +199,20 @@ li.video_li:hover img.thmb {
 }
 
 span.thmb_frame {
-  /* position: relative; */
+  /* position: relative;        /*                        */
 }
 img.thmb {
   opacity:         0;        /* はじめは隠しておく     */
   visibility: hidden;        /* はじめは隠しておく     */
   
   position: absolute;        /* 絶対配置               */
-  left:          0px;        /* 親要素に対する表示位置 */
-  /* left:    -130px;           親要素に対する表示位置 */
-  /* bottom:    24px;           親要素に対する表示位置 */
+  left: calc((100% - 800px) / 2); /* 親要素に対する表示位置 */
+  /* left:          0px;        /* 親要素に対する表示位置 */
+  transform:
+    translateX(-200px) translateY(-90px); /* 親要素に対する表示位置 */
+    /* translateX(-280px) translateY(-90px); /* 親要素に対する表示位置 */
+  /* bottom:       24px;        /* 親要素に対する表示位置 */
+  z-index:         2;
   /* vertical-align: bottom;                           */
   
   padding:       5px;        /* 余白                   */
@@ -193,30 +221,6 @@ img.thmb {
   color:         #bdc1c6;
   
   transition: 0.25s ease-in; /* animation              */
-}
-
-img.srch_icn {
-  width:  18px;
-  vertical-align: middle;
-  margin: 0px 4px;
-}
-
-div.body_lr {
-  display: inline-block;
-  width: calc((100% - (800px + 40px)) / 2);
-  padding-top: 287px;
-  margin: 16px 0px;
-  font-size: 0.8rem;
-}
-
-div.body_l {
-  vertical-align: top;
-  text-align: left;
-}
-
-div.body_r {
-  vertical-align: top;
-  text-align: right;
 }
 
 span.mmbr_lst_lnk {
@@ -236,7 +240,7 @@ span.mmbr_lst {
   visibility: hidden;        /* はじめは隠しておく     */
   
   position:   absolute;      /* 絶対配置               */
-  z-index:    2;
+  z-index:    3;
   left: calc((100% - 900px) / 2);
   /* left:    140px;            親要素に対する表示位置 */
   top:         30px;         /* 親要素に対する表示位置 */
