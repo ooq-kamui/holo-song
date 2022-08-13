@@ -358,9 +358,9 @@ class Mmbr {
           // console.log(profile_node);
 
           let gen_div_elm = gen_node.elm_all("div");
-          gen_div_elm[0].appendChild(profile_node);
+          gen_div_elm[0].__add(profile_node);
         }
-        profile_lst.appendChild(gen_node);
+        profile_lst.__add(gen_node);
       }
     }
   }

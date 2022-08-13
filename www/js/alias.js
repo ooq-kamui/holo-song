@@ -49,6 +49,10 @@ Element.prototype.attr__del = function (name){
   return this.removeAttribute(name);
 };
 
+Element.prototype.__add = function (elm){
+  return this.appendChild(elm);
+};
+
 // 
 // etc
 // 

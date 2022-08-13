@@ -54,7 +54,7 @@ Etc._cnst = {
 		},
 	},
 	hachi = {
-		ch_id = "",
+		ch_id = "UC7XCjKxBEct0uAukpQXNFPw",
 		song = {
 			lst_id = {
 				"PLwW-jiBMC59iewtUTK-P8utZSnGbMBT_r", -- org
@@ -67,13 +67,12 @@ Etc._cnst = {
 			},
 		},
 	},
-	pmaru = {
-		ch_id = "UCLqCmbd6bgcLaBVz3aA-68A",
+	hanabasami = {
+		ch_id = "UC4OeUf_KfYRrwksschtRYow",
 		song = {
 			lst_id = {
-				"PLcC3MjGnFuZvAzsJvZ67VPidd699dtmgM", -- org
-				"PLcC3MjGnFuZtl5KkfXONu9dQMkXLKPhS5", -- cvr
-				
+				"PLxujgzR9TjoOM5w1fMo5g1rDKK1gdTXRS", -- org
+				"PLxujgzR9TjoNzy4qu3G6UFOPyFVc_Zerc", -- cvr
 			},
 			lst_excld_video_id = {
 			},
@@ -85,6 +84,18 @@ Etc._cnst = {
 			lst_id = {
 				"PL1tX8zAv8bPk5fj3uFBgcOUHtlyAYKZBo", -- cvr
 				"PL1tX8zAv8bPma-l8XNdpmGVvfiJIbvrZi", -- org
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
+	pmaru = {
+		ch_id = "UCLqCmbd6bgcLaBVz3aA-68A",
+		song = {
+			lst_id = {
+				"PLcC3MjGnFuZvAzsJvZ67VPidd699dtmgM", -- org
+				"PLcC3MjGnFuZtl5KkfXONu9dQMkXLKPhS5", -- cvr
+				
 			},
 			lst_excld_video_id = {
 			},

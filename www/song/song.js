@@ -144,7 +144,7 @@ class Song {
 
     let video_id = new Array();
 
-    for (let [_video_id, _video] of Object.entries(this._video)){
+    for (let [_video_id, _video] of Obj.entries(this._video)){
 
       // log(_video_id)
       // log(_video)
@@ -317,6 +317,7 @@ class Song {
   static _excld_video_id = [
     "lxJ7SXMEPto", // azki
     "7o_YL35T93w", // azki
+    "O4Oz8Gn6oDY", // azki
     "YcfZziSg0cg", // kanata & azki
     "FefGzx_-Onk"  // dazbee
   ];
@@ -357,7 +358,7 @@ class Song {
 
   video_flt__by_word(word){
 
-    this._video_flt    = new Object();
+    this._video_flt    = new Obj();
     this._video_id_flt = new Array();
 
     let _video;
@@ -444,12 +445,13 @@ class Song {
 
     let view_cnt_elm , title_elm_spn , title_elm , url;
 
-    for (let [video_id, _video] of Object.entries(video)){
+    for (let [video_id, _video] of Obj.entries(video)){
 
       if (_video.view_cnt == undefined || !_video.title){continue;}
 
       let elm_clone = this.elm_li__clone(video_id, _video);
-      elm_ul.appendChild(elm_clone);
+      elm_ul.__add(elm_clone);
+      // elm_ul.appendChild(elm_clone);
     }
   }
 
@@ -698,7 +700,7 @@ class u {
 
 function url_prm(){
 
-  let prm = new Object();
+  let prm = new Obj();
 
   let qery_str = win.location.search;
 

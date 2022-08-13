@@ -207,13 +207,12 @@ img.thmb {
   
   position: absolute;        /* 絶対配置               */
   left: calc((100% - 800px) / 2); /* 親要素に対する表示位置 */
-  /* left:          0px;        /* 親要素に対する表示位置 */
   transform:
-    translateX(-200px) translateY(-90px); /* 親要素に対する表示位置 */
-    /* translateX(-280px) translateY(-90px); /* 親要素に対する表示位置 */
+    translateX(-280px)       /* translateX(-200px) */
+    translateY( -90px);      /* 親要素に対する表示位置 */
   /* bottom:       24px;        /* 親要素に対する表示位置 */
-  z-index:         2;
-  /* vertical-align: bottom;                           */
+  z-index:         2;        /*  */
+  /* vertical-align: bottom;    /*                        */
   
   padding:       5px;        /* 余白                   */
   border-radius: 3px;        /* 角丸                   */
@@ -266,23 +265,57 @@ div.profile_lst {
   padding:    20px 0px;
   overflow-y: auto;
   text-align: center;
+  vertical-align: middle;
 }
 
 /*
  * mmbr.html
  */
 
-div.profile {
-  display: inline-block;
+div.mmbr_gen {
+  /* vertical-align: middle; */
+  /* transition: 0.2s ease-in;  /* anm */
+  /* transition-delay: 0.2s;    /* anm */
 }
 
-div.profile_img {
+div.mmbr_gen:hover {
+  /* height: 135px; */
+  /* transition: 0.2s ease-in;  /* anm */
+  /* transition-delay: 0.0s;    /* anm */
+}
+
+div.profile {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 img.profile {
   width:  75px;
   height: 75px;
   vertical-align: middle;
+  
+  transition: 0.2s ease-out;  /* anm */
+  transition-delay: 0.2s;    /* anm */
+}
+
+div.mmbr_gen:hover img.profile {
+  /* width:  90px; */
+  /* height: 90px; */
+  /* transition-delay: 0.0s;    /* anm */
+}
+
+div.mmbr_gen       img.profile {
+  /* transition-delay: 0.0s;    /* anm */
+}
+
+div.profile:hover img.profile {
+  width:  110px;
+  height: 110px;
+  transition-delay: 0.0s;    /* anm */
+}
+
+div.profile       img.profile {
+  /* transition-delay: 0.2s;    /* anm */
 }
 
 img.icn {
