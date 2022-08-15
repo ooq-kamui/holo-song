@@ -14,10 +14,14 @@ let win = window;
 
 let doc = document;
 
-doc.elm_slct = doc.querySelector; // old
+// doc.elm_slct = doc.querySelector; // old
 
 function elm(slctr){
   return doc.querySelector(slctr);
+}
+
+function elm_all(slctr){
+  return doc.querySelectorAll(slctr);
 }
 
 function elm_by_id(id){
@@ -25,22 +29,40 @@ function elm_by_id(id){
 }
 
 // 
-// Obj
+// obj
 // 
 
 let Obj = Object;
+Obj.entry = Obj.entries
+
+// 
+// array
+// 
+
+Array.prototype.entry = function (){
+  return this.entries();
+};
 
 // 
 // node
 // 
 
+Node.prototype.elm = function (slctr){
+  return this.querySelector(slctr);
+};
+
 Node.prototype.elm_all = function (slctr){
   return this.querySelectorAll(slctr);
+};
+
+Node.prototype.__clone = function (slctr){
+  return this.cloneNode(slctr);
 };
 
 // 
 // elm
 // 
+
 Element.prototype.attr__ = function (name, val){
   return this.setAttribute(name, val);
 };
@@ -53,6 +75,20 @@ Element.prototype.__add = function (elm){
   return this.appendChild(elm);
 };
 
+Element.prototype.evnt__add = function (evnt_name, fnc, flg){
+  return this.addEventListener(evnt_name, fnc, flg);
+};
+
+Element.prototype.anm = function (keyfrm, opt){
+  return this.animate(keyfrm, opt);
+};
+
+/*
+Element.prototype.elm_all = function (slctr){
+  return this.querySelectorAll(slctr);
+};
+ */
+
 // 
 // etc
 // 
@@ -62,7 +98,14 @@ function log(str){
 }
 
 function dly(fnc, msec, arg){
-  setTimeout(fnc, msec, arg);
+  
+  let dly_id = setTimeout(fnc, msec, arg);
+  return dly_id
+}
+
+function dly__cncl(dly_id){
+  
+  return clearTimeout(dly_id);
 }
 
 function scrl(x, y){

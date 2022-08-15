@@ -3,8 +3,8 @@ class Mmbr {
 
   static _mmbr = {
     
-    "jp": [
-      {
+    "jp": {
+      "00": {
         "sora": {
           "ch_id": "UCp6993wxpyDPHUpavwDFqgg",
           "tw_id": "tokino_sora",
@@ -31,7 +31,7 @@ class Mmbr {
           "flt_s": "azki"
         },
       },
-      {
+      "01": {
         "fubuki": {
           "ch_id": "UCdn5BQ06XqgXoAxIhbqw5Rg",
           "tw_id": "shirakamifubuki",
@@ -58,7 +58,7 @@ class Mmbr {
           "flt_s": "夏色まつり,1期生"
         },
       },
-      {
+      "02": {
         "aqua": {
           "ch_id": "UC1opHUrw8rvnsadT-iGp7Cg",
           "tw_id": "minatoaqua",
@@ -85,7 +85,7 @@ class Mmbr {
           "flt_s": "紫咲シオン"
         },
       },
-      {
+      "gamers": {
         "mio": {
           "ch_id": "UCp-5t9SrOQwXMU7iIjQfARg",
           "tw_id": "ookamimio",
@@ -102,7 +102,7 @@ class Mmbr {
           "flt_s": "猫又おかゆ,おかころ"
         },
       },
-      {
+      "03": {
         "flare": {
           "ch_id": "UCvInZx9h3jC2JzsIzoOebWg",
           "tw_id": "shiranuiflare",
@@ -124,7 +124,7 @@ class Mmbr {
           "flt_s": "兎田ぺこら,ホロライブファンタジー"
         },
       },
-      {
+      "04": {
         "kanata": {
           "ch_id": "UCZlDXzGoo7d44bwdNObFacg",
           "tw_id": "amanekanatach",
@@ -146,7 +146,7 @@ class Mmbr {
           "flt_s": "姫森ルーナ,4期生,４期生"
         },
       },
-      {
+      "05": {
         "nene": {
           "ch_id": "UCAWSyEs_Io8MtpY3m-zqILA",
           "tw_id": "momosuzunene",
@@ -168,7 +168,7 @@ class Mmbr {
           "flt_s": "獅白ぼたん,ねぽらぼ,ほろふぁいぶ"
         },
       },
-      {
+      "06": {
         "koyori": {
           "ch_id": "UC6eWCld0KwmyHFbAqK3V-Rw",
           "tw_id": "hakuikoyori",
@@ -195,9 +195,9 @@ class Mmbr {
           "flt_s": "風間いろは,6期生,holox"
         }
       }
-    ],
-    "en": [
-      {
+    },
+    "en": {
+      "myth": {
         "calli": {
           "ch_id": "UCL_qhgtOy0dy1Agp8vkySQg",
           "tw_id": "moricalliope",
@@ -224,14 +224,14 @@ class Mmbr {
           "flt_s": "amelia,myth"
         }
       },
-      {
+      "hope": {
         "irys": {
           "ch_id": "UC8rcEBzJSleTkf_-agPM20g",
           "tw_id": "irys_en",
           "flt_s": "irys"
         }
       },
-      {
+      "council": {
         "sana": {
           "ch_id": "UCsUj0dszADCGbF3gNrQEuSQ",
           "tw_id": "tsukumosana",
@@ -258,9 +258,9 @@ class Mmbr {
           "flt_s": "baelz,council"
         }
       }
-    ],
-    "id": [
-      {
+    },
+    "id": {
+      "01": {
         "risu": {
           "ch_id": "UCOyYb1c43VlX9rc_lT6NKQw",
           "tw_id": "ayunda_risu",
@@ -277,7 +277,7 @@ class Mmbr {
           "flt_s": "iofi"
         }
       },
-      {
+      "02": {
         "ollie": {
           "ch_id": "UCYz_5n-uDuChHtLo7My1HnQ",
           "tw_id": "kureijiollie",
@@ -294,7 +294,7 @@ class Mmbr {
           "flt_s": "reine"
         }
       },
-      {
+      "03": {
         "zeta": {
           "ch_id": "UCTvHWSfBZgtxE4sILOaurIQ",
           "tw_id": "vestiazeta",
@@ -311,61 +311,443 @@ class Mmbr {
           "flt_s": "kobo"
         }
       }
-    ]
+    }
   };
-
-  constructor(){
+  
+  static dly_time_over  = 400;
+  static dly_time_leave = 500;
+  
+  constructor(is_panel){
+    
+    this._lst_elm;
+    this._lst_dsp_elm = {};
+    this._evnt_dly_id = {};
+    
+    this.lst_elm__init();
+    
+    if (is_panel){
+      this.lst_dsp__init();
+    }
   }
   
-  elm__cre(){
+  lst_elm__init(){
   
-    let profile_elm_tmpl = doc.elm_slct('#profile_tmpl');
-    let gen_elm_tmpl     = doc.elm_slct('#gen_tmpl');
-    let profile_lst      = doc.elm_slct('.profile_lst');
+    this.profile_elm__cre();
+    
+    this.lst_elm_evnt__add();
+  }
+  
+  lst_elm_evnt__add(){
+    
+    let mmbr_lst_elm = elm('div.mmbr_lst');
+    let _slf = this;
+    
+    mmbr_lst_elm.evnt__add(
+      "mouseover",
+      function (ev){
+        // log("mouseover");
 
-    for (let [cntry, _mmbr] of Obj.entries(Mmbr._mmbr)){
+        _slf.evnt_dly(
+          function (){ _slf.lst_elm__dsp(true); },
+          Mmbr.dly_time_over
+        );
+      },
+      false
+    );
 
-      for (let [idx, gen] of _mmbr.entries()){
+    mmbr_lst_elm.evnt__add(
+      "mouseleave",
+      function (ev){
+        // log("mouseleave");
+        
+        _slf.evnt_dly(
+          function (){ _slf.lst_elm__dsp(false); },
+          Mmbr.dly_time_leave
+        );
+      },
+      false
+    );
+  }
+  
+  profile_elm__cre(){
+  
+    let profile_elm_tmpl = elm('#profile_tmpl');
+    let gen_elm_tmpl     = elm('#gen_tmpl');
+    let mmbr_lst_elm     = elm('div.mmbr_lst');
 
-        let gen_node = gen_elm_tmpl.content.cloneNode(true);
+    for (let [_cntry, cntry_mmbr] of Obj.entry(Mmbr._mmbr)){
 
-        for (let [name, profile] of Obj.entries(gen)){
+      for (let [_gen, gen_mmbr] of Obj.entry(cntry_mmbr)){
 
-          let profile_node = profile_elm_tmpl.content.cloneNode(true);
+        let gen_node    = gen_elm_tmpl.content.__clone(true);
+        let gen_div_elm = gen_node.elm("div");
+        
+        gen_div_elm.attr__("id", Mmbr.gen_id(_cntry, _gen));
 
-          let t_elm
-          let a_elm = profile_node.elm_all("a");
+        for (let [name, profile] of Obj.entry(gen_mmbr)){
+
+          let profile_node = profile_elm_tmpl.content.__clone(true);
+
+          let a_elm;
+          a_elm = profile_node.elm("a.mmbr_name");
+          a_elm.textContent = name;
+          a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
           
-          a_elm[0].textContent = name;
-          a_elm[0].href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
+          a_elm = profile_node.elm_all("a.icn");
+          a_elm[0].href = "https://www.youtube.com/channel/" + profile.ch_id;
+          a_elm[1].href = "https://twitter.com/" + profile.tw_id;
           
-          a_elm[1].href = "https://www.youtube.com/channel/" + profile.ch_id;
-          
-          a_elm[2].href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
-          if (cntry == "en" || cntry == "id"){
-            a_elm[2].attr__del("href")
-            a_elm[2].attr__("tabindex", "-1")
+          a_elm = profile_node.elm("a.lnk_ch_video");
+          a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
+          if (_cntry == "en" || _cntry == "id"){
+            a_elm.attr__del("href")
+            a_elm.attr__("tabindex", "-1")
           }
           
-          a_elm[3].href = "https://twitter.com/" + profile.tw_id;
+          a_elm = profile_node.elm("a.lnk_song_video");
+          a_elm.href = "../song/?s=" + profile.flt_s
+
+          let img_elm    = profile_node.elm("img.profile");
+          img_elm.src = "../mmbr/" + _cntry + "/" + name + "/profile.jpg";
           
-          t_elm = profile_node.elm_all(".lnk_song_video");
-          t_elm[0].href = "../song/?s=" + profile.flt_s
-
-          let img_elm    = profile_node.elm_all("img");
-          img_elm[1].src = "../mmbr/" + cntry + "/" + name + "/profile.jpg";
-
-          // console.log(profile_node);
-
-          let gen_div_elm = gen_node.elm_all("div");
-          gen_div_elm[0].__add(profile_node);
+          // log(profile_node);
+          
+          gen_div_elm.__add(profile_node);
         }
-        profile_lst.__add(gen_node);
+        
+        let div_profile = gen_div_elm.elm_all("div.profile");
+        for (let [idx, _div_profile] of div_profile.entries()){
+
+          let left = 130 * idx
+          + (900 / 2)
+          - (130 * div_profile.length / 2) + "px";
+          // log(left);
+
+          _div_profile.style.left = left;
+        }
+        
+        mmbr_lst_elm.__add(gen_node);
       }
     }
   }
+  
+  lst_dsp__init(){
+    
+    let _slf = this;
+    
+    for (let [_cntry, cntry_mmbr] of Obj.entry(Mmbr._mmbr)){
+      
+      // dsp cntry evnt
+      
+      let lst_dsp_cntry_elm = this.lst_dsp_elm(_cntry);
+      
+      lst_dsp_cntry_elm.evnt__add(
+        "mouseover",
+        function (ev){
+          // log("mouseover:" + _cntry);
+          
+          _slf.evnt_dly(
+            function (){ _slf.lst_elm__dsp_cntry(_cntry); },
+            Mmbr.dly_time_over
+          );
+        },
+        false
+      );
+      
+      lst_dsp_cntry_elm.evnt__add(
+        "mouseleave",
+        function (ev){
+          // log("mouseleave");
+          
+          _slf.evnt_dly__cncl_all();
+          
+          _slf.evnt_dly(
+            function (){ _slf.lst_elm__dsp(false); },
+            Mmbr.dly_time_leave
+          );
+        },
+        false
+      );
+      
+      for (let [_gen  , gen_mmbr] of Obj.entry(cntry_mmbr)){
+        
+        let gen_id = Mmbr.gen_id(_cntry, _gen);
+        
+        let lst_dsp_elm = this.lst_dsp_elm(gen_id);
+        
+        lst_dsp_elm.evnt__add(
+          "mouseover",
+          function (ev){
+            // log("mouseover:" + gen_id);
+            
+            _slf.evnt_dly(
+              function (){ _slf.lst_elm__dsp_gen_id(gen_id); },
+              Mmbr.dly_time_over
+            );
+          },
+          false
+        );
+        
+        lst_dsp_elm.evnt__add(
+          "mouseleave",
+          function (ev){
+            // log("mouseleave");
+            
+            _slf.evnt_dly__cncl_all();
+            
+            _slf.evnt_dly(
+              function (){ _slf.lst_elm__dsp(false); },
+              Mmbr.dly_time_leave
+            );
+          },
+          false
+        );
+      }
+    }
+    
+    let lst_dsp_all_elm = this.lst_dsp_elm("all");
+    
+    lst_dsp_all_elm.evnt__add(
+      "mouseover",
+      function (evnt){
+        // log("mouseover");
+
+        _slf.evnt_dly(
+          function (){ _slf.lst_elm__dsp_gen_all(); }, 
+          Mmbr.dly_time_over
+        );
+      },
+      false
+    );
+    
+    lst_dsp_all_elm.evnt__add(
+      "mouseleave",
+      function (evnt){
+        // log("mouseleave");
+        
+        _slf.evnt_dly__cncl_all();
+
+        _slf.evnt_dly(
+          function (){ _slf.lst_elm__dsp(false); }, 
+          Mmbr.dly_time_leave
+        );
+      },
+      false
+    );
+  }
+  
+  // 
+  // evnt dly
+  // 
+  
+  evnt_dly(fnc, time){
+    
+    this.evnt_dly__cncl_all();
+    
+    let evnt_dly_id = dly(fnc, time);
+    
+    this.evnt_dly_id__add(evnt_dly_id);
+  }
+  
+  evnt_dly_id__add(evnt_dly_id){
+    
+    this._evnt_dly_id[evnt_dly_id] = true;
+  }
+  
+  evnt_dly__cncl(evnt_dly_id){
+    
+    dly__cncl(evnt_dly_id);
+    
+    delete this._evnt_dly_id[evnt_dly_id]
+  }
+  
+  evnt_dly__cncl_all(){
+    
+    for (let [_evnt_dly_id, _val] of Obj.entry(this._evnt_dly_id)){
+      
+      this.evnt_dly__cncl(_evnt_dly_id);
+    }
+  }
+  
+  // 
+  // elm
+  // 
+  
+  lst_elm(){
+    
+    if (this._lst_elm){ return this._lst_elm; }
+    
+    this.lst_elm__();
+    
+    return this._lst_elm;
+  }
+  
+  lst_elm__(){
+    
+    this._lst_elm = elm("span.mmbr_lst");
+  }
+  
+  lst_dsp_elm(gen_id){
+    
+    if (this._lst_dsp_elm[gen_id]){ return this._lst_dsp_elm[gen_id]; }
+    
+    this.lst_dsp_elm__(gen_id);
+    
+    return this._lst_dsp_elm[gen_id];
+  }
+  
+  lst_dsp_elm__(gen_id){
+    
+    this._lst_dsp_elm[gen_id] = elm_by_id("mmbr_lst_dsp_" + gen_id);
+  }
+  
+  // 
+  // lst elm dsp
+  // 
+  
+  lst_elm__dsp(flg){
+    
+    let opacity, visibility
+    
+    if (flg){
+      opacity    = 1;
+      visibility = "visible";
+      
+    }else{
+      opacity    = 0;
+      visibility = "hidden";
+      
+      this.lst_gen_elm__dsp_all(false);
+    }
+    
+    let lst_elm = this.lst_elm();
+    lst_elm.style.opacity    = opacity;
+    lst_elm.style.visibility = visibility;
+    
+    // log(opacity, visibility, time);
+  }
+  
+  lst_elm__dsp_gen_id(gen_id){
+    
+    this.lst_gen_elm__dsp_only(gen_id, true);
+    
+    this.lst_elm__dsp(true);
+  }
+  
+  lst_elm__dsp_cntry(cntry){
+    
+    this.lst_gen_elm__dsp_cntry_only(cntry, true);
+    
+    this.lst_elm__dsp(true);
+  }
+  
+  lst_elm__dsp_gen_all(){
+    
+    this.lst_gen_elm__dsp_all(true);
+    
+    this.lst_elm__dsp(true);
+  }
+  
+  // 
+  // lst gen dsp
+  // 
+  
+  lst_gen_elm__dsp(gen_id, flg, plt_row){
+    
+    let div_profile = elm_all("#" + gen_id + " div.profile");
+    
+    for (let [idx, _div_profile] of div_profile.entries()){
+        
+      let anm, prm, prm_fin;
+      let opt = {
+        duration: 900,
+        easing  : 'ease-in',
+        fill    : 'forwards',
+      };
+      
+      let mrgn_top =  30;
+      let hdn_top  = 110;
+      
+      if (flg){
+        prm = {
+          top    : 100 * (plt_row - 1) + mrgn_top + "px",
+          opacity: 1,
+          visibility: "visible",
+        };
+        anm = _div_profile.anm( [{}, prm], opt );
+        
+      }else{
+        prm = {
+          top    : hdn_top + mrgn_top + "px",
+          opacity: 0,
+          visibility: "hidden",
+        };
+        anm = _div_profile.anm( [{}, prm], opt );
+      }
+    }
+  }
+  
+  lst_gen_elm__dsp_only(gen_id, flg){
+    
+    let plt_row = 0;
+    
+    for (let [_cntry, cntry_mmbr] of Obj.entry(Mmbr._mmbr)){
+      
+      for (let [_gen, gen_mmbr] of Obj.entry(cntry_mmbr)){
+        
+        let _flg;
+        let _gen_id = Mmbr.gen_id(_cntry, _gen);
+        
+        _flg = (_gen_id == gen_id) ? flg : !flg ;
+        
+        if (_flg){ plt_row += 1; }
+        
+        this.lst_gen_elm__dsp(_gen_id, _flg, plt_row);
+      }
+    }
+  }
+  
+  lst_gen_elm__dsp_cntry_only(cntry, flg){
+    
+    let plt_row = 0;
+    
+    for (let [_cntry, cntry_mmbr] of Obj.entry(Mmbr._mmbr)){
+      
+      let _flg = (_cntry == cntry) ? flg : !flg ;
+      
+      for (let [_gen, gen_mmbr] of Obj.entry(cntry_mmbr)){
+        
+        if (_flg){ plt_row += 1; }
+
+        this.lst_gen_elm__dsp(Mmbr.gen_id(_cntry, _gen), _flg, plt_row);
+      }
+    }
+  }
+  
+  lst_gen_elm__dsp_all(flg){
+    
+    let plt_row = 0;
+    
+    for (  let [_cntry, cntry_mmbr] of Obj.entry(Mmbr._mmbr)){
+      for (let [_gen  , gen_mmbr  ] of Obj.entry(cntry_mmbr)){
+        
+        plt_row += 1;
+
+        this.lst_gen_elm__dsp(Mmbr.gen_id(_cntry, _gen), flg, plt_row);
+      }
+    }
+  }
+  
+  // 
+  // static method
+  // 
+  
+  static gen_id(cntry, gen){
+    
+    let gen_id = cntry + "_" + gen;
+    return gen_id;
+  }
 }
 
-let mmbr = new Mmbr();
-mmbr.elm__cre();
+let mmbr = new Mmbr(true);
 

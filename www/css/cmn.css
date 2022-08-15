@@ -70,9 +70,6 @@ img.srch_icn {
 .flt-tltip {
   position: relative;          /* ツールチップの位置の基準に */
   z-index:         1;
-  /*
-  cursor: pointer;                カーソルを当てたときにポインターに
-   */
 }
 .flt-tltip:hover .flt-tltip-txt {
   opacity: 1;
@@ -83,10 +80,10 @@ img.srch_icn {
   opacity: 0;                  /* はじめは隠しておく */
   visibility: hidden;          /* はじめは隠しておく */
   
-  position: absolute;          /* 絶対配置               */
-  left:          -3%;          /* 親要素に対する表示位置 */
-  transform: translateX(-50%); /* 親要素に対する表示位置 */
-  bottom:       20px;          /* 親要素に対する表示位置 */
+  position: absolute;          /* 絶対配置           */
+  left:          -3%;          
+  bottom:       20px;          
+  transform: translateX(-50%); 
   
   display: inline-block;
   padding: 5px;                /* 余白 */
@@ -97,7 +94,7 @@ img.srch_icn {
   background: #333;
   color: #bdc1c6;
   border-radius: 3px;          /* 角丸 */
-  transition: 0.3s ease-in;    /* animation */
+  transition: all 0.3s ease-in;    /* animation */
 }
 
 input[type="search"]#flt_bar {
@@ -205,67 +202,60 @@ img.thmb {
   opacity:         0;        /* はじめは隠しておく     */
   visibility: hidden;        /* はじめは隠しておく     */
   
-  position: absolute;        /* 絶対配置               */
+  position: absolute;             /* 絶対配置               */
   left: calc((100% - 800px) / 2); /* 親要素に対する表示位置 */
   transform:
     translateX(-280px)       /* translateX(-200px) */
     translateY( -90px);      /* 親要素に対する表示位置 */
   /* bottom:       24px;        /* 親要素に対する表示位置 */
-  z-index:         2;        /*  */
+  z-index:         2;
   /* vertical-align: bottom;    /*                        */
   
-  padding:       5px;        /* 余白                   */
-  border-radius: 3px;        /* 角丸                   */
+  padding:       5px;
+  border-radius: 3px;        /* 角丸 */
   background:    #333;
   color:         #bdc1c6;
   
-  transition: 0.25s ease-in; /* animation              */
+  transition: all 0.25s ease-in; /* anm */
 }
 
-span.mmbr_lst_lnk {
-  /* position: relative; 位置の基準             */
-}
-span.mmbr_lst_lnk:hover span.mmbr_lst {
-  /* display: inline-block; */
-  opacity: 1;
-  visibility: visible;
-  
-  transition-delay: 0.0s;    /* animation              */
+span.mmbr_lst_dsp_all {
 }
 
 span.mmbr_lst {
-  /* display:    none; */
-  opacity:    0;             /* はじめは隠しておく     */
-  visibility: hidden;        /* はじめは隠しておく     */
+  
+  opacity:    0;             /*  */
+  visibility: hidden;        /*  */
+  
+  width:   900px;
+  padding:   5px;
   
   position:   absolute;      /* 絶対配置               */
-  z-index:    3;
-  left: calc((100% - 900px) / 2);
-  /* left:    140px;            親要素に対する表示位置 */
-  top:         30px;         /* 親要素に対する表示位置 */
+  left:    calc((100% - 900px) / 2);
+  top:     30px;             /* 親要素に対する表示位置 */
+  z-index: 3;
   
-  padding:       5px;        /* 余白                   */
-  border-radius: 3px;        /* 角丸                   */
   background:    #333;
   color:         #bdc1c6;
-  
-  transition: 0.25s ease-in; /* animation              */
-  transition-delay: 0.3s;    /* animation              */
+  border-radius: 3px;        /* 角丸                   */
   
   vertical-align: top;
   /* text-align: right; */
   
-  width:      900px;
+  transition: all 0.25s ease-in; /* anm */
+  /* transition-delay: 0.3s;          /* anm */
 }
 
-div.profile_lst {
+div.mmbr_lst {
   
-  height:     600px;
-  margin:      5px 0px;
-  padding:    20px 0px;
-  overflow-y: auto;
-  text-align: center;
+  height:         600px;
+  margin:           5px 0px;
+  padding:         20px 0px;
+  overflow-y:     auto;
+  text-align:     center;
   vertical-align: middle;
+  
+  position: relative;
 }
 
 /*
@@ -273,54 +263,37 @@ div.profile_lst {
  */
 
 div.mmbr_gen {
-  /* vertical-align: middle; */
-  /* transition: 0.2s ease-in;  /* anm */
-  /* transition-delay: 0.2s;    /* anm */
-}
-
-div.mmbr_gen:hover {
-  /* height: 135px; */
-  /* transition: 0.2s ease-in;  /* anm */
-  /* transition-delay: 0.0s;    /* anm */
+  transition: all 1.5s ease-in; /* anm */
 }
 
 div.profile {
   display: inline-block;
   vertical-align: middle;
+  
+  position: absolute;
+  left:     0px;
+  top:      0px;
 }
 
 img.profile {
   width:  75px;
   height: 75px;
   vertical-align: middle;
-  
-  transition: 0.2s ease-out;  /* anm */
-  transition-delay: 0.2s;    /* anm */
 }
 
-div.mmbr_gen:hover img.profile {
-  /* width:  90px; */
-  /* height: 90px; */
-  /* transition-delay: 0.0s;    /* anm */
-}
-
-div.mmbr_gen       img.profile {
-  /* transition-delay: 0.0s;    /* anm */
-}
-
+/*
+ * todo > js
 div.profile:hover img.profile {
   width:  110px;
   height: 110px;
-  transition-delay: 0.0s;    /* anm */
 }
-
-div.profile       img.profile {
-  /* transition-delay: 0.2s;    /* anm */
-}
+ */
 
 img.icn {
   width:  25px;
   vertical-align: middle;
+  
+  transition: all 0.70s ease-in-out; /* anm */
 }
 
 a.mmbr_name {
