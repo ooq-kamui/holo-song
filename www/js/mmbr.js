@@ -674,6 +674,9 @@ class Mmbr {
           opacity: 1,
           visibility: "visible",
         };
+        
+        opt.easing = 'ease-in-out';
+        
         anm = _div_profile.anm( [{}, prm], opt );
         
       }else{

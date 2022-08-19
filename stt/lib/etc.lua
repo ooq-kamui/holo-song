@@ -22,6 +22,27 @@ Etc._cnst = {
 			},
 		},
 	},
+	vwp = {
+		ch_id = "UCfiSo8tO3WPU-8YOgr4Ba6g",
+		song = {
+			lst_id = {
+				"PLPqVb_3u9vSOXd5W4xU6SdRQH566UOIHs", -- kaf          - cvr
+				"PLPqVb_3u9vSPmC_LA5IbAxVsxcJ2YZWwg", -- kaf          - org
+				"PLPqVb_3u9vSP-sTicxVavDDoMHtujX7u9", -- kaf          - clb
+				"PL2JAJdZbZxxBGn9Cr4L8O2M2u9a_qqtB4", -- rim          - cvr
+				"PL2JAJdZbZxxAg-u96NH-rSXH-TU59vAAn", -- rim          - org
+				"PLEmd18ijO3gTDOL1E_e6OmNfmwU-BzaPu", -- harusaruhi   - cvr
+				"PLEmd18ijO3gSyA3lngsFXmm9wE3jXQplY", -- harusaruhi   - org
+				"PL_Y0U3KlPL0dmpNS5ewVWmxOmmWobj0zU", -- isekaijoucho - cvr
+				"PL_Y0U3KlPL0c_GRDoMbZsWlBNEoSb10Hh", -- isekaijoucho - org
+				"PL_Y0U3KlPL0dz_yBRLuOzdTeTSSSSJbM9", -- isekaijoucho - clb
+				"PLGmIA5WXg5Ll5lX6ur923ME1SrLobL_dm", -- koko         - cvr
+				"PLGmIA5WXg5LmN-hr7TKH97hU9CIL1_gov", -- koko         - org
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
 	kaf = {
 		ch_id = "UCQ1U65-CQdIoZ2_NA4Z4F7A",
 		song = {
