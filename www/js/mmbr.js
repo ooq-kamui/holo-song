@@ -15,6 +15,11 @@ class Mmbr {
           "tw_id": "robocosan",
           "flt_s": "ロボ子,ロボビタンA,roboco"
         },
+        "azki": {
+          "ch_id": "UC0TXe_LYZ4scaW2XMyi5_kw",
+          "tw_id": "azki_vdiva",
+          "flt_s": "azki"
+        },
         "miko": {
           "ch_id": "UC-hM6YJuNYVAmUWxeIr9FeA",
           "tw_id": "sakuramiko35",
@@ -25,17 +30,12 @@ class Mmbr {
           "tw_id": "suisei_hosimati",
           "flt_s": "すいせい,suisei,micomet"
         },
-        "azki": {
-          "ch_id": "UC0TXe_LYZ4scaW2XMyi5_kw",
-          "tw_id": "azki_vdiva",
-          "flt_s": "azki"
-        },
       },
       "01": {
-        "fubuki": {
-          "ch_id": "UCdn5BQ06XqgXoAxIhbqw5Rg",
-          "tw_id": "shirakamifubuki",
-          "flt_s": "フブキ,fubuki,1期生"
+        "mel": {
+          "ch_id": "UCD8HOxPs4Xvsm8H0ZxXGiBw",
+          "tw_id": "yozoramel",
+          "flt_s": "夜空メル,1期生"
         },
         "aki": {
           "ch_id": "UCFTLzh12_nrtzqBPsTCqenA",
@@ -47,10 +47,10 @@ class Mmbr {
           "tw_id": "akaihaato",
           "flt_s": "はあと,はあちゃま,haato,haachama,ロイちゃま,1期生"
         },
-        "mel": {
-          "ch_id": "UCD8HOxPs4Xvsm8H0ZxXGiBw",
-          "tw_id": "yozoramel",
-          "flt_s": "夜空メル,1期生"
+        "fubuki": {
+          "ch_id": "UCdn5BQ06XqgXoAxIhbqw5Rg",
+          "tw_id": "shirakamifubuki",
+          "flt_s": "フブキ,fubuki,1期生"
         },
         "matsuri": {
           "ch_id": "UCQ0UDLQCjY0rmuxCDE38FGg",
@@ -64,10 +64,10 @@ class Mmbr {
           "tw_id": "minatoaqua",
           "flt_s": "湊あくあ,aqua"
         },
-        "subaru": {
-          "ch_id": "UCvzGlP9oQwU--Y0r9id_jnA",
-          "tw_id": "oozorasubaru",
-          "flt_s": "スバル"
+        "shion": {
+          "ch_id": "UCXTpFs_3PqI41qX2d9tL2Rw",
+          "tw_id": "murasakishionch",
+          "flt_s": "紫咲シオン"
         },
         "ayame": {
           "ch_id": "UC7fk0CB07ly8oSl0aqKkqFg",
@@ -79,10 +79,10 @@ class Mmbr {
           "tw_id": "yuzukichococh",
           "flt_s": "癒月ちょこ"
         },
-        "shion": {
-          "ch_id": "UCXTpFs_3PqI41qX2d9tL2Rw",
-          "tw_id": "murasakishionch",
-          "flt_s": "紫咲シオン"
+        "subaru": {
+          "ch_id": "UCvzGlP9oQwU--Y0r9id_jnA",
+          "tw_id": "oozorasubaru",
+          "flt_s": "スバル"
         },
       },
       "gamers": {
@@ -91,37 +91,37 @@ class Mmbr {
           "tw_id": "ookamimio",
           "flt_s": "大神ミオ,さしみお"
         },
-        "korone": {
-          "ch_id": "UChAnqc_AY5_I3Px5dig3X1Q",
-          "tw_id": "inugamikorone",
-          "flt_s": "戌神ころね,おかころ"
-        },
         "okayu": {
           "ch_id": "UCvaTdHTWBGv3MKj3KVqJVCw",
           "tw_id": "nekomataokayu",
           "flt_s": "猫又おかゆ,おかころ"
         },
+        "korone": {
+          "ch_id": "UChAnqc_AY5_I3Px5dig3X1Q",
+          "tw_id": "inugamikorone",
+          "flt_s": "戌神ころね,おかころ"
+        },
       },
       "03": {
+        "pekora": {
+          "ch_id": "UC1DCedRgGHBdm81E1llLhOQ",
+          "tw_id": "usadapekora",
+          "flt_s": "兎田ぺこら,ホロライブファンタジー"
+        },
         "flare": {
           "ch_id": "UCvInZx9h3jC2JzsIzoOebWg",
           "tw_id": "shiranuiflare",
           "flt_s": "不知火フレア,ホロライブファンタジー"
-        },
-        "marine": {
-          "ch_id": "UCCzUftO8KOVkV4wQG1vkUvg",
-          "tw_id": "houshoumarine",
-          "flt_s": "宝鐘マリン,ホロライブファンタジー"
         },
         "noel": {
           "ch_id": "UCdyqAaZDKHXg4Ahi7VENThQ",
           "tw_id": "shiroganenoel",
           "flt_s": "白銀ノエル,ホロライブファンタジー"
         },
-        "pekora": {
-          "ch_id": "UC1DCedRgGHBdm81E1llLhOQ",
-          "tw_id": "usadapekora",
-          "flt_s": "兎田ぺこら,ホロライブファンタジー"
+        "marine": {
+          "ch_id": "UCCzUftO8KOVkV4wQG1vkUvg",
+          "tw_id": "houshoumarine",
+          "flt_s": "宝鐘マリン,ホロライブファンタジー"
         },
       },
       "04": {
@@ -147,33 +147,28 @@ class Mmbr {
         },
       },
       "05": {
-        "nene": {
-          "ch_id": "UCAWSyEs_Io8MtpY3m-zqILA",
-          "tw_id": "momosuzunene",
-          "flt_s": "桃鈴ねね,nene,ねぽらぼ,ほろふぁいぶ"
-        },
         "lamy": {
           "ch_id": "UCFKOVgVbGmX65RxO3EtH3iw",
           "tw_id": "yukihanalamy",
           "flt_s": "雪花ラミィ,ねぽらぼ,ほろふぁいぶ"
         },
-        "polka": {
-          "ch_id": "UCK9V2B22uJYu3N7eR_BT9QA",
-          "tw_id": "omarupolka",
-          "flt_s": "尾丸ポルカ,polka,ねぽらぼ,ほろふぁいぶ"
+        "nene": {
+          "ch_id": "UCAWSyEs_Io8MtpY3m-zqILA",
+          "tw_id": "momosuzunene",
+          "flt_s": "桃鈴ねね,nene,ねぽらぼ,ほろふぁいぶ"
         },
         "botan": {
           "ch_id": "UCUKD-uaobj9jiqB-VXt71mA",
           "tw_id": "shishirobotan",
           "flt_s": "獅白ぼたん,ねぽらぼ,ほろふぁいぶ"
         },
+        "polka": {
+          "ch_id": "UCK9V2B22uJYu3N7eR_BT9QA",
+          "tw_id": "omarupolka",
+          "flt_s": "尾丸ポルカ,polka,ねぽらぼ,ほろふぁいぶ"
+        },
       },
       "06": {
-        "koyori": {
-          "ch_id": "UC6eWCld0KwmyHFbAqK3V-Rw",
-          "tw_id": "hakuikoyori",
-          "flt_s": "博衣こより,6期生,holox"
-        },
         "laplus": {
           "ch_id": "UCENwRMx5Yh42zWpzURebzTw",
           "tw_id": "laplusdarknesss",
@@ -183,6 +178,11 @@ class Mmbr {
           "ch_id": "UCs9_O1tRPMQTHQ-N_L6FU2g",
           "tw_id": "takanelui",
           "flt_s": "鷹嶺ルイ,6期生,holox"
+        },
+        "koyori": {
+          "ch_id": "UC6eWCld0KwmyHFbAqK3V-Rw",
+          "tw_id": "hakuikoyori",
+          "flt_s": "博衣こより,6期生,holox"
         },
         "chloe": {
           "ch_id": "UCIBY1ollUsauvVi4hW4cumw",
@@ -232,11 +232,6 @@ class Mmbr {
         }
       },
       "council": {
-        "sana": {
-          "ch_id": "UCsUj0dszADCGbF3gNrQEuSQ",
-          "tw_id": "tsukumosana",
-          "flt_s": "sana,council"
-        },
         "fauna": {
           "ch_id": "UCO_aKKYxn4tvrqPjcTzZ6EQ",
           "tw_id": "ceresfauna",
@@ -256,6 +251,11 @@ class Mmbr {
           "ch_id": "UCgmPnx-EEeOrZSg5Tiw7ZRQ",
           "tw_id": "hakosbaelz",
           "flt_s": "baelz,council"
+        },
+        "sana": {
+          "ch_id": "UCsUj0dszADCGbF3gNrQEuSQ",
+          "tw_id": "tsukumosana",
+          "flt_s": "sana,council"
         }
       }
     },

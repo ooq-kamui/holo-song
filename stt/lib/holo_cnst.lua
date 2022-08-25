@@ -70,6 +70,53 @@ Holo._jp = {
         },
       },
     },
+    azki    = {
+      ch_id = "UC0TXe_LYZ4scaW2XMyi5_kw",
+      song = {
+        lst_id = {
+          "PLpt61bADOMwXIZpLr09sCNeocN7CXjcoS", -- cvr
+          "PLpt61bADOMwWhy94VL5fB9NfJERFmAOiF", -- cvr-clb
+          "PLpt61bADOMwW2aA9I1hWHyR8OixSuCXzc", -- org
+        },
+        lst_excld_video_id = {
+          "aWSaIdLUE0Y", -- vo-m
+          "hvB26v6rBxA", -- live
+          "tl_cVdFVkGQ", -- live
+        },
+        video_id = {
+          "uE6keTcapp0",
+        },
+      },
+    },
+    miko    = {
+      ch_id = "UC-hM6YJuNYVAmUWxeIr9FeA",
+      song = {
+        lst_id = {
+          "PLMF8NocLqJtubiccXUm9SCZ79dDPSLq2B", -- cvr
+          "PLMF8NocLqJttJCIiUCkNXx6jW4dAYfz5G", -- org
+        },
+        lst_excld_video_id = {
+          "DWIo1R5G_oc", -- game live ?
+          "w6e95H1nXVc", -- live ?
+        },
+        video_id = {
+          "AaCFoBdpviw", -- ch holo not
+        },
+      },
+    },
+    suisei  = {
+      ch_id = "UC5CwaMl1eIgY8h02uZw7u8A",
+      song = {
+        lst_id = {
+          "PLAo9RlHR2tDakgakxbOxT9dAZD0rpwvXQ", -- cvr
+          "PLAo9RlHR2tDZwddeEyp9nTfpaFB58DrXd", -- org
+        },
+        lst_excld_video_id = {
+          "UXQDUhSr8nU", -- 
+          "68iRzgy6c00", -- vo-m
+        },
+      },
+    },
     mel     = {
       ch_id = "UCD8HOxPs4Xvsm8H0ZxXGiBw",
       song = {
@@ -100,19 +147,13 @@ Holo._jp = {
         },
       },
     },
-    matsuri = {
-      ch_id = "UCQ0UDLQCjY0rmuxCDE38FGg",
+    haato   = {
+      ch_id = "UC1CfXB_kRs3C-zaeTG3oGyg",
       song = {
         lst_id = {
-          "PL6sZ3uYmeG1vGZVLNlWdJkm3W0R86y_Qa", -- cvr, org
-        },
-        lst_excld_video_id = {
-          "j84IEsVYGyE", -- vo-m
-          "-wV0AH0u8ik", -- vo-m
-          "Z-q5aJm0UJE", -- vo-m
-          "VbLsb2t1qzI", -- vo-m
-          "1KyLE_Ejf-U", -- vo-m
-          "Mm8Ej2xG_O8", -- vo-m
+          "PLQoA24ikdy_kFurrcDRRJufTwHo_Kv6ew", -- cvr, org
+          "PLQoA24ikdy_nAOv_I7586LS891s5es8AC", -- org
+          -- "PLQoA24ikdy_mj_PeUMQcq-VXTXvlsuffo", -- rap
         },
       },
     },
@@ -134,13 +175,19 @@ Holo._jp = {
         },
       },
     },
-    haato   = {
-      ch_id = "UC1CfXB_kRs3C-zaeTG3oGyg",
+    matsuri = {
+      ch_id = "UCQ0UDLQCjY0rmuxCDE38FGg",
       song = {
         lst_id = {
-          "PLQoA24ikdy_kFurrcDRRJufTwHo_Kv6ew", -- cvr, org
-          "PLQoA24ikdy_nAOv_I7586LS891s5es8AC", -- org
-          -- "PLQoA24ikdy_mj_PeUMQcq-VXTXvlsuffo", -- rap
+          "PL6sZ3uYmeG1vGZVLNlWdJkm3W0R86y_Qa", -- cvr, org
+        },
+        lst_excld_video_id = {
+          "j84IEsVYGyE", -- vo-m
+          "-wV0AH0u8ik", -- vo-m
+          "Z-q5aJm0UJE", -- vo-m
+          "VbLsb2t1qzI", -- vo-m
+          "1KyLE_Ejf-U", -- vo-m
+          "Mm8Ej2xG_O8", -- vo-m
         },
       },
     },
@@ -203,22 +250,6 @@ Holo._jp = {
         },
       },
     },
-    miko    = {
-      ch_id = "UC-hM6YJuNYVAmUWxeIr9FeA",
-      song = {
-        lst_id = {
-          "PLMF8NocLqJtubiccXUm9SCZ79dDPSLq2B", -- cvr
-          "PLMF8NocLqJttJCIiUCkNXx6jW4dAYfz5G", -- org
-        },
-        lst_excld_video_id = {
-          "DWIo1R5G_oc", -- game live ?
-          "w6e95H1nXVc", -- live ?
-        },
-        video_id = {
-          "AaCFoBdpviw", -- ch holo not
-        },
-      },
-    },
     okayu   = {
       ch_id = "UCvaTdHTWBGv3MKj3KVqJVCw",
       song = {
@@ -253,36 +284,6 @@ Holo._jp = {
         },
       },
     },
-    azki    = {
-      ch_id = "UC0TXe_LYZ4scaW2XMyi5_kw",
-      song = {
-        lst_id = {
-          "PLpt61bADOMwXIZpLr09sCNeocN7CXjcoS", -- cvr
-          "PLpt61bADOMwWhy94VL5fB9NfJERFmAOiF", -- cvr-clb
-          "PLpt61bADOMwW2aA9I1hWHyR8OixSuCXzc", -- org
-        },
-        lst_excld_video_id = {
-          "aWSaIdLUE0Y", -- vo-m
-          "hvB26v6rBxA", -- live
-        },
-        video_id = {
-          "uE6keTcapp0",
-        },
-      },
-    },
-    suisei  = {
-      ch_id = "UC5CwaMl1eIgY8h02uZw7u8A",
-      song = {
-        lst_id = {
-          "PLAo9RlHR2tDakgakxbOxT9dAZD0rpwvXQ", -- cvr
-          "PLAo9RlHR2tDZwddeEyp9nTfpaFB58DrXd", -- org
-        },
-        lst_excld_video_id = {
-          "UXQDUhSr8nU", -- 
-          "68iRzgy6c00", -- vo-m
-        },
-      },
-    },
     pekora  = {
       ch_id = "UC1DCedRgGHBdm81E1llLhOQ",
       song = {
@@ -291,16 +292,6 @@ Holo._jp = {
         },
       },
     },
-    --[[
-    rushia  = {
-      ch_id = "UCl_gCybOJRIgOXw6Qb4qJzQ",
-      song = {
-        lst_id = {
-          "PL_i2uYKhN9y3qOFj4177ZsINvyS_KUDgb", -- cvr, org
-        },
-      },
-    },
-    --]]
     flare   = {
       ch_id = "UCvInZx9h3jC2JzsIzoOebWg",
       song = {
@@ -328,6 +319,16 @@ Holo._jp = {
         },
       },
     },
+    --[[
+    rushia  = {
+      ch_id = "UCl_gCybOJRIgOXw6Qb4qJzQ",
+      song = {
+        lst_id = {
+          "PL_i2uYKhN9y3qOFj4177ZsINvyS_KUDgb", -- cvr, org
+        },
+      },
+    },
+    --]]
     kanata  = {
       ch_id = "UCZlDXzGoo7d44bwdNObFacg",
       song = {
@@ -541,12 +542,6 @@ Holo._en = {
         },
       },
     },
-    sana = {
-      ch_id = "UCsUj0dszADCGbF3gNrQEuSQ",
-      song = {
-        lst_id = {},
-      },
-    },
     fauna = {
       ch_id = "UCO_aKKYxn4tvrqPjcTzZ6EQ",
       song = {
@@ -578,6 +573,12 @@ Holo._en = {
         -- video_id = {},
       },
     },
+    sana = {
+      ch_id = "UCsUj0dszADCGbF3gNrQEuSQ",
+      song = {
+        lst_id = {},
+      },
+    },
   },
 }
 Holo._id = {
@@ -598,11 +599,15 @@ Holo._id = {
     },
   },
   mmbr = {
-    iofi = {
-      ch_id = "UCAoy6rzhSf4ydcYjJw3WoVg",
+    risu = {
+      ch_id = "UCOyYb1c43VlX9rc_lT6NKQw",
       song = {
         lst_id = {
-          -- "PL0OWyC-pOgQnQ1POfg1fOiXffUPE-b3sR", -- cvr
+          -- "PLHeIKIUgnbJDhs2mTJ6WFXUvol189G7IK", -- org
+          -- "PLHeIKIUgnbJBzW9cvaqSG6P9_NvXldgCH", -- cvr
+        },
+        lst_excld_video_id = {
+          -- "N9M5jX9z5cQ", -- vo-m
         },
       },
     },
@@ -614,15 +619,11 @@ Holo._id = {
         },
       },
     },
-    risu = {
-      ch_id = "UCOyYb1c43VlX9rc_lT6NKQw",
+    iofi = {
+      ch_id = "UCAoy6rzhSf4ydcYjJw3WoVg",
       song = {
         lst_id = {
-          -- "PLHeIKIUgnbJDhs2mTJ6WFXUvol189G7IK", -- org
-          -- "PLHeIKIUgnbJBzW9cvaqSG6P9_NvXldgCH", -- cvr
-        },
-        lst_excld_video_id = {
-          -- "N9M5jX9z5cQ", -- vo-m
+          -- "PL0OWyC-pOgQnQ1POfg1fOiXffUPE-b3sR", -- cvr
         },
       },
     },

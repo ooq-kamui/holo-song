@@ -801,6 +801,10 @@ let song = new Song();
 
 // ytplyr
 
+// plyr size l
+// 950
+// 534
+
 let ytplyr;
 win.onYouTubeIframeAPIReady = function(){
 

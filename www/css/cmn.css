@@ -36,6 +36,15 @@ ul {
   text-decoration: none;
 }
 
+/*
+ * html body construction
+ */
+
+:root {
+  --hdr-h: 287px; /* 280px; 370px; */
+  --lst-w: 800px;
+}
+
 .header {
   position: fixed;
   background-color: #202124;
@@ -81,9 +90,9 @@ img.srch_icn {
   visibility: hidden;          /* はじめは隠しておく */
   
   position: absolute;          /* 絶対配置           */
-  left:          -3%;          
-  bottom:       20px;          
-  transform: translateX(-50%); 
+  left:          -3%;
+  bottom:       20px;
+  transform: translateX(-50%);
   
   display: inline-block;
   padding: 5px;                /* 余白 */
@@ -122,10 +131,14 @@ input::-webkit-search-cancel-button {
   color: gray;
 }
 
+div.body_hdr {
+  height : var(--hdr-h);
+}
+
 div.body_lr {
   display: inline-block;
-  width: calc((100% - (800px + 40px)) / 2);
-  padding-top: 287px;
+  width: calc((100% - (var(--lst-w) + 40px)) / 2);
+  /* padding-top: var(--hdr-h); /*  */
   margin: 16px 0px;
   font-size: 0.8rem;
 }
@@ -141,10 +154,10 @@ div.body_r {
 }
 
 .video_lst_scrl {
-  padding-top: 287px; /* 280px; 370px; */
+  /* padding-top: var(--hdr-h); /*  */
 
   text-align: left;
-  width: 800px;
+  width: var(--lst-w);
 
   display: inline-block;
   white-space: nowrap;
@@ -152,7 +165,6 @@ div.body_r {
 
   /*
   overflow-y: auto;
-  height: 800px;
    */
 }
 
@@ -203,7 +215,7 @@ img.thmb {
   visibility: hidden;        /* はじめは隠しておく     */
   
   position: absolute;             /* 絶対配置               */
-  left: calc((100% - 800px) / 2); /* 親要素に対する表示位置 */
+  left: calc((100% - var(--lst-w)) / 2); /* 親要素に対する表示位置 */
   transform:
     translateX(-280px)       /* translateX(-200px) */
     translateY( -90px);      /* 親要素に対する表示位置 */
