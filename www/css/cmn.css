@@ -32,7 +32,7 @@ ul {
   /* margin: 0 auto; */
 }
 
-.switch {
+.swtch {
   text-decoration: none;
 }
 
@@ -42,6 +42,7 @@ ul {
 
 :root {
   --hdr-h: 287px; /* 280px; 370px; */
+  
   --lst-w: 800px;
 }
 
@@ -57,7 +58,7 @@ ul {
 
 .hdr_lr {
   display: inline-block;
-  width: calc((100% - (640px + 40px)) / 2);
+  /* width: calc((100% - (640px + 40px)) / 2); /*  */
   vertical-align: top;
   font-size: 0.8rem;
 }
@@ -76,16 +77,16 @@ img.srch_icn {
   margin: 0px 4px;
 }
 
-.flt-tltip {
+.tooltip {
   position: relative;          /* ツールチップの位置の基準に */
   z-index:         1;
 }
-.flt-tltip:hover .flt-tltip-txt {
+.tooltip:hover .tooltip-txt {
   opacity: 1;
   visibility: visible;
 }
 
-.flt-tltip-txt {
+.tooltip-txt {
   opacity: 0;                  /* はじめは隠しておく */
   visibility: hidden;          /* はじめは隠しておく */
   
@@ -95,43 +96,43 @@ img.srch_icn {
   transform: translateX(-50%);
   
   display: inline-block;
-  padding: 5px;                /* 余白 */
+  padding: 5px;                 /* 余白 */
   text-align: start;
-  white-space: nowrap;         /* テキストを折り返さない */
+  white-space: nowrap;          /* テキストを折り返さない */
   font-size: 0.7rem;
-  line-height: 1.3;            /* 行間 */
+  line-height: 1.3;             /* 行間 */
   background: #333;
   color: #bdc1c6;
-  border-radius: 3px;          /* 角丸 */
-  transition: all 0.3s ease-in;    /* animation */
+  border-radius: 3px;           /* 角丸 */
+  transition: all 0.3s ease-in; /* animation */
 }
 
 input[type="search"]#flt_bar {
-  width: 750px;
+  width:            750px;
   background-color: #1a1c21;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 4px;
-  border-color: blueviolet;
-  padding-left: 10px;
-  color: #bdc1c6;
-  font-size: 0.9rem;
+  border-style:     solid;
+  border-width:       1px;
+  border-radius:      4px;
+  border-color:     blueviolet;
+  padding-left:      10px;
+  color:            #bdc1c6;
+  font-size:        0.9rem;
 }
 
 input::-webkit-search-cancel-button {
   -webkit-appearance: none;
   content: url("/holo/img/input-cancel.png");
-  height : 13px;
-  width  : 13px;
-  cursor : pointer;
-  padding-right: 4px;
+  height :       13px;
+  width  :       13px;
+  cursor :       pointer;
+  padding-right:  4px;
 }
 
 ::placeholder {
   color: gray;
 }
 
-div.body_hdr {
+div.body_hdr_space {
   height : var(--hdr-h);
 }
 

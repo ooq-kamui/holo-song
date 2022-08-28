@@ -343,7 +343,7 @@ class Mmbr {
     let _slf = this;
     
     mmbr_lst_elm.evnt__add(
-      "mouseover",
+      'mouseover',
       function (ev){
         // log("mouseover");
 
@@ -356,7 +356,7 @@ class Mmbr {
     );
 
     mmbr_lst_elm.evnt__add(
-      "mouseleave",
+      'mouseleave',
       function (ev){
         // log("mouseleave");
         
@@ -442,7 +442,7 @@ class Mmbr {
       let lst_dsp_cntry_elm = this.lst_dsp_elm(_cntry);
       
       lst_dsp_cntry_elm.evnt__add(
-        "mouseover",
+        'mouseover',
         function (ev){
           // log("mouseover:" + _cntry);
           
@@ -455,7 +455,7 @@ class Mmbr {
       );
       
       lst_dsp_cntry_elm.evnt__add(
-        "mouseleave",
+        'mouseleave',
         function (ev){
           // log("mouseleave");
           
@@ -476,7 +476,7 @@ class Mmbr {
         let lst_dsp_elm = this.lst_dsp_elm(gen_id);
         
         lst_dsp_elm.evnt__add(
-          "mouseover",
+          'mouseover',
           function (ev){
             // log("mouseover:" + gen_id);
             
@@ -489,7 +489,7 @@ class Mmbr {
         );
         
         lst_dsp_elm.evnt__add(
-          "mouseleave",
+          'mouseleave',
           function (ev){
             // log("mouseleave");
             
@@ -505,10 +505,10 @@ class Mmbr {
       }
     }
     
-    let lst_dsp_all_elm = this.lst_dsp_elm("all");
+    let lst_dsp_all_elm = this.lst_dsp_elm('all');
     
     lst_dsp_all_elm.evnt__add(
-      "mouseover",
+      'mouseover',
       function (evnt){
         // log("mouseover");
 
@@ -521,7 +521,7 @@ class Mmbr {
     );
     
     lst_dsp_all_elm.evnt__add(
-      "mouseleave",
+      'mouseleave',
       function (evnt){
         // log("mouseleave");
         
@@ -584,7 +584,7 @@ class Mmbr {
   
   lst_elm__(){
     
-    this._lst_elm = elm("span.mmbr_lst");
+    this._lst_elm = elm('span.mmbr_lst');
   }
   
   lst_dsp_elm(gen_id){
@@ -598,7 +598,7 @@ class Mmbr {
   
   lst_dsp_elm__(gen_id){
     
-    this._lst_dsp_elm[gen_id] = elm_by_id("mmbr_lst_dsp_" + gen_id);
+    this._lst_dsp_elm[gen_id] = elm_by_id('mmbr_lst_dsp_' + gen_id);
   }
   
   // 
@@ -611,11 +611,11 @@ class Mmbr {
     
     if (flg){
       opacity    = 1;
-      visibility = "visible";
+      visibility = 'visible';
       
     }else{
       opacity    = 0;
-      visibility = "hidden";
+      visibility = 'hidden';
       
       this.lst_gen_elm__dsp_all(false);
     }
@@ -654,7 +654,7 @@ class Mmbr {
   
   lst_gen_elm__dsp(gen_id, flg, plt_row){
     
-    let div_profile = elm_all("#" + gen_id + " div.profile");
+    let div_profile = elm_all('#' + gen_id + ' div.profile');
     
     for (let [idx, _div_profile] of div_profile.entries()){
         
@@ -672,7 +672,7 @@ class Mmbr {
         prm = {
           top    : 100 * (plt_row - 1) + mrgn_top + "px",
           opacity: 1,
-          visibility: "visible",
+          visibility: 'visible',
         };
         
         opt.easing = 'ease-in-out';
@@ -681,9 +681,9 @@ class Mmbr {
         
       }else{
         prm = {
-          top    : hdn_top + mrgn_top + "px",
+          top    : hdn_top + mrgn_top + 'px',
           opacity: 0,
-          visibility: "hidden",
+          visibility: 'hidden',
         };
         anm = _div_profile.anm( [{}, prm], opt );
       }
@@ -747,7 +747,7 @@ class Mmbr {
   
   static gen_id(cntry, gen){
     
-    let gen_id = cntry + "_" + gen;
+    let gen_id = cntry + '_' + gen;
     return gen_id;
   }
 }

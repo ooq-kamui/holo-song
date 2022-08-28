@@ -54,6 +54,15 @@ class Plyr {
       this.ply_rnd();
     }
   }
+  
+  size__(w, h){
+    
+    this._ytplyr.setSize(w, h);
+  }
+  
+  // 
+  // static
+  // 
 
   static ready(ev){
     // Song._embd_code = ev.target.getVideoEmbedCode();
@@ -81,7 +90,7 @@ class Plyr {
 
 class Song {
 
-  constructor(){
+  constructor(menu){
 
     this._plyr = new Plyr();
 
@@ -101,7 +110,8 @@ class Song {
     let keyup_stack = [];
     let slf = this;
 
-    function flt_bar_keyup_exe(force){
+    // function flt_bar_keyup_exe(force){
+    let flt_bar_keyup_exe = function (force){
 
       keyup_stack.pop();
 
@@ -111,7 +121,8 @@ class Song {
       slf.flt_ply(str, force);
     }
 
-    function flt_bar_keyup(ev){
+    let flt_bar_keyup = function (ev){
+      log("flt_bar_keyup");
 
       log("isComposing: " + ev.isComposing);
       log("keyCode: "     + ev.keyCode    );
@@ -119,15 +130,29 @@ class Song {
       if (ev.keyCode === 16){return;} // shift
       if (ev.keyCode ===  0){return;} // del ?
       if (ev.keyCode === 27){return;} // esc
-      log("flt_bar_keyup_exe");
-
-      let force = (ev.code == "Enter") ? true : false;
 
       keyup_stack.push(1);
-
+      
+      let force = (ev.code == "Enter") ? true : false;
       dly(flt_bar_keyup_exe, 700, force);
     }
-    this.flt_bar_elm().addEventListener('keyup', flt_bar_keyup);
+    this.flt_bar_elm().addEventListener('keyup' , flt_bar_keyup);
+    
+    let flt_bar_cncl = function (ev){
+      log("flt_bar_cncl");
+
+      keyup_stack.push(1);
+      
+      let force = false;
+      dly(flt_bar_keyup_exe, 700, force);
+    }
+    this.flt_bar_elm().addEventListener('search', flt_bar_cncl);
+    
+    // plyr size
+    
+    this.plyr_size__init();
+    
+    this._menu = menu;
   }
 
   // video
@@ -167,12 +192,12 @@ class Song {
 
   // video ordr
 
-  static _video_ordr_df = [
+  static _video_ordr_def = [
     "view_cnt",
     "cdt"
   ];
 
-  static _video_ordr_op_df = [
+  static _video_ordr_op_def = [
     "asc",
     "dsc"
   ];
@@ -193,9 +218,9 @@ class Song {
 
   video_ordr__(ordr){
 
-    if (!Song._video_ordr_df.includes(ordr)){
+    if (!Song._video_ordr_def.includes(ordr)){
 
-      ordr = Song._video_ordr_df[0];
+      ordr = Song._video_ordr_def[0];
     }
 
     this._video_ordr = ordr;
@@ -205,29 +230,29 @@ class Song {
 
   video_ordr__tgl(){
 
-    let idx = Song._video_ordr_df.indexOf(this._video_ordr);
+    let idx = Song._video_ordr_def.indexOf(this._video_ordr);
 
     idx = idx + 1;
-    if (idx >= Song._video_ordr_df.length) idx = 0;
+    if (idx >= Song._video_ordr_def.length) idx = 0;
 
-    this.video_ordr__(Song._video_ordr_df[idx]);
+    this.video_ordr__(Song._video_ordr_def[idx]);
   }
 
   video_ordr_op__tgl(){
 
-    let idx = Song._video_ordr_op_df.indexOf(this._video_ordr_op);
+    let idx = Song._video_ordr_op_def.indexOf(this._video_ordr_op);
 
     idx = idx + 1;
-    if (idx >= Song._video_ordr_op_df.length) idx = 0;
+    if (idx >= Song._video_ordr_op_def.length) idx = 0;
 
-    this.video_ordr_op__(Song._video_ordr_op_df[idx]);
+    this.video_ordr_op__(Song._video_ordr_op_def[idx]);
   }
 
   video_ordr_op__(ordr_op){
 
-    if (!Song._video_ordr_op_df.includes(ordr_op)){
+    if (!Song._video_ordr_op_def.includes(ordr_op)){
 
-      ordr_op = Song._video_ordr_op_df[0];
+      ordr_op = Song._video_ordr_op_def[0];
     }
 
     this._video_ordr_op = ordr_op;
@@ -497,16 +522,16 @@ class Song {
   ordr_swtch_elm_txt(){
 
     let txt;
-    if      (this._video_ordr == "view_cnt"){txt = this.swtch_elm_txt("l");}
-    else if (this._video_ordr == "cdt"     ){txt = this.swtch_elm_txt("r");}
+    if      (this._video_ordr == 'view_cnt'){txt = this.swtch_elm_txt('l');}
+    else if (this._video_ordr == 'cdt'     ){txt = this.swtch_elm_txt('r');}
     return txt;
   }
 
   swtch_elm_txt(lr){
 
     let txt;
-    if      (lr == "l"){txt = "🟢-";}
-    else if (lr == "r"){txt = "-🟢";}
+    if      (lr == 'l'){txt = '🟢-';}
+    else if (lr == 'r'){txt = '-🟢';}
     return txt;
   }
 
@@ -525,8 +550,8 @@ class Song {
   ordr_op_elm_txt(op){
 
     let txt;
-    if      (op == "asc"){txt = "🔼";}
-    else if (op == "dsc"){txt = "🔽";}
+    if      (op == 'asc'){txt = '🔼';}
+    else if (op == 'dsc'){txt = '🔽';}
     return txt;
   }
 
@@ -651,6 +676,84 @@ class Song {
     // let lst_elm = elm_by_id('video_lst_scrl');
     // lst_elm.scroll(0, scrl_y);
     scrl(0, scrl_y);
+  }
+  
+  // 
+  // plyr size
+  // 
+  
+  static _plyr_size_def = {
+    n: { w: 640, h: 250},
+    l: { w: 992, h: 558},
+  };
+  
+  plyr_size__(){
+    
+    let size = this.plyr_size();
+    
+    this._plyr.size__(size.w, size.h);
+    
+    this.hdr_h__();
+    
+    this._menu.w__(this._plyr_size_idx);
+    
+    this.plyr_size_swtch_elm__()
+  }
+  
+  plyr_size(){
+    
+    let size_key = this._plyr_size_key[this._plyr_size_idx];
+    
+    return Song._plyr_size_def[size_key];
+  }
+  
+  plyr_size__init(){
+    
+    this._plyr_size_key = Obj.keys(Song._plyr_size_def);
+    
+    this._plyr_size_idx = 0;
+    
+    // this.plyr_size__();
+  }
+  
+  plyr_size__tgl(){
+    
+    this.plyr_size_idx__tgl();
+    
+    this.plyr_size__();
+  }
+  
+  plyr_size_idx__tgl(){
+    
+    this._plyr_size_idx += 1;
+    
+    if (this._plyr_size_idx >= this._plyr_size_key.length){
+      this._plyr_size_idx = 0;
+    }
+  }
+  
+  plyr_size_swtch_elm__(){
+  
+    elm('#plyr_size_swtch').textContent = this.plyr_size_swtch_txt();
+  }
+  
+  plyr_size_swtch_txt(){
+  
+    let txt;
+    if      (this._plyr_size_idx == 0){txt = '🔳';}
+    else if (this._plyr_size_idx == 1){txt = '🔳';}
+    // else if (this._plyr_size_idx == 1){txt = '◽️';}
+    return txt;
+  }
+  
+  hdr_h__(){ // n: 287px
+    
+    let hdr_h_crct = 37;
+    
+    let hdr_h = this.plyr_size().h + hdr_h_crct;
+    // log(hdr_h);
+    
+    elm('.body_hdr_space').style.height = hdr_h + 'px';
   }
 }
 
@@ -797,13 +900,10 @@ tag.src = "https://www.youtube.com/iframe_api";
 let js1 = doc.getElementsByTagName('script')[0];
 js1.parentNode.insertBefore(tag, js1);
 
-let song = new Song();
+let menu = new Menu();
+let song = new Song(menu);
 
 // ytplyr
-
-// plyr size l
-// 950
-// 534
 
 let ytplyr;
 win.onYouTubeIframeAPIReady = function(){
@@ -811,8 +911,15 @@ win.onYouTubeIframeAPIReady = function(){
   ytplyr = new YT.Player (
     'plyr',
     {
-      height: '250', // '360',
-      //width: '640',
+      // size n
+      // width : '640',
+      // height: '250',
+      height: Song._plyr_size_def.n.h,
+      
+      // size l
+      // width : '992',
+      // height: '558',
+      
       videoId: '68KV7JnrvDo', // sss
       playerVars: {
         autoplay: 0,

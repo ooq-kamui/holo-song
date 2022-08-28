@@ -28,6 +28,10 @@ function elm_by_id(id){
   return doc.getElementById(id);
 }
 
+function node_by_tmpl(slctr){
+  return elm(slctr).content.__clone(true);
+}
+
 // 
 // obj
 // 
