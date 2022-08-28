@@ -13,6 +13,6 @@ set l_path_date1 $l_path_date[1]
 #echo $l_path_date1
 scp $l_path_date1 ooq@ooq.sakura.ne.jp:~/$s_dir_data
 
-set l_path_ltst $l_dir_data/s.ltst.json
+set l_path_ltst $l_dir_data/ltst.s.json
 scp $l_path_ltst ooq@ooq.sakura.ne.jp:~/$s_dir_data
 

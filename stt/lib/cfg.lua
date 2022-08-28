@@ -20,11 +20,11 @@ Cfg.ch.path_ltst = Cfg.ch.dir_data .. "/" .. Cfg.ch.file_ltst
 
 Cfg.song_video = {
   dir_data = Cfg.prj.dir .. "/www/song/data/song_video",
-	t_ltst_file = "t.ltst.json",
-	s_ltst_file = "s.ltst.json",
+	t_ltst_file = "ltst.t.json",
+	s_ltst_file = "ltst.s.json",
 }
-Cfg.song_video.path_t_ltst = Cfg.song_video.dir_data .. "/t.ltst.json"
-Cfg.song_video.path_s_ltst = Cfg.song_video.dir_data .. "/s.ltst.json"
+Cfg.song_video.path_t_ltst = Cfg.song_video.dir_data .. "/ltst.t.json"
+Cfg.song_video.path_s_ltst = Cfg.song_video.dir_data .. "/ltst.s.json"
 
 -- ch_video
 

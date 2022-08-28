@@ -110,15 +110,15 @@ class Song {
     let keyup_stack = [];
     let slf = this;
 
-    // function flt_bar_keyup_exe(force){
     let flt_bar_keyup_exe = function (force){
 
       keyup_stack.pop();
 
       if (keyup_stack.length !== 0){return;}
 
-      let str = slf.flt_bar_elm().value;
-      slf.flt_ply(str, force);
+      // let str = slf.flt_bar_str();
+      // slf.flt_ply(str, force);
+      slf.flt_ply(null, force);
     }
 
     let flt_bar_keyup = function (ev){
@@ -368,7 +368,7 @@ class Song {
 
   video_flt__(str){
 
-    if (!str){str = this.srch_bar_str();}
+    if (!str){str = this.flt_bar_str();}
 
     let word = u.split_and_or(str);
 
@@ -404,12 +404,16 @@ class Song {
 
     let prm = url_prm();
     if (!prm.s){return;}
-    // if (!(prm && prm.s)){return;}
 
-    this.flt_bar_elm().value = prm.s;
+    this.flt_bar_str__(prm.s);
   }
 
-  srch_bar_str(){
+  flt_bar_str__(str){
+
+    this.flt_bar_elm().value = str;
+  }
+  
+  flt_bar_str(){
 
     return this.flt_bar_elm().value;
   }
@@ -419,6 +423,13 @@ class Song {
     this.flt_bar_elm().focus();
   }
 
+  flt_bar_str__z_ply(flt_str){
+    
+    this.flt_bar_str__(flt_str);
+    
+    this.flt_ply(null, false);
+  }
+  
   // 
   // elm
   // 
@@ -626,6 +637,13 @@ class Song {
   }
 
   flt_ply(srch_str, force){
+    
+    // todo refactoring
+    // srch_str は常に取らなくてもよい可能性
+    
+    if (! srch_str){
+      srch_str = this.flt_bar_str();
+    }
 
     srch_str = srch_str.trim();
 
@@ -757,17 +775,17 @@ class Song {
   }
 }
 
-//
+// 
 // util
-//
+// 
 
 class u {
 
   static data_url(){
 
     let prm = url_prm();
-    let file_json = prm.f ? prm.f : 'song_video/s.ltst.json';
-    // let file_json = (prm && prm.f) ? prm.f : 's.ltst.json';
+    let file_json = prm.f ? prm.f : 'song_video/ltst.s.json';
+    // let file_json = (prm && prm.f) ? prm.f : 'ltst.s.json';
 
     let domain   = 'ooq.jp';
     let dir      = 'holo/song/data';

@@ -106,7 +106,7 @@ class Mmbr {
         "pekora": {
           "ch_id": "UC1DCedRgGHBdm81E1llLhOQ",
           "tw_id": "usadapekora",
-          "flt_s": "兎田ぺこら,ホロライブファンタジー"
+          "flt_s": "兎田ぺこら,pekora,ホロライブファンタジー"
         },
         "flare": {
           "ch_id": "UCvInZx9h3jC2JzsIzoOebWg",

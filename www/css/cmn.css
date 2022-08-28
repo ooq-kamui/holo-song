@@ -71,6 +71,10 @@ ul {
   text-align: right;
 }
 
+.hdr_r div.plyr_size_swtch {
+  text-align: left;
+}
+
 img.srch_icn {
   width:  18px;
   vertical-align: middle;

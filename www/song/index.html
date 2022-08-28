@@ -7,7 +7,7 @@
 <meta name="description" content="ホロライブ 全歌 再生数 週間ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
 <meta name=”keywords” content="hololive,song,list,all,filter,player,weekly,ranking,original,cover,search,filter" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
-<link rel="stylesheet" href="../css/cmn.css?ts=2022-08-28.13:39" />
+<link rel="stylesheet" href="../css/cmn.css?ts=2022-08-28.13:40" />
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2099637840916857"
   crossorigin="anonymous"></script>
@@ -57,37 +57,46 @@
   <div class="body_lr body_l">
     <div id="body_l_menu">
     </div>
+    <div>
+      list order :
+      view
+      <a id="ordr_swtch" class="swtch"
+        href="javascript:song.video__srt_tgl();" >🟢-</a>
+      date :
+      <a id="ordr_op_swtch" class="swtch"
+        href="javascript:song.video__srt_op_tgl();" >🔼</a>
+    </div>
   </div>
-      
+
   <div class="video_lst_scrl" id="video_lst_scrl">
     <ul id="video_lst" class="video_lst">
     </ul>
   </div>
-  
+
   <div class="body_lr body_r">
     <div id="body_r_menu">
     </div>
     
     <div>
-      <a href="?s=あやふぶみ">あやふぶみ</a>
-      <a href="?s=okfams">okfams</a>
-      <a href="?s=soraz">soraz</a>
-      <a href="?s=魔界組">魔界組</a>
-      <a href="?s=どっきりラビリンス">どきラビ</a>
-      <a href="?s=あんぽんたん">あんぽんたん</a>
-      <a href="?s=ホロALICE">ホロALICE</a>
-      <a href="?s=みっころね">みっころね</a>
-      <a href="?s=micomet">micomet</a>
-      <a href="?s=バカタレ">バカタレ</a>
-      <a href="?s=umisea">umisea</a>
-      <a href="?s=やかまし娘">やかまし娘</a>
-      <a href="?s=startend">startend</a>
-      <a href="?s=kiara,キアラ nene,ねね">o'riends</a>
-      <a href="?s=orio,天音かなた・常闇トワ,天音かなた＆常闇トワ">orio</a>
-      <a href="?s=negi☆u">negi☆u</a>
-      <a href="?s=koara">koara</a>
-      <a href="?s=takamori">takamori</a>
-      <a href="?s=スターアニマル">スターアニマル</a>
+      <a href="javascript:song.flt_bar_str__z_ply('あやふぶみ')">あやふぶみ</a>
+      <a href="javascript:song.flt_bar_str__z_ply('okfams')">okfams</a>
+      <a href="javascript:song.flt_bar_str__z_ply('soraz')">soraz</a>
+      <a href="javascript:song.flt_bar_str__z_ply('魔界組')">魔界組</a>
+      <a href="javascript:song.flt_bar_str__z_ply('どっきりラビリンス')">どきラビ</a>
+      <a href="javascript:song.flt_bar_str__z_ply('あんぽんたん')">あんぽんたん</a>
+      <a href="javascript:song.flt_bar_str__z_ply('ホロALICE')">ホロALICE</a>
+      <a href="javascript:song.flt_bar_str__z_ply('みっころね')">みっころね</a>
+      <a href="javascript:song.flt_bar_str__z_ply('micomet')">micomet</a>
+      <a href="javascript:song.flt_bar_str__z_ply('バカタレ')">バカタレ</a>
+      <a href="javascript:song.flt_bar_str__z_ply('umisea')">umisea</a>
+      <a href="javascript:song.flt_bar_str__z_ply('やかまし娘')">やかまし娘</a>
+      <a href="javascript:song.flt_bar_str__z_ply('startend')">startend</a>
+      <a href="javascript:song.flt_bar_str__z_ply('kiara,キアラ nene,ねね')">o'riends</a>
+      <a href="javascript:song.flt_bar_str__z_ply('orio,天音かなた・常闇トワ,天音かなた＆常闇トワ')">orio</a>
+      <a href="javascript:song.flt_bar_str__z_ply('negi☆u')">negi☆u</a>
+      <a href="javascript:song.flt_bar_str__z_ply('koara')">koara</a>
+      <a href="javascript:song.flt_bar_str__z_ply('takamori')">takamori</a>
+      <a href="javascript:song.flt_bar_str__z_ply('スターアニマル')">スターアニマル</a>
     </div>
     <div>&nbsp;</div>
     <div>&nbsp;</div>
@@ -121,9 +130,15 @@
   </div>
   <div>&nbsp;</div>
   <div>
+    <a href="javascript:song.flt_bar_str__z_ply('original,オリジナル,official')">original</a>
+    <a href="javascript:song.flt_bar_str__z_ply('cover,歌ってみた')">cover</a>
+  </div>
+  <!--
+  <div>
     <a href="?s=original,オリジナル,official">original</a>
     <a href="?s=cover,歌ってみた">cover</a>
   </div>
+  -->
   <div>&nbsp;</div>
   <div>
     member -
@@ -141,43 +156,43 @@
       href="javascript:void(0)">jp</a>
     -
     <a id='mmbr_lst_dsp_jp_00'
-      href="?s=ときのそら,ロボ子,さくらみこ,すいせい,ロボビタンA,azki,suisei,roboco,sorasong,micomet,soraz">00</a>
+      href="javascript:song.flt_bar_str__z_ply('ときのそら,ロボ子,さくらみこ,すいせい,ロボビタンA,azki,suisei,roboco,sorasong,micomet,soraz')">00</a>
     <a id='mmbr_lst_dsp_jp_01'
-      href="?s=フブキ,夜空メル,アキロゼ,ローゼンタール,はあと,はあちゃま,夏色まつり,fubuki,haato,haachama,rosenthal,1期生,ロイちゃま">01</a>
+      href="javascript:song.flt_bar_str__z_ply('フブキ,夜空メル,アキロゼ,ローゼンタール,はあと,はあちゃま,夏色まつり,fubuki,haato,haachama,rosenthal,1期生,ロイちゃま')">01</a>
     <a id='mmbr_lst_dsp_jp_02'
-      href="?s=百鬼あやめ,スバル,癒月ちょこ,紫咲シオン,湊あくあ,aqua">02</a>
+      href="javascript:song.flt_bar_str__z_ply('百鬼あやめ,スバル,癒月ちょこ,紫咲シオン,湊あくあ,aqua')">02</a>
     <a id='mmbr_lst_dsp_jp_gamers'
-      href="?s=大神ミオ,猫又おかゆ,戌神ころね,おかころ,さしみお">gamers</a>
+      href="javascript:song.flt_bar_str__z_ply('大神ミオ,猫又おかゆ,戌神ころね,おかころ,さしみお')">gamers</a>
     <a id='mmbr_lst_dsp_jp_03'
-      href="?s=不知火フレア,兎田ぺこら,宝鐘マリン,白銀ノエル,ホロライブファンタジー">03</a>
+      href="javascript:song.flt_bar_str__z_ply('不知火フレア,兎田ぺこら,宝鐘マリン,白銀ノエル,pekora,ホロライブファンタジー')">03</a>
     <a id='mmbr_lst_dsp_jp_04'
-      href="?s=角巻わため,天音かなた,常闇トワ,姫森ルーナ,watame,kanata,4期生,４期生,回線">04</a>
+      href="javascript:song.flt_bar_str__z_ply('角巻わため,天音かなた,常闇トワ,姫森ルーナ,watame,kanata,4期生,４期生,回線')">04</a>
     <a id='mmbr_lst_dsp_jp_05'
-      href="?s=桃鈴ねね,雪花ラミィ,尾丸ポルカ,獅白ぼたん,nene,polka,ねぽらぼ,ほろふぁいぶ">05</a>
+      href="javascript:song.flt_bar_str__z_ply('桃鈴ねね,雪花ラミィ,尾丸ポルカ,獅白ぼたん,nene,polka,ねぽらぼ,ほろふぁいぶ')">05</a>
     <a id='mmbr_lst_dsp_jp_06'
-      href="?s=ラプラス,鷹嶺ルイ,博衣こより,沙花叉クロヱ,風間いろは,6期生,holox">06</a>
+      href="javascript:song.flt_bar_str__z_ply('ラプラス,鷹嶺ルイ,博衣こより,沙花叉クロヱ,風間いろは,6期生,holox')">06</a>
   </div>
   <div>
     <a id='mmbr_lst_dsp_en'
-      href="?s=calliope,kiara,ina'nis,gura,amelia,irys,sana,fauna,kronii,mumei,baelz,myth,council,english">en</a>
+      href="javascript:song.flt_bar_str__z_ply('calliope,kiara,ina\'nis,gura,amelia,irys,sana,fauna,kronii,mumei,baelz,myth,council,english')">en</a>
     - 
     <a id='mmbr_lst_dsp_en_myth'
-       href="?s=calliope,kiara,ina'nis,gura,amelia,myth">myth</a>
+      href="javascript:song.flt_bar_str__z_ply('calliope,kiara,ina\'nis,gura,amelia,myth')">myth</a>
     <a id='mmbr_lst_dsp_en_hope'
-      href="?s=irys">hope</a>
+      href="javascript:song.flt_bar_str__z_ply('irys')">hope</a>
     <a id='mmbr_lst_dsp_en_council'
-      href="?s=sana,fauna,kronii,mumei,baelz,council">council</a>
+      href="javascript:song.flt_bar_str__z_ply('sana,fauna,kronii,mumei,baelz,council')">council</a>
   </div>
   <div>
     <a id='mmbr_lst_dsp_id'
-      href="?s=risu,moona,iofi,ollie,anya,reine,zeta,kaela,kobo,indonesia">id</a>
+      href="javascript:song.flt_bar_str__z_ply('risu,moona,iofi,ollie,anya,reine,zeta,kaela,kobo,indonesia')">id</a>
     - 
     <a id='mmbr_lst_dsp_id_01'
-      href="?s=risu,moona,iofi" >01</a>
+      href="javascript:song.flt_bar_str__z_ply('risu,moona,iofi')" >01</a>
     <a id='mmbr_lst_dsp_id_02'
-      href="?s=ollie,anya,reine">02</a>
+      href="javascript:song.flt_bar_str__z_ply('ollie,anya,reine')">02</a>
     <a id='mmbr_lst_dsp_id_03'
-      href="?s=zeta,kaela,kobo" >03</a>
+      href="javascript:song.flt_bar_str__z_ply('zeta,kaela,kobo')" >03</a>
   </div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
@@ -193,9 +208,16 @@
   <div>
     <a href="help.html" target="holo_song_help">help</a>
   </div>
-  <div>&nbsp;</div>
+  <div class="plyr_size_swtch">
+    <span class="tooltip">
+      <span class="tooltip-txt">player size change</span>
+      <a id="plyr_size_swtch" class="swtch"
+        href="javascript:song.plyr_size__tgl();">🔳
+      </a>
+    </span>
+  </div>
   <div>
-    <a href="?f=song_video/t.ltst.json" >total view count</a>
+    <a href="?f=song_video/ltst.t.json" >total view count</a>
   </div>
   <div>&nbsp;</div>
   <div>
@@ -213,23 +235,7 @@
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
-  <div>
-    <span class="tooltip">
-      <span class="tooltip-txt">player size change</span>
-      <a id="plyr_size_swtch" class="swtch"
-        href="javascript:song.plyr_size__tgl();">🔳
-      </a>
-    </span>
-  </div>
-  <div>
-    list order :
-    view
-    <a id="ordr_swtch" class="swtch"
-      href="javascript:song.video__srt_tgl();" >🟢-</a>
-    date :
-    <a id="ordr_op_swtch" class="swtch"
-      href="javascript:song.video__srt_op_tgl();" >🔼</a>
-  </div>
+  <div>&nbsp;</div>
 </template>
 
 <template id="video_li_tmpl">
@@ -276,9 +282,9 @@
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="menu.js?ts=2022-08-28.13:39"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="song.js?ts=2022-08-28.13:39"
+<script src="song.js?ts=2022-08-29.00:08"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="../js/mmbr.js?ts=2022-08-28.13:39"
+<script src="../js/mmbr.js?ts=2022-08-29.00:26"
   defer type="text/javascript" charset="UTF-8"></script>
 </html>
 
