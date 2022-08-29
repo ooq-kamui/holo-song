@@ -47,6 +47,24 @@ Array.prototype.entry = function (){
   return this.entries();
 };
 
+Array.prototype.idx = function (){
+  return this.indexOf();
+};
+
+Array.idx = Array.indexOf;
+
+// 
+// string
+// 
+
+String.prototype.match_idx = function (word){
+  return this.indexOf(word);
+};
+
+String.prototype.lower = function (){
+  return this.toLowerCase();
+};
+
 // 
 // node
 // 

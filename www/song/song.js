@@ -122,10 +122,10 @@ class Song {
     }
 
     let flt_bar_keyup = function (ev){
-      log("flt_bar_keyup");
-
-      log("isComposing: " + ev.isComposing);
-      log("keyCode: "     + ev.keyCode    );
+      // log("flt_bar_keyup");
+      // log("isComposing: " + ev.isComposing);
+      // log("keyCode: "     + ev.keyCode    );
+      
       if (ev.isComposing || ev.keyCode === 229){return;}
       if (ev.keyCode === 16){return;} // shift
       if (ev.keyCode ===  0){return;} // del ?
@@ -369,10 +369,19 @@ class Song {
   video_flt__(str){
 
     if (!str){str = this.flt_bar_str();}
+    
+    let tmp = str.split(/\s*-\s*/);
+    log(tmp);
+    
+    let str_match = tmp[0];
+    let word_match = Flt_word.split(str_match);
+    
+    let word_excld = null;
+    if (tmp[1]){
+      word_excld = Flt_word.split(tmp[1]);
+    }
 
-    let word = u.split_and_or(str);
-
-    this.video_flt__by_word(word);
+    this.video_flt__by_word(word_match, word_excld);
 
     this.elm_ul__flt();
 
@@ -381,7 +390,9 @@ class Song {
     }
   }
 
-  video_flt__by_word(word){
+  video_flt__by_word(word, excld){
+    
+    // todo if word = '' then flt not
 
     this._video_flt    = new Obj();
     this._video_id_flt = new Array();
@@ -391,9 +402,13 @@ class Song {
 
       _video = this._video[_video_id];
 
-      if (!_video.title){continue;}
+      if (! _video.title){continue;}
 
-      if (!is_match_and_or(_video.title, word)){continue;}
+      if (excld){
+        if (Flt_word.is_match(_video.title, excld)){continue;}
+      }
+      
+      if (! Flt_word.is_match(_video.title, word )){continue;}
 
       this._video_flt[_video_id] = _video;
       this._video_id_flt.push(_video_id);
@@ -423,7 +438,8 @@ class Song {
     this.flt_bar_elm().focus();
   }
 
-  flt_bar_str__z_ply(flt_str){
+  // flt_bar_str__z_ply(flt_str){
+  flt_ply2(flt_str){ // todo name mod
     
     this.flt_bar_str__(flt_str);
     
@@ -636,7 +652,7 @@ class Song {
     }
   }
 
-  flt_ply(srch_str, force){
+  flt_ply(srch_str, force){ // todo name mod
     
     // todo refactoring
     // srch_str は常に取らなくてもよい可能性
@@ -674,25 +690,18 @@ class Song {
   }
 
   video_lst__scrl(video_id){
-    log("video_lst__scrl");
 
     video_id = video_id ? video_id : this._ply_video_id[0];
     if (!video_id){return;}
 
-    log("video_id: " + video_id);
-
     let video_elm = elm_by_id(video_id);
     let video_top = video_elm.offsetTop;
-    // log("top: " + video_top);
 
     let header_elm = elm_by_id('header');
     let header_h = header_elm.clientHeight;
-    // log("h: " + header_h);
 
     let scrl_y = video_top - header_h - 28;
 
-    // let lst_elm = elm_by_id('video_lst_scrl');
-    // lst_elm.scroll(0, scrl_y);
     scrl(0, scrl_y);
   }
   
@@ -730,8 +739,6 @@ class Song {
     this._plyr_size_key = Obj.keys(Song._plyr_size_def);
     
     this._plyr_size_idx = 0;
-    
-    // this.plyr_size__();
   }
   
   plyr_size__tgl(){
@@ -760,7 +767,6 @@ class Song {
     let txt;
     if      (this._plyr_size_idx == 0){txt = '🔳';}
     else if (this._plyr_size_idx == 1){txt = '🔳';}
-    // else if (this._plyr_size_idx == 1){txt = '◽️';}
     return txt;
   }
   
@@ -776,6 +782,93 @@ class Song {
 }
 
 // 
+// flt
+// 
+
+class Flt_word {
+  
+  // 
+  // word match
+  // 
+  
+  static is_match(str, word){ // flt main
+
+    let ret = false;
+
+    for (let [idx, word_and] of word.entries()){
+
+      ret = Flt_word.is_match_or(str, word_and);
+      
+      if (! ret){break;}
+    }
+    return ret;
+  }
+
+  static is_match_or(str, word_or){
+
+    let ret = false;
+
+    for (let [idx, _word_or] of word_or.entries()){
+      
+      ret = Flt_word.is_str_match(str, _word_or);
+      if (ret){break;}
+    }
+    return ret;
+  }
+  
+  static is_str_match(str, word){
+
+    let ret = false;
+
+    str  = str.lower();
+    word = word.lower();
+
+    if (str.match_idx(word) >= 0){
+      ret = true;
+    }
+    return ret;
+  }
+
+  // 
+  // str split
+  // 
+  
+  static split(str){
+
+    let word_and = Flt_word.split_and(str);
+    log(word_and);
+
+    for (let [idx, _word_and] of word_and.entries()){
+    
+      word_and[idx] = Flt_word.split_or(_word_and);
+    }
+    
+    log(word_and);
+    return word_and;
+  }
+  
+  static split_and(str){
+    
+    str = str.trim()
+    
+    // if (str == ''){return [];}
+    
+    let word_and = str.split(/\s+/g);
+    return word_and;
+  }
+  
+  static split_or(word_and){
+
+    let split_char = ',';
+
+    let exp = new RegExp('^' + split_char + '+|' + split_char + '+$', 'g');
+
+    let word_or = word_and.replace(exp, '').split(split_char);
+    return word_or;
+  }
+}
+
+// 
 // util
 // 
 
@@ -785,7 +878,6 @@ class u {
 
     let prm = url_prm();
     let file_json = prm.f ? prm.f : 'song_video/ltst.s.json';
-    // let file_json = (prm && prm.f) ? prm.f : 'ltst.s.json';
 
     let domain   = 'ooq.jp';
     let dir      = 'holo/song/data';
@@ -793,29 +885,6 @@ class u {
     let url_data = 'https://' + url_dir + "/" + file_json;
 
     return url_data;
-  }
-
-  static split_and_or(str){
-
-    let word = str.trim().split(/\s/g);
-
-    for (let [idx, word_and] of word.entries()){
-    
-      word[idx] = u.split_or(word_and);
-    }
-    return word;
-  }
-
-  static split_or(word_and){
-
-    let split_char = ",";
-
-    if (!is_match(word_and, split_char)){return word_and;}
-
-    let exp = new RegExp("^" + split_char + "+|" + split_char + "+$", "g");
-
-    let word = word_and.replace(exp,'').split(split_char);
-    return word;
   }
 }
 
@@ -840,49 +909,6 @@ function url_prm(){
     prm[key] = val;
   }
   return prm;
-}
-
-function is_match(str, word){
-
-  let ret = false;
-
-  str  = str.toLowerCase();
-  word = word.toLowerCase();
-
-  if (str.indexOf(word) >= 0){
-    ret = true;
-  }
-  return ret;
-}
-
-function is_match_and_or(str, word){
-
-  let ret = false;
-
-  for (let [idx, word_and] of word.entries()){
-
-    if      (typeof word_and == "string"){
-
-      ret = is_match(   str, word_and);
-
-    }else if(typeof word_and == "object"){
-
-      ret = is_match_or(str, word_and);
-    }
-    if (!ret){break;}
-  }
-  return ret;
-}
-
-function is_match_or(str, word){
-
-  let ret = false;
-
-  for (let [idx, word_or] of word.entries()){
-    ret = is_match(str, word_or);
-    if (ret){break;}
-  }
-  return ret;
 }
 
 function rnd(min, max){
@@ -956,7 +982,8 @@ win.onYouTubeIframeAPIReady = function(){
 }
 
 doc.onkeydown = function (e){
-  log("keydown : " + e.keyCode);
+  // log("keydown : " + e.keyCode);
+  
   switch (e.keyCode){
     case 191: // key: /
       if (doc.activeElement.id != 'flt_bar'){break;}

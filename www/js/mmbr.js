@@ -371,22 +371,24 @@ class Mmbr {
   
   profile_elm__cre(){
   
-    let profile_elm_tmpl = elm('#profile_tmpl');
-    let gen_elm_tmpl     = elm('#gen_tmpl');
+    // let profile_elm_tmpl = elm('#profile_tmpl');
+    // let gen_elm_tmpl     = elm('#gen_tmpl');
     let mmbr_lst_elm     = elm('div.mmbr_lst');
 
     for (let [_cntry, cntry_mmbr] of Obj.entry(Mmbr._mmbr)){
 
       for (let [_gen, gen_mmbr] of Obj.entry(cntry_mmbr)){
 
-        let gen_node    = gen_elm_tmpl.content.__clone(true);
+        // let gen_node    = gen_elm_tmpl.content.__clone(true);
+        let gen_node    = node_by_tmpl('#gen_tmpl');
         let gen_div_elm = gen_node.elm("div");
         
         gen_div_elm.attr__("id", Mmbr.gen_id(_cntry, _gen));
 
         for (let [name, profile] of Obj.entry(gen_mmbr)){
 
-          let profile_node = profile_elm_tmpl.content.__clone(true);
+          // let profile_node = profile_elm_tmpl.content.__clone(true);
+          let profile_node = node_by_tmpl('#profile_tmpl');
 
           let a_elm;
           a_elm = profile_node.elm("a.mmbr_name");
@@ -405,7 +407,8 @@ class Mmbr {
           }
           
           a_elm = profile_node.elm("a.lnk_song_video");
-          a_elm.href = "../song/?s=" + profile.flt_s
+          a_elm.href = "javascript:song.flt_ply2('" + profile.flt_s + "')"
+          // a_elm.href = "../song/?s=" + profile.flt_s
 
           let img_elm    = profile_node.elm("img.profile");
           img_elm.src = "../mmbr/" + _cntry + "/" + name + "/profile.jpg";
