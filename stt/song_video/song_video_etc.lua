@@ -9,7 +9,7 @@ local etc = Etc.new()
 -- etc:main_song_video("pmaru"     )
 
 -- etc:main_song_video("inuitoko"  )
--- etc:main_song_video("hachi"     )
+etc:main_song_video("hachi"     )
 -- etc:main_song_video("hanabasami")
 -- etc:main_song_video("kano"      )
 -- etc:main_song_video("lon"       )
@@ -19,6 +19,6 @@ local etc = Etc.new()
 
 -- etc:main_song_video("vwp"       )
 
-etc:main_song_video("asu"       )
-etc:main_song_video("aru"       )
+-- etc:main_song_video("asu"       )
+-- etc:main_song_video("aru"       )
 

@@ -196,7 +196,7 @@ div.body_r {
 
 .title {
   display: inline-block;
-  margin-left: 15px;
+  /* margin-left: 15px; /*  */
 }
 
 .video_li {
@@ -236,6 +236,11 @@ div.body_r {
 
 .video_li.plying a:link {
   color: #bdc1c6;
+}
+
+.video_li span.ply_st {
+  display: inline-block;
+  width:   10px;
 }
 
 span.mmbr_lst_dsp_all {

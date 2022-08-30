@@ -88,7 +88,8 @@ function Utl.jq(jsn)
 	
 	Utl.file_write(file, jsn)
 	
-  local cmd = "cat " .. file .. " | jq "
+	-- local cmd = "cat " .. file .. " | jq "
+	local cmd = "cat " .. file .. " | jq 'to_entries|sort_by(.value.cdt)|reverse|from_entries'"
   -- u.log(cmd)
 	
 	jsn = Utl.cmd(cmd)

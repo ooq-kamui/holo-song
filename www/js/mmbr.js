@@ -128,22 +128,22 @@ class Mmbr {
         "kanata": {
           "ch_id": "UCZlDXzGoo7d44bwdNObFacg",
           "tw_id": "amanekanatach",
-          "flt_s": "天音かなた,kanata,4期生,４期生"
+          "flt_s": "天音かなた,kanata"
         },
         "watame": {
           "ch_id": "UCqm3BQLlJfvkTsX_hvm0UmA",
           "tw_id": "tsunomakiwatame",
-          "flt_s": "角巻わため,watame,回線,4期生,４期生"
+          "flt_s": "角巻わため,watame,回線"
         },
         "towa": {
           "ch_id": "UC1uv2Oq6kNxgATlCiez59hw",
           "tw_id": "tokoyamitowa",
-          "flt_s": "常闇トワ,4期生,４期生"
+          "flt_s": "常闇トワ"
         },
         "luna": {
           "ch_id": "UCa9Y57gfeY0Zro_noHRVrnw",
           "tw_id": "himemoriluna",
-          "flt_s": "姫森ルーナ,4期生,４期生"
+          "flt_s": "姫森ルーナ"
         },
       },
       "05": {

@@ -39,19 +39,38 @@ class Plyr {
   }
 
   stp(){
-    log("stp");
+    log('stp');
 
     this._ytplyr.stopVideo();
   }
 
   st_ch(ev){
+    let st = Plyr.st(ev.data);
+    log('st_ch: ' + st);
 
-    let st = ev.data;
-    log("st_ch: " + Plyr.st(st));
-
-    if (Plyr.st(st) == "ENDED"){
-      log("ENDED");
+    if       (st == 'ENDED'){
+      // log('ENDED');
       this.ply_rnd();
+      
+    }else if (st == 'PLAYING'){
+      // log('PLAYING');
+      
+      let t_elm;
+      t_elm = elm_all('li.video_li span.plying');
+      for (let [idx, _elm] of t_elm.entries()){
+        _elm.textContent = '';
+        _elm.classList.remove('plying');
+      }
+      
+      let t_prm_str = ev.target.getVideoUrl().substring(29);
+      // log(t_prm_str);
+      
+      let video_id = url_prm(t_prm_str).v;
+      log(video_id);
+      
+      t_elm = elm_by_id(video_id).elm('span.ply_st');
+      t_elm.classList.add('plying');
+      t_elm.textContent = '*';
     }
   }
   
@@ -70,12 +89,12 @@ class Plyr {
   }
 
   static _st = [
-    "ENDED",
-    "PLAYING",
-    "PAUSED",
-    "BUFFERING",
-    "none",
-    "CUED"
+    'ENDED',
+    'PLAYING',
+    'PAUSED',
+    'BUFFERING',
+    'none',
+    'CUED'
   ];
 
   static st(st){
@@ -438,7 +457,6 @@ class Song {
     this.flt_bar_elm().focus();
   }
 
-  // flt_bar_str__z_ply(flt_str){
   flt_ply2(flt_str){ // todo name mod
     
     this.flt_bar_str__(flt_str);
@@ -611,7 +629,6 @@ class Song {
     let elm;
     for (let [idx, _video_id] of this._ply_video_id.entries()){
 
-      // elm = elm_by_id(_video_id).children[2];
       elm = elm_by_id(_video_id);
       if (val){
         elm.classList.add(   "plying");
@@ -892,13 +909,15 @@ class u {
   }
 }
 
-function url_prm(){
+function url_prm(qery_str){
 
+  if(! qery_str){
+    qery_str = win.location.search;
+  }
+  
   let prm = new Obj();
 
-  let qery_str = win.location.search;
-
-  if(!qery_str){return prm;}
+  if(! qery_str){return prm;}
 
   qery_str = qery_str.substring(1);
 
