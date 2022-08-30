@@ -511,27 +511,29 @@ class Song {
 
     let r_node = elm__clone('#video_li_tmpl');
     
-    let elm_li = r_node.elm_all("li");
-    elm_li[0].attr__("id", video_id);
+    let elm_li = r_node.elm('li');
+    elm_li.attr__('id', video_id);
 
     let t_elm
-    t_elm = r_node.elm_all(".view_cnt");
-    t_elm[0].textContent = _video.view_cnt;
+    t_elm = r_node.elm('.view_cnt');
+    t_elm.textContent = _video.view_cnt;
     if (_video.new){
-      t_elm[0].classList.replace("view_cnt", "view_cnt_new");
+      t_elm.classList.replace('view_cnt', 'view_cnt_new');
     }
     
-    t_elm = r_node.elm_all(".title");
-    t_elm[0].textContent = _video.title;
+    t_elm = r_node.elm('.title');
+    t_elm.textContent = _video.title;
 
-    let elm_a   = r_node.elm_all("a");
+    let elm_a   = r_node.elm('a');
     let href_js = "javascript:song.onclick('" + video_id + "');";
-    elm_a[0].attr__("href", href_js);
+    elm_a.attr__('href', href_js);
     
-    t_elm = r_node.elm_all(".thmb");
-    // let src = "https://i.ytimg.com/vi/" + video_id + "/default.jpg";
-    let src = "https://i.ytimg.com/vi/" + video_id + "/mqdefault.jpg";
-    t_elm[0].attr__("src", src);
+    t_elm = r_node.elm('.thmb');
+    let src = 'https://i.ytimg.com/vi/' + video_id + '/mqdefault.jpg';
+    t_elm.attr__('src', src);
+    
+    t_elm = r_node.elm('.cdt');
+    t_elm.textContent = _video.cdt.substring(0, 10);
 
     return r_node;
   }
@@ -609,11 +611,12 @@ class Song {
     let elm;
     for (let [idx, _video_id] of this._ply_video_id.entries()){
 
-      elm = elm_by_id(_video_id).children[2];
+      // elm = elm_by_id(_video_id).children[2];
+      elm = elm_by_id(_video_id);
       if (val){
-        elm.classList.add(   "playing");
+        elm.classList.add(   "plying");
       }else{
-        elm.classList.remove("playing");
+        elm.classList.remove("plying");
       }
     }
   }
@@ -654,8 +657,9 @@ class Song {
 
   flt_ply(srch_str, force){ // todo name mod
     
-    // todo refactoring
-    // srch_str は常に取らなくてもよい可能性
+    // todo
+    // srch_str は取らなくてもよい可能性
+    //   そうであるならば 引数削除可
     
     if (! srch_str){
       srch_str = this.flt_bar_str();

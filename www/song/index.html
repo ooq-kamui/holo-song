@@ -7,7 +7,7 @@
 <meta name="description" content="ホロライブ 全歌 再生数 週間ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
 <meta name=”keywords” content="hololive,song,list,all,filter,player,weekly,ranking,original,cover,search,filter" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
-<link rel="stylesheet" href="../css/cmn.css?ts=2022-08-28.13:40" />
+<link rel="stylesheet" href="../css/cmn.css?ts=2022-08-30.10:52" />
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2099637840916857"
   crossorigin="anonymous"></script>
@@ -104,8 +104,10 @@
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>other artist ( beta )</div>
-    <div><a href="?f=etc/dazbee/2022-08-25.10:04.json"  >dazbee  </a></div>
-    <div><a href="?f=etc/inuitoko/2022-08-25.10:04.json">戌亥とこ</a></div>
+    <div><a href="?f=etc/dazbee/2022-08-25.10:04.json"    >dazbee    </a></div>
+    <div><a href="?f=etc/inuitoko/2022-08-25.10:04.json"  >戌亥とこ  </a></div>
+    <div><a href="?f=etc/hanabasami/2022-08-25.10:04.json">花鋏キョウ</a></div>
+    <div><a href="?f=etc/hachi/2022-08-25.10:04.json"     >hachi     </a></div>
     <div>
       <a href="?f=etc/vwp/2022-08-25.10:04.json">v.w.p</a>
       <a href="?f=etc/vwp/2022-08-19.08:54.json&s=花譜"      >花譜      </a>
@@ -114,12 +116,14 @@
       <a href="?f=etc/vwp/2022-08-19.08:54.json&s=ヰ世界情緒">ヰ世界情緒</a>
       <a href="?f=etc/vwp/2022-08-19.08:54.json&s=幸祜"      >幸祜      </a>
     </div>
-    <div><a href="?f=etc/aru/2022-08-25.10:33.json"       >存流      </a></div>
-    <div><a href="?f=etc/asu/2022-08-25.10:33.json"       >明透      </a></div>
-    <div><a href="?f=etc/kano/2022-08-25.10:04.json"      >鹿乃      </a></div>
-    <div><a href="?f=etc/lon/2022-08-25.10:04.json"       >ろん      </a></div>
-    <div><a href="?f=etc/hachi/2022-08-25.10:04.json"     >hachi     </a></div>
-    <div><a href="?f=etc/hanabasami/2022-08-25.10:04.json">花鋏キョウ</a></div>
+    <div>
+      <a href="?f=etc/aru/2022-08-25.10:33.json">存流</a>
+      <a href="?f=etc/asu/2022-08-25.10:33.json">明透</a>
+    </div>
+    <div>
+      <a href="?f=etc/kano/2022-08-25.10:04.json">鹿乃</a>
+      <a href="?f=etc/lon/2022-08-25.10:04.json" >ろん</a>
+    </div>
     <div><a href="?f=etc/vesperbell/2022-08-25.10:04.json">vesperbell</a></div>
     <div><a href="?f=etc/himehina/2022-08-25.10:04.json"  >himehina  </a></div>
     <div><a href="?f=etc/pmaru/2022-08-25.10:04.json"     >P丸様。   </a></div>
@@ -136,12 +140,6 @@
     <a href="javascript:song.flt_ply2('original,オリジナル,official')">original</a>
     <a href="javascript:song.flt_ply2('cover,歌ってみた')">cover</a>
   </div>
-  <!--
-  <div>
-    <a href="?s=original,オリジナル,official">original</a>
-    <a href="?s=cover,歌ってみた">cover</a>
-  </div>
-  -->
   <div>&nbsp;</div>
   <div>
     member -
@@ -244,10 +242,11 @@
 <template id="video_li_tmpl">
   <li class="video_li" >
     <span class="view_cnt">0</span>
-    <span class="thmb_frame">
-      <img class="thmb" src="https://i.ytimg.com/vi/68KV7JnrvDo/default.jpg">
-    </span>
     <a href=""><span class="title"></span></a>
+    <div class="thmb_frame">
+      <img class="thmb" src="https://i.ytimg.com/vi/68KV7JnrvDo/default.jpg">
+      <div class="cdt">yyyy-mm-dd</div>
+    </div>
   </li>
 </template>
 
@@ -290,11 +289,11 @@
 </template>
 
 </body>
-<script src="../js/alias.js?ts=2022-08-29.19:12"
+<script src="../js/alias.js?ts=2022-08-30.10:52"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="menu.js?ts=2022-08-28.13:39"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="song.js?ts=2022-08-29.08:30"
+<script src="song.js?ts=2022-08-30.10:52"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="../js/mmbr.js?ts=2022-08-29.08:54"
   defer type="text/javascript" charset="UTF-8"></script>

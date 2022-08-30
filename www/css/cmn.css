@@ -16,10 +16,6 @@ a:link {
   color: #99b6e8;
 }
 
-a:link.playing {
-  color: #bdc1c6;
-}
-
 a:visited {
   color: #B384FF;
 }
@@ -203,19 +199,16 @@ div.body_r {
   margin-left: 15px;
 }
 
-li.video_li {
+.video_li {
   display: block;
   order: 0;
 }
-li.video_li:hover img.thmb {
+.video_li:hover div.thmb_frame {
   opacity: 1;
   visibility: visible;
 }
 
-span.thmb_frame {
-  /* position: relative;        /*                        */
-}
-img.thmb {
+.video_li       div.thmb_frame {
   opacity:         0;        /* はじめは隠しておく     */
   visibility: hidden;        /* はじめは隠しておく     */
   
@@ -223,7 +216,7 @@ img.thmb {
   left: calc((100% - var(--lst-w)) / 2); /* 親要素に対する表示位置 */
   transform:
     translateX(-280px)       /* translateX(-200px) */
-    translateY( -90px);      /* 親要素に対する表示位置 */
+    translateY(-132px);      /* 親要素に対する表示位置 */
   /* bottom:       24px;        /* 親要素に対する表示位置 */
   z-index:         2;
   /* vertical-align: bottom;    /*                        */
@@ -234,6 +227,15 @@ img.thmb {
   color:         #bdc1c6;
   
   transition: all 0.25s ease-in; /* anm */
+}
+
+.video_li .cdt {
+  text-align: right;
+  font-size:  0.8rem;
+}
+
+.video_li.plying a:link {
+  color: #bdc1c6;
 }
 
 span.mmbr_lst_dsp_all {

@@ -75,11 +75,9 @@ function Holo.video_view_cnt__(_s)
 		end
 
     for idx, itm in pairs(res.items) do
-			---[[
+			
       _s._video[itm.id].title = itm.snippet.title
       _s._video[itm.id].cdt   = itm.snippet.publishedAt
-			--]]
-      -- _s._video[itm.id].thmb_url = itm.snippet.thumbnails.default.url
 
       if itm.statistics.viewCount then
         _s._video[itm.id].view_cnt = tonumber(itm.statistics.viewCount)
