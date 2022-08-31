@@ -239,8 +239,10 @@ div.body_r {
 }
 
 .video_li span.ply_st {
-  display: inline-block;
-  width:   10px;
+  display:        inline-block;
+  width:          10px;
+  text-align:     right;
+  vertical-align: middle;
 }
 
 span.mmbr_lst_dsp_all {

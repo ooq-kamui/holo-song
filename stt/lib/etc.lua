@@ -577,7 +577,8 @@ function Etc.video__song_ttl_write(_s)
 	local path_song_ttl = Etc._cfg.dir_data.."/".._s._name.."/"..Utl.datetime()..".json"
 	_s:video_2_jsn_write(path_song_ttl)
 
-	-- Utl.cp(path_song_ttl, Cfg.song_video.path_t_ltst)
+	local path_t_ltst   = Etc._cfg.dir_data.."/".._s._name.."/ltst.t.json"
+	Utl.cp(path_song_ttl, path_t_ltst)
 end
 
 function Etc.video__song_ttl_ltst1_sub_ttl_ltst2_write(_s)
@@ -612,8 +613,8 @@ function Etc.song_ttl_jsn_file_ltst(_s)
 	return path_jsn
 end
 
-function Etc.song_video_data_rsync(_s)
+function Etc.data_rsync(_s)
 	
-	Utl.cmd("fish rsync.data.song_video.fish")
+	Utl.cmd("fish rsync.data.etc.fish")
 end
 

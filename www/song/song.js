@@ -66,11 +66,11 @@ class Plyr {
       // log(t_prm_str);
       
       let video_id = url_prm(t_prm_str).v;
-      log(video_id);
+      // log(video_id);
       
       t_elm = elm_by_id(video_id).elm('span.ply_st');
       t_elm.classList.add('plying');
-      t_elm.textContent = '*';
+      t_elm.textContent = '･'; // '*';
     }
   }
   
@@ -390,7 +390,7 @@ class Song {
     if (!str){str = this.flt_bar_str();}
     
     let tmp = str.split(/\s*-\s*/);
-    log(tmp);
+    // log(tmp);
     
     let str_match = tmp[0];
     let word_match = Flt_word.split(str_match);
@@ -644,7 +644,7 @@ class Song {
 
     this._ply_video_id = this.video_id_flt_slice(_video_id, lim)
 
-    log(this._ply_video_id);
+    // log(this._ply_video_id);
   }
 
   // video req
@@ -857,14 +857,14 @@ class Flt_word {
   static split(str){
 
     let word_and = Flt_word.split_and(str);
-    log(word_and);
+    // log(word_and);
 
     for (let [idx, _word_and] of word_and.entries()){
     
       word_and[idx] = Flt_word.split_or(_word_and);
     }
     
-    log(word_and);
+    // log(word_and);
     return word_and;
   }
   
