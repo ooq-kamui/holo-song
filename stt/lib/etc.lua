@@ -19,6 +19,8 @@ Etc._cnst = {
 				"19CVkddgXMo", -- anm
 				"QF5Jkv0oHYA", -- clb-real
 				"cRm7xQ7MEEI", -- clb
+				"pQF18US2tpk", -- clb
+				"RATcPb1D_X4", -- clb
 			},
 		},
 	},

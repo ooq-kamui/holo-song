@@ -117,6 +117,10 @@ ul {
   width:   18px;
 }
 
+.cntry_mmbr {
+  display: inline-block;
+}
+
 .hdr_r {
   text-align: right;
 }
