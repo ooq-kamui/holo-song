@@ -119,7 +119,7 @@ class Song {
     this._video_flt;
     this._video_id_flt;
 
-    this._srch_str_pre     = "";
+    this._flt_str_pre      = "";
     this._video_id_1st_pre = [];
 
     this.video__init_req();
@@ -135,9 +135,7 @@ class Song {
 
       if (keyup_stack.length !== 0){return;}
 
-      // let str = slf.flt_bar_str();
-      // slf.flt_ply(str, force);
-      slf.flt_ply(null, force);
+      slf.flt_ply(force);
     }
 
     let flt_bar_keyup = function (ev){
@@ -322,14 +320,14 @@ class Song {
   // video __ srt
 
   video__srt(ordr){
-    log("video__srt");
+    log('video__srt');
 
     if (ordr){this.video_ordr__(ordr);}
 
-    if       (this._video_ordr == "view_cnt"){
+    if       (this._video_ordr == 'view_cnt'){
       this.video_id_srtd_view_cnt__();
 
-    }else if (this._video_ordr == "cdt"     ){
+    }else if (this._video_ordr == 'cdt'     ){
       this.video_id_strd_cdt__();
     }
 
@@ -390,10 +388,15 @@ class Song {
     if (!str){str = this.flt_bar_str();}
     
     let tmp = str.split(/\s*-\s*/);
+    tmp[0] = tmp[0].trim();
     // log(tmp);
     
-    let str_match = tmp[0];
-    let word_match = Flt_word.split(str_match);
+    let word_match;
+    if (tmp[0] == ''){
+      word_match = null;
+    }else{
+      word_match = Flt_word.split(tmp[0]);
+    }
     
     let word_excld = null;
     if (tmp[1]){
@@ -401,7 +404,7 @@ class Song {
     }
 
     this.video_flt__by_word(word_match, word_excld);
-
+    
     this.elm_ul__flt();
 
     if (!str || str == ""){
@@ -411,7 +414,13 @@ class Song {
 
   video_flt__by_word(word, excld){
     
-    // todo if word = '' then flt not
+    if ((!word) && (!excld)){
+      log('flt not');
+      
+      this._video_flt    = this._video;
+      this._video_id_flt = this._video_id;
+      return;
+    }
 
     this._video_flt    = new Obj();
     this._video_id_flt = new Array();
@@ -424,10 +433,12 @@ class Song {
       if (! _video.title){continue;}
 
       if (excld){
-        if (Flt_word.is_match(_video.title, excld)){continue;}
+        if (  Flt_word.is_match(_video.title, excld)){continue;}
       }
       
-      if (! Flt_word.is_match(_video.title, word )){continue;}
+      if (word){
+        if (! Flt_word.is_match(_video.title, word )){continue;}
+      }
 
       this._video_flt[_video_id] = _video;
       this._video_id_flt.push(_video_id);
@@ -461,7 +472,7 @@ class Song {
     
     this.flt_bar_str__(flt_str);
     
-    this.flt_ply(null, false);
+    this.flt_ply(false);
   }
   
   // 
@@ -672,29 +683,21 @@ class Song {
     }
   }
 
-  flt_ply(srch_str, force){ // todo name mod
+  flt_ply(force){ // todo name mod
     
-    // todo
-    // srch_str は取らなくてもよい可能性
-    //   そうであるならば 引数削除可
-    
-    if (! srch_str){
-      srch_str = this.flt_bar_str();
-    }
+    let flt_str = this.flt_bar_str().trim();
 
-    srch_str = srch_str.trim();
+    if ((flt_str == this._flt_str_pre) && !force){return;}
 
-    if ((srch_str == this._srch_str_pre) && !force){return;}
+    log("__flt :" + flt_str + ":" + this._flt_str_pre + ":");
 
-    log("__flt :" + srch_str + ":" + this._srch_str_pre + ":");
-
-    this.video_flt__(srch_str);
+    this.video_flt__(flt_str);
 
     this.video__srt();
 
-    this._srch_str_pre = srch_str;
+    this._flt_str_pre = flt_str;
 
-    if ((!srch_str || srch_str == "") && !force){return;}
+    if ((!flt_str || flt_str == "") && !force){return;}
 
     this.ply_rnd();
   }

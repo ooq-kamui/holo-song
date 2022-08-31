@@ -32,51 +32,6 @@ ul {
   text-decoration: none;
 }
 
-/*
- * html body construction
- */
-
-:root {
-  --hdr-h: 287px; /* 280px; 370px; */
-  
-  --lst-w: 800px;
-}
-
-.header {
-  position: fixed;
-  background-color: #202124;
-  width: 100%;
-  /*
-  overflow-x: auto;
-  white-space: nowrap;
-   */
-}
-
-.hdr_lr {
-  display: inline-block;
-  /* width: calc((100% - (640px + 40px)) / 2); /*  */
-  vertical-align: top;
-  font-size: 0.8rem;
-}
-
-.hdr_l {
-  text-align: left;
-}
-
-.hdr_r {
-  text-align: right;
-}
-
-.hdr_r div.plyr_size_swtch {
-  text-align: left;
-}
-
-img.srch_icn {
-  width:  18px;
-  vertical-align: middle;
-  margin: 0px 4px;
-}
-
 .tooltip {
   position: relative;          /* ツールチップの位置の基準に */
   z-index:         1;
@@ -105,6 +60,75 @@ img.srch_icn {
   color: #bdc1c6;
   border-radius: 3px;           /* 角丸 */
   transition: all 0.3s ease-in; /* animation */
+}
+
+/*
+ * html body construction
+ */
+
+:root {
+  --hdr-h: 287px; /* 280px; 370px; */
+  
+  --lst-w: 800px;
+}
+
+.logo {
+  font-family: 'Paytone One', sans-serif;
+  font-size:   2.4rem;
+  margin:      0px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #84DCE9;
+}
+
+.logo a:link {
+  color: #84DCE9;
+}
+
+.logo a:visited {
+  color: #84DCE9;
+}
+
+.header {
+  position: fixed;
+  background-color: #202124;
+  width: 100%;
+  /*
+  overflow-x: auto;
+  white-space: nowrap;
+   */
+}
+
+.hdr_lr {
+  display: inline-block;
+  /* width: calc((100% - (640px + 40px)) / 2); /*  */
+  vertical-align: top;
+  font-size: 0.8rem;
+}
+
+.hdr_l {
+  text-align: left;
+}
+
+.cntry {
+  display: inline-block;
+  width:   18px;
+}
+
+.hdr_r {
+  text-align: right;
+}
+
+.hdr_r div.plyr_size_swtch {
+  text-align: left;
+}
+
+img.srch_icn {
+  width:  18px;
+  vertical-align: middle;
+  margin: 0px 4px;
 }
 
 input[type="search"]#flt_bar {
@@ -197,6 +221,7 @@ div.body_r {
 .title {
   display: inline-block;
   /* margin-left: 15px; /*  */
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .video_li {

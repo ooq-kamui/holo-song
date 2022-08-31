@@ -4,10 +4,19 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>hololive song - view count - weekly ranking</title>
-<meta name="description" content="ホロライブ 全歌 再生数 週間ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
-<meta name=”keywords” content="hololive,song,list,all,filter,player,weekly,ranking,original,cover,search,filter" />
+
+<meta name="description"
+  content="ホロライブ 全歌 再生数 週間ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
+<meta name=”keywords”
+  content="hololive,holo,song,music,list,all,player,weekly,ranking,original,official,cover,MV,search,filter,ホロライブ,全歌,再生数,週間ランキング,オリジナル,カバー,歌ってみた,検索" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Paytone+One&display=swap">
+
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
-<link rel="stylesheet" href="../css/cmn.css?ts=2022-08-31.05:26" />
+<link rel="stylesheet" href="../css/cmn.css?ts=2022-08-31.12:48" />
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2099637840916857"
   crossorigin="anonymous"></script>
@@ -61,10 +70,10 @@
       order :
       view
       <a id="ordr_swtch" class="swtch"
-        href="javascript:song.video__srt_tgl();" >🟢-</a>
+        href="javascript:song.video__srt_tgl()" >🟢-</a>
       date :
       <a id="ordr_op_swtch" class="swtch"
-        href="javascript:song.video__srt_op_tgl();" >🔼</a>
+        href="javascript:song.video__srt_op_tgl()" >🔼</a>
     </div>
   </div>
 
@@ -104,6 +113,7 @@
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>other artist ( beta )</div>
+    <div>total view count</div>
     <div><a href="?f=etc/dazbee/ltst.t.json"    >dazbee    </a></div>
     <div><a href="?f=etc/inuitoko/ltst.t.json"  >戌亥とこ  </a></div>
     <div><a href="?f=etc/hanabasami/ltst.t.json">花鋏キョウ</a></div>
@@ -132,10 +142,9 @@
 </div>
 
 <template id="menu_l_tmpl">
-  <div>
-    <a href="./">home</a>
-  </div>
-  <div>&nbsp;</div>
+  <h1 class="logo">
+    <a href="./">Holo Song</a>
+  </h1>
   <div>
     <a href="javascript:song.flt_ply2('original,オリジナル,official')">original</a>
     <a href="javascript:song.flt_ply2('cover,歌ってみた')">cover</a>
@@ -153,8 +162,10 @@
     </span>
   </div>
   <div>
-    <a id='mmbr_lst_dsp_jp'
-      href="javascript:void(0)">jp</a>
+    <span class="cntry"
+     ><a id='mmbr_lst_dsp_jp'
+        href="javascript:void(0)">jp</a
+   ></span>
     -
     <a id='mmbr_lst_dsp_jp_00'
       href="javascript:song.flt_ply2('ときのそら,ロボ子,さくらみこ,すいせい,ロボビタンA,azki,suisei,roboco,sorasong,micomet,soraz')">00</a>
@@ -174,8 +185,10 @@
       href="javascript:song.flt_ply2('ラプラス,鷹嶺ルイ,博衣こより,沙花叉クロヱ,風間いろは,6期生,holox')">06</a>
   </div>
   <div>
-    <a id='mmbr_lst_dsp_en'
-      href="javascript:song.flt_ply2('calliope,kiara,ina\'nis,gura,amelia,irys,sana,fauna,kronii,mumei,baelz,myth,council,english')">en</a>
+    <span class="cntry"
+     ><a id='mmbr_lst_dsp_en'
+        href="javascript:song.flt_ply2('calliope,kiara,ina\'nis,gura,amelia,irys,sana,fauna,kronii,mumei,baelz,myth,council,english')">en</a
+   ></span>
     - 
     <a id='mmbr_lst_dsp_en_myth'
       href="javascript:song.flt_ply2('calliope,kiara,ina\'nis,gura,amelia,myth')">myth</a>
@@ -185,8 +198,10 @@
       href="javascript:song.flt_ply2('sana,fauna,kronii,mumei,baelz,council')">council</a>
   </div>
   <div>
-    <a id='mmbr_lst_dsp_id'
-      href="javascript:song.flt_ply2('risu,moona,iofi,ollie,anya,reine,zeta,kaela,kobo,indonesia')">id</a>
+    <span class="cntry"
+     ><a id='mmbr_lst_dsp_id'
+        href="javascript:song.flt_ply2('risu,moona,iofi,ollie,anya,reine,zeta,kaela,kobo,indonesia')">id</a
+   ></span>
     - 
     <a id='mmbr_lst_dsp_id_01'
       href="javascript:song.flt_ply2('risu,moona,iofi')" >01</a>
@@ -197,7 +212,6 @@
   </div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
-  <div>&nbsp;</div>
   <div>official</div>
   <div>
     <a href="https://schedule.hololive.tv/lives/hololive" target="_blank">schedule</a>
@@ -206,19 +220,19 @@
 </template>
 
 <template id="menu_r_tmpl">
+  <div class="logo">
+    <a href="help.html" target="help">?</a>
+  </div>
   <div>
-    <a href="help.html" target="holo_song_help">help</a>
+    <a href="?f=song_video/ltst.t.json" >total view count</a>
   </div>
   <div class="plyr_size_swtch">
     <span class="tooltip">
       <span class="tooltip-txt">player size change</span>
       <a id="plyr_size_swtch" class="swtch"
-        href="javascript:song.plyr_size__tgl();">🔳
+        href="javascript:song.plyr_size__tgl()">🔳
       </a>
     </span>
-  </div>
-  <div>
-    <a href="?f=song_video/ltst.t.json" >total view count</a>
   </div>
   <div>&nbsp;</div>
   <div>
@@ -294,7 +308,7 @@
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="menu.js?ts=2022-08-28.13:39"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="song.js?ts=2022-08-31.05:36"
+<script src="song.js?ts=2022-08-31.12:46"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="../js/mmbr.js?ts=2022-08-30.12:52"
   defer type="text/javascript" charset="UTF-8"></script>
