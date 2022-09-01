@@ -2,197 +2,266 @@
 class Mmbr {
 
   static _mmbr = {
-    
     "jp": {
       "00": {
         "sora": {
           "ch_id": "UCp6993wxpyDPHUpavwDFqgg",
           "tw_id": "tokino_sora",
-          "flt_s": "ときのそら,sorasong"
+          "flt_s": "ときのそら,sorasong",
+          "debut": "2017-09-07",
+          "birth": "05-15"
         },
         "roboco": {
           "ch_id": "UCDqI2jOz0weumE8s7paEk6g",
           "tw_id": "robocosan",
-          "flt_s": "ロボ子,ロボビタンA,roboco"
+          "flt_s": "ロボ子,ロボビタンA,roboco",
+          "debut": "2018-03-04",
+          "birth": "05-23"
         },
         "azki": {
           "ch_id": "UC0TXe_LYZ4scaW2XMyi5_kw",
           "tw_id": "azki_vdiva",
-          "flt_s": "azki"
+          "flt_s": "azki",
+          "debut": "2019-05-19",
+          "birth": "07-01"
         },
         "miko": {
           "ch_id": "UC-hM6YJuNYVAmUWxeIr9FeA",
           "tw_id": "sakuramiko35",
-          "flt_s": "さくらみこ,micomet"
+          "flt_s": "さくらみこ,micomet",
+          "debut": "2018-08-01",
+          "birth": "03-05"
         },
         "suisei": {
           "ch_id": "UC5CwaMl1eIgY8h02uZw7u8A",
           "tw_id": "suisei_hosimati",
-          "flt_s": "すいせい,suisei,micomet"
+          "flt_s": "すいせい,suisei,micomet",
+          "debut": "2018-03-22",
+          "birth": "03-22"
         },
       },
       "01": {
         "mel": {
           "ch_id": "UCD8HOxPs4Xvsm8H0ZxXGiBw",
           "tw_id": "yozoramel",
-          "flt_s": "夜空メル,1期生"
+          "flt_s": "夜空メル,1期生",
+          "debut": "2018-05-13",
+          "birth": "10-31"
         },
         "aki": {
           "ch_id": "UCFTLzh12_nrtzqBPsTCqenA",
           "tw_id": "akirosenthal",
-          "flt_s": "アキロゼ,ローゼンタール,rosenthal,1期生"
+          "flt_s": "アキロゼ,ローゼンタール,rosenthal,1期生",
+          "debut": "2018-06-01",
+          "birth": "02-17"
         },
         "haato": {
           "ch_id": "UC1CfXB_kRs3C-zaeTG3oGyg",
           "tw_id": "akaihaato",
-          "flt_s": "はあと,はあちゃま,haato,haachama,ロイちゃま,1期生"
+          "flt_s": "はあと,はあちゃま,haato,haachama,ロイちゃま,1期生",
+          "debut": "2018-06-02",
+          "birth": "08-10"
         },
         "fubuki": {
           "ch_id": "UCdn5BQ06XqgXoAxIhbqw5Rg",
           "tw_id": "shirakamifubuki",
-          "flt_s": "フブキ,fubuki,1期生"
+          "flt_s": "フブキ,fubuki,1期生",
+          "debut": "2018-06-01",
+          "birth": "10-05"
         },
         "matsuri": {
           "ch_id": "UCQ0UDLQCjY0rmuxCDE38FGg",
           "tw_id": "natsuiromatsuri",
-          "flt_s": "夏色まつり,1期生"
+          "flt_s": "夏色まつり,1期生",
+          "debut": "2018-06-01",
+          "birth": "07-22"
         },
       },
       "02": {
         "aqua": {
           "ch_id": "UC1opHUrw8rvnsadT-iGp7Cg",
           "tw_id": "minatoaqua",
-          "flt_s": "湊あくあ,aqua"
+          "flt_s": "湊あくあ,aqua",
+          "debut": "2018-08-08",
+          "birth": "12-01"
         },
         "shion": {
           "ch_id": "UCXTpFs_3PqI41qX2d9tL2Rw",
           "tw_id": "murasakishionch",
-          "flt_s": "紫咲シオン"
+          "flt_s": "紫咲シオン",
+          "debut": "2018-08-17",
+          "birth": "12-08"
         },
         "ayame": {
           "ch_id": "UC7fk0CB07ly8oSl0aqKkqFg",
           "tw_id": "nakiriayame",
-          "flt_s": "百鬼あやめ"
+          "flt_s": "百鬼あやめ",
+          "debut": "2018-09-03",
+          "birth": "12-13"
         },
         "choco": {
           "ch_id": "UC1suqwovbL1kzsoaZgFZLKg",
           "tw_id": "yuzukichococh",
-          "flt_s": "癒月ちょこ"
+          "flt_s": "癒月ちょこ",
+          "debut": "2018-09-04",
+          "birth": "02-14"
         },
         "subaru": {
           "ch_id": "UCvzGlP9oQwU--Y0r9id_jnA",
           "tw_id": "oozorasubaru",
-          "flt_s": "スバル"
+          "flt_s": "スバル",
+          "debut": "2018-09-16",
+          "birth": "07-02"
         },
       },
       "gamers": {
         "mio": {
           "ch_id": "UCp-5t9SrOQwXMU7iIjQfARg",
           "tw_id": "ookamimio",
-          "flt_s": "大神ミオ,さしみお"
+          "flt_s": "大神ミオ,さしみお",
+          "debut": "2018-12-07",
+          "birth": "08-20"
         },
         "okayu": {
           "ch_id": "UCvaTdHTWBGv3MKj3KVqJVCw",
           "tw_id": "nekomataokayu",
-          "flt_s": "猫又おかゆ,おかころ"
+          "flt_s": "猫又おかゆ,おかころ",
+          "debut": "2019-04-06",
+          "birth": "02-22"
         },
         "korone": {
           "ch_id": "UChAnqc_AY5_I3Px5dig3X1Q",
           "tw_id": "inugamikorone",
-          "flt_s": "戌神ころね,おかころ"
+          "flt_s": "戌神ころね,おかころ",
+          "debut": "2019-04-13",
+          "birth": "10-01"
         },
       },
       "03": {
         "pekora": {
           "ch_id": "UC1DCedRgGHBdm81E1llLhOQ",
           "tw_id": "usadapekora",
-          "flt_s": "兎田ぺこら,pekora,ホロライブファンタジー"
+          "flt_s": "兎田ぺこら,pekora,ホロライブファンタジー",
+          "debut": "2019-07-17",
+          "birth": "01-12"
         },
         "flare": {
           "ch_id": "UCvInZx9h3jC2JzsIzoOebWg",
           "tw_id": "shiranuiflare",
-          "flt_s": "不知火フレア,ホロライブファンタジー"
+          "flt_s": "不知火フレア,ホロライブファンタジー",
+          "debut": "2019-08-07",
+          "birth": "04-02"
         },
         "noel": {
           "ch_id": "UCdyqAaZDKHXg4Ahi7VENThQ",
           "tw_id": "shiroganenoel",
-          "flt_s": "白銀ノエル,ホロライブファンタジー"
+          "flt_s": "白銀ノエル,ホロライブファンタジー",
+          "debut": "2019-08-08",
+          "birth": "11-24"
         },
         "marine": {
           "ch_id": "UCCzUftO8KOVkV4wQG1vkUvg",
           "tw_id": "houshoumarine",
-          "flt_s": "宝鐘マリン,ホロライブファンタジー"
+          "flt_s": "宝鐘マリン,ホロライブファンタジー",
+          "debut": "2019-08-11",
+          "birth": "07-30"
         },
       },
       "04": {
         "kanata": {
           "ch_id": "UCZlDXzGoo7d44bwdNObFacg",
           "tw_id": "amanekanatach",
-          "flt_s": "天音かなた,kanata"
+          "flt_s": "天音かなた,kanata",
+          "debut": "2019-12-27",
+          "birth": "04-22"
         },
         "watame": {
           "ch_id": "UCqm3BQLlJfvkTsX_hvm0UmA",
           "tw_id": "tsunomakiwatame",
-          "flt_s": "角巻わため,watame,回線"
+          "flt_s": "角巻わため,watame,回線",
+          "debut": "2019-12-29",
+          "birth": "06-06"
         },
         "towa": {
           "ch_id": "UC1uv2Oq6kNxgATlCiez59hw",
           "tw_id": "tokoyamitowa",
-          "flt_s": "常闇トワ"
+          "flt_s": "常闇トワ",
+          "debut": "2020-01-03",
+          "birth": "08-08"
         },
         "luna": {
           "ch_id": "UCa9Y57gfeY0Zro_noHRVrnw",
           "tw_id": "himemoriluna",
-          "flt_s": "姫森ルーナ"
+          "flt_s": "姫森ルーナ",
+          "debut": "2020-01-04",
+          "birth": "10-10"
         },
       },
       "05": {
         "lamy": {
           "ch_id": "UCFKOVgVbGmX65RxO3EtH3iw",
           "tw_id": "yukihanalamy",
-          "flt_s": "雪花ラミィ,ねぽらぼ,ほろふぁいぶ"
+          "flt_s": "雪花ラミィ,ねぽらぼ,ほろふぁいぶ",
+          "debut": "2020-08-12",
+          "birth": "11-15"
         },
         "nene": {
           "ch_id": "UCAWSyEs_Io8MtpY3m-zqILA",
           "tw_id": "momosuzunene",
-          "flt_s": "桃鈴ねね,nene,ねぽらぼ,ほろふぁいぶ"
+          "flt_s": "桃鈴ねね,nene,ねぽらぼ,ほろふぁいぶ",
+          "debut": "2020-08-13",
+          "birth": "03-02"
         },
         "botan": {
           "ch_id": "UCUKD-uaobj9jiqB-VXt71mA",
           "tw_id": "shishirobotan",
-          "flt_s": "獅白ぼたん,ねぽらぼ,ほろふぁいぶ"
+          "flt_s": "獅白ぼたん,ねぽらぼ,ほろふぁいぶ",
+          "debut": "2020-08-14",
+          "birth": "09-08"
         },
         "polka": {
           "ch_id": "UCK9V2B22uJYu3N7eR_BT9QA",
           "tw_id": "omarupolka",
-          "flt_s": "尾丸ポルカ,polka,ねぽらぼ,ほろふぁいぶ"
+          "flt_s": "尾丸ポルカ,polka,ねぽらぼ,ほろふぁいぶ",
+          "debut": "2020-08-16",
+          "birth": "01-30"
         },
       },
       "06": {
         "laplus": {
           "ch_id": "UCENwRMx5Yh42zWpzURebzTw",
           "tw_id": "laplusdarknesss",
-          "flt_s": "ラプラス,6期生,holox"
+          "flt_s": "ラプラス,6期生,holox",
+          "debut": "2021-11-26",
+          "birth": "05-25"
         },
         "lui": {
           "ch_id": "UCs9_O1tRPMQTHQ-N_L6FU2g",
           "tw_id": "takanelui",
-          "flt_s": "鷹嶺ルイ,6期生,holox"
+          "flt_s": "鷹嶺ルイ,6期生,holox",
+          "debut": "2021-11-27",
+          "birth": "06-11"
         },
         "koyori": {
           "ch_id": "UC6eWCld0KwmyHFbAqK3V-Rw",
           "tw_id": "hakuikoyori",
-          "flt_s": "博衣こより,6期生,holox"
+          "flt_s": "博衣こより,6期生,holox",
+          "debut": "2021-11-28",
+          "birth": "03-15"
         },
         "chloe": {
           "ch_id": "UCIBY1ollUsauvVi4hW4cumw",
           "tw_id": "sakamatachloe",
-          "flt_s": "沙花叉クロヱ,6期生,holox"
+          "flt_s": "沙花叉クロヱ,6期生,holox",
+          "debut": "2021-11-29",
+          "birth": "05-18"
         },
         "iroha": {
           "ch_id": "UC_vMYWcDjmfdpH6r4TTn1MQ",
           "tw_id": "kazamairohach",
-          "flt_s": "風間いろは,6期生,holox"
+          "flt_s": "風間いろは,6期生,holox",
+          "debut": "2021-11-30",
+          "birth": "06-18"
         }
       }
     },
@@ -201,56 +270,76 @@ class Mmbr {
         "calli": {
           "ch_id": "UCL_qhgtOy0dy1Agp8vkySQg",
           "tw_id": "moricalliope",
-          "flt_s": "calliope,myth"
+          "flt_s": "calliope,myth",
+          "debut": "2020-09-12",
+          "birth": "04-04"
         },
         "kiara": {
           "ch_id": "UCHsx4Hqa-1ORjQTh9TYDhww",
           "tw_id": "takanashikiara",
-          "flt_s": "kiara,myth"
+          "flt_s": "kiara,myth",
+          "debut": "2020-09-12",
+          "birth": "07-06"
         },
         "ina": {
           "ch_id": "UCMwGHR0BTZuLsmjY_NT5Pwg",
           "tw_id": "ninomaeinanis",
-          "flt_s": "ina'nis,myth"
+          "flt_s": "ina'nis,myth",
+          "debut": "2020-09-13",
+          "birth": "05-20"
         },
         "gura": {
           "ch_id": "UCoSrY_IQQVpmIRZ9Xf-y93g",
           "tw_id": "gawrgura",
-          "flt_s": "gura,myth"
+          "flt_s": "gura,myth",
+          "debut": "2020-09-13",
+          "birth": "06-20"
         },
         "ame": {
           "ch_id": "UCyl1z3jo3XHR1riLFKG5UAg",
           "tw_id": "watsonameliaEN",
-          "flt_s": "amelia,myth"
+          "flt_s": "amelia,myth",
+          "debut": "2020-09-13",
+          "birth": "01-06"
         }
       },
       "hope": {
         "irys": {
           "ch_id": "UC8rcEBzJSleTkf_-agPM20g",
           "tw_id": "irys_en",
-          "flt_s": "irys"
+          "flt_s": "irys",
+          "debut": "2021-07-11",
+          "birth": "03-07"
         }
       },
       "council": {
         "fauna": {
           "ch_id": "UCO_aKKYxn4tvrqPjcTzZ6EQ",
           "tw_id": "ceresfauna",
-          "flt_s": "fauna,council"
+          "flt_s": "fauna,council",
+          "debut": "2021-08-23",
+          "birth": "03-21"
         },
         "kronii": {
           "ch_id": "UCmbs8T6MWqUHP1tIQvSgKrg",
           "tw_id": "ourokronii",
-          "flt_s": "kronii,council"
+          "flt_s": "kronii,council",
+          "debut": "2021-08-23",
+          "birth": "03-14"
         },
         "mumei": {
           "ch_id": "UC3n5uGu18FoCy23ggWWp8tA",
           "tw_id": "nanashimumei_en",
-          "flt_s": "mumei,council"
+          "flt_s": "mumei,council",
+          "debut": "2021-08-23",
+          "birth": "08-04"
         },
         "baelz": {
           "ch_id": "UCgmPnx-EEeOrZSg5Tiw7ZRQ",
           "tw_id": "hakosbaelz",
-          "flt_s": "baelz,council"
+          "flt_s": "baelz,council",
+          "debut": "2021-08-23",
+          "birth": "02-29"
         },
         "sana": {
           "ch_id": "UCsUj0dszADCGbF3gNrQEuSQ",
@@ -264,51 +353,69 @@ class Mmbr {
         "risu": {
           "ch_id": "UCOyYb1c43VlX9rc_lT6NKQw",
           "tw_id": "ayunda_risu",
-          "flt_s": "risu"
+          "flt_s": "risu",
+          "debut": "2020-04-10",
+          "birth": "01-15"
         },
         "moona": {
           "ch_id": "UCP0BspO_AMEe3aQqqpo89Dg",
           "tw_id": "moonahoshinova",
-          "flt_s": "moona"
+          "flt_s": "moona",
+          "debut": "2020-04-11",
+          "birth": "02-15"
         },
         "iofi": {
           "ch_id": "UCAoy6rzhSf4ydcYjJw3WoVg",
           "tw_id": "airaniiofifteen",
-          "flt_s": "iofi"
+          "flt_s": "iofi",
+          "debut": "2020-04-12",
+          "birth": "07-15"
         }
       },
       "02": {
         "ollie": {
           "ch_id": "UCYz_5n-uDuChHtLo7My1HnQ",
           "tw_id": "kureijiollie",
-          "flt_s": "ollie"
+          "flt_s": "ollie",
+          "debut": "2020-12-04",
+          "birth": "10-13"
         },
         "anya": {
           "ch_id": "UC727SQYUvx5pDDGQpTICNWg",
           "tw_id": "anyamelfissa",
-          "flt_s": "anya"
+          "flt_s": "anya",
+          "debut": "2020-12-05",
+          "birth": "03-12"
         },
         "reine": {
           "ch_id": "UChgTyjG-pdNvxxhdsXfHQ5Q",
           "tw_id": "pavoliareine",
-          "flt_s": "reine"
+          "flt_s": "reine",
+          "debut": "2020-12-06",
+          "birth": "09-09"
         }
       },
       "03": {
         "zeta": {
           "ch_id": "UCTvHWSfBZgtxE4sILOaurIQ",
           "tw_id": "vestiazeta",
-          "flt_s": "zeta"
+          "flt_s": "zeta",
+          "debut": "2022-03-25",
+          "birth": "11-07"
         },
         "kaela": {
           "ch_id": "UCZLZ8Jjx_RN2CXloOmgTHVg",
           "tw_id": "kaelakovalskia",
-          "flt_s": "kaela"
+          "flt_s": "kaela",
+          "debut": "2022-03-26",
+          "birth": "08-30"
         },
         "kobo": {
           "ch_id": "UCjLEmnpCNeisMxy134KPwWw",
           "tw_id": "kobokanaeru",
-          "flt_s": "kobo"
+          "flt_s": "kobo",
+          "debut": "2022-03-27",
+          "birth": "12-12"
         }
       }
     }

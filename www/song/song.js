@@ -62,10 +62,10 @@ class Plyr {
         _elm.classList.remove('plying');
       }
       
-      let t_prm_str = ev.target.getVideoUrl().substring(29);
-      // log(t_prm_str);
+      let t_qery_str = ev.target.getVideoUrl().substring(29);
+      // log(t_qery_str);
       
-      let video_id = url_prm(t_prm_str).v;
+      let video_id = u.url_qery_parse(t_qery_str).v;
       // log(video_id);
       
       t_elm = elm_by_id(video_id).elm('span.ply_st');
@@ -121,6 +121,8 @@ class Song {
 
     this._flt_str_pre      = "";
     this._video_id_1st_pre = [];
+    
+    this._video_file;
 
     this.video__init_req();
     this.flt_bar__init();
@@ -175,6 +177,7 @@ class Song {
   // video
 
   video__(_video){
+    // log(_video);
 
     this._video = _video;
 
@@ -224,7 +227,7 @@ class Song {
 
   video_ordr__by_url_prm(){
 
-    let prm = url_prm();
+    let prm = this.url_prm();
 
     let ordr = prm.o || 'view_cnt';
     this.video_ordr__(ordr);
@@ -413,6 +416,7 @@ class Song {
   }
 
   video_flt__by_word(word, excld){
+    log('video_flt__by_word');
     
     if ((!word) && (!excld)){
       log('flt not');
@@ -447,7 +451,8 @@ class Song {
 
   flt_bar__init(){
 
-    let prm = url_prm();
+    let prm = this.url_prm();
+    
     if (!prm.s){return;}
 
     this.flt_bar_str__(prm.s);
@@ -665,8 +670,9 @@ class Song {
     let song = this;
 
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", u.data_url());
+    xhr.open("GET", this.video_file_url());
     xhr.setRequestHeader('If-Modified-Since', 'Thu, 01 Jun 1970 00:00:00 GMT');
+    // xhr.setRequestHeader('If-Modified-Since', 'Wed, 31 Aug 2022 23:00:00 GMT');
     xhr.send();
     xhr.onreadystatechange = function(){
 
@@ -803,6 +809,80 @@ class Song {
     
     elm('.body_hdr_space').style.height = hdr_h + 'px';
   }
+  
+  video_file(){
+    
+    if (this._video_file){
+      return this._video_file;
+    }
+    
+    this.video_file__();
+    
+    return this._video_file;
+  }
+  
+  video_file__(video_file){
+    
+    if (video_file){
+      this._video_file = video_file;
+      
+    }else{
+      this.video_file__init();
+    }
+  }
+  
+  static video_file_dflt = 'song_video/ltst.s.json';
+  
+  video_file__init(){
+
+    let prm = this.url_prm();
+    
+    this._video_file = prm.f ? prm.f : Song.video_file_dflt;
+  }
+  
+  video_file_url(){
+    
+    let domain   = 'ooq.jp';
+    let dir      = 'holo/song/data';
+    let url_dir  = domain + "/" + dir;
+    
+    let video_file_url = 'https://' + url_dir + "/" + this.video_file();
+    return video_file_url;
+  }
+  
+  url_prm(){
+
+    if (this._url_prm){
+      return this._url_prm;
+    }
+    
+    this.url_prm__();
+    
+    return this._url_prm;
+  }
+  
+  url_prm__(){
+    
+    let qery_str = this.qery_str();
+    
+    this._url_prm = u.url_qery_parse(qery_str);
+  }
+  
+  qery_str(){
+    
+    if (this._qery_str){
+      return this._qery_str;
+    }
+    
+    this.qery_str__();
+    
+    return this._qery_str;
+  }
+  
+  qery_str__(){
+    
+    this._qery_str = win.location.search;
+  }
 }
 
 // 
@@ -897,44 +977,24 @@ class Flt_word {
 // 
 
 class u {
-
-  static data_url(){
-
-    let prm = url_prm();
-    let file_json = prm.f ? prm.f : 'song_video/ltst.s.json';
-
-    let domain   = 'ooq.jp';
-    let dir      = 'holo/song/data';
-    let url_dir  = domain + "/" + dir;
-    let url_data = 'https://' + url_dir + "/" + file_json;
-
-    return url_data;
-  }
-}
-
-function url_prm(qery_str){
-
-  if(! qery_str){
-    qery_str = win.location.search;
-  }
   
-  let prm = new Obj();
+  static url_qery_parse(qery_str){
 
-  if(! qery_str){return prm;}
+    qery_str = qery_str.substring(1);
 
-  qery_str = qery_str.substring(1);
+    let prms = qery_str.split('&');
 
-  let prms = qery_str.split('&');
+    let prm = new Obj();
+    let elm, key, val;
+    for (let i = 0; i < prms.length; i++){
 
-  let elm, key, val;
-  for (let i = 0; i < prms.length; i++){
-
-    elm = prms[i].split('=');
-    key = decodeURIComponent(elm[0]);
-    val = decodeURIComponent(elm[1]);
-    prm[key] = val;
+      elm = prms[i].split('=');
+      key = decodeURIComponent(elm[0]);
+      val = decodeURIComponent(elm[1]);
+      prm[key] = val;
+    }
+    return prm;
   }
-  return prm;
 }
 
 function rnd(min, max){
@@ -990,7 +1050,9 @@ win.onYouTubeIframeAPIReady = function(){
       // width : '992',
       // height: '558',
       
-      videoId: '68KV7JnrvDo', // sss
+      // videoId: '68KV7JnrvDo', // sss
+      videoId: 'vQOPE6kHeoU', // sss
+      
       playerVars: {
         autoplay: 0,
         controls: 1, 
