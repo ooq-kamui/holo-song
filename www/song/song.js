@@ -44,36 +44,6 @@ class Plyr {
     this._ytplyr.stopVideo();
   }
 
-  st_ch(ev){
-    let st = Plyr.st(ev.data);
-    log('st_ch: ' + st);
-
-    if       (st == 'ENDED'){
-      // log('ENDED');
-      this.ply_rnd();
-      
-    }else if (st == 'PLAYING'){
-      // log('PLAYING');
-      
-      let t_elm;
-      t_elm = elm_all('li.video_li span.plying');
-      for (let [idx, _elm] of t_elm.entries()){
-        _elm.textContent = '';
-        _elm.classList.remove('plying');
-      }
-      
-      let t_qery_str = ev.target.getVideoUrl().substring(29);
-      // log(t_qery_str);
-      
-      let video_id = u.url_qery_parse(t_qery_str).v;
-      // log(video_id);
-      
-      t_elm = elm_by_id(video_id).elm('span.ply_st');
-      t_elm.classList.add('plying');
-      t_elm.textContent = '･'; // '*';
-    }
-  }
-  
   size__(w, h){
     
     this._ytplyr.setSize(w, h);
@@ -84,8 +54,7 @@ class Plyr {
   // 
 
   static ready(ev){
-    // Song._embd_code = ev.target.getVideoEmbedCode();
-    // log("ready : " + Song._embd_code);
+    log("plyr ready");
   }
 
   static _st = [
@@ -111,7 +80,8 @@ class Song {
 
   constructor(menu){
 
-    this._plyr = new Plyr();
+    this._plyr       = new Plyr();
+    this._plyr_ready = false;
 
     this._video;
     this._video_id;
@@ -124,10 +94,13 @@ class Song {
     
     this._video_file;
 
-    this.video__init_req();
+    this.video_ordr__init();
+
+    this.video__init();
+    
     this.flt_bar__init();
     this.flt_bar__focus();
-
+    
     let keyup_stack = [];
     let slf = this;
 
@@ -163,7 +136,8 @@ class Song {
       keyup_stack.push(1);
       
       let force = false;
-      dly(flt_bar_keyup_exe, 700, force);
+      flt_bar_keyup_exe(force);
+      // dly(flt_bar_keyup_exe, 700, force);
     }
     this.flt_bar_elm().addEventListener('search', flt_bar_cncl);
     
@@ -223,6 +197,8 @@ class Song {
   ];
 
   video_ordr__init(){
+    
+    this.video_ordr__by_url_prm();
   }
 
   video_ordr__by_url_prm(){
@@ -337,12 +313,6 @@ class Song {
     this.elm_ul__srt();
   }
 
-  video__srt_by_url_prm(){
-
-    this.video_ordr__by_url_prm();
-    this.video__srt();
-  }
-
   video__srt_tgl(){
 
     this.video_ordr__tgl();
@@ -409,8 +379,11 @@ class Song {
     this.video_flt__by_word(word_match, word_excld);
     
     this.elm_ul__flt();
+    
+    this._flt_str_pre = str;
 
-    if (!str || str == ""){
+    // if (!str || str == ''){
+    if (str == ''){
       scrl(0, 0);
     }
   }
@@ -473,11 +446,22 @@ class Song {
     this.flt_bar_elm().focus();
   }
 
-  flt_ply2(flt_str){ // todo name mod
+  s__(flt_str){
     
     this.flt_bar_str__(flt_str);
     
     this.flt_ply(false);
+  }
+  
+  f__(video_file, flt_str){
+  
+    if (! flt_str){flt_str = '';}
+    
+    this.video_file__(video_file);
+    
+    this.flt_bar_str__(flt_str);
+    
+    this.video__req();
   }
   
   // 
@@ -646,6 +630,9 @@ class Song {
     for (let [idx, _video_id] of this._ply_video_id.entries()){
 
       elm = elm_by_id(_video_id);
+      
+      if (! elm){continue;}
+      
       if (val){
         elm.classList.add(   "plying");
       }else{
@@ -665,12 +652,21 @@ class Song {
 
   // video req
 
-  video__init_req(){
-
-    let song = this;
+  video__init(){
+    
+    this.video_file__();
+    
+    this.video__req();
+  }
+  
+  video__req(){
+  
+    let slf = this;
 
     const xhr = new XMLHttpRequest();
+    
     xhr.open("GET", this.video_file_url());
+    
     xhr.setRequestHeader('If-Modified-Since', 'Thu, 01 Jun 1970 00:00:00 GMT');
     // xhr.setRequestHeader('If-Modified-Since', 'Wed, 31 Aug 2022 23:00:00 GMT');
     xhr.send();
@@ -679,13 +675,18 @@ class Song {
       if (!(xhr.readyState == 4 && xhr.status == 200)){return;}
 
       let video = JSON.parse(xhr.responseText);      
-      song.video__(video);
+      slf.video__(video);
 
-      song.elm_ul__cre();
+      slf.elm_ul__cre();
 
-      song.video_flt__()
-
-      song.video__srt_by_url_prm();
+      // dont del because sync a
+      slf.video_flt__();
+      slf.video__srt();
+      
+      // log(slf._plyr_ready);
+      if (slf._plyr_ready){
+        // slf.ply_rnd();
+      }
     }
   }
 
@@ -701,7 +702,7 @@ class Song {
 
     this.video__srt();
 
-    this._flt_str_pre = flt_str;
+    // this._flt_str_pre = flt_str;
 
     if ((!flt_str || flt_str == "") && !force){return;}
 
@@ -749,6 +750,7 @@ class Song {
     let size = this.plyr_size();
     
     this._plyr.size__(size.w, size.h);
+    elm('.plyr').style.width = size.w + 'px';
     
     this.hdr_h__();
     
@@ -882,6 +884,42 @@ class Song {
   qery_str__(){
     
     this._qery_str = win.location.search;
+  }
+  
+  plyr_ready__(){
+    // log("plyr_ready__");
+    
+    this._plyr_ready = true;
+  }
+  
+  st_ch(ev){
+    let st = Plyr.st(ev.data);
+    log('st_ch: ' + st);
+
+    if       (st == 'ENDED'){
+      // log('ENDED');
+      this.ply_rnd();
+      
+    }else if (st == 'PLAYING'){
+      // log('PLAYING');
+      
+      let t_elm;
+      t_elm = elm_all('li.video_li span.plying');
+      for (let [idx, _elm] of t_elm.entries()){
+        _elm.textContent = '';
+        _elm.classList.remove('plying');
+      }
+      
+      let t_qery_str = ev.target.getVideoUrl().substring(29);
+      // log(t_qery_str);
+      
+      let video_id = u.url_qery_parse(t_qery_str).v;
+      // log(video_id);
+      
+      t_elm = elm_by_id(video_id).elm('span.ply_st');
+      t_elm.classList.add('plying');
+      t_elm.textContent = '･'; // '*';
+    }
   }
 }
 
@@ -1061,8 +1099,10 @@ win.onYouTubeIframeAPIReady = function(){
         //playlist: "68KV7JnrvDo"
       },
       events: {
-        'onReady':       Plyr.ready,
-        'onStateChange': song._plyr.st_ch.bind(song)
+        // 'onReady':       Plyr.ready,
+        'onReady':       song.plyr_ready__.bind(song),
+        // 'onStateChange': song._plyr.st_ch.bind(song)
+        'onStateChange': song.st_ch.bind(song)
       }
     }
   );

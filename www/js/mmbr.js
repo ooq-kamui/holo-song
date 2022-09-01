@@ -514,7 +514,7 @@ class Mmbr {
           }
           
           a_elm = profile_node.elm("a.lnk_song_video");
-          a_elm.href = "javascript:song.flt_ply2('" + profile.flt_s + "')"
+          a_elm.href = "javascript:song.s__('" + profile.flt_s + "')"
           // a_elm.href = "../song/?s=" + profile.flt_s
 
           let img_elm    = profile_node.elm("img.profile");
