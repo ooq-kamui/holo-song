@@ -23,6 +23,9 @@ Etc._cnst = {
 				"RATcPb1D_X4", -- clb
 				"1vsJydi9BSs", -- clb
 			},
+			video_id = {
+				"L-Hl9uQWHPE", -- clb
+			},
 		},
 	},
 	inuitoko = {

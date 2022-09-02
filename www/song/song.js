@@ -382,9 +382,9 @@ class Song {
     
     this._flt_str_pre = str;
 
-    // if (!str || str == ''){
     if (str == ''){
-      scrl(0, 0);
+      this.video_lst__scrl_top();
+      // scrl(0, 0);
     }
   }
 
@@ -720,18 +720,21 @@ class Song {
     this.video_lst__scrl();
   }
 
+  video_lst__scrl_top(){
+    scrl(0, 0);
+  }
+  
   video_lst__scrl(video_id){
 
     video_id = video_id ? video_id : this._ply_video_id[0];
+    
     if (!video_id){return;}
 
     let video_elm = elm_by_id(video_id);
     let video_top = video_elm.offsetTop;
 
-    let header_elm = elm_by_id('header');
-    let header_h = header_elm.clientHeight;
-
-    let scrl_y = video_top - header_h - 28;
+    let hdr_h = elm_by_id('header').clientHeight;
+    let scrl_y = video_top - ( hdr_h + 28 );
 
     scrl(0, scrl_y);
   }

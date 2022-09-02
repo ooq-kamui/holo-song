@@ -15,6 +15,7 @@ Holo._jp = {
         video_id = {
           "3RxlzJWWzdY", -- alternative 1
           "fRsjv-JKyf8", -- alternative 2
+          "vQOPE6kHeoU", -- sss mv 2
         },
       },
     },

@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Paytone+One&display=swap">
 
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
-<link rel="stylesheet" href="../css/cmn.css?ts=2022-09-01.20:49" />
+<link rel="stylesheet" href="../css/cmn.css?ts=2022-09-01.20:50" />
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2099637840916857"
   crossorigin="anonymous"></script>
@@ -67,13 +67,22 @@
     </div>
       
     <div class="body_l_fixed">
-      order :
-      view
-      <a id="ordr_swtch" class="swtch"
-        href="javascript:song.video__srt_tgl()" >🟢-</a>
-      date :
-      <a id="ordr_op_swtch" class="swtch"
-        href="javascript:song.video__srt_op_tgl()" >🔼</a>
+      <div>
+        order :
+        view
+        <a id="ordr_swtch"    class="swtch"
+          href="javascript:song.video__srt_tgl()">🟢-</a>
+        date :
+        <a id="ordr_op_swtch" class="swtch"
+          href="javascript:song.video__srt_op_tgl()">🔼</a>
+      </div>
+      <div>
+        list pos :
+        <a id="" class="btn"
+          href="javascript:song.video_lst__scrl_top()">🔼</a>
+        <a id="" class="btn"
+          href="javascript:song.video_lst__scrl()">▶️</a>
+      </div>
     </div>
   </div>
 
@@ -225,20 +234,23 @@
 </template>
 
 <template id="menu_r_tmpl">
-  <div class="logo">
-    <a href="help.html" target="help">?</a>
+  <div>
+    <div class="plyr_size_swtch">
+      <span class="tooltip">
+        <span class="tooltip-txt">player size change</span>
+        <a id="plyr_size_swtch" class="swtch"
+          href="javascript:song.plyr_size__tgl()">🔳
+        </a>
+      </span>
+    </div>
+    <div class="logo help">
+      <a href="help.html" target="help">?</a>
+    </div>
   </div>
   <div>
     <a href="javascript:song.f__('song_video/ltst.t.json')" >total view count</a>
   </div>
-  <div class="plyr_size_swtch">
-    <span class="tooltip">
-      <span class="tooltip-txt">player size change</span>
-      <a id="plyr_size_swtch" class="swtch"
-        href="javascript:song.plyr_size__tgl()">🔳
-      </a>
-    </span>
-  </div>
+  <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>
     <!-- twitter share -->
@@ -250,7 +262,6 @@
       >Tweet</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
-  <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>&nbsp;</div>
@@ -309,9 +320,9 @@
 </body>
 <script src="../js/alias.js?ts=2022-08-30.10:55"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="menu.js?ts=2022-09-01.13:25"
+<script src="menu.js?ts=2022-09-02.06:17"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="song.js?ts=2022-09-01.21:32"
+<script src="song.js?ts=2022-09-02.06:19"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="../js/mmbr.js?ts=2022-09-01.15:28"
   defer type="text/javascript" charset="UTF-8"></script>

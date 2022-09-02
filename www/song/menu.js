@@ -21,7 +21,7 @@ class Menu {
   }
   
   static w_def = [ // idx: plyr_size_idx
-    300,
+    230, // 300,
     100,
   ];
   
