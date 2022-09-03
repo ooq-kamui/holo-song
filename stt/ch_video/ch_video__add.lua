@@ -3,5 +3,4 @@ require("holo")
 
 local holo = Holo.new()
 holo:main_ch_video()
--- holo:main_ch_video_dbg()
 

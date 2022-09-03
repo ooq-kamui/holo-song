@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Paytone+One&display=swap">
 
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
-<link rel="stylesheet" href="../css/cmn.css?ts=2022-09-01.20:50" />
+<link rel="stylesheet" href="../css/cmn.css?ts=2022-09-03.08:43" />
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2099637840916857"
   crossorigin="anonymous"></script>
@@ -77,11 +77,17 @@
           href="javascript:song.video__srt_op_tgl()">🔼</a>
       </div>
       <div>
-        list pos :
-        <a id="" class="btn"
-          href="javascript:song.video_lst__scrl_top()">🔼</a>
-        <a id="" class="btn"
-          href="javascript:song.video_lst__scrl()">▶️</a>
+        pos :
+        <span class="tooltip">
+          <span class="tooltip-txt">top</span>
+          <a class="btn"
+            href="javascript:song.video_lst__scrl_top()">🔼</a>
+        </span>
+        <span class="tooltip">
+          <span class="tooltip-txt">playing now</span>
+          <a class="btn"
+            href="javascript:song.video_lst__scrl()">▶️</a>
+        </span>
       </div>
     </div>
   </div>
@@ -130,11 +136,13 @@
       <div><a href="javascript:song.f__('etc/hachi/ltst.t.json')"     >hachi</a></div>
       <div>
         <a href="javascript:song.f__('etc/vwp/ltst.t.json')"             >v.w.p</a> -
-        <a href="javascript:song.f__('etc/vwp/ltst.t.json','花譜')"      >花譜</a>
-        <a href="javascript:song.f__('etc/vwp/ltst.t.json','理芽')"      >理芽</a>
-        <a href="javascript:song.f__('etc/vwp/ltst.t.json','春猿火')"    >春猿火</a>
-        <a href="javascript:song.f__('etc/vwp/ltst.t.json','ヰ世界情緒')">ヰ世界情緒</a>
-        <a href="javascript:song.f__('etc/vwp/ltst.t.json','幸祜')"      >幸祜</a>
+        <span class="inline-block">
+          <a href="javascript:song.f__('etc/vwp/ltst.t.json','花譜')"      >花譜</a>
+          <a href="javascript:song.f__('etc/vwp/ltst.t.json','理芽')"      >理芽</a>
+          <a href="javascript:song.f__('etc/vwp/ltst.t.json','春猿火')"    >春猿火</a>
+          <a href="javascript:song.f__('etc/vwp/ltst.t.json','ヰ世界情緒')">ヰ世界情緒</a>
+          <a href="javascript:song.f__('etc/vwp/ltst.t.json','幸祜')"      >幸祜</a>
+        </span>
       </div>
       <div>
         <a href="javascript:song.f__('etc/aru/ltst.t.json')">存流</a>
@@ -271,7 +279,7 @@
   <li class="video_li">
     <span class="view_cnt">0</span>
     <span class="ply_st"></span>
-    <a href=""><span class="title"></span></a>
+    <a href="javascript:song.p('')"><span class="title"></span></a>
     <div class="thmb_frame">
       <img class="thmb" src="https://i.ytimg.com/vi/68KV7JnrvDo/default.jpg">
       <div class="cdt">yyyy-mm-dd</div>
@@ -318,11 +326,11 @@
 </template>
 
 </body>
-<script src="../js/alias.js?ts=2022-08-30.10:55"
+<script src="../js/alias.js?ts=2022-08-30.10:57"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="menu.js?ts=2022-09-02.06:17"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="song.js?ts=2022-09-02.06:19"
+<script src="song.js?ts=2022-09-03.08:35"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="../js/mmbr.js?ts=2022-09-01.15:28"
   defer type="text/javascript" charset="UTF-8"></script>

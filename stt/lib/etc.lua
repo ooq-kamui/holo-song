@@ -56,6 +56,7 @@ Etc._cnst = {
 				"PLGmIA5WXg5LmN-hr7TKH97hU9CIL1_gov", -- koko         - org
 			},
 			lst_excld_video_id = {
+				"6QIEK5NbEAY", -- netflix
 			},
 		},
 	},
@@ -280,7 +281,7 @@ function Etc.video_view_cnt__(_s)
   until idx_s > #video_id
 end
 
-function Etc.video_view_cnt__0(_s)
+function Etc.video_view_cnt__0(_s) -- use not
 	
 	for video_id, _video in pairs(_s._video) do
 		_video.view_cnt = 0

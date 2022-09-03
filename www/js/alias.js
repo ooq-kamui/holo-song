@@ -119,6 +119,12 @@ function log(str){
   console.log(str);
 }
 
+function dly2(msec, fnc, arg){
+  
+  let dly_id = setTimeout(fnc, msec, arg);
+  return dly_id
+}
+
 function dly(fnc, msec, arg){
   
   let dly_id = setTimeout(fnc, msec, arg);

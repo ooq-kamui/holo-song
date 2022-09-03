@@ -18,13 +18,42 @@ class Plyr {
   }
 
   __load_lst(video_id){
-    log("__load_lst :" + video_id);
+    log("__load_lst    :" + video_id);
 
     if (!this._ytplyr.loadPlaylist){return;}
 
     this._ytplyr.loadPlaylist(video_id);
 
     this._load_time_pre = Date.now();
+    
+    let dly_time = 1800;
+    this._dly_id = dly2(dly_time, this.__load_lst_re.bind(this), video_id);
+  }
+  
+  __load_lst_re(video_id){
+    log("__load_lst re :" + video_id);
+    
+    this._ytplyr.loadPlaylist(video_id);
+    
+    this._dly_id = null;
+  }
+  
+  if_dly__cncl(){
+    
+    if (! this._dly_id){return;}
+    
+    this.dly__cncl();
+  }
+  
+  dly__cncl(){
+    
+    if (! this._dly_id){return;}
+    
+    log("dly__cncl");
+    
+    dly__cncl(this._dly_id);
+    
+    this._dly_id = null;
   }
 
   cue_lst(video_id){
@@ -168,7 +197,6 @@ class Song {
       // log(_video_id)
       // log(_video)
       
-      // if(!_video.view_cnt || _video.view_cnt == 0 || !_video.cdt){continue;}
       if(_video.view_cnt == undefined || _video.cdt == undefined){
         // log("continue")
         continue;
@@ -529,29 +557,27 @@ class Song {
 
     let r_node = elm__clone('#video_li_tmpl');
     
-    let elm_li = r_node.elm('li');
-    elm_li.attr__('id', video_id);
+    r_node.elm('li').attr__('id', video_id);
 
-    let t_elm
-    t_elm = r_node.elm('.view_cnt');
+    let t_elm = r_node.elm('.view_cnt');
     t_elm.textContent = _video.view_cnt;
     if (_video.new){
       t_elm.classList.replace('view_cnt', 'view_cnt_new');
     }
     
-    t_elm = r_node.elm('.title');
-    t_elm.textContent = _video.title;
+    r_node.elm('.title').textContent = _video.title;
 
-    let elm_a   = r_node.elm('a');
-    let href_js = "javascript:song.onclick('" + video_id + "');";
-    elm_a.attr__('href', href_js);
+    let href_js = "javascript:song.p('" + video_id + "');";
+    r_node.elm('a').attr__('href', href_js);
     
-    t_elm = r_node.elm('.thmb');
     let src = 'https://i.ytimg.com/vi/' + video_id + '/mqdefault.jpg';
-    t_elm.attr__('src', src);
+    r_node.elm('.thmb').attr__('src', src);
     
-    t_elm = r_node.elm('.cdt');
-    t_elm.textContent = _video.cdt.substring(0, 10);
+    let cdt = _video.cdt.substring(0, 10);
+    if (_video.new){
+      cdt = 'new ' + cdt;
+    }
+    r_node.elm('.cdt').textContent = cdt;
 
     return r_node;
   }
@@ -606,11 +632,14 @@ class Song {
   // lst
   // 
 
-  onclick(_video_id){
-
-    this.plyr__ply_by_video_id(_video_id);
+  onclick(_video_id){ // old
+    this.p(_video_id);
   }
 
+  p(_video_id){ // alias
+    this.plyr__ply_by_video_id(_video_id);
+  }
+  
   plyr__ply_by_video_id(_video_id){
 
     this.ply_video_elm__(false);
@@ -717,7 +746,7 @@ class Song {
 
     this.plyr__ply_by_video_id(video_id);
 
-    this.video_lst__scrl();
+    this.video_lst__scrl(video_id);
   }
 
   video_lst__scrl_top(){
@@ -726,14 +755,19 @@ class Song {
   
   video_lst__scrl(video_id){
 
-    video_id = video_id ? video_id : this._ply_video_id[0];
-    
-    if (!video_id){return;}
+    if (! video_id){
+      
+      if (this._plying_video_id){
+        video_id = this._plying_video_id;
+        
+      }else{return;}
+    }
 
     let video_elm = elm_by_id(video_id);
     let video_top = video_elm.offsetTop;
 
     let hdr_h = elm_by_id('header').clientHeight;
+    
     let scrl_y = video_top - ( hdr_h + 28 );
 
     scrl(0, scrl_y);
@@ -916,12 +950,16 @@ class Song {
       let t_qery_str = ev.target.getVideoUrl().substring(29);
       // log(t_qery_str);
       
-      let video_id = u.url_qery_parse(t_qery_str).v;
-      // log(video_id);
+      this._plying_video_id = u.url_qery_parse(t_qery_str).v;
+      // log(this._plying_video_id);
       
-      t_elm = elm_by_id(video_id).elm('span.ply_st');
+      t_elm = elm_by_id(this._plying_video_id).elm('span.ply_st');
       t_elm.classList.add('plying');
       t_elm.textContent = '･'; // '*';
+      
+    }else if (st == 'PAUSED' || st == 'BUFFERING'){
+      
+      this._plyr.if_dly__cncl();
     }
   }
 }
@@ -1076,6 +1114,11 @@ let song = new Song(menu);
 
 // ytplyr
 
+let video_id_dflt = [
+  '68KV7JnrvDo', // sss mv 1
+  'vQOPE6kHeoU', // sss mv 2
+];
+
 let ytplyr;
 win.onYouTubeIframeAPIReady = function(){
 
@@ -1091,8 +1134,7 @@ win.onYouTubeIframeAPIReady = function(){
       // width : '992',
       // height: '558',
       
-      // videoId: '68KV7JnrvDo', // sss
-      videoId: 'vQOPE6kHeoU', // sss
+      videoId: ar_rnd(video_id_dflt),
       
       playerVars: {
         autoplay: 0,

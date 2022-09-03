@@ -91,7 +91,7 @@ function Holo.video_view_cnt__(_s)
   until idx_s > #video_id
 end
 
-function Holo.video_view_cnt__0(_s)
+function Holo.video_view_cnt__0(_s) -- use not
 	
 	for video_id, _video in pairs(_s._video) do
 		_video.view_cnt = 0
@@ -516,14 +516,13 @@ end
 
 function Holo.video__ttl_add_term_write(_s, name, fr_date, to_date)
 
-	local path_name_jsn = _s:ch_video_path_name_jsn(name)
-	_s:video__by_jsn_file(path_name_jsn)
+	local path_name_jsn_old = _s:ch_video_path_name_jsn_old(name)
+	local path_name_jsn     = _s:ch_video_path_name_jsn(name)
+	_s:video__by_jsn_file(path_name_jsn_old)
 	
 	local path_term_jsn = _s:ch_video_path_term_jsn(name, fr_date, to_date)
 	local video2 = Utl.tbl_by_jsn_file(path_term_jsn)
 	_s:video__add(video2)
-	
-	-- _s:video_view_cnt__0() -- 
 	
 	local path_ttl_jsn = _s:ch_video_path_ttl_jsn(name)
 	_s:video_2_jsn_write(path_ttl_jsn)
@@ -542,10 +541,17 @@ function Holo.ch_video_dir_name(_s, name)
 	return dir_name
 end
 
-function Holo.ch_video_path_name_jsn(_s, name)
+function Holo.ch_video_path_name_jsn_old(_s, name)
 
 	local dir_name = _s:ch_video_dir_name(name)
 	local path_name_jsn = dir_name.."/"..name..".json"
+	return path_name_jsn
+end
+
+function Holo.ch_video_path_name_jsn(_s, name)
+
+	local dir_name = _s:ch_video_dir_name(name)
+	local path_name_jsn = dir_name.."/ltst.json"
 	return path_name_jsn
 end
 

@@ -27,6 +27,14 @@ ul {
   list-style-type: none;
 }
 
+span.inline-block {
+  display: inline-block;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
 .plyr {
   display: inline-block;
   width:   640px;
@@ -408,5 +416,7 @@ a.lnk_song_video {
   text-align: left;
   width: 600px;
   /* width: 500px; */
+  
+  white-space: normal; /*  */
 }
 
