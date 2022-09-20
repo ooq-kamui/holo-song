@@ -516,9 +516,11 @@ end
 
 function Holo.video__ttl_add_term_write(_s, name, fr_date, to_date)
 
-	local path_name_jsn_old = _s:ch_video_path_name_jsn_old(name)
 	local path_name_jsn     = _s:ch_video_path_name_jsn(name)
-	_s:video__by_jsn_file(path_name_jsn_old)
+	local path_name_jsn_old = _s:ch_video_path_name_jsn_old(name)
+	
+	_s:video__by_jsn_file(path_name_jsn)
+	-- _s:video__by_jsn_file(path_name_jsn_old)
 	
 	local path_term_jsn = _s:ch_video_path_term_jsn(name, fr_date, to_date)
 	local video2 = Utl.tbl_by_jsn_file(path_term_jsn)

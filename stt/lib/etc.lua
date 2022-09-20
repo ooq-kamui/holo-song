@@ -155,13 +155,56 @@ Etc._cnst = {
 			},
 		},
 	},
+	riot = {
+		ch_id = "UCgmlcscaWprxYw0hta4JQuQ",
+		song = {
+			lst_id = {
+				-- cocoa
+				"PL8yYW3zN2w8KSD8W5vv2O7Vj_yE34Bizu", -- org
+				"PL8yYW3zN2w8K183O6N4PI5jlUF50mI_P9", -- cvr
+				-- saki
+				"PLk2NROpUvNYQ079z0uSXRITi-jnPOWHqx", -- org
+				"PLk2NROpUvNYTp24jG9JfgI1zNhVShplbX", -- cvr
+				-- iori
+				"PLEA7t4ZaBOyRVAvdKumS2DwLONoD0YtC-", -- org
+				"PLEA7t4ZaBOyS99fQGN0vE1IIy0_RcYG5Y", -- cvr
+				"PLEA7t4ZaBOySCj2EsnUsR5fc_NVITbXIN", -- clb
+				-- yuka
+				"PL52mQEfscnrS4O_Qx64SVDYFqDwQTEkmQ", -- org
+				"PL52mQEfscnrQPUGHnLBPG7vdyiOKPoNX8", -- cvr
+				"PL52mQEfscnrTPSsNQzQkb0pTgdsbI72St", -- cvr
+				-- suzuna
+				"PLPJAhEd_ipmBGM9v041KDOYd9wBfQCd8A", -- org
+				"PLPJAhEd_ipmBAjp3XsU1JPWQJpjeHm4kM", -- cvr
+				-- miona
+				"PLPJAhEd_ipmDVLuyS0Ekw_ygiKqWhWngV", -- org
+				"PLPJAhEd_ipmCYsf22yImDru1Knw0uVdv7", -- cvr
+				-- meteopolis
+				-- "PLPJAhEd_ipmDm0omMiGZBqJMjteizS5dB",
+			},
+			lst_excld_video_id = {
+				-- iori
+				"gB99iD1urig", -- live
+			},
+		},
+	},
+	lucia = {
+		ch_id = "UCBwH091x3pYLbGYwRtPbLlA",
+		song = {
+			lst_id = {
+				"PLg6XDNQDetpqMYGl-wOtw_iKW4N7eFPrr", -- org
+				"PLg6XDNQDetppnwEWDYlYXhoc9r9YQYIXG", -- cvr
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
 	pmaru = {
 		ch_id = "UCLqCmbd6bgcLaBVz3aA-68A",
 		song = {
 			lst_id = {
 				"PLcC3MjGnFuZvAzsJvZ67VPidd699dtmgM", -- org
 				"PLcC3MjGnFuZtl5KkfXONu9dQMkXLKPhS5", -- cvr
-				
 			},
 			lst_excld_video_id = {
 			},

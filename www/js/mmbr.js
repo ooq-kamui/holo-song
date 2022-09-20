@@ -507,7 +507,8 @@ class Mmbr {
           a_elm[1].href = "https://twitter.com/" + profile.tw_id;
           
           a_elm = profile_node.elm("a.lnk_ch_video");
-          a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
+          a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/ltst.json";
+          // a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
           if (_cntry == "en" || _cntry == "id"){
             a_elm.attr__del("href")
             a_elm.attr__("tabindex", "-1")

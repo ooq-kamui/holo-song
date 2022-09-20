@@ -83,7 +83,7 @@ class Plyr {
   // 
 
   static ready(ev){
-    log("plyr ready");
+    log('plyr ready');
   }
 
   static _st = [
@@ -97,7 +97,7 @@ class Plyr {
 
   static st(st){
 
-    if (st == -1){return "UNSTARTED";}
+    if (st == -1){return 'UNSTARTED';}
 
     return (Plyr._st[st]) ? Plyr._st[st] : st;
   }
@@ -957,9 +957,15 @@ class Song {
       t_elm.classList.add('plying');
       t_elm.textContent = '･'; // '*';
       
-    }else if (st == 'PAUSED' || st == 'BUFFERING'){
-      
-      this._plyr.if_dly__cncl();
+    }
+    
+    switch (st){
+      case 'PAUSED'   :
+      case 'BUFFERING':
+      case 'PLAYING'  :
+      case 'UNSTARTED':
+        this._plyr.if_dly__cncl();
+        break;
     }
   }
 }
