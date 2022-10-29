@@ -36,16 +36,19 @@ a.btn {
 }
 
 img.btn {
-  
   width:  15px;
   height: 15px;
   vertical-align: middle;
 }
 
 img.plyingdot {
-  
   width:  4px;
   height: 4px;
+  vertical-align: middle;
+}
+
+img.swtch {
+  height: 16px;
   vertical-align: middle;
 }
 

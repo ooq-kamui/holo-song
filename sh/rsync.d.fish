@@ -9,13 +9,10 @@
 #            対象が複数の場合は--excludeを繰り返す
 #            sync元の相対パスで指定
 
-set prj   ~/doc/hoby/youtube/vtuber/hololive/prj
+#set prj   ~/doc/hoby/youtube/vtuber/hololive/prj
+set prj   ~/doc/hoby/youtube/vtuber/hololive/prj.svg
 set l_dir $prj/www
 set s_dir www/holo.d
-
-#set l_dir $prj/www/song
-#set s_dir www/holo.d/song
-#set s_dir www/holo/song.d
 
 rsync -av -e ssh --delete     \
   --exclude="data/"           \

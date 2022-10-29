@@ -589,9 +589,29 @@ class Song {
 
   ordr_swtch_elm__(){
 
-    elm_by_id('ordr_swtch').textContent = this.ordr_swtch_elm_txt();
+    // elm_by_id('ordr_swtch').textContent = this.ordr_swtch_elm_txt();
+    elm_by_id('ordr_swtch').innerHTML = this.ordr_swtch_elm_html();
   }
 
+  ordr_swtch_elm_html(){
+
+    let txt;
+    if      (this._video_ordr == 'view_cnt'){txt = this.swtch_elm_html('l');}
+    else if (this._video_ordr == 'cdt'     ){txt = this.swtch_elm_html('r');}
+    return txt;
+  }
+
+  swtch_elm_html(lr){
+
+    let html;
+    if       (lr == 'l'){
+      html = '<img class="swtch" src="../img/swtch.l.svg">';
+    }else if (lr == 'r'){
+      html = '<img class="swtch" src="../img/swtch.r.svg">';
+    }
+    return html;
+  }
+  
   ordr_swtch_elm_txt(){
 
     let txt;
@@ -603,8 +623,8 @@ class Song {
   swtch_elm_txt(lr){
 
     let txt;
-    if      (lr == 'l'){txt = '🟢-';}
-    else if (lr == 'r'){txt = '-🟢';}
+    if      (lr == 'l'){txt = '';}
+    else if (lr == 'r'){txt = '';}
     return txt;
   }
 

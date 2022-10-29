@@ -1,4 +1,5 @@
 
+/www/img/
 /www/mmbr/
 /www/favicon.ico
 
@@ -10,10 +11,11 @@ log/
 
 *.jpg
 *.png
+*.svg
 *.log
 *.ico
 .DS_Store
 
-sh/rsync.r.fish
-sh/rsync.d.fish
+/sh/rsync.r.fish
+/sh/rsync.d.fish
 
