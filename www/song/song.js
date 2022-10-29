@@ -610,9 +610,28 @@ class Song {
 
   ordr_op_swtch_elm__(){
 
-    elm_by_id('ordr_op_swtch').textContent = this.ordr_op_swtch_elm_txt();
+    // elm_by_id('ordr_op_swtch').textContent = this.ordr_op_swtch_elm_txt();
+    elm_by_id('ordr_op_swtch').innerHTML = this.ordr_op_swtch_elm_html();
   }
 
+  ordr_op_swtch_elm_html(){
+
+    let op  = this._video_ordr_op;
+    let txt = this.ordr_op_elm_html(op);
+    return txt;
+  }
+
+  ordr_op_elm_html(op){
+
+    let html;
+    if      (op == 'asc'){
+      html = '<img class="btn" src="../img/kaku03u.svg">';
+    }else if(op == 'dsc'){
+      html = '<img class="btn" src="../img/kaku03d.svg">';
+    }
+    return html;
+  }
+  
   ordr_op_swtch_elm_txt(){
 
     let op  = this._video_ordr_op;
@@ -623,8 +642,8 @@ class Song {
   ordr_op_elm_txt(op){
 
     let txt;
-    if      (op == 'asc'){txt = '🔼';}
-    else if (op == 'dsc'){txt = '🔽';}
+    if      (op == 'asc'){txt = '';}
+    else if (op == 'dsc'){txt = '';}
     return txt;
   }
 
@@ -828,14 +847,29 @@ class Song {
   
   plyr_size_swtch_elm__(){
   
-    elm('#plyr_size_swtch').textContent = this.plyr_size_swtch_txt();
+    // elm('#plyr_size_swtch').textContent = this.plyr_size_swtch_txt();
+    elm('#plyr_size_swtch').innerHTML = this.plyr_size_swtch_html();
+  }
+  
+  plyr_size_swtch_html(){
+  
+    let html;
+    if       (this._plyr_size_idx == 0){
+      html = '<img class="btn" src="../img/scrn.size.u.svg">';
+    }else if (this._plyr_size_idx == 1){
+      html = '<img class="btn" src="../img/scrn.size.d.svg">';
+    }
+    return html;
   }
   
   plyr_size_swtch_txt(){
   
     let txt;
-    if      (this._plyr_size_idx == 0){txt = '🔳';}
-    else if (this._plyr_size_idx == 1){txt = '🔳';}
+    if       (this._plyr_size_idx == 0){
+      txt = '';
+    }else if (this._plyr_size_idx == 1){
+      txt = '';
+    }
     return txt;
   }
   
@@ -955,8 +989,9 @@ class Song {
       
       t_elm = elm_by_id(this._plying_video_id).elm('span.ply_st');
       t_elm.classList.add('plying');
-      t_elm.textContent = '･'; // '*';
       
+      // t_elm.textContent = '･'; // '*';
+      t_elm.innerHTML = '<img class="plyingdot" src="../img/dot.svg">';
     }
     
     switch (st){

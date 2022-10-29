@@ -35,6 +35,20 @@ a.btn {
   text-decoration: none;
 }
 
+img.btn {
+  
+  width:  15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+img.plyingdot {
+  
+  width:  4px;
+  height: 4px;
+  vertical-align: middle;
+}
+
 .plyr {
   display: inline-block;
   width:   640px;

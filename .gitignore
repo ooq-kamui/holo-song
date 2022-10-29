@@ -14,3 +14,6 @@ log/
 *.ico
 .DS_Store
 
+sh/rsync.r.fish
+sh/rsync.d.fish
+
