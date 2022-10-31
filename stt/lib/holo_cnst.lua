@@ -83,6 +83,8 @@ Holo._jp = {
           "aWSaIdLUE0Y", -- vo-m
           "hvB26v6rBxA", -- live
           "tl_cVdFVkGQ", -- live
+          "qBUNfuVwKuc", -- live
+          "ioIDjX5MVfI", -- live
         },
         video_id = {
           "uE6keTcapp0",

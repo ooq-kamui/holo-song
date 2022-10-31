@@ -9,7 +9,8 @@ function df_side_by_side
 
   echo "df" (basename $argv[1]) (basename $argv[2])
   
-  diff -sy -W 38 $argv
+  #diff -sy -W 38 $argv
+  diff -sy -W 38 (expand $argv[1] | psub) (expand $argv[2] | psub)
 end
 
 set path_ltst2 (ls $dir_data/cnt.????-??-??.txt | tail -2)
