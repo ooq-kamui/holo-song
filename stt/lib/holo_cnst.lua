@@ -487,6 +487,7 @@ Holo._en = {
           "5HWCMh1ZmzE", -- 
           "bvKGGXDnt4A", -- live
           -- "4SssgZg8rpY", -- trailer
+          "UZ_sISapV7M", -- lofi
         },
       },
     },
