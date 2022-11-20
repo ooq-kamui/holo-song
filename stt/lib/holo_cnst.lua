@@ -281,6 +281,7 @@ Holo._jp = {
           "iYjjKmBok9o", -- live
           "mrc2uXkJles", -- live
           "XPeJ9mQ3V9Q", -- live
+          "qUExW09D5HU", -- live
         },
         video_id = {
           "wLNTAMY1NZA",

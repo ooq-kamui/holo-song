@@ -3,7 +3,7 @@ require("etc")
 
 local etc = Etc.new()
 
--- etc:main_song_video("dazbee"    )
+etc:main_song_video("dazbee"    )
 
 etc:main_song_video("ado"       )
 etc:main_song_video("pmaru"     )

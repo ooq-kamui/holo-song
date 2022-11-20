@@ -23,6 +23,8 @@ Etc._cnst = {
 				"RATcPb1D_X4", -- clb
 				"1vsJydi9BSs", -- clb
 				"BacusC8zGqY", -- clb
+				"oGyC1tffbv4", -- clb
+				"2DDJcLtGuLA", -- trailer
 			},
 			video_id = {
 				"L-Hl9uQWHPE", -- clb
@@ -613,6 +615,7 @@ end
 function Etc.main_song_video(_s, name)
 	
 	_s._name = name
+  u.log(_s._name)
 	
 	_s:video__song_ttl_write()
 
