@@ -340,12 +340,14 @@ class Mmbr {
           "flt_s": "baelz,council",
           "debut": "2021-08-23",
           "birth": "02-29"
-        },
+        } // ,
+        /*
         "sana": {
           "ch_id": "UCsUj0dszADCGbF3gNrQEuSQ",
           "tw_id": "tsukumosana",
           "flt_s": "sana,council"
         }
+         */
       }
     },
     "id": {
