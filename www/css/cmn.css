@@ -352,7 +352,7 @@ span.mmbr_lst {
   
   position:   absolute;      /* 絶対配置               */
   left:    calc((100% - 900px) / 2);
-  top:     30px;             /* 親要素に対する表示位置 */
+  top:     150px;            /* 親要素に対する表示位置 */
   z-index: 3;
   
   background:    #333;
