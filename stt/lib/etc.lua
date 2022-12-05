@@ -219,7 +219,7 @@ Etc._cnst = {
 			lst_id = {
 				"PLaxauk3chSWjJUBirUlCQH9fOgvfiNjcc", -- cvr
 				"PLaxauk3chSWgwI1W0yo5Bv9GAn1O1cwKB", -- org
-				"PLaxauk3chSWhFY96tRGKJlWpTWwCb_b2M", -- org - uta
+				-- "PLaxauk3chSWhFY96tRGKJlWpTWwCb_b2M", -- org - uta
 			},
 			lst_excld_video_id = {
 			},
