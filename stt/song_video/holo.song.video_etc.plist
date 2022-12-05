@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>holo.song.video_etc</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>PATH</key>
+      <string>/opt/homebrew/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin</string>
+    </dict>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/opt/homebrew/bin/lua</string>
+      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/song_video_etc.lua</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video</string>
+    <key>StartCalendarInterval</key>
+    <array>
+      <dict>
+        <key>Weekday</key>
+        <integer>3</integer>
+        <key>Hour</key>
+        <integer>00</integer>
+        <key>Minute</key>
+        <integer>10</integer>
+      </dict>
+    </array>
+    <key>StandardOutPath</key>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/log/etc.std-out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/log/etc.std-err.log</string>
+  </dict>
+</plist>
+
