@@ -424,6 +424,11 @@ a.lnk_song_video {
   text-decoration: none;
 }
 
+li.video_li_sndtmr{
+  
+  text-align: center;
+}
+
 /*
  * help.html
  */
