@@ -532,6 +532,21 @@ class Song {
 
     return elm_by_id('video_lst');
   }
+  
+  elm_ul__sndtmr(){
+
+    let elm_ul = this.video_lst_elm_ul();
+    elm_ul.textContent = null;
+
+    let elm_sndtmr_clone = this.elm_li_sndtmr__clone();
+    elm_ul.__add(elm_sndtmr_clone);
+  }
+  
+  elm_li_sndtmr__clone(){
+    
+    let r_node = elm__clone('#video_li_sndtmr_tmpl');
+    return r_node;
+  }
 
   elm_ul__cre(){
 
@@ -729,6 +744,8 @@ class Song {
   
   video__req(){
   
+    this.elm_ul__sndtmr();
+    
     let slf = this;
 
     const xhr = new XMLHttpRequest();
