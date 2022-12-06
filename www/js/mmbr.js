@@ -259,7 +259,7 @@ class Mmbr {
         "iroha": {
           "ch_id": "UC_vMYWcDjmfdpH6r4TTn1MQ",
           "tw_id": "kazamairohach",
-          "flt_s": "風間いろは,6期生,holox",
+          "flt_s": "風真いろは,6期生,holox",
           "debut": "2021-11-30",
           "birth": "06-18"
         }
