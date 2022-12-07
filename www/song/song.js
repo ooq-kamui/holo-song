@@ -960,13 +960,33 @@ class Song {
     this._video_file = prm.f ? prm.f : Song.video_file_dflt;
   }
   
+  static domain   = 'ooq.jp';
+  static dir      = 'holo/song';
+  static dir_data = 'data';
+  
+  static url_dir(){
+    
+    return 'https://' + Song.domain_dir();
+  }
+  
+  static url_dir_data(){
+    
+    return 'https://' + Song.domain_dir_data();
+  }
+  
+  static domain_dir(){
+    
+    return Song.domain + "/" + Song.dir;
+  }
+  
+  static domain_dir_data(){
+    
+    return Song.domain_dir() + '/' + Song.dir_data;
+  }
+  
   video_file_url(){
     
-    let domain   = 'ooq.jp';
-    let dir      = 'holo/song/data';
-    let url_dir  = domain + "/" + dir;
-    
-    let video_file_url = 'https://' + url_dir + "/" + this.video_file();
+    let video_file_url = Song.url_dir_data() + "/" + this.video_file();
     return video_file_url;
   }
   
@@ -1051,15 +1071,26 @@ class Song {
     }
   }
   
+  clipboard__(str){
+    
+    this._clipboard = str;
+    
+    navigator.clipboard.writeText(this._clipboard);
+  }
+    
   clipboard__video_lst_lnk(){
     
-    this._clipboard = this.video_lst_lnk();
-    
-    // > sys clipboard
-    // ...
+    this.clipboard__(this.video_lst_lnk());
   }
   
   video_lst_lnk(){
+    
+    this.video_lst_lnk__();
+      
+    return this._video_lst_lnk;
+  }
+  
+  video_lst_lnk__(){
     
     let url_prm = [];
     
@@ -1083,17 +1114,8 @@ class Song {
       url_prm.push('s='    + flt_bar_str);
     }
     
-    this._video_lst_lnk = this.url_base() + '?' + url_prm.join('&');
+    this._video_lst_lnk = Song.url_dir() + '/' + '?' + url_prm.join('&');
     log(this._video_lst_lnk);
-    navigator.clipboard.writeText(this._video_lst_lnk);
-  }
-  
-  url_base(){
-    
-    let domain   = 'ooq.jp';
-    let dir      = 'holo/song';
-    let url_base = 'https://' + domain + "/" + dir; + "/";
-    return url_base;
   }
 }
 
