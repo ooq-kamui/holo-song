@@ -484,7 +484,7 @@ class Song {
     this.flt_bar_elm().focus();
   }
 
-  s__(flt_str){
+  s__(flt_str){ // call fr html
     
     this.flt_bar_str__(flt_str);
     
@@ -1062,9 +1062,15 @@ class Song {
   video_lst_lnk(){
     
     let url_prm = [];
-    url_prm.push('f='    + this.video_file()   );
+    
+    let video_file = this.video_file();
+    if (video_file != Song.video_file_dflt){
+      url_prm.push('f=' + video_file);
+    }
+    
     url_prm.push('o='    + this.video_ordr()   );
     url_prm.push('o_op=' + this.video_ordr_op());
+    url_prm.push('s='    + this.flt_bar_str());
     
     this._video_lst_lnk = this.url_base() + '?' + url_prm.join('&');
     log(this._video_lst_lnk);
