@@ -1068,9 +1068,20 @@ class Song {
       url_prm.push('f=' + video_file);
     }
     
-    url_prm.push('o='    + this.video_ordr()   );
-    url_prm.push('o_op=' + this.video_ordr_op());
-    url_prm.push('s='    + this.flt_bar_str());
+    let video_ordr = this.video_ordr();
+    if (video_ordr != 'view_cnt'){
+      url_prm.push('o=' + video_ordr);
+    }
+    
+    let video_ordr_op = this.video_ordr_op();
+    if (video_ordr_op != 'dsc'){
+      url_prm.push('o_op=' + this.video_ordr_op());
+    }
+    
+    let flt_bar_str = this.flt_bar_str();
+    if (flt_bar_str != ''){
+      url_prm.push('s='    + flt_bar_str);
+    }
     
     this._video_lst_lnk = this.url_base() + '?' + url_prm.join('&');
     log(this._video_lst_lnk);
