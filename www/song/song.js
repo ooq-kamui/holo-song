@@ -240,6 +240,11 @@ class Song {
     this.video_ordr_op__(ordr_op);
   }
 
+  video_ordr(){
+    
+    return this._video_ordr;
+  }
+    
   video_ordr__(ordr){
 
     if (!Song._video_ordr_def.includes(ordr)){
@@ -272,6 +277,11 @@ class Song {
     this.video_ordr_op__(Song._video_ordr_op_def[idx]);
   }
 
+  video_ordr_op(){
+    
+    return this._video_ordr_op;
+  }
+    
   video_ordr_op__(ordr_op){
 
     if (!Song._video_ordr_op_def.includes(ordr_op)){
@@ -1039,6 +1049,34 @@ class Song {
         this._plyr.if_dly__cncl();
         break;
     }
+  }
+  
+  clipboard__video_lst_lnk(){
+    
+    this._clipboard = this.video_lst_lnk();
+    
+    // > sys clipboard
+    // ...
+  }
+  
+  video_lst_lnk(){
+    
+    let url_prm = [];
+    url_prm.push('f='    + this.video_file()   );
+    url_prm.push('o='    + this.video_ordr()   );
+    url_prm.push('o_op=' + this.video_ordr_op());
+    
+    this._video_lst_lnk = this.url_base() + '?' + url_prm.join('&');
+    log(this._video_lst_lnk);
+    navigator.clipboard.writeText(this._video_lst_lnk);
+  }
+  
+  url_base(){
+    
+    let domain   = 'ooq.jp';
+    let dir      = 'holo/song';
+    let url_base = 'https://' + domain + "/" + dir; + "/";
+    return url_base;
   }
 }
 
