@@ -41,6 +41,12 @@ img.btn {
   vertical-align: middle;
 }
 
+img.lnk_btn {
+  width:  23px;
+  height: 23px;
+  vertical-align: middle;
+}
+
 img.plyingdot {
   width:  4px;
   height: 4px;
