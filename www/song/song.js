@@ -964,29 +964,32 @@ class Song {
   static dir      = 'holo/song';
   static dir_data = 'data';
   
-  static url_dir(){
+  url_dir(){
     
-    return 'https://' + Song.domain_dir();
+    return 'https://' + this.domain_dir();
   }
   
-  static url_dir_data(){
+  url_dir_data(){
     
-    return 'https://' + Song.domain_dir_data();
+    return 'https://' + this.domain_dir_data();
   }
   
-  static domain_dir(){
+  domain_dir(){
     
-    return Song.domain + "/" + Song.dir;
+    // let dir = Song.domain + "/" + Song.dir;
+    let dir = Song.domain + this.url().pathname;
+    log(dir);
+    return dir;
   }
   
-  static domain_dir_data(){
+  domain_dir_data(){
     
-    return Song.domain_dir() + '/' + Song.dir_data;
+    return this.domain_dir() + Song.dir_data;
   }
   
   video_file_url(){
     
-    let video_file_url = Song.url_dir_data() + "/" + this.video_file();
+    let video_file_url = this.url_dir_data() + '/' + this.video_file();
     return video_file_url;
   }
   
@@ -1022,6 +1025,11 @@ class Song {
   qery_str__(){
     
     this._qery_str = win.location.search;
+  }
+  
+  url(){
+    let url = new URL(window.location.href);
+    return url;
   }
   
   plyr_ready__(){
@@ -1114,7 +1122,7 @@ class Song {
       url_prm.push('s='    + flt_bar_str);
     }
     
-    this._video_lst_lnk = Song.url_dir() + '/' + '?' + url_prm.join('&');
+    this._video_lst_lnk = this.url_dir() + '?' + url_prm.join('&');
     log(this._video_lst_lnk);
   }
 }
