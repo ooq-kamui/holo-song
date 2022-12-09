@@ -1131,17 +1131,19 @@ class Song {
   video_lst_lnk_btn_anm(){
     
     let prm1 = {
-      transform: 'scale(2)',
+      transform: 'scale(1.8)',
+      easing   : 'ease-out',
     };
     
     let prm2 = {
       transform: 'scale(1)',
+      easing   : 'ease-in',
     };
     
     let opt = {
-      duration: 900,
-      easing : 'ease-out',
-      fill   : 'forwards',
+      duration: 450,
+      fill    : 'forwards',
+      // easing : 'ease-out',
     };
     
     let btn_elm = elm('.lnk_btn');
