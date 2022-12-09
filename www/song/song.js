@@ -1089,6 +1089,8 @@ class Song {
   clipboard__video_lst_lnk(){
     
     this.clipboard__(this.video_lst_lnk());
+    
+    this.video_lst_lnk_btn_anm();
   }
   
   video_lst_lnk(){
@@ -1124,6 +1126,26 @@ class Song {
     
     this._video_lst_lnk = this.url_dir() + '?' + url_prm.join('&');
     log(this._video_lst_lnk);
+  }
+  
+  video_lst_lnk_btn_anm(){
+    
+    let prm1 = {
+      transform: 'scale(2)',
+    };
+    
+    let prm2 = {
+      transform: 'scale(1)',
+    };
+    
+    let opt = {
+      duration: 900,
+      easing : 'ease-out',
+      fill   : 'forwards',
+    };
+    
+    let btn_elm = elm('.lnk_btn');
+    btn_elm.anm( [{}, prm1, prm2], opt );
   }
 }
 
