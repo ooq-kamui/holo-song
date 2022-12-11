@@ -188,6 +188,9 @@ Etc._cnst = {
 			lst_excld_video_id = {
 				-- iori
 				"gB99iD1urig", -- live
+				"aI-IfsQbOKU", -- live
+				"5V427kFmjyI", -- live
+				
 			},
 		},
 	},
@@ -199,6 +202,8 @@ Etc._cnst = {
 				"PLg6XDNQDetppnwEWDYlYXhoc9r9YQYIXG", -- cvr
 			},
 			lst_excld_video_id = {
+				"37vSW-Q8YnQ", -- teaser
+				"pd7H0nDN_us", -- teaser
 			},
 		},
 	},

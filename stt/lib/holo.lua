@@ -75,9 +75,19 @@ function Holo.video_view_cnt__(_s)
 		end
 
     for idx, itm in pairs(res.items) do
-			
+      
       _s._video[itm.id].title = itm.snippet.title
       _s._video[itm.id].cdt   = itm.snippet.publishedAt
+      
+      -- localization en
+      -- tst
+      -- u.log_ar(itm.localizations)
+      if itm.localizations then
+        if itm.localizations.en then
+          -- u.log_ar(itm.localizations.en.title)
+          _s._video[itm.id].title_en = itm.localizations.en.title
+        end
+      end
 
       if itm.statistics.viewCount then
         _s._video[itm.id].view_cnt = tonumber(itm.statistics.viewCount)
@@ -86,8 +96,7 @@ function Holo.video_view_cnt__(_s)
       end
     end
     idx_s = idx_s + lim
-		
-		-- break -- tst
+    
   until idx_s > #video_id
 end
 
@@ -205,9 +214,9 @@ function Holo.video__add_by_lst_id(_s, lst_id, excld_video_id)
     res = Ytube.video_by_lst(lst_id, pgtkn_nxt)
 
     if res.error then
-			Ytube.log_err(res.error)
-			break
-		end
+      Ytube.log_err(res.error)
+      break
+    end
 
     for idx, itm in pairs(res.items) do
 
@@ -394,42 +403,42 @@ end
 -- 
 
 function Holo.main_song_video(_s)
-	
-	_s:video__song_ttl_write()
+  
+  _s:video__song_ttl_write()
 
-	_s:video__song_ttl_ltst1_sub_ttl_ltst2_write()
+  _s:video__song_ttl_ltst1_sub_ttl_ltst2_write()
 
-	_s:song_video_data_rsync()
+  _s:song_video_data_rsync()
 end
 
 function Holo.main_song_video_dbg(_s)
-	
-	local is_by_jsn = true -- dbg
-	
-	if is_by_jsn then
-		
-		local path_song_ttl = _s:song_ttl_jsn_file_ltst()[1]
-		_s:video__by_jsn_file(path_song_ttl)
-		
-		-- tst
-		-- _s:video_view_cnt__()
-		-- _s:video_2_jsn_write("a.json")
-	else
-		_s:video__song_ttl_write()
-	end
+  
+  local is_by_jsn = true -- dbg
+  
+  if is_by_jsn then
+    
+    local path_song_ttl = _s:song_ttl_jsn_file_ltst()[1]
+    _s:video__by_jsn_file(path_song_ttl)
+    
+    -- dbg tst
+    -- _s:video_view_cnt__()
+    -- _s:video_2_jsn_write("a.json")
+  else
+    _s:video__song_ttl_write()
+  end
 
-	-- _s:video__song_ttl_ltst1_sub_ttl_ltst2_write()
+  -- _s:video__song_ttl_ltst1_sub_ttl_ltst2_write()
 
 	-- _s:song_video_data_rsync()
 end
 
 function Holo.video__song_ttl_write(_s)
-	
-	local path_song_ttl = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
-	
-	_s:video__song({"jp", "en", "id"})
+  
+  local path_song_ttl = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
+  
+  _s:video__song({"jp", "en", "id"})
 
-	_s:video_2_jsn_write(path_song_ttl)
+  _s:video_2_jsn_write(path_song_ttl)
 
 	Utl.cp(path_song_ttl, Cfg.song_video.path_t_ltst)
 end
@@ -493,14 +502,11 @@ function Holo.video__ch_ttl_add_term_write(_s, fr_date, to_date)
 	local mmbr = _s:mmbr(_s._cntry)
 
 	for name, tbl in pairs(mmbr) do
-		-- name = "aki" -- tst
 		u.log(name)
 		
 		_s:video__ch_by_term_write(name, fr_date, to_date)
 		
 		_s:video__ttl_add_term_write(name, fr_date, to_date)
-		
-		-- break -- tst
 	end
 end
 
