@@ -250,7 +250,8 @@ Holo._jp = {
       ch_id = "UCp-5t9SrOQwXMU7iIjQfARg",
       song = {
         lst_id = {
-          "PLMUtkfkYDjAFJlZeDBNLAlrKjfue2DRRu", -- cvr, org
+          "PLMUtkfkYDjAFJlZeDBNLAlrKjfue2DRRu", -- clb
+          "PLMUtkfkYDjAHOWzoQcjvbMX3ElMxKmsUp", -- cvr, org
         },
       },
     },
@@ -694,12 +695,20 @@ function Holo.song_lst_id(_s, cntry, cls)
   local cls_tbl = Holo["_"..cntry][cls]
 
   for name, tbl in pairs(cls_tbl) do
+    
+    -- tst
+    -- u.log(name)
+    -- if name == 'fubuki' then
+    -- u.log(name)
 
-    ar.join(lst_id        , tbl.song.lst_id)
+    ar.join(lst_id , tbl.song.lst_id)
 
     if tbl.song.lst_excld_video_id then
       ar.join(excld_video_id, tbl.song.lst_excld_video_id)
     end
+		
+		-- end
+		
   end
 
   return lst_id, excld_video_id

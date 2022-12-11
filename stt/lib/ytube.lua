@@ -12,7 +12,8 @@ function Ytube.video_view_cnt(video_id, idx_s)
 	if not video_id[idx_e] then idx_e = #video_id end
   local prm = {
     "key" .."="..Ytube.api_key,
-    "part".."=".."statistics,snippet",
+    -- "part".."=".."statistics,snippet",
+    "part".."=".."statistics,snippet,localizations",
     "id"  .."="..table.concat(video_id, ",", idx_s, idx_e),
   }
   local res = Ytube.curl(trgt, prm)
