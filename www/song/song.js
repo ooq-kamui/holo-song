@@ -502,6 +502,17 @@ class Song {
     this.video__req();
   }
   
+  holo_s__(flt_str){
+  
+    let video_file = 'song_video/ltst.s.json';
+    this.f__(video_file, flt_str);
+  }
+
+  h_s__(flt_str){ // alias
+  
+    this.holo_s__(flt_str);
+  }
+  
   // 
   // elm
   // 
@@ -778,9 +789,9 @@ class Song {
       slf.video_flt__();
       slf.video__srt();
       
-      // log(slf._plyr_ready);
+      log('plyr_ready: ' + slf._plyr_ready);
       if (slf._plyr_ready){
-        // slf.ply_rnd();
+        slf.ply_rnd();
       }
     }
   }
