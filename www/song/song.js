@@ -130,7 +130,7 @@ class Song {
     this.flt_bar__init();
     this.flt_bar__focus();
     
-    this.lang_idx__init();
+    this.lang__init();
     
     let keyup_stack = [];
     let slf = this;
@@ -442,19 +442,21 @@ class Song {
     this._video_flt    = new Obj();
     this._video_id_flt = new Array();
 
-    let _video;
+    let _video, title, la;
     for (let [idx, _video_id] of this._video_id.entries()){
 
       _video = this._video[_video_id];
 
       if (! _video.title){continue;}
+      
+      title = this.video_title_by_lang(_video_id);
 
       if (excld){
-        if (  Flt_word.is_match(_video.title, excld)){continue;}
+        if (  Flt_word.is_match(title, excld)){continue;}
       }
       
       if (word){
-        if (! Flt_word.is_match(_video.title, word )){continue;}
+        if (! Flt_word.is_match(title, word )){continue;}
       }
 
       this._video_flt[_video_id] = _video;
@@ -573,15 +575,13 @@ class Song {
 
   elm_ul__cre(){
 
-    let video = this._video;
-
     let elm_ul = this.video_lst_elm_ul();
 
     elm_ul.textContent = null;
 
     let view_cnt_elm , title_elm_spn , title_elm , url;
 
-    for (let [video_id, _video] of Obj.entries(video)){
+    for (let [video_id, _video] of Obj.entries(this._video)){
 
       if (_video.view_cnt == undefined || !_video.title){continue;}
 
@@ -1152,9 +1152,24 @@ class Song {
     'en'
   ];
   
+  lang__init(){
+    
+    this.lang_idx__init();
+  }
+  
   lang_idx__init(){
     
     this._lang_idx = 0;
+  }
+  
+  lang__tgl(){
+    
+    this.lang_idx__tgl();
+    this.lang_swtch_elm__();
+    
+    this.video_title__ch();
+    
+    this.flt_ply(true);
   }
   
   lang_idx__tgl(){
@@ -1167,19 +1182,64 @@ class Song {
     log('lang_idx: ' + this._lang_idx);
   }
   
-  lang__tgl(){
-    
-    this.lang_idx__tgl();
-    this.lang_swtch_elm__();
+  lang(){
+  
+    let la = Song._lang_def[this._lang_idx];
+    return la;
   }
   
   lang_swtch_elm__(){
   
-    let html;
-    if      (this._lang_idx == 0){html = this.swtch_elm_html('l');}
-    else if (this._lang_idx == 1){html = this.swtch_elm_html('r');}
+    let lr;
+    switch (this.lang()){
+      case 'ja': lr = 'l';
+        break;
+      case 'en': lr = 'r';
+        break;
+    }
+    elm('#lang_swtch').innerHTML = this.swtch_elm_html(lr);
+  }
+  
+  video_title__ch(){
     
-    elm('#lang_swtch').innerHTML = html;
+    let title;
+    
+    for (let [_video_id, _video] of Obj.entries(this._video)){
+      
+      title = this.video_title_by_lang(_video_id);
+      
+      elm_by_id(_video_id).elm('.title').textContent = title;
+    }
+  }
+  
+  video_title_by_lang(video_id){
+    
+    let title;
+    let la = this.lang();
+    log('lang: ' + la);
+    
+    let video = this._video[video_id];
+    // if (video_id == '0bo6MVQxY6Y'){
+    //   log(video);
+    // };
+    
+    if       (la == 'ja'){
+
+      title = video.title;
+
+    }else if (la == 'en'){
+
+      if (video.title_en){
+        
+        title = video.title_en;
+        // log(title);
+        
+      } else             {
+        
+        title = video.title;
+      }
+    }
+    return title;
   }
 }
 
