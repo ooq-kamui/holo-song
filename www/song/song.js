@@ -130,6 +130,8 @@ class Song {
     this.flt_bar__init();
     this.flt_bar__focus();
     
+    this.lang_idx__init();
+    
     let keyup_stack = [];
     let slf = this;
 
@@ -625,16 +627,15 @@ class Song {
 
   ordr_swtch_elm__(){
 
-    // elm_by_id('ordr_swtch').textContent = this.ordr_swtch_elm_txt();
     elm_by_id('ordr_swtch').innerHTML = this.ordr_swtch_elm_html();
   }
 
   ordr_swtch_elm_html(){
 
-    let txt;
-    if      (this._video_ordr == 'view_cnt'){txt = this.swtch_elm_html('l');}
-    else if (this._video_ordr == 'cdt'     ){txt = this.swtch_elm_html('r');}
-    return txt;
+    let html;
+    if      (this._video_ordr == 'view_cnt'){html = this.swtch_elm_html('l');}
+    else if (this._video_ordr == 'cdt'     ){html = this.swtch_elm_html('r');}
+    return html;
   }
 
   swtch_elm_html(lr){
@@ -647,34 +648,17 @@ class Song {
     }
     return html;
   }
-  
-  ordr_swtch_elm_txt(){
-
-    let txt;
-    if      (this._video_ordr == 'view_cnt'){txt = this.swtch_elm_txt('l');}
-    else if (this._video_ordr == 'cdt'     ){txt = this.swtch_elm_txt('r');}
-    return txt;
-  }
-
-  swtch_elm_txt(lr){
-
-    let txt;
-    if      (lr == 'l'){txt = '';}
-    else if (lr == 'r'){txt = '';}
-    return txt;
-  }
 
   ordr_op_swtch_elm__(){
 
-    // elm_by_id('ordr_op_swtch').textContent = this.ordr_op_swtch_elm_txt();
     elm_by_id('ordr_op_swtch').innerHTML = this.ordr_op_swtch_elm_html();
   }
 
   ordr_op_swtch_elm_html(){
 
     let op  = this._video_ordr_op;
-    let txt = this.ordr_op_elm_html(op);
-    return txt;
+    let html = this.ordr_op_elm_html(op);
+    return html;
   }
 
   ordr_op_elm_html(op){
@@ -688,21 +672,31 @@ class Song {
     return html;
   }
   
-  ordr_op_swtch_elm_txt(){
+  ordr_op_swtch_elm__(){
+
+    elm_by_id('ordr_op_swtch').innerHTML = this.ordr_op_swtch_elm_html();
+  }
+
+  ordr_op_swtch_elm_html(){
 
     let op  = this._video_ordr_op;
-    let txt = this.ordr_op_elm_txt(op);
-    return txt;
+    let html = this.ordr_op_elm_html(op);
+    return html;
   }
 
-  ordr_op_elm_txt(op){
+  ordr_op_elm_html(op){
 
-    let txt;
-    if      (op == 'asc'){txt = '';}
-    else if (op == 'dsc'){txt = '';}
-    return txt;
+    let html;
+    if      (op == 'asc'){
+      html = '<img class="btn" src="../img/kaku03u.svg">';
+    }else if(op == 'dsc'){
+      html = '<img class="btn" src="../img/kaku03d.svg">';
+    }
+    return html;
   }
-
+  
+  
+  
   // 
   // lst
   // 
@@ -905,7 +899,6 @@ class Song {
   
   plyr_size_swtch_elm__(){
   
-    // elm('#plyr_size_swtch').textContent = this.plyr_size_swtch_txt();
     elm('#plyr_size_swtch').innerHTML = this.plyr_size_swtch_html();
   }
   
@@ -918,17 +911,6 @@ class Song {
       html = '<img class="btn" src="../img/scrn.size.d.svg">';
     }
     return html;
-  }
-  
-  plyr_size_swtch_txt(){
-  
-    let txt;
-    if       (this._plyr_size_idx == 0){
-      txt = '';
-    }else if (this._plyr_size_idx == 1){
-      txt = '';
-    }
-    return txt;
   }
   
   hdr_h__(){ // n: 287px
@@ -1096,7 +1078,7 @@ class Song {
     
     navigator.clipboard.writeText(this._clipboard);
   }
-    
+  
   clipboard__video_lst_lnk(){
     
     this.clipboard__(this.video_lst_lnk());
@@ -1159,6 +1141,45 @@ class Song {
     
     let btn_elm = elm('.lnk_btn');
     btn_elm.anm( [{}, prm1, prm2], opt );
+  }
+  
+  // 
+  // lang
+  // 
+  
+  static _lang_def = [
+    'ja',
+    'en'
+  ];
+  
+  lang_idx__init(){
+    
+    this._lang_idx = 0;
+  }
+  
+  lang_idx__tgl(){
+    
+    this._lang_idx += 1;
+    
+    if (this._lang_idx >= Song._lang_def.length){
+      this._lang_idx = 0;
+    }
+    log('lang_idx: ' + this._lang_idx);
+  }
+  
+  lang__tgl(){
+    
+    this.lang_idx__tgl();
+    this.lang_swtch_elm__();
+  }
+  
+  lang_swtch_elm__(){
+  
+    let html;
+    if      (this._lang_idx == 0){html = this.swtch_elm_html('l');}
+    else if (this._lang_idx == 1){html = this.swtch_elm_html('r');}
+    
+    elm('#lang_swtch').innerHTML = html;
   }
 }
 
