@@ -230,6 +230,58 @@ Etc._cnst = {
 			},
 		},
 	},
+	waka100 = {
+		ch_id = "UC8isYJEcM_M7LOkJDodG-rg",
+		song = {
+			lst_id = {
+				"PLuoIEgeIX7y7OEcBNuhNNkCic8snzKrei",
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
+	switchindie = {
+		ch_id = "UCkH3CcMfqww9RsZvPRPkAJA",
+		song = {
+			lst_id = {
+				"PLPh3p_yYrx0BPcWGA1uZ51w8fmmBlJWGs", -- 2018-05-11
+				"PLPh3p_yYrx0DB3bdLdPmDYCCi4XBZBFAB", -- 2018-12-27
+				"PLPh3p_yYrx0AlwkqPepl904VtvnY0Euiz", -- 2019-12-11
+				"PLPh3p_yYrx0Dhlxx_hhQWX4d_Mli7Sxl_", -- 2020-12-16
+				"PLPh3p_yYrx0BSuqPrQm2e87mGAMN7WBRG", -- 2021-04-15
+				"PLPh3p_yYrx0DWoaz_DRnXn8XEw5TZEokI", -- 2021-12-16
+				"PLPh3p_yYrx0AdabHG-gGzu8mE_ECLYp_9", -- 2022-05-11
+				"PLPh3p_yYrx0DUuR7ASyt3OQ7pPfL_7gog", -- 2022-11-10
+			},
+			lst_excld_video_id = { -- main video
+				"9Fw_wC2amlc", -- 2018-05-11
+				"kF7JDSFnIe4", -- 2018-12-27
+				"Sjosqi8m2iI", -- 2019-12-11
+				"nsDmFKxtlLQ", -- 2020-12-16
+				"8WteKv9ScIY", -- 2021-04-15
+				"-7oS4zL04jc", -- 2021-12-16
+				"q9jOzsYeV_w", -- 2022-05-11
+				"aq6GPDhqPkQ", -- 2022-11-10
+			},
+			video_id = {
+				"N8fodxhRilY", -- 2019-05-31
+				"kgdEHUIG3Lo",
+				"XLMxfxBsPYI",
+				"EyWen57qH74",
+				"CNJWtpK6y0s",
+				"z3eHHfyLA54",
+				"pk9fMeNFAck",
+				"fvG_Q0Vtbsw",
+				"hDvJSve9vOM",
+				"3gymWm1zvZM",
+				"fv13YWqvAec",
+				"sWGeOnN62Mo",
+				"j82J3cFkCts",
+				"09plew6N6ic",
+				"Ir-TYrdl0aU",
+			},
+		},
+	},
 }
 Etc._cfg = {
   dir_data = Cfg.prj.dir .. "/www/song/data/etc",
