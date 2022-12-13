@@ -504,6 +504,9 @@ class Mmbr {
           a_elm.textContent = name;
           a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
           
+          a_elm = profile_node.elm("span.mmbr_name");
+          a_elm.textContent = name;
+          
           a_elm = profile_node.elm_all("a.icn");
           a_elm[0].href = "https://www.youtube.com/channel/" + profile.ch_id;
           a_elm[1].href = "https://twitter.com/" + profile.tw_id;
