@@ -3,6 +3,7 @@ require("etc")
 
 local etc = Etc.new()
 
+---[[
 etc:main_song_video("dazbee"    )
 
 etc:main_song_video("ado"       )
@@ -24,6 +25,10 @@ etc:main_song_video("vwp"       )
 etc:main_song_video("riot"      )
 
 etc:main_song_video("lucia"     )
+--]]
+
+-- etc:main_song_video("waka100")
+-- etc:main_song_video("switchindie")
 
 etc:data_rsync()
 
