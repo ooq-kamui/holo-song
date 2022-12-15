@@ -1137,7 +1137,7 @@ class Song {
     
     this.video_title__ch();
     
-    this.flt_ply(true);
+    // this.flt_ply(true);
   }
   
   lang_idx__tgl(){
