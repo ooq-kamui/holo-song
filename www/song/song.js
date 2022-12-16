@@ -1221,26 +1221,37 @@ class Song {
     let video_title_elm = video_li_elm.elm('.video_title');
     let thmb_elm        = video_li_elm.elm('.thmb_frame');
     
-    video_title_elm.evnt__add(
+    Elm.__hvr_dsp(video_title_elm, thmb_elm);
+  }
+}
+
+// 
+// elm
+// 
+class Elm {
+  
+  static __hvr_dsp(hvr_elm, dsp_elm){
+    
+    hvr_elm.evnt__add(
       'mouseover',
       function (ev){
         // log("mouseover");
-        thmb_elm.style.opacity    = 1;
-        thmb_elm.style.visibility = 'visible';
+        dsp_elm.style.opacity    = 1;
+        dsp_elm.style.visibility = 'visible';
       },
       false
     );
 
-    video_title_elm.evnt__add(
+    hvr_elm.evnt__add(
       'mouseleave',
       function (ev){
         // log("mouseleave");
-        thmb_elm.style.opacity    = 0;
-        thmb_elm.style.visibility = 'hidden';
+        dsp_elm.style.opacity    = 0;
+        dsp_elm.style.visibility = 'hidden';
       },
       false
     );
-  }
+  };
 }
 
 // 

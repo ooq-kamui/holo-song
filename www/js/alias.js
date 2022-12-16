@@ -105,12 +105,6 @@ Element.prototype.anm = function (keyfrm, opt){
   return this.animate(keyfrm, opt);
 };
 
-/*
-Element.prototype.elm_all = function (slctr){
-  return this.querySelectorAll(slctr);
-};
- */
-
 // 
 // etc
 // 
