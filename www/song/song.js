@@ -616,6 +616,8 @@ class Song {
       cdt = 'new ' + cdt;
     }
     r_node.elm('.cdt').textContent = cdt;
+    
+    this.thmb__init(r_node.elm('li'));
 
     return r_node;
   }
@@ -1208,6 +1210,36 @@ class Song {
       }
     }
     return title;
+  }
+  
+  // 
+  // thmb
+  // 
+  
+  thmb__init(video_li_elm){
+    
+    let video_title_elm = video_li_elm.elm('.video_title');
+    let thmb_elm        = video_li_elm.elm('.thmb_frame');
+    
+    video_title_elm.evnt__add(
+      'mouseover',
+      function (ev){
+        // log("mouseover");
+        thmb_elm.style.opacity    = 1;
+        thmb_elm.style.visibility = 'visible';
+      },
+      false
+    );
+
+    video_title_elm.evnt__add(
+      'mouseleave',
+      function (ev){
+        // log("mouseleave");
+        thmb_elm.style.opacity    = 0;
+        thmb_elm.style.visibility = 'hidden';
+      },
+      false
+    );
   }
 }
 
