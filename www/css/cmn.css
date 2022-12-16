@@ -303,12 +303,8 @@ div.body_r div.body_r_fixed {
   display: block;
   order: 0;
 }
-.video_li:hover div.thmb_frame {
-  opacity: 1;
-  visibility: visible;
-}
 
-.video_li       div.thmb_frame {
+div.thmb_frame {
   opacity:         0;        /* はじめは隠しておく     */
   visibility: hidden;        /* はじめは隠しておく     */
   
