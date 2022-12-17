@@ -497,7 +497,6 @@ class Mmbr {
 
           let a_elm;
           a_elm = profile_node.elm("a.mmbr_name");
-          // a_elm.textContent = name;
           a_elm.txt__(name);
           a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
           
