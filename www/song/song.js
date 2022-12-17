@@ -563,7 +563,8 @@ class Song {
   elm_ul__sndtmr(){
 
     let elm_ul = this.video_lst_elm_ul();
-    elm_ul.textContent = null;
+    // elm_ul.textContent = null;
+    elm_ul.txt__(null);
 
     let elm_sndtmr_clone = this.elm_li_sndtmr__clone();
     elm_ul.__add(elm_sndtmr_clone);
@@ -580,7 +581,8 @@ class Song {
 
     let elm_ul = this.video_lst_elm_ul();
 
-    elm_ul.textContent = null;
+    // elm_ul.textContent = null;
+    elm_ul.txt__(null);
 
     let view_cnt_elm , title_elm_spn , title_elm , url;
 
@@ -602,12 +604,14 @@ class Song {
     r_node.elm('li').attr__('id', video_id);
 
     let t_elm = r_node.elm('.view_cnt');
-    t_elm.textContent = _video.view_cnt;
+    // t_elm.textContent = _video.view_cnt;
+    t_elm.txt__(_video.view_cnt);
     if (_video.new){
       t_elm.classList.replace('view_cnt', 'view_cnt_new');
     }
     
-    r_node.elm('.title').textContent = _video.title;
+    // r_node.elm('.title').textContent = _video.title;
+    r_node.elm('.title').txt__(_video.title);
 
     let href_js = "javascript:song.p('" + video_id + "');";
     r_node.elm('a').attr__('href', href_js);
@@ -619,7 +623,8 @@ class Song {
     if (_video.new){
       cdt = 'new ' + cdt;
     }
-    r_node.elm('.cdt').textContent = cdt;
+    // r_node.elm('.cdt').textContent = cdt;
+    r_node.elm('.cdt').txt__(cdt);
     
     this.thmb__init(r_node.elm('li'));
 
@@ -1016,7 +1021,8 @@ class Song {
       let t_elm;
       t_elm = elm_all('li.video_li span.plying');
       for (let [idx, _elm] of t_elm.entries()){
-        _elm.textContent = '';
+        // _elm.textContent = '';
+        _elm.txt__('');
         _elm.classList.remove('plying');
       }
       
@@ -1181,7 +1187,8 @@ class Song {
       
       title = this.video_title_by_lang(_video_id);
       
-      elm_by_id(_video_id).elm('.title').textContent = title;
+      // elm_by_id(_video_id).elm('.title').textContent = title;
+      elm_by_id(_video_id).elm('.title').txt__(title);
     }
   }
   
