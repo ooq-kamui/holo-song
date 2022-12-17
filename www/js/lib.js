@@ -32,8 +32,9 @@ class Elm {
     
     let dsp_node = node_by_tmpl('#tooltip_tmpl');
     let dsp_elm  = dsp_node.elm('span');
+    dsp_elm.style.opacity    = 0;
+    dsp_elm.style.visibility = "hidden";
     
-    // let html = txt.replace(/\n/g, '<br>');
     let html = lf_2_br(txt);
     dsp_elm.html__(html);
     // log(dsp_elm);
