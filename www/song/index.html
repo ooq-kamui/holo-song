@@ -16,7 +16,7 @@
   crossorigin="anonymous"></script>
 
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
-<link rel="stylesheet" href="../css/cmn.css?ts=2022-12-16.10:30" />
+<link rel="stylesheet" href="../css/cmn.css?ts=2022-12-17.18:00" />
 <title>hololive song - view count - weekly ranking</title>
 <meta name="description"
   content="ホロライブ 歌 再生数 週間 ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
@@ -67,7 +67,6 @@
         order :
         view
         <span class="tooltip">
-        <!-- span class="tooltip_txt">view count or date added</span -->
           <a id="ordr_swtch"    class="swtch"
             href="javascript:song.video__srt_tgl()"
            ><img class="swtch" src="../img/swtch.l.svg"
@@ -75,7 +74,6 @@
         </span>
         date :
         <span class="tooltip">
-          <!-- span class="tooltip_txt">asc or desc</span -->
           <a id="ordr_op_swtch" class="swtch"
             href="javascript:song.video__srt_op_tgl()"
            ><img class="btn" src="../img/kaku03u.svg"
@@ -85,14 +83,12 @@
       <div>
         pos :
         <span class="tooltip">
-          <!-- span class="tooltip_txt">top</span -->
           <a class="btn" id="lst_scrl_top_btn"
             href="javascript:song.video_lst__scrl_top()"
            ><img class="btn" src="../img/kaku03u.svg"
          ></a>
         </span>
         <span class="tooltip">
-          <!-- span class="tooltip_txt">playing now</span -->
           <a class="btn" id="lst_scrl_plynow_btn"
             href="javascript:song.video_lst__scrl()"
            ><img class="btn" src="../img/kaku03r.svg"
@@ -101,7 +97,6 @@
       </div>
       <div>
         <span class="tooltip">
-          <!-- span class="tooltip_txt">link copy</span -->
           <a class="btn" id="lst_lnkcp_btn"
             href="javascript:song.clipboard__video_lst_lnk()"
            ><img class="lnk_btn" src="../img/lnkcp.svg"
@@ -112,7 +107,6 @@
       <div>
         lang : ja
         <span class="tooltip">
-          <!-- span class="tooltip_txt">video title japanese or english</span -->
           <a class="swtch" id="lang_swtch"
             href="javascript:song.lang__tgl()"
            ><img class="swtch" src="../img/swtch.l.svg"
@@ -293,7 +287,6 @@
   <div>
     <div class="plyr_size_swtch">
       <span class="tooltip">
-        <!-- span class="tooltip_txt">player size change</span -->
         <a id="plyr_size_swtch" class="swtch"
           href="javascript:song.plyr_size__tgl()"
          ><img class="btn" src="../img/scrn.size.u.svg"
@@ -371,11 +364,11 @@
            href="../song/?o=cdt&f=ch/sora.json"
            ><img class="profile" src="jp/sora/profile.jpg"
        ></a
-     ><span class="tooltip_txt"
-       ><span class="mmbr_name">sora</span><br>
-        ch video list</span
-     ></span
-     ><a class="icn" target="_blank"
+     ><!-- span class="tooltip_txt"
+       ><span class="mmbr_name"
+         >sora</span><br>
+          ch video list</span></span
+     --><a class="icn" target="_blank"
          href="https://twitter.com/tokino_sora"
        ><img class="icn" src="../img/tw.png"
      ></a>
@@ -384,28 +377,28 @@
       <span class="tooltip"
        ><a class="lnk_song_video"
            href="../song/?s=">♪♪</a
-       ><span class="tooltip_txt">song filter</span
-     ></span>
+       ><!-- span class="tooltip_txt">song filter</span
+     --></span>
     </div>
   </div>
 </template>
 
 <template id="tooltip_tmpl">
-  <span class="tooltip_txt">xxx</span>
+  <span class="tooltip_txt"></span>
 </template>
 
 </body>
-<script src="../js/alias.js?ts=2022-12-17.12:22"
+<script src="../js/alias.js?ts=2022-12-17.20:00"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="../js/lib.js?ts=2022-12-17.12:22"
+<script src="../js/lib.js?ts=2022-12-17.16:20"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="menu.js?ts=2022-09-13.11:15"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="thmb.js?ts=2022-09-13.11:15"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="song.js?ts=2022-12-17.14:21"
+<script src="song.js?ts=2022-12-17.20:10"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="../js/mmbr.js?ts=2022-12-13.11:16"
+<script src="../js/mmbr.js?ts=2022-12-17.20:00"
   defer type="text/javascript" charset="UTF-8"></script>
 </html>
 

@@ -497,11 +497,9 @@ class Mmbr {
 
           let a_elm;
           a_elm = profile_node.elm("a.mmbr_name");
-          a_elm.textContent = name;
+          // a_elm.textContent = name;
+          a_elm.txt__(name);
           a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
-          
-          a_elm = profile_node.elm("span.mmbr_name");
-          a_elm.textContent = name;
           
           a_elm = profile_node.elm_all("a.icn");
           a_elm[0].href = "https://www.youtube.com/channel/" + profile.ch_id;
@@ -509,19 +507,25 @@ class Mmbr {
           
           a_elm = profile_node.elm("a.lnk_ch_video");
           a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/ltst.json";
-          // a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/" + name + ".json";
           if (_cntry == "en" || _cntry == "id"){
-            a_elm.attr__del("href")
-            a_elm.attr__("tabindex", "-1")
+            a_elm.attr__del("href");
+            a_elm.attr__("tabindex", "-1");
           }
+          // tooltip - ch video lst
+          let txt;
+          txt = name + "\n"
+                  + "ch video list";
+          Elm.__tooltip(a_elm, txt);
           
           a_elm = profile_node.elm("a.lnk_song_video");
-          // a_elm.href = "../song/?s=" + profile.flt_s
-          // a_elm.href = "javascript:song.s__('" + profile.flt_s + "')"
-          a_elm.href = "javascript:song.h_s__('" + profile.flt_s + "')"
+          a_elm.href = "javascript:song.h_s__('" + profile.flt_s + "')";
 
           let img_elm    = profile_node.elm("img.profile");
           img_elm.src = "../mmbr/" + _cntry + "/" + name + "/profile.jpg";
+          
+          // tooltip - song video
+          txt = "song filter";
+          Elm.__tooltip(a_elm, txt);
           
           // log(profile_node);
           

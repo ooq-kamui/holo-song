@@ -33,9 +33,10 @@ class Elm {
     let dsp_node = node_by_tmpl('#tooltip_tmpl');
     let dsp_elm  = dsp_node.elm('span');
     
-    let html = txt.replace(/\n/g, '<br>');
+    // let html = txt.replace(/\n/g, '<br>');
+    let html = lf_2_br(txt);
     dsp_elm.html__(html);
-    log(dsp_elm);
+    // log(dsp_elm);
     
     hvr_elm.__extnd(dsp_node);
     
@@ -131,7 +132,7 @@ class Flt_word {
 }
 
 // 
-// util
+// utl
 // 
 
 class u {
@@ -179,5 +180,11 @@ function ar_in(ar, val){
   let idx = ar.indexOf(val);
   let ret = idx >= 0 ? true : false ;
   return ret;
+}
+
+function lf_2_br(str){
+  
+  let html = str.replace(/\n/g, '<br>');
+  return html
 }
 
