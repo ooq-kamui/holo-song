@@ -130,8 +130,6 @@ class Song {
     this.flt_bar__init();
     this.flt_bar__focus();
     
-    this.lang__init();
-    
     let keyup_stack = [];
     let slf = this;
 
@@ -177,6 +175,10 @@ class Song {
     this.plyr_size__init();
     
     this._menu = menu;
+    
+    this.lang__init();
+    
+    this.tooltip__init();
   }
 
   // video
@@ -569,7 +571,8 @@ class Song {
   
   elm_li_sndtmr__clone(){
     
-    let r_node = elm__clone('#video_li_sndtmr_tmpl');
+    // let r_node = elm__clone('#video_li_sndtmr_tmpl');
+    let r_node = node_by_tmpl('#video_li_sndtmr_tmpl');
     return r_node;
   }
 
@@ -593,7 +596,8 @@ class Song {
 
   elm_li__clone(video_id, _video){
 
-    let r_node = elm__clone('#video_li_tmpl');
+    // let r_node = elm__clone('#video_li_tmpl');
+    let r_node = node_by_tmpl('#video_li_tmpl');
     
     r_node.elm('li').attr__('id', video_id);
 
@@ -1025,7 +1029,6 @@ class Song {
       t_elm = elm_by_id(this._plying_video_id).elm('span.ply_st');
       t_elm.classList.add('plying');
       
-      // t_elm.textContent = '･'; // '*';
       t_elm.innerHTML = '<img class="plyingdot" src="../img/dot.svg">';
     }
     
@@ -1223,173 +1226,49 @@ class Song {
     
     Elm.__hvr_dsp(video_title_elm, thmb_elm);
   }
-}
-
-// 
-// elm
-// 
-class Elm {
-  
-  static __hvr_dsp(hvr_elm, dsp_elm){
-    
-    hvr_elm.evnt__add(
-      'mouseover',
-      function (ev){
-        // log("mouseover");
-        dsp_elm.style.opacity    = 1;
-        dsp_elm.style.visibility = 'visible';
-      },
-      false
-    );
-
-    hvr_elm.evnt__add(
-      'mouseleave',
-      function (ev){
-        // log("mouseleave");
-        dsp_elm.style.opacity    = 0;
-        dsp_elm.style.visibility = 'hidden';
-      },
-      false
-    );
-  };
-}
-
-// 
-// flt
-// 
-
-class Flt_word {
   
   // 
-  // word match
+  // tooltip
   // 
   
-  static is_match(str, word){ // flt main
-
-    let ret = false;
-
-    for (let [idx, word_and] of word.entries()){
-
-      ret = Flt_word.is_match_or(str, word_and);
-      
-      if (! ret){break;}
-    }
-    return ret;
-  }
-
-  static is_match_or(str, word_or){
-
-    let ret = false;
-
-    for (let [idx, _word_or] of word_or.entries()){
-      
-      ret = Flt_word.is_str_match(str, _word_or);
-      if (ret){break;}
-    }
-    return ret;
-  }
-  
-  static is_str_match(str, word){
-
-    let ret = false;
-
-    str  = str.lower();
-    word = word.lower();
-
-    if (str.match_idx(word) >= 0){
-      ret = true;
-    }
-    return ret;
-  }
-
-  // 
-  // str split
-  // 
-  
-  static split(str){
-
-    let word_and = Flt_word.split_and(str);
-    // log(word_and);
-
-    for (let [idx, _word_and] of word_and.entries()){
+  tooltip__init(){
     
-      word_and[idx] = Flt_word.split_or(_word_and);
-    }
+    // flt_bar
+    let txt;
+    txt = "空白区切りで and 条件\n"
+        + "カンマ区切りで or 条件\n"
+        + "例\n"
+        + "すいせい,azki original,オリジナル,official";
+    Elm.__tooltip(elm('#flt_bar'), txt);
     
-    // log(word_and);
-    return word_and;
-  }
-  
-  static split_and(str){
+    // ordr_swtch
+    txt = "view count or date added";
+    Elm.__tooltip(elm('#ordr_swtch'), txt);
     
-    str = str.trim()
+    // ordr_op_swtch
+    txt = "asc or desc";
+    Elm.__tooltip(elm('#ordr_op_swtch'), txt);
     
-    // if (str == ''){return [];}
+    // lst_scrl_top_btn
+    txt = "top";
+    Elm.__tooltip(elm('#lst_scrl_top_btn'), txt);
     
-    let word_and = str.split(/\s+/g);
-    return word_and;
+    // lst_scrl_plynow_btn
+    txt = "playing now";
+    Elm.__tooltip(elm('#lst_scrl_plynow_btn'), txt);
+    
+    // lst_lnkcp_btn
+    txt = "link copy";
+    Elm.__tooltip(elm('#lst_lnkcp_btn'), txt);
+    
+    // lang_swtch
+    txt = "video title japanese or english";
+    Elm.__tooltip(elm('#lang_swtch'), txt);
+    
+    // plyr_size_swtch
+    txt = "player size change";
+    Elm.__tooltip(elm('#plyr_size_swtch'), txt);
   }
-  
-  static split_or(word_and){
-
-    let split_char = ',';
-
-    let exp = new RegExp('^' + split_char + '+|' + split_char + '+$', 'g');
-
-    let word_or = word_and.replace(exp, '').split(split_char);
-    return word_or;
-  }
-}
-
-// 
-// util
-// 
-
-class u {
-  
-  static url_qery_parse(qery_str){
-
-    qery_str = qery_str.substring(1);
-
-    let prms = qery_str.split('&');
-
-    let prm = new Obj();
-    let elm, key, val;
-    for (let i = 0; i < prms.length; i++){
-
-      elm = prms[i].split('=');
-      key = decodeURIComponent(elm[0]);
-      val = decodeURIComponent(elm[1]);
-      prm[key] = val;
-    }
-    return prm;
-  }
-}
-
-function rnd(min, max){
-
-  let val = Math.floor(Math.random() * (max - min + 1) + min);
-  return val
-}
-
-function ar_rnd(ar){
-
-  let idx = ar_rnd_idx(ar);
-  let val = ar[idx];
-  return val;
-}
-
-function ar_rnd_idx(ar){
-
-  let idx = rnd(0, ar.length - 1);
-  return idx;
-}
-
-function ar_in(ar, val){
-
-  let idx = ar.indexOf(val);
-  let ret = idx >= 0 ? true : false ;
-  return ret;
 }
 
 // main

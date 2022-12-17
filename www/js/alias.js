@@ -81,6 +81,16 @@ Node.prototype.__clone = function (slctr){
   return this.cloneNode(slctr);
 };
 
+Node.prototype.html__ = function (html){
+  this.innerHTML = html;
+  // return;
+};
+
+Node.prototype.txt__ = function (txt){
+  this.textContent = txt;
+  // return;
+};
+
 // 
 // elm
 // 
@@ -95,6 +105,10 @@ Element.prototype.attr__del = function (name){
 
 Element.prototype.__add = function (elm){
   return this.appendChild(elm);
+};
+
+Element.prototype.__extnd = function (elm){
+  return this.after(elm);
 };
 
 Element.prototype.evnt__add = function (evnt_name, fnc, flg){
@@ -134,7 +148,7 @@ function scrl(x, y){
   scrollTo(x, y);
 }
 
-function elm__clone(tmpl_slctr){
+function elm__clone(tmpl_slctr){ -- old
 
   let tmpl      = elm(tmpl_slctr);
   let elm_clone = tmpl.content.cloneNode(true);

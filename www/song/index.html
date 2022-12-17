@@ -49,15 +49,9 @@
   </div>
   -->
   <div>
-    <!-- <img class="srch_icn" src="/holo/img/srch.png" > -->
     <span class="tooltip">
-      <input type='search' id="flt_bar" size="100" placeholder="入力して絞り込み" >
-      <span class="tooltip-txt"
-       >空白区切りで and 条件<br
-       >カンマ区切りで or 条件<br
-       >例<br
-       >すいせい,azki original,オリジナル,official</span
-   ></span>
+      <input type='search' id="flt_bar" size="100" placeholder="入力して絞り込み">
+    </span>
   </div>
 </header>
 <div>
@@ -73,7 +67,7 @@
         order :
         view
         <span class="tooltip">
-          <span class="tooltip-txt">view count or date added</span>
+        <!-- span class="tooltip_txt">view count or date added</span -->
           <a id="ordr_swtch"    class="swtch"
             href="javascript:song.video__srt_tgl()"
            ><img class="swtch" src="../img/swtch.l.svg"
@@ -81,7 +75,7 @@
         </span>
         date :
         <span class="tooltip">
-          <span class="tooltip-txt">asc or desc</span>
+          <!-- span class="tooltip_txt">asc or desc</span -->
           <a id="ordr_op_swtch" class="swtch"
             href="javascript:song.video__srt_op_tgl()"
            ><img class="btn" src="../img/kaku03u.svg"
@@ -91,15 +85,15 @@
       <div>
         pos :
         <span class="tooltip">
-          <span class="tooltip-txt">top</span>
-          <a class="btn"
+          <!-- span class="tooltip_txt">top</span -->
+          <a class="btn" id="lst_scrl_top_btn"
             href="javascript:song.video_lst__scrl_top()"
            ><img class="btn" src="../img/kaku03u.svg"
          ></a>
         </span>
         <span class="tooltip">
-          <span class="tooltip-txt">playing now</span>
-          <a class="btn"
+          <!-- span class="tooltip_txt">playing now</span -->
+          <a class="btn" id="lst_scrl_plynow_btn"
             href="javascript:song.video_lst__scrl()"
            ><img class="btn" src="../img/kaku03r.svg"
          ></a>
@@ -107,8 +101,8 @@
       </div>
       <div>
         <span class="tooltip">
-          <span class="tooltip-txt">link copy</span>
-          <a class="btn"
+          <!-- span class="tooltip_txt">link copy</span -->
+          <a class="btn" id="lst_lnkcp_btn"
             href="javascript:song.clipboard__video_lst_lnk()"
            ><img class="lnk_btn" src="../img/lnkcp.svg"
          ></a>
@@ -118,8 +112,8 @@
       <div>
         lang : ja
         <span class="tooltip">
-          <span class="tooltip-txt">video title japanese or english</span>
-          <a id="lang_swtch" class="swtch"
+          <!-- span class="tooltip_txt">video title japanese or english</span -->
+          <a class="swtch" id="lang_swtch"
             href="javascript:song.lang__tgl()"
            ><img class="swtch" src="../img/swtch.l.svg"
          ></a>
@@ -299,7 +293,7 @@
   <div>
     <div class="plyr_size_swtch">
       <span class="tooltip">
-        <span class="tooltip-txt">player size change</span>
+        <!-- span class="tooltip_txt">player size change</span -->
         <a id="plyr_size_swtch" class="swtch"
           href="javascript:song.plyr_size__tgl()"
          ><img class="btn" src="../img/scrn.size.u.svg"
@@ -377,7 +371,7 @@
            href="../song/?o=cdt&f=ch/sora.json"
            ><img class="profile" src="jp/sora/profile.jpg"
        ></a
-     ><span class="tooltip-txt"
+     ><span class="tooltip_txt"
        ><span class="mmbr_name">sora</span><br>
         ch video list</span
      ></span
@@ -390,20 +384,26 @@
       <span class="tooltip"
        ><a class="lnk_song_video"
            href="../song/?s=">♪♪</a
-       ><span class="tooltip-txt">song filter</span
+       ><span class="tooltip_txt">song filter</span
      ></span>
     </div>
   </div>
 </template>
 
+<template id="tooltip_tmpl">
+  <span class="tooltip_txt">xxx</span>
+</template>
+
 </body>
-<script src="../js/alias.js?ts=2022-12-16.18:25"
+<script src="../js/alias.js?ts=2022-12-17.12:22"
+  defer type="text/javascript" charset="UTF-8"></script>
+<script src="../js/lib.js?ts=2022-12-17.12:22"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="menu.js?ts=2022-09-13.11:15"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="thmb.js?ts=2022-09-13.11:15"
   defer type="text/javascript" charset="UTF-8"></script>
-<script src="song.js?ts=2022-12-16.18:30"
+<script src="song.js?ts=2022-12-17.14:21"
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="../js/mmbr.js?ts=2022-12-13.11:16"
   defer type="text/javascript" charset="UTF-8"></script>
