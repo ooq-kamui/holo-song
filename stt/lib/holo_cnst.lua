@@ -553,6 +553,10 @@ Holo._en = {
       ch_id = "UCO_aKKYxn4tvrqPjcTzZ6EQ",
       song = {
         lst_id = {},
+        video_id = {
+          "0RMVJTLZOzQ",
+          "IdgKmhbsZt0",
+        },
       },
     },
     kronii = {
