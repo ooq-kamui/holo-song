@@ -29,6 +29,7 @@ etc:main_song_video("lucia"     )
 
 -- etc:main_song_video("waka100")
 -- etc:main_song_video("switchindie")
+-- etc:main_song_video("holobgm")
 
 etc:data_rsync()
 
