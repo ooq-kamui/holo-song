@@ -282,6 +282,15 @@ Etc._cnst = {
 			},
 		},
 	},
+	holobgm = {
+		ch_id = "UCJFZiqLMntJufDCHc6bQixg",
+		song = {
+			lst_id = {
+				"PL1NeGg1woXqnC8Rh_M0oO0QashTHocZqv",
+				"PL1NeGg1woXqnPzWkH_Xqs3fxijJrgB-MF",
+			},
+		},
+	},
 }
 Etc._cfg = {
   dir_data = Cfg.prj.dir .. "/www/song/data/etc",
