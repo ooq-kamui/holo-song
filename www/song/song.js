@@ -1149,7 +1149,7 @@ class Song {
     if (this._lang_idx >= Song._lang_def.length){
       this._lang_idx = 0;
     }
-    log('lang_idx: ' + this._lang_idx);
+    // log('lang_idx: ' + this._lang_idx);
   }
   
   lang(){
