@@ -212,6 +212,7 @@ Holo._jp = {
         },
         video_id = {
           "DFGJ8PhjrlM", -- clb
+          "NjtIAuZQN_E", -- holo*27
         },
       },
     },
@@ -475,6 +476,9 @@ Holo._en = {
           "kPyLnwSXqkA",
           "uFJHdT_ie9U",
           "I1cdQp5uz5s",
+          "xvvjwhLG4Dw",
+          "bbJqGGRQ32k",
+          "FPzV-3vLRd8",
         },
       },
     },

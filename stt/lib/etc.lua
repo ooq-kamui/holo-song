@@ -230,6 +230,19 @@ Etc._cnst = {
 			},
 		},
 	},
+	hanatan = {
+		ch_id = "UC8aUF9ipzQb2jTHlFoFZ1Vg",
+		song = {
+			lst_id = {
+				"PL7Miy6hSyIrTe-rVOCP0H98rG7B34ugrG",
+				"PL7Miy6hSyIrSimxrq6X-AbdC9UAMKgqUf",
+				"PL7Miy6hSyIrT2d_-NkD4xvAQ2o0NG9dI8",
+				"PL7Miy6hSyIrTJPfVbdt86Bqw5H4trIcKQ",
+			},
+			lst_excld_video_id = {
+			},
+		},
+	},
 	waka100 = {
 		ch_id = "UC8isYJEcM_M7LOkJDodG-rg",
 		song = {
