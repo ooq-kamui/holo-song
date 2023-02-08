@@ -8,7 +8,6 @@ etc:main_song_video("dazbee"    )
 
 etc:main_song_video("ado"       )
 etc:main_song_video("pmaru"     )
-etc:main_song_video("hanatan"   )
 
 etc:main_song_video("lucia"     )
 etc:main_song_video("hachi"     )
@@ -25,6 +24,8 @@ etc:main_song_video("aru"       )
 
 etc:main_song_video("vwp"       )
 etc:main_song_video("riot"      )
+
+-- etc:main_song_video("hanatan"   )
 --]]
 
 -- etc:main_song_video("waka100")
