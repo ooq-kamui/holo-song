@@ -68,6 +68,7 @@ Holo._jp = {
           "ZVVMf8kelv0", -- live
           "TSZ9RlU6EXk", -- vo-m
           "24NBZW9P7_c", -- 
+          "HqBVZQyNH0k", -- live
         },
       },
     },
@@ -117,6 +118,10 @@ Holo._jp = {
         lst_excld_video_id = {
           "UXQDUhSr8nU", -- 
           "68iRzgy6c00", -- vo-m
+        },
+        video_id = {
+          "AAsRtnbDs-0", -- first take
+          "szONkV3l21g", -- first take
         },
       },
     },
@@ -495,6 +500,7 @@ Holo._en = {
           "bvKGGXDnt4A", -- live
           -- "4SssgZg8rpY", -- trailer
           "UZ_sISapV7M", -- lofi
+          "e5LaKxJVeVI", -- zutomayo
         },
       },
     },
