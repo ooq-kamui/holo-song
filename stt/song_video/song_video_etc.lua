@@ -24,13 +24,11 @@ etc:main_song_video("aru"       )
 
 etc:main_song_video("vwp"       )
 etc:main_song_video("riot"      )
-
--- etc:main_song_video("hanatan"   )
 --]]
 
+-- etc:main_song_video("holobgm")
 -- etc:main_song_video("waka100")
 -- etc:main_song_video("switchindie")
--- etc:main_song_video("holobgm")
 
 etc:data_rsync()
 
