@@ -79,7 +79,7 @@
 ( 記載されていない動画もあります )
 
 - すいせい と azki の コラボ曲 に絞り込みたい場合 ( and 条件 )  
-  [`すいせい azki`](https://ooq.jp/holo/song/?s=すいせい%20azki)
+  [`すいせい azki`](https://ooq.jp/holo/song/?s=すいせい%20azki)  
   と入力します
 
 - すいせい か azki の 曲 に絞り込みたい場合 ( or 条件 )  
