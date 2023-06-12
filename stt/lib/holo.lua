@@ -413,7 +413,7 @@ function Holo.main_song_video(_s)
 
   _s:video__song_ttl_ltst1_sub_ttl_ltst2_write()
 
-  -- _s:song_video_data_rsync()
+  _s:song_video_data_rsync()
 end
 
 function Holo.main_song_video_dbg(_s)
