@@ -222,6 +222,24 @@ function Utl.ext_del(file_name, ext)
 	return r_str
 end
 
+function Utl.str_mb_daku_crct(p_str)
+
+	local mb_daku = {
+		{'ガ', 'ガ'}, {'ギ', 'ギ'}, {'グ', 'グ'}, {'ゲ', 'ゲ'}, {'ゴ', 'ゴ'},
+		{'ザ', 'ザ'}, {'ジ', 'ジ'}, {'ズ', 'ズ'}, {'ゼ', 'ゼ'}, {'ゾ', 'ゾ'},
+		{'ダ', 'ダ'}, {'ヂ', 'ヂ'}, {'ヅ', 'ヅ'}, {'デ', 'デ'}, {'ド', 'ド'},
+		{'バ', 'バ'}, {'ビ', 'ビ'}, {'ブ', 'ブ'}, {'ベ', 'ベ'}, {'ボ', 'ボ'},
+		{'パ', 'パ'}, {'ピ', 'ピ'}, {'プ', 'プ'}, {'ペ', 'ペ'}, {'ポ', 'ポ'},
+	}
+
+	local r_str = p_str
+	for idx, _mb_daku in pairs(mb_daku) do
+
+		r_str = string.gsub(r_str, _mb_daku[1], _mb_daku[2])
+	end
+	return r_str
+end
+
 function Utl.txt_2_tbl(txt)
 end
 
@@ -314,19 +332,4 @@ function ar.clr(_ar)
     _ar[key] = nil
   end
 end
-
---[[
-function Utl.ar_ofst(_ar, _idx, num)
-
-  local ar = {}
-
-  if not ar[_idx] then return end
-
-  for idx, val in pairs(_ar) do
-
-  end
-
-  return ar
-end
---]]
 

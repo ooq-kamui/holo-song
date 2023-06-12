@@ -60,6 +60,9 @@ end
 
 -- video view cnt
 
+function Holo.video___dtl(_s)
+end
+
 function Holo.video_view_cnt__(_s)
 
   local video_id = ar.key(_s._video)
@@ -76,7 +79,9 @@ function Holo.video_view_cnt__(_s)
 
     for idx, itm in pairs(res.items) do
       
-      _s._video[itm.id].title = itm.snippet.title
+      -- _s._video[itm.id].title = itm.snippet.title
+      _s._video[itm.id].title = Utl.str_mb_daku_crct(itm.snippet.title)
+
       _s._video[itm.id].cdt   = itm.snippet.publishedAt
       
       -- localization en
@@ -283,14 +288,14 @@ function Holo.video_2_jsn_prnt(_s)
 	
 	local jsn = _s:video_2_jsn()
 	
-  u.prnt(jsn)
+	u.prnt(jsn)
 end
 
 function Holo.video_2_jsn_write(_s, path_file)
 	
 	local jsn = _s:video_2_jsn()
 	
-  Utl.file_write(path_file, jsn)
+	Utl.file_write(path_file, jsn)
 end
 
 function Holo.video_2_jsn(_s)
@@ -408,7 +413,7 @@ function Holo.main_song_video(_s)
 
   _s:video__song_ttl_ltst1_sub_ttl_ltst2_write()
 
-  _s:song_video_data_rsync()
+  -- _s:song_video_data_rsync()
 end
 
 function Holo.main_song_video_dbg(_s)
