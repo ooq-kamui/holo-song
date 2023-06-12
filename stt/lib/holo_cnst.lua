@@ -330,18 +330,11 @@ Holo._jp = {
         video_id = {
           "u_hUpHUTJwQ",
         },
-      },
-    },
-    --[[
-    rushia  = {
-      ch_id = "UCl_gCybOJRIgOXw6Qb4qJzQ",
-      song = {
-        lst_id = {
-          "PL_i2uYKhN9y3qOFj4177ZsINvyS_KUDgb", -- cvr, org
+        lst_excld_video_id = {
+          "ZMvQe-mItp4", -- short
         },
       },
     },
-    --]]
     kanata  = {
       ch_id = "UCZlDXzGoo7d44bwdNObFacg",
       song = {
@@ -351,6 +344,7 @@ Holo._jp = {
         },
         lst_excld_video_id = {
           "gDfd2ICWezg", -- v fes jp day 2
+          "xIi1CtFYkvo", -- short
         },
       },
     },
