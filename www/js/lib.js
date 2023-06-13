@@ -142,18 +142,18 @@ class u {
 
     qery_str = qery_str.substring(1);
 
-    let prms = qery_str.split('&');
+    let prm_str = qery_str.split('&');
 
-    let prm = new Obj();
+    let r_prm = new Obj();
     let elm, key, val;
-    for (let i = 0; i < prms.length; i++){
+    for (let i = 0; i < prm_str.length; i++){
 
-      elm = prms[i].split('=');
+      elm = prm_str[i].split('=');
       key = decodeURIComponent(elm[0]);
       val = decodeURIComponent(elm[1]);
-      prm[key] = val;
+      r_prm[key] = val;
     }
-    return prm;
+    return r_prm;
   }
 }
 

@@ -1081,11 +1081,11 @@ class Song {
     
     let flt_bar_str = this.flt_bar_str();
     if (flt_bar_str != ''){
-      url_prm.push('s='    + flt_bar_str);
+      url_prm.push('s='    + encodeURI(flt_bar_str));
     }
     
     this._video_lst_lnk = this.url_dir() + '?' + url_prm.join('&');
-    log(this._video_lst_lnk);
+    // log(this._video_lst_lnk);
   }
   
   video_lst_lnk_btn_anm(){
