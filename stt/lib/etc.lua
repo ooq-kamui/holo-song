@@ -177,8 +177,8 @@ Etc._cnst = {
 				'PLPJAhEd_ipmBGM9v041KDOYd9wBfQCd8A', -- org
 				'PLPJAhEd_ipmBAjp3XsU1JPWQJpjeHm4kM', -- cvr
 				-- miona
-				-- 'PL7l66mvLmelBbBEE26oXPubSAkOvzJfJy', -- org
-				-- 'PL7l66mvLmelD09A6zsKKlOB-M84I-4iWh', -- cvr
+				'PL7l66mvLmelBbBEE26oXPubSAkOvzJfJy', -- org
+				'PL7l66mvLmelD09A6zsKKlOB-M84I-4iWh', -- cvr
 				-- meteopolis
 				-- 'PLPJAhEd_ipmDm0omMiGZBqJMjteizS5dB',
 			},
