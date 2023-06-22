@@ -482,7 +482,7 @@ end
 
 function Holo.song_video_data_rsync(_s)
 	
-	Utl.cmd("fish rsync.data.song_video.fish")
+	Utl.cmd("fish rsync.data.song_video.holo.fish")
 end
 
 -- 
