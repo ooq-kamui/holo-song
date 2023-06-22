@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>holo.song.video</string>
+    <string>holo.song.video_holo</string>
     <key>EnvironmentVariables</key>
     <dict>
       <key>PATH</key>
@@ -12,7 +12,7 @@
     <key>ProgramArguments</key>
     <array>
       <string>/opt/homebrew/bin/lua</string>
-      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/song_video.lua</string>
+      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/song_video_holo.lua</string>
     </array>
     <key>WorkingDirectory</key>
     <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video</string>
@@ -28,9 +28,9 @@
       </dict>
     </array>
     <key>StandardOutPath</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/log/std-out.log</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/log/holo.std-out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/log/std-err.log</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/log/holo.std-err.log</string>
   </dict>
 </plist>
 

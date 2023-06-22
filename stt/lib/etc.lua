@@ -747,6 +747,6 @@ end
 
 function Etc.data_rsync(_s)
 	
-	Utl.cmd("fish rsync.data.etc.fish")
+	Utl.cmd("fish rsync.data.song_video.etc.fish")
 end
 

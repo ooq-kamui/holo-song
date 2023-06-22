@@ -123,6 +123,7 @@ Holo._jp = {
         video_id = {
           "AAsRtnbDs-0", -- first take
           "szONkV3l21g", -- first take
+          "5Jja39-69G8", -- clb - kanaria
         },
       },
     },
@@ -332,6 +333,7 @@ Holo._jp = {
         },
         lst_excld_video_id = {
           "ZMvQe-mItp4", -- short
+          "X5amjklAr-g", -- shrot
         },
       },
     },
