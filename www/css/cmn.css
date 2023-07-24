@@ -58,6 +58,10 @@ img.swtch {
   vertical-align: middle;
 }
 
+img.share_btn {
+  height: 20px;
+}
+
 .plyr {
   display: inline-block;
   width:   640px;

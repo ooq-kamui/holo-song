@@ -16,7 +16,7 @@
   crossorigin="anonymous"></script>
 
 <link rel="icon" type="image/vnd.microsoft.icon" href="/holo/favicon.ico" />
-<link rel="stylesheet" href="../css/cmn.css?ts=2022-12-18.01:00" />
+<link rel="stylesheet" href="../css/cmn.css?ts=2023-07-24.19:00" />
 <title>hololive song - view count - weekly ranking</title>
 <meta name="description"
   content="ホロライブ 歌 再生数 週間 ランキング, オリジナル, カバー, hololive all song view count weekly ranking, original, cover" />
@@ -304,7 +304,11 @@
   <div>&nbsp;</div>
   <div>&nbsp;</div>
   <div>
-    <!-- twitter share -->
+    <!-- share taittsuu -->
+    <a href="javascript:share_taittsuu()"
+     ><img class="share_btn" src="../img/taittsuu_icon.png"
+     ></a>&nbsp;
+    <!-- share twitter -->
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
        class="twitter-share-button"
        data-text="#hololive #ホロライブ 歌動画 週間 再生数"
@@ -401,5 +405,15 @@
   defer type="text/javascript" charset="UTF-8"></script>
 <script src="../js/mmbr.js?ts=2022-12-17.20:00"
   defer type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+  function share_taittsuu(){
+
+    let txt = "hololive ホロライブ 歌動画 週間 再生数 "
+            + "https://ooq.jp/holo/song/";
+
+    let url = "https://taittsuu.com/share?text=" + encodeURI(txt);
+    window.open(url);
+  }
+</script>
 </html>
 
