@@ -12,10 +12,10 @@
     <key>ProgramArguments</key>
     <array>
       <string>/opt/homebrew/bin/lua</string>
-      <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/song_video_holo.lua</string>
+      <string>/Users/kamui/doc/hoby/youtube/vtuber/holo/prj/stt/song_video/song_video_holo.lua</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/holo/prj/stt/song_video</string>
     <key>StartCalendarInterval</key>
     <array>
       <dict>
@@ -28,9 +28,9 @@
       </dict>
     </array>
     <key>StandardOutPath</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/log/holo.std-out.log</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/holo/prj/stt/song_video/log/holo.std-out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj/stt/song_video/log/holo.std-err.log</string>
+    <string>/Users/kamui/doc/hoby/youtube/vtuber/holo/prj/stt/song_video/log/holo.std-err.log</string>
   </dict>
 </plist>
 

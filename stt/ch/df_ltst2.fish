@@ -1,6 +1,7 @@
-# fish
+etG fish
 
-set dir_prj  ~/doc/hoby/youtube/vtuber/hololive/prj
+#set dir_prj  ~/doc/hoby/youtube/vtuber/hololive/prj
+set dir_prj  ~/doc/hoby/youtube/vtuber/holo/prj
 set dir_exe  $dir_prj/stt/ch
 set dir_data $dir_exe/data
 cd $dir_exe

@@ -1,4 +1,4 @@
-# fish
+etG fish
 
 # -a  なるべくコピー元のファイルと同一条件でコピー
 # -v  詳細を出力
@@ -9,7 +9,8 @@
 #            対象が複数の場合は--excludeを繰り返す
 #            sync元の相対パスで指定
 
-set prj   ~/doc/hoby/youtube/vtuber/hololive/prj
+#set prj   ~/doc/hoby/youtube/vtuber/hololive/prj
+set prj   ~/doc/hoby/youtube/vtuber/holo/prj
 set l_dir $prj/www/song/data/ch_video
 set s_dir www/holo/song/data/ch_video
 
