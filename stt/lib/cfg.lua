@@ -5,7 +5,8 @@
 Cfg = {}
   
 Cfg.prj = {
-  dir = "/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj",
+  -- dir = "/Users/kamui/doc/hoby/youtube/vtuber/hololive/prj",
+  dir = "/Users/kamui/doc/hoby/youtube/vtuber/holo/prj",
 }
 
 -- ch

@@ -25,6 +25,8 @@ Etc._cnst = {
 				"BacusC8zGqY", -- clb
 				"oGyC1tffbv4", -- clb
 				"2DDJcLtGuLA", -- trailer
+				"rpnNSR3_zf0", -- clb
+				"RusKAHCV5SQ", -- clb
 			},
 			video_id = {
 				"L-Hl9uQWHPE", -- clb
@@ -390,16 +392,18 @@ function Etc.video_view_cnt__(_s)
 
     for idx, itm in pairs(res.items) do
 			
-      _s._video[itm.id].title = itm.snippet.title
-      _s._video[itm.id].cdt   = itm.snippet.publishedAt
+			-- _s._video[itm.id].title = itm.snippet.title
+			_s._video[itm.id].title = Utl.str_mb_daku_crct(itm.snippet.title)
 
-      if itm.statistics.viewCount then
-        _s._video[itm.id].view_cnt = tonumber(itm.statistics.viewCount)
-      else
-        _s._video[itm.id].view_cnt = -1 -- mmbr only
-      end
-    end
-    idx_s = idx_s + lim
+			_s._video[itm.id].cdt   = itm.snippet.publishedAt
+
+			if itm.statistics.viewCount then
+				_s._video[itm.id].view_cnt = tonumber(itm.statistics.viewCount)
+			else
+				_s._video[itm.id].view_cnt = -1 -- mmbr only
+			end
+		end
+		idx_s = idx_s + lim
 		
 		-- break -- tst
   until idx_s > #video_id
@@ -563,9 +567,9 @@ function Etc.ch_srch(_s, ch_id, word, video)
   return video
 end
 
---
+-- 
 -- output
---
+-- 
 
 function Etc.video_2_jsn_prnt(_s)
 	
