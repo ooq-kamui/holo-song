@@ -340,14 +340,37 @@ class Mmbr {
           "flt_s": "baelz,council",
           "debut": "2021-08-23",
           "birth": "02-29"
-        } // ,
-        /*
-        "sana": {
-          "ch_id": "UCsUj0dszADCGbF3gNrQEuSQ",
-          "tw_id": "tsukumosana",
-          "flt_s": "sana,council"
         }
-         */
+      },
+      "advent": {
+        "novella": {
+          "ch_id": "UCgnfPPb9JI3e9A4cXHnWbyg",
+          "tw_id": "shiorinovella",
+          "flt_s": "novella,advent",
+          "debut": "2023-07-30",
+          "birth": "05-02"
+        },
+        "bijou": {
+          "ch_id": "UC9p_lqQ0FEDz327Vgf5JwqA",
+          "tw_id": "kosekibijou",
+          "flt_s": "bijou,advent",
+          "debut": "2023-07-30",
+          "birth": "04-14"
+        },
+        "nerissa": {
+          "ch_id": "UC_sFNM0z0MWm9A6WlKPuMMg",
+          "tw_id": "nerissa_en",
+          "flt_s": "nerissa,advent",
+          "debut": "2023-07-31",
+          "birth": "11-21"
+        },
+        "fuwamoco": {
+          "ch_id": "UCt9H_RpQzhxzlyBxFqrdHqA",
+          "tw_id": "fuwamoco_en",
+          "flt_s": "fuwamoco,fuwawa,mococo,advent",
+          "debut": "2023-07-31",
+          "birth": "02-01"
+        }
       }
     },
     "id": {
