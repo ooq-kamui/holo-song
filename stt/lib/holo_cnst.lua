@@ -498,6 +498,7 @@ Holo._en = {
           -- "4SssgZg8rpY", -- trailer
           "UZ_sISapV7M", -- lofi
           "e5LaKxJVeVI", -- zutomayo
+          "-Sb4wxbHh-4", -- clb
         },
       },
     },
@@ -591,14 +592,39 @@ Holo._en = {
         -- video_id = {},
       },
     },
---[[
-    sana = {
-      ch_id = "UCsUj0dszADCGbF3gNrQEuSQ",
+    novella = {
+      ch_id = "UCgnfPPb9JI3e9A4cXHnWbyg",
       song = {
         lst_id = {},
       },
     },
---]]
+    bijou = {
+      ch_id = "UC9p_lqQ0FEDz327Vgf5JwqA",
+      song = {
+        lst_id = {},
+        video_id = {
+          "Akn_Gdi05Ys",
+        },
+      },
+    },
+    nerissa = {
+      ch_id = "UC_sFNM0z0MWm9A6WlKPuMMg",
+      song = {
+        lst_id = {},
+        video_id = {
+          "RWU3o_kDixc",
+        },
+      },
+    },
+    fuwamoco = {
+      ch_id = "UCt9H_RpQzhxzlyBxFqrdHqA",
+      song = {
+        lst_id = {},
+        video_id = {
+          "Yr1EI_jYBB8",
+        },
+      },
+    },
   },
 }
 Holo._id = {
