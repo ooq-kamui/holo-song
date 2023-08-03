@@ -39,6 +39,15 @@ Holo._jp = {
         },
       },
     },
+    bluejourney = {
+      ch_id = "UCrEgFGxfrKGyy17V9csSa5w",
+      song = {
+        lst_id = {
+          "PLeXZqYvZaBnVrnFRVTkOKo2P9ZOPDyps4",
+        },
+        video_id = {},
+      },
+    },
   },
   mmbr = {
     sora    = {
