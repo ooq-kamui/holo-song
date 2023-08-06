@@ -619,10 +619,10 @@ Holo._en = {
     nerissa = {
       ch_id = "UC_sFNM0z0MWm9A6WlKPuMMg",
       song = {
-        lst_id = {},
-        video_id = {
-          "RWU3o_kDixc",
+        lst_id = {
+          "PLSJG6WXf5JvFn2FWv_B5HP7DklUtdeZiM", -- cvr
         },
+        video_id = {},
       },
     },
     fuwamoco = {
