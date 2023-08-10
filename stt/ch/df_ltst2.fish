@@ -1,4 +1,4 @@
-etG fish
+# fish
 
 #set dir_prj  ~/doc/hoby/youtube/vtuber/hololive/prj
 set dir_prj  ~/doc/hoby/youtube/vtuber/holo/prj

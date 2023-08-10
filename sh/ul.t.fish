@@ -1,4 +1,4 @@
-etG fish
+# fish
 
 set dir_data song/data
 
