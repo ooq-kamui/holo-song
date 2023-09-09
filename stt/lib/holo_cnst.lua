@@ -280,6 +280,9 @@ Holo._jp = {
         lst_id = {
           "PL3y-e0n6k6gDoG3mViEOESGV1WhY8aCrR", -- cvr, org
         },
+        lst_excld_video_id = {
+          "AlC8Q9z-MZo", -- private
+        },
       },
     },
     korone  = {
