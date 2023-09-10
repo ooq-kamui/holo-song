@@ -157,6 +157,11 @@ img.share_btn {
   width:   18px;
 }
 
+.grp {
+  display: inline-block;
+  width:   50px;
+}
+
 .cntry_mmbr {
   display: inline-block;
 }
