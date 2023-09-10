@@ -5,9 +5,10 @@
 
 /stt/tmp/
 
-doc/
 data/
 log/
+
+doc
 
 *.jpg
 *.png
@@ -18,4 +19,6 @@ log/
 
 /sh/rsync.r.fish
 /sh/rsync.d.fish
+
+
 
