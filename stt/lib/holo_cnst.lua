@@ -741,6 +741,60 @@ Holo._id = {
     },
   },
 }
+Holo._dev_is = {
+
+  ofcl = {
+    ofcl = {
+      ch_id = "UC10wVt6hoQiwySRhz7RdOUA",
+      song = {
+        lst_id = {},
+        video_id = {
+          "Ix_uXN_ybxc",
+        },
+        lst_excld_video_id = {},
+      },
+    },
+  },
+  mmbr = {
+    ao = {
+      ch_id = "UCMGfV7TVTmHhEErVJg1oHBQ",
+      song = {
+        lst_id = {},
+        lst_excld_video_id = {},
+      },
+    },
+    kanade = {
+      ch_id = "UCWQtYtq9EOB4-I5P-3fh8lA",
+      song = {
+        lst_id = {
+          "PL6qjLH_5VIDUEA7yBOKxdRPdI4vYmL-dR", -- cvr
+        },
+      },
+    },
+    ririka = {
+      ch_id = "UCtyWhCj3AqKh2dXctLkDtng",
+      song = {
+        lst_id = {},
+        video_id = {
+          "Gw15GATnuXo",
+        },
+      },
+    },
+    raden = {
+      ch_id = "UCdXAk5MpyLD8594lm_OvtGQ",
+      song = {
+        lst_id = {},
+        lst_excld_video_id = {},
+      },
+    },
+    hajime = {
+      ch_id = "UC1iA6_NT4mtAcIII6ygrvCw",
+      song = {
+        lst_id = {},
+      },
+    },
+  },
+}
 
 function Holo.song_lst_id(_s, cntry, cls)
 
