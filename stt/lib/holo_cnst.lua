@@ -784,13 +784,18 @@ Holo._dev_is = {
       ch_id = "UCdXAk5MpyLD8594lm_OvtGQ",
       song = {
         lst_id = {},
-        lst_excld_video_id = {},
+        video_id = {
+          "qmqD4syxeeA",
+        },
       },
     },
     hajime = {
       ch_id = "UC1iA6_NT4mtAcIII6ygrvCw",
       song = {
         lst_id = {},
+        video_id = {
+          "Ae1BV8Suk0A",
+        },
       },
     },
   },
