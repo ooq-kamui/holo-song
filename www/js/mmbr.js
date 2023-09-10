@@ -443,6 +443,45 @@ class Mmbr {
           "birth": "12-12"
         }
       }
+    },
+    "dev_is": {
+      "regloss": {
+        "ao": {
+          "ch_id": "UCMGfV7TVTmHhEErVJg1oHBQ",
+          "tw_id": "hiodoshiao",
+          "flt_s": "火威青,ao,regloss",
+          "debut": "2023-09-09",
+          "birth": "02-27"
+        },
+        "kanade": {
+          "ch_id": "UCWQtYtq9EOB4-I5P-3fh8lA",
+          "tw_id": "otonosekanade",
+          "flt_s": "音乃瀬奏,kanade,regloss",
+          "debut": "2023-09-09",
+          "birth": "04-20"
+        },
+        "ririka": {
+          "ch_id": "UCtyWhCj3AqKh2dXctLkDtng",
+          "tw_id": "ichijouririka",
+          "flt_s": "一条莉々華,ririka,regloss",
+          "debut": "2023-09-09",
+          "birth": "05-12"
+        },
+        "raden": {
+          "ch_id": "UCdXAk5MpyLD8594lm_OvtGQ",
+          "tw_id": "juufuuteiraden",
+          "flt_s": "儒烏風亭らでん,raden,regloss",
+          "debut": "2023-09-10",
+          "birth": "02-04"
+        },
+        "hajime": {
+          "ch_id": "UC1iA6_NT4mtAcIII6ygrvCw",
+          "tw_id": "todoroki_hajime",
+          "flt_s": "轟はじめ,hajime,regloss",
+          "debut": "2023-09-10",
+          "birth": "06-07"
+        }
+      }
     }
   };
   
@@ -529,7 +568,7 @@ class Mmbr {
           
           a_elm = profile_node.elm("a.lnk_ch_video");
           a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/ltst.json";
-          if (_cntry == "en" || _cntry == "id"){
+          if (_cntry == "en" || _cntry == "id" || _cntry == "dev_is" ){
             a_elm.attr__del("href");
             a_elm.attr__("tabindex", "-1");
           }
