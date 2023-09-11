@@ -9,8 +9,7 @@
 #            対象が複数の場合は--excludeを繰り返す
 #            sync元の相対パスで指定
 
-#set prj   ~/doc/hoby/youtube/vtuber/hololive/prj
-set prj   ~/doc/hoby/youtube/vtuber/holo/prj
+set prj   ~/doc/hoby/youtube/vtuber/holo/prj/stt
 set l_dir $prj/www/song/data/ch_video
 set s_dir www/holo/song/data/ch_video
 
