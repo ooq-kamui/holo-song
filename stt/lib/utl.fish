@@ -39,3 +39,5 @@ function y2day_date
   #date -v-2d +"%Y-%m-%d"
 end
 
+
+
