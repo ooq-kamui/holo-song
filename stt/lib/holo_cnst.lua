@@ -348,6 +348,7 @@ Holo._jp = {
         lst_excld_video_id = {
           "ZMvQe-mItp4", -- short
           "X5amjklAr-g", -- shrot
+          "lJGLjlVZvQo", -- shrot
         },
       },
     },
