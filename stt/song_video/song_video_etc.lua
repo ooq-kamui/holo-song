@@ -6,6 +6,7 @@ local etc = Etc.new()
 ---[[
 etc:main_song_video("dazbee"    )
 
+etc:main_song_video("nayuta"    )
 etc:main_song_video("lucia"     )
 etc:main_song_video("hachi"     )
 etc:main_song_video("hanabasami")
