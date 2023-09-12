@@ -33,6 +33,18 @@ Etc._cnst = {
 			},
 		},
 	},
+	nayuta = {
+		ch_id = "UCmhtmUBjkXOAetnaDq-XJ1g",
+		song = {
+			lst_id = {
+				"PLafbGAWIOOmz4rZVzrkWM-rDeZNc135wc", -- org
+				"PLafbGAWIOOmx2Qnx7YMOHyb-geTtPQXk6", -- cvr
+			},
+			lst_excld_video_id = {},
+			video_id = {},
+		},
+	},
+--[[
 	inuitoko = {
 		ch_id = "UCXRlIK3Cw_TJIQC5kSJJQMg",
 		song = {
@@ -43,6 +55,7 @@ Etc._cnst = {
 			},
 		},
 	},
+--]]
 	vwp = {
 		ch_id = "UCfiSo8tO3WPU-8YOgr4Ba6g",
 		song = {
