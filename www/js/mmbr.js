@@ -470,7 +470,7 @@ class Mmbr {
         "raden": {
           "ch_id": "UCdXAk5MpyLD8594lm_OvtGQ",
           "tw_id": "juufuuteiraden",
-          "flt_s": "儒烏風亭らでん,raden,regloss",
+          "flt_s": "らでん,raden,regloss",
           "debut": "2023-09-10",
           "birth": "02-04"
         },
