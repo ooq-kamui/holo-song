@@ -449,7 +449,7 @@ class Mmbr {
         "ao": {
           "ch_id": "UCMGfV7TVTmHhEErVJg1oHBQ",
           "tw_id": "hiodoshiao",
-          "flt_s": "火威青,ao,regloss",
+          "flt_s": "火威青,regloss",
           "debut": "2023-09-09",
           "birth": "02-27"
         },
