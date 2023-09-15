@@ -5,7 +5,7 @@ set dir_data song/data
 set s_dir_base www/holo
 set s_dir_data $s_dir_base/$dir_data
 
-set l_dir_base ~/doc/hoby/youtube/vtuber/holo/prj/www/www
+set l_dir_base ~/doc/hoby/youtube/vtuber/holo/prj/stt/www
 set l_dir_data $l_dir_base/$dir_data
 
 set l_path_date  ( ls -t $l_dir_data/????-??-??.??:??.-.????-??-??.??:??.json )

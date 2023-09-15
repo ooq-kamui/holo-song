@@ -873,7 +873,7 @@ end
 function Holo.mmbr(_s, cntry)
 
 	local mmbr
-	local cntry_lst = {"jp", "en", "id"}
+	local cntry_lst = {"jp", "en", "id", "dev_is"}
 	
 	if cntry then
 		mmbr = Holo["_"..cntry].mmbr
@@ -881,8 +881,8 @@ function Holo.mmbr(_s, cntry)
 		mmbr = {}
 		
 		for idx, cntry in pairs(cntry_lst) do
-		 ar.mrg(mmbr, Holo["_"..cntry].mmbr)
-	 end
+			ar.mrg(mmbr, Holo["_"..cntry].mmbr)
+		end
 	end
   return mmbr
 end

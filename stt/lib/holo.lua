@@ -441,7 +441,8 @@ function Holo.video__song_ttl_write(_s)
   
   local path_song_ttl = Cfg.song_video.dir_data.."/"..Utl.datetime()..".json"
   
-  _s:video__song({"jp", "en", "id"})
+  _s:video__song({"jp", "en", "id", "dev_is"})
+  -- _s:video__song({"dev_is"})
 
   _s:video_2_jsn_write(path_song_ttl)
 
