@@ -1,17 +1,6 @@
 
 class Info {
 
-  static _itm_tst = [
-    {
-      "ts" : "2023-09-15.00:00",
-      "txt": "dev_is regloss に対応しました"
-    },
-    {
-      "ts" : "2023-09-17.00:00",
-      "txt": "ch video list は廃止する予定です"
-    }
-  ];
-
   constructor(){
 
     this._itm;
@@ -23,9 +12,42 @@ class Info {
 
     this._itm = [];
 
-    let t_itm = Info._itm_tst;
+    this.itm__req();
+  }
 
-    for (let [idx, _itm] of t_itm.entries()){
+  static _domain    = 'ooq.jp';
+  static _dir       = 'holo/song/data/info';
+  static _file_name = 'info.json';
+
+  info_url(){
+
+    let url = 'https://' + Info._domain + '/'
+            + Info._dir + '/' + Info._file_name;
+    return url;
+  }
+
+  itm__req(){
+
+    let slf = this;
+
+    const xhr = new XMLHttpRequest();
+    
+    xhr.open("GET", this.info_url());
+
+    xhr.setRequestHeader('If-Modified-Since', 'Thu, 01 Jun 1970 00:00:00 GMT');
+    xhr.send();
+    xhr.onreadystatechange = function(){
+
+      if (!(xhr.readyState == 4 && xhr.status == 200)){return;}
+
+      let t_itm = JSON.parse(xhr.responseText);      
+      slf.itm_lst__add(t_itm);
+    }
+  }
+
+  itm_lst__add(itm){
+
+    for (let [idx, _itm] of itm.entries()){
 
       this.itm__add(_itm);
     }

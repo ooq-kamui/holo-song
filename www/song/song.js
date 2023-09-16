@@ -920,24 +920,23 @@ class Song {
     
     this._video_file = prm.f ? prm.f : Song.video_file_dflt;
   }
-  
+
   static domain   = 'ooq.jp';
   static dir      = 'holo/song';
   static dir_data = 'data';
-  
+
   url_dir(){
-    
+
     return 'https://' + this.domain_dir();
   }
   
   url_dir_data(){
-    
+
     return 'https://' + this.domain_dir_data();
   }
   
   domain_dir(){
-    
-    // let dir = Song.domain + "/" + Song.dir;
+
     let dir = Song.domain + this.url().pathname;
     log(dir);
     return dir;
