@@ -435,6 +435,10 @@ li.video_li_sndtmr{
   text-align: center;
 }
 
+ul.info_lst{
+  padding-left: 0px;
+}
+
 /*
  * help.html
  */
