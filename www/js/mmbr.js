@@ -568,14 +568,15 @@ class Mmbr {
           
           a_elm = profile_node.elm("a.lnk_ch_video");
           a_elm.href = "../song/?o=cdt&f=ch_video/" + name + "/ltst.json";
-          if (_cntry == "en" || _cntry == "id" || _cntry == "dev_is" ){
+
+          // if (_cntry == "jp" || _cntry == "en" || _cntry == "id" || _cntry == "dev_is" ){
+          if (true){
             a_elm.attr__del("href");
             a_elm.attr__("tabindex", "-1");
           }
           // tooltip - ch video lst
           let txt;
-          txt = name + "\n"
-                  + "ch video list";
+          txt = name; // + "\n" + "ch video list";
           Elm.__tooltip(a_elm, txt);
           
           a_elm = profile_node.elm("a.lnk_song_video");
