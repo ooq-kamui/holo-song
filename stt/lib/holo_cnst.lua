@@ -603,6 +603,7 @@ Holo._en = {
       song = {
         lst_id = {
           "PLcPAszg2ItaGAkxKIUiTTtgekfmgMmmEQ", -- cvr
+          "PLcPAszg2ItaF6wFT6Yc49o7ZQY-pTJJeH", -- org
         },
         -- video_id = {},
       },
