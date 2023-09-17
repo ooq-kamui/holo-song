@@ -3,7 +3,7 @@ body {
   background-color: #202124;
   color: #bdc1c6;
   font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
-  margin: 0;
+  margin: 0px;
   height: 100%;
   text-align: center;
   
@@ -65,7 +65,7 @@ img.share_btn {
 .plyr {
   display: inline-block;
   width:   640px;
-  /* margin: 0 auto; */
+  /* margin: 0px auto; */
 }
 
 .swtch {
@@ -375,8 +375,8 @@ span.mmbr_lst {
 div.mmbr_lst {
   
   height:         600px;
-  margin:           5px 0px;
-  padding:         20px 0px;
+  margin:          5px 0px;
+  padding:        20px 0px;
   overflow-y:     auto;
   text-align:     center;
   vertical-align: middle;
@@ -436,6 +436,7 @@ li.video_li_sndtmr{
 }
 
 ul.info_lst{
+  margin:       0px;
   padding-left: 0px;
 }
 
