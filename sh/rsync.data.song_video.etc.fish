@@ -1,0 +1,1 @@
+/Users/kamui/doc/hoby/youtube/vtuber/holo/prj/stt/stt/song_video/rsync.data.song_video.etc.fish
