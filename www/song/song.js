@@ -1258,8 +1258,8 @@ class Song {
     Elm.__tooltip(elm('#lst_lnkcp_btn'), txt);
     
     // lang_swtch
-    txt = "video title japanese or english";
-    Elm.__tooltip(elm('#lang_swtch'), txt);
+    // txt = "video title japanese or english";
+    // Elm.__tooltip(elm('#lang_swtch'), txt);
     
     // plyr_size_swtch
     txt = "player size change";
