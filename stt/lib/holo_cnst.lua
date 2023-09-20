@@ -342,13 +342,13 @@ Holo._jp = {
         lst_id = {
           "PLKo9UD3uKyyFUSwUDM5hCTB4fEvZqYs0P", -- cvr, org
         },
-        video_id = {
-          "u_hUpHUTJwQ",
-        },
         lst_excld_video_id = {
           "ZMvQe-mItp4", -- short
           "X5amjklAr-g", -- shrot
           "lJGLjlVZvQo", -- shrot
+        },
+        video_id = {
+          "u_hUpHUTJwQ",
         },
       },
     },
@@ -638,6 +638,7 @@ Holo._en = {
         lst_id = {},
         video_id = {
           "Yr1EI_jYBB8",
+          "-wzgy7uTuSk",
         },
       },
     },
@@ -750,10 +751,10 @@ Holo._dev_is = {
       ch_id = "UC10wVt6hoQiwySRhz7RdOUA",
       song = {
         lst_id = {},
+        lst_excld_video_id = {},
         video_id = {
           "Ix_uXN_ybxc",
         },
-        lst_excld_video_id = {},
       },
     },
   },
@@ -763,6 +764,9 @@ Holo._dev_is = {
       song = {
         lst_id = {},
         lst_excld_video_id = {},
+        video_id = {
+          "JTAnRkLMv7U",
+        },
       },
     },
     kanade = {
