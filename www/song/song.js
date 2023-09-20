@@ -475,14 +475,30 @@ class Song {
     this.flt_bar_str__(prm.s);
   }
 
+  flt_bar_str(){
+
+    return this.flt_bar_elm().value;
+  }
+
   flt_bar_str__(str){
 
     this.flt_bar_elm().value = str;
   }
-  
-  flt_bar_str(){
 
-    return this.flt_bar_elm().value;
+  flt_bar_str__add(str){
+
+    this.flt_bar_str__(this.flt_bar_str() + str);
+  }
+  
+  is_flt_bar_str_emp(){
+
+    let ret = false;
+
+    if (this.flt_bar_str().trim() == ''){
+
+      ret = true;
+    }
+    return ret;
   }
 
   flt_bar__focus(){
@@ -490,10 +506,25 @@ class Song {
     this.flt_bar_elm().focus();
   }
 
-  s__(flt_str){ // call fr html
+  s__(flt_str){ // fr html
     
     this.flt_bar_str__(flt_str);
     
+    this.flt_ply(false);
+  }
+  
+  s__add(flt_str){
+
+    if (this.is_flt_bar_str_emp()){
+
+      this.flt_bar_str__(flt_str);
+
+    }else{
+
+      flt_str = ' ' + flt_str;
+      this.flt_bar_str__add(flt_str);
+    }
+
     this.flt_ply(false);
   }
   
