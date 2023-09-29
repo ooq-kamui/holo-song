@@ -277,7 +277,7 @@ class Mmbr {
         "kiara": {
           "ch_id": "UCHsx4Hqa-1ORjQTh9TYDhww",
           "tw_id": "takanashikiara",
-          "flt_s": "kiara,myth",
+          "flt_s": "kiara,キアラ,myth",
           "debut": "2020-09-12",
           "birth": "07-06"
         },
