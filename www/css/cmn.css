@@ -13,6 +13,11 @@ body {
 
 a {
   color: #99b6e8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 a:link {
