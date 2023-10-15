@@ -1,4 +1,33 @@
 
+import {
+
+  win,
+  doc,
+  elm,
+  elm_all,
+  elm_by_id,
+  node_by_tmpl,
+  Obj,
+  log,
+  dly2,
+  dly,
+  dly__cncl,
+  scrl
+} from './alias.mdl.js';
+
+import {
+
+  Elm,
+  Flt_word,
+  u,
+  rnd,
+  ar_rnd,
+  ar_rnd_idx,
+  ar_in,
+  lf_2_br
+} from './lib.mdl.js';
+
+
 class Mmbr {
 
   static _mmbr = {
@@ -931,5 +960,8 @@ class Mmbr {
   }
 }
 
-let mmbr = new Mmbr(true);
+export {
+
+  Mmbr
+};
 
