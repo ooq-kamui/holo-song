@@ -146,10 +146,30 @@ function scrl(x, y){
   scrollTo(x, y);
 }
 
-function elm__clone(tmpl_slctr){ // old
+function elm__clone(tmpl_slctr){ -- old
 
   let tmpl      = elm(tmpl_slctr);
   let elm_clone = tmpl.content.cloneNode(true);
   return elm_clone
 }
+
+export {
+
+  win,
+  doc,
+  elm,
+  elm_all,
+  elm_by_id,
+  node_by_tmpl,
+  Obj,
+  // Array,
+  // String,
+  // Node,
+  // Element,
+  log,
+  dly2,
+  dly,
+  dly__cncl,
+  scrl
+};
 
