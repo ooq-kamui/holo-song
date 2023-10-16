@@ -421,23 +421,25 @@
 </template>
 
 </body>
+<script type="text/javascript">
 
-<script src="../js/alias.js?ts=2022-12-17.20:00"
-  defer type="text/javascript" charset="UTF-8"></script>
-<script src="../js/lib.js?ts=2023-06-13.11:00"
-  defer type="text/javascript" charset="UTF-8"></script>
+let song;
 
-<script src="js/menu.js?ts=2022-09-13.11:15"
-  defer type="text/javascript" charset="UTF-8"></script>
-<script src="js/thmb.js?ts=2022-09-13.11:15"
-  defer type="text/javascript" charset="UTF-8"></script>
-<script src="js/song.js?ts=2023-09-20.22:03"
-  defer type="text/javascript" charset="UTF-8"></script>
-<script src="js/info.js?ts=2023-09-17.04:53"
-  defer type="text/javascript" charset="UTF-8"></script>
+// 
+// taittsuu
+// 
 
-<script src="../js/mmbr.js?ts=2023-09-29.15:21"
-  defer type="text/javascript" charset="UTF-8"></script>
+function share_taittsuu(){
 
+  let txt = "hololive ホロライブ 歌動画 週間 再生数 "
+          + "https://ooq.jp/holo/song/";
+
+  let url = "https://taittsuu.com/share?text=" + encodeURI(txt);
+  window.open(url);
+}
+</script>
+<script type="module" src="js/song.main.js?ts=2023-10-16.02:38"></script>
+<script type="module" src="js/info.main.js?ts=2023-10-16.02:38"></script>
+<script type="module" src="../js/mmbr.main.js?ts=2023-10-16.02:38"></script>
 </html>
 
