@@ -5,7 +5,7 @@ import {
 } from './mmbr.mdl.js';
 
 
-// mian
+// main
 
 let mmbr = new Mmbr(true);
 
