@@ -160,7 +160,7 @@ get パラメータ `f` にファイル名を与えることで,
 
 ## developer
 
-[twitter](https://twitter.com/ooq_kamui)
+[twitter](https://twitter.com/ooq_tiki)
 
 
 
