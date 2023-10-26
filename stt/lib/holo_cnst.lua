@@ -59,6 +59,7 @@ Holo._jp = {
         lst_excld_video_id = {
           "zsBD66Sa5Yg", -- 
           "UAMhYU9SHzo", -- v fes jp day 1
+          "DHOPAU78XLU", -- vo-m
         },
       },
     },
