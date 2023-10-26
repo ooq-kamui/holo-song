@@ -44,18 +44,6 @@ Etc._cnst = {
 			video_id = {},
 		},
 	},
---[[
-	inuitoko = {
-		ch_id = "UCXRlIK3Cw_TJIQC5kSJJQMg",
-		song = {
-			lst_id = {
-				"PLRGzS-dvI7Zz0AuAqnv0yo9bZSIQHutwt", -- all
-			},
-			lst_excld_video_id = {
-			},
-		},
-	},
---]]
 	vwp = {
 		ch_id = "UCfiSo8tO3WPU-8YOgr4Ba6g",
 		song = {
@@ -232,6 +220,7 @@ Etc._cnst = {
 			},
 		},
 	},
+--[[
 	ado = {
 		ch_id = "UCln9P4Qm3-EAY4aiEPmRwEA",
 		song = {
@@ -244,26 +233,13 @@ Etc._cnst = {
 			},
 		},
 	},
-	hanatan = {
-		ch_id = "UC8aUF9ipzQb2jTHlFoFZ1Vg",
+--]]
+	holobgm = {
+		ch_id = "UCJFZiqLMntJufDCHc6bQixg",
 		song = {
 			lst_id = {
-				"PL7Miy6hSyIrTe-rVOCP0H98rG7B34ugrG",
-				"PL7Miy6hSyIrSimxrq6X-AbdC9UAMKgqUf",
-				"PL7Miy6hSyIrT2d_-NkD4xvAQ2o0NG9dI8",
-				"PL7Miy6hSyIrTJPfVbdt86Bqw5H4trIcKQ",
-			},
-			lst_excld_video_id = {
-			},
-		},
-	},
-	waka100 = {
-		ch_id = "UC8isYJEcM_M7LOkJDodG-rg",
-		song = {
-			lst_id = {
-				"PLuoIEgeIX7y7OEcBNuhNNkCic8snzKrei",
-			},
-			lst_excld_video_id = {
+				"PL1NeGg1woXqnC8Rh_M0oO0QashTHocZqv",
+				"PL1NeGg1woXqnPzWkH_Xqs3fxijJrgB-MF",
 			},
 		},
 	},
@@ -309,13 +285,23 @@ Etc._cnst = {
 			},
 		},
 	},
-	holobgm = {
-		ch_id = "UCJFZiqLMntJufDCHc6bQixg",
+	waka100 = {
+		ch_id = "UC8isYJEcM_M7LOkJDodG-rg",
 		song = {
 			lst_id = {
-				"PL1NeGg1woXqnC8Rh_M0oO0QashTHocZqv",
-				"PL1NeGg1woXqnPzWkH_Xqs3fxijJrgB-MF",
+				"PLuoIEgeIX7y7OEcBNuhNNkCic8snzKrei",
 			},
+			lst_excld_video_id = {},
+		},
+	},
+	readaloud = {
+		ch_id = "UCL_O_HXgLJx3Auteer0n0pA", -- sango
+		song = {
+			lst_id = {
+				"PLPn_ydpuhps4-8ZFL1wcol0ligKpE07Nr", -- sango
+				"PLWGY2acU-ZeTnRz4mL6OKYQO8rxiOyDv1", -- polka
+			},
+			lst_excld_video_id = {},
 		},
 	},
 }

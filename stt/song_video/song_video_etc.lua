@@ -29,6 +29,7 @@ etc:main_song_video("pmaru"     )
 -- etc:main_song_video("holobgm")
 -- etc:main_song_video("waka100")
 -- etc:main_song_video("switchindie")
+-- etc:main_song_video("readaloud")
 
 etc:data_rsync()
 
