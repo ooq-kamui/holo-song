@@ -87,8 +87,8 @@ Holo._jp = {
       song = {
         lst_id = {
           "PLpt61bADOMwXIZpLr09sCNeocN7CXjcoS", -- cvr
-          "PLpt61bADOMwWhy94VL5fB9NfJERFmAOiF", -- cvr-clb
           "PLpt61bADOMwW2aA9I1hWHyR8OixSuCXzc", -- org
+          "PLpt61bADOMwWhy94VL5fB9NfJERFmAOiF", -- cvr-clb
         },
         lst_excld_video_id = {
           "aWSaIdLUE0Y", -- vo-m
@@ -100,6 +100,16 @@ Holo._jp = {
           "p4Vva2AP7EU", -- live
           "4ysmVAeb9A4", -- live
           "w5JCt6XfN0o", -- short
+          "K9DTUxUtrPs", -- clb-live
+          "FL4ZqehhBP0", -- clb-live
+          "n0YgZ-Ncje4", -- clb-live
+          "H96MeUNN1To", -- clb-live
+          "q51rYUHZ6L0", -- clb-live
+          "U_O_avYebdo", -- clb-live
+          "CohBCNY9Pm4", -- clb-live
+          "70ZyyaBIBu0", -- clb-live
+          "UOepe6jQtN0", -- clb-live
+          "K_OxiN5J1ps", -- clb-live
         },
         video_id = {
           "uE6keTcapp0",
