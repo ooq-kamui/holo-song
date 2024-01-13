@@ -79,6 +79,7 @@ Holo._jp = {
           "TSZ9RlU6EXk", -- vo-m
           "24NBZW9P7_c", -- 
           "HqBVZQyNH0k", -- live
+          "mEB4GrGA0Y0", -- short
         },
       },
     },
@@ -110,6 +111,14 @@ Holo._jp = {
           "70ZyyaBIBu0", -- clb-live
           "UOepe6jQtN0", -- clb-live
           "K_OxiN5J1ps", -- clb-live
+          "ls3kb0qhT4E", -- clb-live
+          "3SJ8U0c0oAI", -- clb-live
+          "lZ7ZShIK_-o", -- clb-live
+          "abSKWPWUBCM", -- clb-live
+          "0BIei_crgHw", -- clb-live
+          "WYEnp4mIe8Y", -- clb-live
+          "i3dI9FvdS6I", -- clb-live
+          "wAvBwPTaUZY", -- clb-live
         },
         video_id = {
           "uE6keTcapp0",
@@ -511,6 +520,9 @@ Holo._en = {
           "bbJqGGRQ32k",
           "FPzV-3vLRd8",
         },
+        lst_excld_video_id = {
+          "S5-yWTQtyjA", -- vo-m , research lst
+        },
       },
     },
   },
@@ -761,6 +773,9 @@ Holo._id = {
         lst_id = {
           "PLwtTNsTyL23S4MNl0-gdozd769CytE_9X",
         },
+        lst_excld_video_id = {
+          "JIYV9KKU29U", -- vo-m
+        },
       },
     },
   },
@@ -777,6 +792,8 @@ Holo._dev_is = {
         lst_excld_video_id = {},
         video_id = {
           "Ix_uXN_ybxc",
+          "CSVy1AlYnrQ",
+          "2dwh0WELcZg",
         },
       },
     },
