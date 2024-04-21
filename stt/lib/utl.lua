@@ -286,6 +286,23 @@ function u.c(...)
 	return r_str
 end
 
+function u.duration_2_sec(duration)
+
+  local ptn = '^P(%d*)T(%d+)M(%d*)S?$'
+
+  local h, m, s, sec
+
+  h, m, s = string.match(duration, ptn)
+
+  h = ( h == '' ) and 0 or h
+  s = ( s == '' ) and 0 or s
+
+  sec = h * 60 * 60 + m * 60 + s
+
+  -- print(duration, h, m, s, sec)
+  return sec
+end
+
 -- ar
 
 ar = {}

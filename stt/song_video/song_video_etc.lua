@@ -3,6 +3,8 @@ require("etc")
 
 local etc = Etc.new()
 
+-- etc:main_song_video("nayuta"    )
+
 ---[[
 etc:main_song_video("dazbee"    )
 
@@ -23,7 +25,6 @@ etc:main_song_video("vwp"       )
 etc:main_song_video("riot"      )
 
 etc:main_song_video("pmaru"     )
--- etc:main_song_video("ado"       )
 --]]
 
 -- etc:main_song_video("holobgm")
