@@ -67,15 +67,16 @@ function Holo.video_view_cnt__(_s)
 
   local video_id = ar.key(_s._video)
   local res
-	local lim = 50
+  local lim = 50
   local idx_s = 1
+  local sec
   repeat
     res = Ytube.video_view_cnt(video_id, idx_s)
 
     if res.error then
-			Ytube.log_err(res.error)
-			break
-		end
+      Ytube.log_err(res.error)
+      break
+    end
 
     for idx, itm in pairs(res.items) do
       
@@ -86,7 +87,7 @@ function Holo.video_view_cnt__(_s)
       
       -- localization en
       -- tst
-      -- u.log_ar(itm.localizations)
+      u.log_ar(itm.localizations)
       if itm.localizations then
         if itm.localizations.en then
           -- u.log_ar(itm.localizations.en.title)
@@ -99,10 +100,17 @@ function Holo.video_view_cnt__(_s)
       else
         _s._video[itm.id].view_cnt = -1 -- mmbr only
       end
+
+      sec = u.duration_2_sec(itm.contentDetails.duration)
+      -- u.log(sec)
+      if sec > 30 * 60 then
+        _s._video[itm.id] = nil
+      end
     end
     idx_s = idx_s + lim
     
   until idx_s > #video_id
+  -- until true
 end
 
 function Holo.video_view_cnt__0(_s) -- use not

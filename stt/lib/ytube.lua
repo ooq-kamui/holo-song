@@ -13,7 +13,8 @@ function Ytube.video_view_cnt(video_id, idx_s)
   local prm = {
     "key" .."="..Ytube.api_key,
     -- "part".."=".."statistics,snippet",
-    "part".."=".."statistics,snippet,localizations",
+    -- "part".."=".."statistics,snippet,localizations",
+    "part".."=".."statistics,snippet,localizations,contentDetails",
     "id"  .."="..table.concat(video_id, ",", idx_s, idx_e),
   }
   local res = Ytube.curl(trgt, prm)
