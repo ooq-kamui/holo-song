@@ -986,7 +986,7 @@ class Song {
     this._video_file = prm.f ? prm.f : Song.video_file_dflt;
   }
 
-  static domain   = 'ooq.jp';
+  static domain   = 'www.ooq.jp';
   static dir      = 'holo/song';
   static dir_data = 'data';
 

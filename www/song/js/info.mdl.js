@@ -44,7 +44,7 @@ class Info {
     this.itm__req();
   }
 
-  static _domain    = 'ooq.jp';
+  static _domain    = 'www.ooq.jp';
   static _dir       = 'holo/song/data/info';
   static _file_name = 'info.json';
 

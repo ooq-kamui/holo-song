@@ -82,23 +82,23 @@
 ( 記載されていない動画もあります )
 
 - すいせい と azki の コラボ曲 に絞り込みたい場合 [and 条件]  
-  [`すいせい azki`](https://ooq.jp/holo/song/?s=すいせい%20azki)  
+  [`すいせい azki`](https://www.ooq.jp/holo/song/?s=すいせい%20azki)  
   と入力します
 
 - すいせい か azki の 曲 に絞り込みたい場合 [or 条件]  
-  [`すいせい,azki`](https://ooq.jp/holo/song/?s=すいせい,azki)  
+  [`すいせい,azki`](https://www.ooq.jp/holo/song/?s=すいせい,azki)  
   と入力します
 
 - オリジナル曲 のみにする場合  
-  [`original,オリジナル,official`](https://ooq.jp/holo/song/?s=original,オリジナル,official)  
+  [`original,オリジナル,official`](https://www.ooq.jp/holo/song/?s=original,オリジナル,official)  
   と入力します
 
 - カバー曲 のみにする場合  
-  [`cover,歌ってみた`](https://ooq.jp/holo/song/?s=cover,歌ってみた)  
+  [`cover,歌ってみた`](https://www.ooq.jp/holo/song/?s=cover,歌ってみた)  
   と入力します
 
 - すいせい か azki の オリジナル曲 に絞り込みたい場合  
-  [`すいせい,azki original,オリジナル,official`](https://ooq.jp/holo/song/?s=すいせい,azki%20original,オリジナル,official)  
+  [`すいせい,azki original,オリジナル,official`](https://www.ooq.jp/holo/song/?s=すいせい,azki%20original,オリジナル,official)  
   と入力します
 
 
@@ -150,13 +150,13 @@ o_op  : 並び順オプション
 [抽出対象の youtube リストID](https://github.com/ooq-kamui/holo-song/blob/master/stt/lib/holo_cnst.lua)  
 抜けている歌に気づいたかたは, 連絡いただけましたら嬉しいです
 
-[data archive](https://ooq.jp/holo/song/data/)  
+[data archive](https://www.ooq.jp/holo/song/data/)  
 自由に活用してもらって構いませんが, 値の保証まではできません  
 あくまで参考程度に活用ください
 
 get パラメータ `f` にファイル名を与えることで,  
 過去データを本サイトで見ることもできます  
-[`?f=song_video/2022/2022-07-07.23:45.-.2022-06-30.23:45.json`](https://ooq.jp/holo/song/?f=song_video/2022/2022-07-07.23:45.-.2022-06-30.23:45.json)
+[`?f=song_video/2022/2022-07-07.23:45.-.2022-06-30.23:45.json`](https://www.ooq.jp/holo/song/?f=song_video/2022/2022-07-07.23:45.-.2022-06-30.23:45.json)
 
 
 ## developer
