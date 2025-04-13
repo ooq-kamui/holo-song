@@ -1,6 +1,6 @@
 
-# /www/img/
-/www/mmbr/
+.DS_Store
+
 /www/favicon.ico
 
 /stt/tmp/
@@ -26,9 +26,9 @@ doc
 *.svg
 *.log
 *.ico
-.DS_Store
 
 !/www/img/*.*
+!/www/mmbr/*/*/*.*
 
 /sh/rsync.r.fish
 /sh/rsync.d.fish

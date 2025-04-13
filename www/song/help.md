@@ -161,7 +161,6 @@ get パラメータ `f` にファイル名を与えることで,
 
 ## developer
 
-[twitter](https://twitter.com/ooq_tiki)
-
+[bsky](https://bsky.app/profile/ooq-tiki.bsky.social )
 
 
