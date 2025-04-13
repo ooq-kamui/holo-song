@@ -7,15 +7,16 @@
 
 /stt/ch/data/
 
-/www/song/data/ch_video/
-/www/song/data/etc/
-/www/song/data/info/
 /www/song/data/song_video/2022/
 /www/song/data/song_video/2023/
 /www/song/data/song_video/2024/
 /www/song/data/song_video/2025/
 # !/www/song/data/song_video/ltst.t.json
 # !/www/song/data/song_video/ltst.s.json
+/www/song/data/ch_video/
+# /www/song/data/info/
+/www/song/data/etc/*/*.*
+!/www/song/data/etc/*/ltst.t.json
 
 log/
 
