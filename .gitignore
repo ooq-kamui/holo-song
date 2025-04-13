@@ -1,11 +1,22 @@
 
-/www/img/
+# /www/img/
 /www/mmbr/
 /www/favicon.ico
 
 /stt/tmp/
 
-data/
+/stt/ch/data/
+
+/www/song/data/ch_video/
+/www/song/data/etc/
+/www/song/data/info/
+/www/song/data/song_video/2022/
+/www/song/data/song_video/2023/
+/www/song/data/song_video/2024/
+/www/song/data/song_video/2025/
+# !/www/song/data/song_video/ltst.t.json
+# !/www/song/data/song_video/ltst.s.json
+
 log/
 
 doc
@@ -17,9 +28,10 @@ doc
 *.ico
 .DS_Store
 
+!/www/img/*.*
+
 /sh/rsync.r.fish
 /sh/rsync.d.fish
 /sh/rsync.data.info.fish
-
 
 
